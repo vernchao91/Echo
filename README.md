@@ -3,10 +3,10 @@ Echo is a fullstack clone of Discord. Users can create servers, text channels, c
 
 ## Technologies
 * Ruby
-- Rails
+-Rails
 -PostgreSQL
 * Javascript / JSX
-- React
-- Redux
-- Webpack
-- SCSS
+-React
+-Redux
+-Webpack
+-SCSS
