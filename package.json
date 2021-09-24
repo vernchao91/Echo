@@ -1,5 +1,44 @@
 {
   "name": "Echo",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.6",
+    "@babel/preset-react": "^7.14.5",
+    "babel-loader": "^8.2.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.5",
+    "react-router": "^5.2.1",
+    "react-router-dom": "^5.3.0",
+    "redux": "^4.1.1",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
+    "webpack": "^5.54.0",
+    "webpack-cli": "^4.8.0"
+  },
+  "description": "Echo is a fullstack clone of Discord. Users can create servers, text channels, chat areas, and direct messaging.",
+  "version": "1.0.0",
+  "main": "webpack.config.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack --watch --mode=development",
+    "postinstall": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vernchao91/Echo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vernchao91/Echo/issues"
+  },
+  "homepage": "https://github.com/vernchao91/Echo#readme"
 }
