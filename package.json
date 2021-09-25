@@ -30,6 +30,10 @@
     "webpack": "webpack --watch --mode=development",
     "postinstall": "webpack"
   },
+  "engines": {
+    "node": "14.17.4",
+    "npm": "6.14.14"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vernchao91/Echo.git"
