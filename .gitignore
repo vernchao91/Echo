@@ -12,3 +12,4 @@ npm-debug.log
 /log/*
 /log/.keep
 /config/master.key
+/public/assets

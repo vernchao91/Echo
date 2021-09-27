@@ -9,5 +9,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // window.getState = store.getSTate;
   // window.dispatch = store.dispatch;
-  ReactDOM.render(<h1>ReactDOM is working!!!!</h1>, root)
+  ReactDOM.render(<h1>ReactDOM is working!@</h1>, root)
 })
