@@ -15,9 +15,19 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def destroy
+    @user = User.find_by(id: params[:id])
+    if @user
+      @user.destroy
+      render :show
+    else
+      render json: ["Could not find user"]
+    end
+  end
+
   private
   def user_params
-    self.params.require(:user).permit(:username, :email, :password)
+    params.require(:user).permit(:username, :email, :password)
   end
 
 end
