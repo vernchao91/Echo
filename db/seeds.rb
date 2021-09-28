@@ -7,9 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 user = User.create!(username: "Guest", email: "guest@gmail.com", password: "password")
-user1 = User.create!(username: "Ashe", email: "ashe1@gmail.com", password: "password")
-user2 = User.create!(username: "Alistar", email: "alistar1@gmail.com", password: "password")
-user3 = User.create!(username: "Ryze", email: "ryze1@gmail.com", password: "password")
+user1 = User.create!(username: "Demo", email: "demo@gmail.com", password: "password")
+user2 = User.create!(username: "Ashe", email: "ashe1@gmail.com", password: "password")
+user3 = User.create!(username: "Alistar", email: "alistar1@gmail.com", password: "password")
+user4 = User.create!(username: "Ryze", email: "ryze1@gmail.com", password: "password")
 
 # server1 = Server.create!(name: "Summoner's Rift", owner_id: 1)
 # server2 = Server.create!(name: "Twisted Treeline", owner_id: 2)

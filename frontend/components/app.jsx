@@ -7,7 +7,7 @@ import LoginFormContainer from "./session/login_form_container"
 import GreetingContainer from "./greeting/greeting_container"
 
 const App = () => (
-  <div>
+  <div className="app-wrapper">
     <header>
       <h1>Echo</h1>
       <GreetingContainer />
