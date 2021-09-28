@@ -7,7 +7,6 @@ import LoginFormContainer from "./session/login_form_container"
 
 const App = () => (
   <div className="app-wrapper">
-      <h1>Welcome to Echo!</h1>
     <Route exact path="/" component={ LandingContainer }/>
     <AuthRoute path="/register" component={SignupFormContainer} />
     <AuthRoute path="/login" component={LoginFormContainer} />

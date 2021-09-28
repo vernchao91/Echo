@@ -3,10 +3,8 @@ import * as SessionApiUtil from "../util/session_api_util";
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_ERRORS";
-export const REMOVE_SESSION_ERRORS = "REMOVE_SESSION_ERRORS"
+export const REMOVE_SESSION_ERRORS = "REMOVE_SESSION_ERRORS";
 
-
-// regular actions
 const receiveCurrentUser = user => {
   return {
     type: RECEIVE_CURRENT_USER,
@@ -21,19 +19,18 @@ const logoutCurrentUser = () => {
 }
 
 const receiveErrors = (errors) => {
-  return{
+  return {
     type: RECEIVE_SESSION_ERRORS,
     errors
   }
 }
 
-export const removeErrors = () => {
-  return{
+export const removeSessionErrors = () => {
+  return {
     type: REMOVE_SESSION_ERRORS,
   }
 }
 
-// thunk actions
 export const signup = user => dispatch => (
   SessionApiUtil.signup(user).then(user => (
     dispatch(receiveCurrentUser(user))

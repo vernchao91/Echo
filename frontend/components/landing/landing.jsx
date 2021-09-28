@@ -12,6 +12,7 @@ const Landing = (props) => {
   } else {
     return (
       <div>
+        <h1>Welcome to Echo!</h1>
         <Link className="register-button" to="/register">Register</Link>
         <Link className="login-button" to="/login">Log In </Link>
       </div>
