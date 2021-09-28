@@ -1,0 +1,31 @@
+.register-button {
+  background-color: turquoise;
+  color: rgb(192, 89, 5);
+  border-style: outset;
+  margin: 5px;
+  padding: 3px;
+}
+
+.login-button {
+  background-color: turquoise;
+  color: rgb(192, 89, 5);
+  border-style: outset;
+  margin: 5px;
+  padding: 3px;
+}
+
+.register-button:active {
+  border-style: inset;
+}
+
+.login-button:active {
+  border-style: inset;
+}
+
+// .splash {
+//   background-image: image-url("bg.png");
+//   height: 800px;
+//   background-size: cover, contain;
+//   background-repeat: no-repeat;
+//   background-attachment: fixed;
+// }

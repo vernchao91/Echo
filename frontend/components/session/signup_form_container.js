@@ -9,7 +9,7 @@ const mapStateToProps = (state, ownProps) => ({
     password: ""
   },
   errors: state.errors.session,
-  formType: "register"
+  formType: "Register"
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

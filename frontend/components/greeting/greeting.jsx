@@ -12,8 +12,8 @@ const Greeting = (props) => {
   } else {
     return (
       <div>
-        <Link className="button" to="/signup">Register</Link>
-        <Link className="button" to="/login">Log In </Link>
+        <Link className="register-button" to="/register">Register</Link>
+        <Link className="login-button" to="/login">Log In </Link>
       </div>
     )
   }

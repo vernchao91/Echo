@@ -38,8 +38,8 @@ class SessionForm extends React.Component {
 
   render() {
     let otherLink ;
-    if (this.props.formType === "login") {
-      otherLink = <Link to="/signup">Register</Link>
+    if (this.props.formType === "Login") {
+      otherLink = <Link to="/register">Register</Link>
     } else {
       otherLink = <Link to="/login">Login</Link>
     };

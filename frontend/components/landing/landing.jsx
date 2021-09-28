@@ -1,11 +1,9 @@
 import React from "react";
 
-
 const Home = () => (
-  <div>
-    <p>
-    Join these servers to chat!
-    </p>
+  <div className="splash-wrapper">
+    <header className="splash">
+    </header>
   </div>
 )
 
