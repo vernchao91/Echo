@@ -21,7 +21,7 @@ class SessionForm extends React.Component {
   }
 
   signupUsername() {
-    if (this.props.formType === "register") {
+    if (this.props.formType === "Register") {
       return (
         <label>
           Username:

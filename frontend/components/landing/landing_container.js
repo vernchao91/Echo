@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { logout } from "../../actions/session_actions"
-import Greeting from "./greeting";
+import Landing from "./landing"
 
 const mSTP = (state) => {
   return {
@@ -14,4 +14,4 @@ const mDTP = (dispatch) => {
   };
 };
 
-export default connect(mSTP, mDTP)(Greeting);
+export default connect(mSTP, mDTP)(Landing);

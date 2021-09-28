@@ -14,14 +14,9 @@
  *= require_self
  */
 
- .button {
-  background-color: turquoise;
-  color: rgb(192, 89, 5);
-  border-style: outset;
-  margin: 5px;
-  padding: 3px;
-}
+// CSS Reset
+@import "base/reset.scss";
 
-.button:active {
-  border-style: inset;
-}
+
+// Components
+@import "components/*";
