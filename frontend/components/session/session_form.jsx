@@ -6,15 +6,15 @@ class SessionForm extends React.Component {
     super(props);
     this.state = props.user;
     this.handleSubmit = this.handleSubmit.bind(this)
-    this.demoLogin = this.demoLogin.bind(this)
+    this.handleDemoSubmit = this.handleDemoSubmit.bind(this)
   }
 
-  componentWillUmount() {
+  componentWillUnmount() {
     this.props.removeSessionErrors();
   }
 
   insertErorrs() {
-    this.props.errors;
+
   }
 
   handleSubmit(e) {
@@ -23,13 +23,28 @@ class SessionForm extends React.Component {
     this.props.processForm(user);
   }
 
-  demoLogin() {
-
+  handleDemoSubmit(e) {
+    e.preventDefault();
+    const user = {
+      email: "demo@gmail.com",
+      password: "password"
+    }
+    this.props.processForm(user);
   }
 
   update(field) {
     return (e) => {
       this.setState({ [field]: e.currentTarget.value })
+    }
+  }
+
+  demoLogin() {
+    if (this.props.formType === "Login") {
+      return (
+        <div className="demo-wrapper">
+          <button type="submit" onClick={this.handleDemoSubmit}>Demo Login</button>
+        </div>
+      )
     }
   }
 
@@ -69,6 +84,7 @@ class SessionForm extends React.Component {
         <form onSubmit={this.handleSubmit}>
 
           {this.signupUsername()}
+          {this.demoLogin()}
 
             <div className="email-wrapper">
               <label>Email:
@@ -90,8 +106,14 @@ class SessionForm extends React.Component {
               </label>
             </div>
 
-            {this.props.errors}
+            {this.props.errors.map((error, i) => (
+              <div className="session-error-wrapper" key={i}>
+                <p>{error}</p>
+              </div>
+            ))}
+            
           <button type="submit">{this.props.formType}</button>
+
         </form>
       </div>
     )
