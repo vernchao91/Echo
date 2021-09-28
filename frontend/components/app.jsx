@@ -9,7 +9,7 @@ import GreetingContainer from "./greeting/greeting_container"
 const App = () => (
   <div>
     <header>
-      <h1>Welcome to Echo</h1>
+      <h1>Echo</h1>
       <GreetingContainer />
     </header>
     <Route exact path="/" component={ Home }/>

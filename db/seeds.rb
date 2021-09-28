@@ -20,4 +20,3 @@ user3 = User.create!(username: "Ryze", email: "ryze1@gmail.com", password: "pass
 # channel3 = Channel.create!(name: "Ranked", server_id: 1)
 # channel4 = Channel.create!(name: "ARAM Inhouse", server_id: 3)
 # channel5 = Channel.create!(name: "ARAM Public", server_id: 3)
-

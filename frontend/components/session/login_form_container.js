@@ -3,6 +3,10 @@ import SessionForm from "./session_form"
 import { login } from"../../actions/session_actions"
 
 const mapStateToProps = (state, ownProps) => ({
+  user: {
+    email: "",
+    password: ""
+  },
   errors: state.errors.session,
   formType: "login"
 })
