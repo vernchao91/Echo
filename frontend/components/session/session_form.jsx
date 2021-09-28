@@ -25,7 +25,7 @@ class SessionForm extends React.Component {
   }
 
   signupUsername() {
-    if (this.props.formType === "signup") {
+    if (this.props.formType === "register") {
       return (
         <label>
           Username:
@@ -43,7 +43,7 @@ class SessionForm extends React.Component {
   render() {
     let otherLink ;
     if (this.props.formType === "login") {
-      otherLink = <Link to="/signup">Sign Up</Link>
+      otherLink = <Link to="/signup">Register</Link>
     } else {
       otherLink = <Link to="/login">Login</Link>
     };
