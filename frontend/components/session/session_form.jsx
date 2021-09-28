@@ -14,7 +14,7 @@ class SessionForm extends React.Component {
   }
 
   insertErorrs() {
-
+    
   }
 
   handleSubmit(e) {
@@ -69,9 +69,15 @@ class SessionForm extends React.Component {
   registerOtherLink() {
     let otherLink ;
     if (this.props.formType === "Login") {
-      otherLink = <Link to="/register">Register</Link>
+      otherLink = <div>
+        <label>Need an Account? </label>
+        <Link to="/register">Register</Link>
+      </div>
     } else {
-      otherLink = <Link to="/login">Already have an account?</Link>
+      otherLink = <div> 
+        <label>Already have an account? </label>
+        <Link to="/login">Login</Link>
+      </div>
     };
     return otherLink
   }
