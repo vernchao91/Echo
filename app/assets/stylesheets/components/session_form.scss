@@ -40,30 +40,35 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-  }
 
-  button {
-    border: none;
-    font-size: 16px;
-    border-radius: 3px;
-  }
-
-  input {
-    box-sizing: border-box;
-    font-size: 16px;
-    outline: none;
-    width: 412px;
-    height: 40px;
-    border-radius: 3px;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.2);
-    border: 1px solid;
-    transition: border-color .2s ease-in-out;
-
-    &:hover {
-      border-color:rgba(9, 88, 107, 0.2);
+    .label-email, .label-username, .label-password {
+      display: flex;
+      flex-direction: column;
     }
 
+    button {
+      border: 1px solid black;
+      font-size: 16px;
+      border-radius: 3px;
+      text-align: center;
+    }
+
+    input {
+      box-sizing: border-box;
+      font-size: 16px;
+      outline: none;
+      width: 412px;
+      height: 40px;
+      border-radius: 3px;
+      padding: 10px;
+      background-color: rgba(0, 0, 0, 0.2);
+      border: 1px solid;
+      transition: border-color .2s ease-in-out;
+  
+      &:hover {
+        border-color:rgba(9, 88, 107, 0.2);
+      }
+    }
 
   }
 
