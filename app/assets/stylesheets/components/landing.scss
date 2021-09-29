@@ -1,6 +1,7 @@
 .register-button, .login-button {
   display: flex;
-  // justify-content: flex-end;
+  flex-direction: column;
+  justify-content: flex-end;
   // border: none;
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
@@ -9,6 +10,8 @@
   // max-width: 100px;
   border-radius: 10px;
   font-weight: 500;
+  font-size: 18px;
+  font: sans-serif;
 }
 
 .button-wrapper {
@@ -19,10 +22,13 @@
 }
 
 .landing-wrapper {
-  // display: flex;4
+  display: flex;
   // justify-content: left;
-  background-image: image-url("background.png");
+  position: absolute;
+  background-image: image-url("echo-background.jpg");
   height: 800px;
+  width: 100vw;
+  z-index: -10;
   // background-size: cover, contain;
   // background-repeat: no-repeat;
   // background-attachment: fixed;

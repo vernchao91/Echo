@@ -42,6 +42,7 @@ class SessionForm extends React.Component {
     if (this.props.formType === "Login") {
       return (
         <div className="demo-wrapper">
+          <span></span>
           <button type="submit" onClick={this.handleDemoSubmit}>Demo Login</button>
         </div>
       )
@@ -52,8 +53,8 @@ class SessionForm extends React.Component {
     if (this.props.formType === "Register") {
       return (
         <div className="username-wrapper">
-          <label>
-            Username:
+          <label className="label-username">
+            Username
             <input
               id="username"
               type="text"
@@ -67,15 +68,17 @@ class SessionForm extends React.Component {
     }
   }
 
-  registerOtherLink() {
-    let otherLink ;
+  inquiryLink() {
+    let otherLink;
     if (this.props.formType === "Login") {
-      otherLink = <div>
+      otherLink = 
+      <div className="redirect-wrapper-register">
         <label>Need an Account? </label>
         <Link to="/register">Register</Link>
       </div>
     } else {
-      otherLink = <div> 
+      otherLink = 
+      <div className="redirect-wrapper-login"> 
         <label>Already have an account? </label>
         <Link to="/login">Login</Link>
       </div>
@@ -85,46 +88,63 @@ class SessionForm extends React.Component {
 
   render() {
 
+    // div-wrapper
+    const formBox = `form-box-${this.props.formType}`
+
     return (
-      <div className="session-form-wrapper">
-        <h3>{this.registerOtherLink()}</h3>
-        <form onSubmit={this.handleSubmit}>
+      <>
+        <div className="bg-container">
+          
+        </div>
+        <header className="session-header-wrapper">
+          <Link className="session-home-link" to="/">
+            Home
+          </Link>
+        </header>
+        <div className="session-form-wrapper">
+          <div className={ formBox }>
+            {this.inquiryLink()}
+            {this.demoLogin()}
+            <div className="form-wrapper">
+              <form className="session-form" onSubmit={this.handleSubmit}>
 
-          {this.signupUsername()}
-          {this.demoLogin()}
+                {this.signupUsername()}
 
-            <div className="email-wrapper">
-              <label>Email:
-                <input
-                  id="email"
-                  type="email" 
-                  value={this.state.email}
-                  onChange={this.update("email")}>
-                  </input>
-              </label>
+                  <div className="email-wrapper">
+                    <label className="label-email">Email
+                      <input
+                        id="email"
+                        type="email" 
+                        value={this.state.email}
+                        onChange={this.update("email")}>
+                        </input>
+                    </label>
+                  </div>
+
+                  <div className="password-wrapper">
+                    <label className="label-password">Password
+                      <input
+                        id="password"
+                        type="password" 
+                        value={this.state.password}
+                        onChange={this.update("password")}>
+                        </input>
+                    </label>
+                  </div>
+
+                  {this.props.errors.map((error, i) => (
+                    <div className="session-error-wrapper" key={i}>
+                      <li className="session-error">{error}</li>
+                    </div>
+                  ))}
+                  
+                <button type="submit">{this.props.formType}</button>
+
+              </form>
             </div>
-
-            <div className="password-wrapper">
-              <label>Password:
-                <input
-                  id="password"
-                  type="password" 
-                  value={this.state.password}
-                  onChange={this.update("password")}>
-                  </input>
-              </label>
-            </div>
-
-            {this.props.errors.map((error, i) => (
-              <div className="session-error-wrapper" key={i}>
-                <li>{error}</li>
-              </div>
-            ))}
-            
-          <button type="submit">{this.props.formType}</button>
-
-        </form>
-      </div>
+          </div>
+        </div>
+      </>
     )
   }
 
