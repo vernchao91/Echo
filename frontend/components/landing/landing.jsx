@@ -23,7 +23,7 @@ const Landing = (props) => {
           </ul>
           <div className="button-wrapper">
             <Link className="register-button" to="/register">Register</Link>
-            <Link className="login-button" to="/login">Log In </Link>
+            <Link className="login-button" to="/login">Login </Link>
           </div>
         </div>
 

@@ -32,11 +32,10 @@
   min-height: 580px;
   top: 0;
   left: 0;
-
   // font-family: $roboto;
 
   .session-form {
-    border: 1px solid black;
+    // border: 1px solid black;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -51,6 +50,8 @@
       font-size: 16px;
       border-radius: 3px;
       text-align: center;
+      background-color: rgb(46, 153, 142);
+      color: white;
     }
 
     input {
@@ -72,6 +73,20 @@
 
   }
 
+  // inquiry text and link
+
+  .redirect-wrapper-register {
+    display: flex;
+    justify-content: center;
+    // flex-direction: column;
+    
+  }
+  .redirect-wrapper-login {
+    display: flex;
+    justify-content: center;
+    // flex-direction: column;
+  }
+
   // demo button
   .demo-wrapper {
     display: flex;
@@ -79,8 +94,10 @@
     flex-direction: column;
 
     button {
+      background-color: rgb(37, 126, 117);
+      color: white;
       font-size: 16px;
-      border: 1px solid;
+      border: 1px solid black;
     }
 
   }
@@ -93,7 +110,7 @@
     height: 408px;
     padding: 32px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     border-radius: 5px;
     box-sizing: border-box;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
@@ -109,7 +126,33 @@
     color: red;
   }
 
+  // register form
+
+  .form-box-Register {
+    background-color: $form-color;
+    width: 784px;
+    height: 408px;
+    padding: 32px;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+
+    .form-wrapper {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .session-error {
+    color: red;
+  }
+
 }
+
+
+
 // .login-button {
 //   border: none;
 //   background-color: turquoise;
