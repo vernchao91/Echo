@@ -1,9 +1,33 @@
 .register-button, .login-button {
-  border: none;
-  background-color: rgb(29, 103, 146);
-  color: rgb(245, 245, 245);
+  display: flex;
+  // justify-content: flex-end;
+  // border: none;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   margin: 5px;
   padding: 3px;
+  // max-width: 100px;
   border-radius: 10px;
   font-weight: 500;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  // align-items: flex-end;
+}
+
+.landing-wrapper {
+  // display: flex;4
+  // justify-content: left;
+  background-image: image-url("background.png");
+  height: 800px;
+  // background-size: cover, contain;
+  // background-repeat: no-repeat;
+  // background-attachment: fixed;
+
+  h1 {
+    color: white;
+  }
 }

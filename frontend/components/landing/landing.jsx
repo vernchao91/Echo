@@ -13,8 +13,10 @@ const Landing = (props) => {
     return (
       <div className="landing-wrapper">
         <h1>Welcome to Echo!</h1>
-        <Link className="register-button" to="/register">Register</Link>
-        <Link className="login-button" to="/login">Log In </Link>
+        <div className="button-wrapper">
+          <Link className="register-button" to="/register">Register</Link>
+          <Link className="login-button" to="/login">Log In </Link>
+        </div>
       </div>
     )
   }
