@@ -1,28 +1,75 @@
-.register-button, .login-button {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  // border: none;
-  background-color: rgb(255, 255, 255);
-  color: rgb(0, 0, 0);
-  margin: 5px;
-  padding: 3px;
-  // max-width: 100px;
-  border-radius: 10px;
-  font-weight: 500;
-  font-size: 18px;
-  font: sans-serif;
-}
+// .register-button {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: flex-end;
+//   background-color: rgb(255, 255, 255);
+//   color: rgb(0, 0, 0);
+//   margin: 5px;
+//   padding: 3px;
+//   height: 16px;
+//   width: 55px;
+//   font-size: 14px;
+//   border-radius: 10px;
+//   font-weight: 500;
+//   font-family: sans-serif;
+// }
+
+// .login-button {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: flex-end;
+//   background-color: rgb(255, 255, 255);
+//   color: rgb(0, 0, 0);
+//   margin: 5px;
+//   padding: 3px;
+//   height: 16px;
+//   border-radius: 10px;
+//   font-weight: 500;
+//   font-size: 14px;
+//   font-family: sans-serif;
+// }
 
 .button-wrapper {
   display: flex;
   justify-content: flex-end;
   flex-direction: row;
   // align-items: flex-end;
+
+  .register-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    margin: 5px;
+    padding: 3px;
+    height: 16px;
+    width: 55px;
+    font-size: 14px;
+    border-radius: 10px;
+    font-weight: 500;
+    font-family: sans-serif;
+  }
+  
+  .login-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    margin: 5px;
+    padding: 3px;
+    height: 16px;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 14px;
+    font-family: sans-serif;
+  }
+
 }
 
 .landing-wrapper {
-  display: flex;
+  // display: flex;
   // justify-content: left;
   position: absolute;
   background-image: image-url("echo-background.jpg");
@@ -34,6 +81,9 @@
   // background-attachment: fixed;
 
   h1 {
+    display: flex;
+    justify-content: flex-start;
     color: white;
+    font-size: 30px;
   }
 }

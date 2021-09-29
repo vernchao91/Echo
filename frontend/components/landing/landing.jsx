@@ -13,6 +13,13 @@ const Landing = (props) => {
     return (
       <div className="landing-wrapper">
         <h1>Welcome to Echo!</h1>
+        <ul className="social-links-wrapper">
+          <li>LinkedIn</li>
+          <li>GitHub</li>
+          <li>AngelList</li>
+          <li>MazeRunner</li>
+        </ul>
+        <p>Your place to chat</p>
         <div className="button-wrapper">
           <Link className="register-button" to="/register">Register</Link>
           <Link className="login-button" to="/login">Log In </Link>
