@@ -14,7 +14,7 @@ class SessionForm extends React.Component {
   }
 
   insertErorrs() {
-    
+
   }
 
   handleSubmit(e) {
@@ -54,7 +54,8 @@ class SessionForm extends React.Component {
         <div className="username-wrapper">
           <label>
             Username:
-            <input 
+            <input
+              id="username"
               type="text"
               value={this.state.username}
               onChange={this.update("username")}
@@ -95,6 +96,7 @@ class SessionForm extends React.Component {
             <div className="email-wrapper">
               <label>Email:
                 <input
+                  id="email"
                   type="text" 
                   value={this.state.email}
                   onChange={this.update("email")}>
@@ -105,6 +107,7 @@ class SessionForm extends React.Component {
             <div className="password-wrapper">
               <label>Password:
                 <input
+                  id="password"
                   type="password" 
                   value={this.state.password}
                   onChange={this.update("password")}>
@@ -114,7 +117,7 @@ class SessionForm extends React.Component {
 
             {this.props.errors.map((error, i) => (
               <div className="session-error-wrapper" key={i}>
-                <p>{error}</p>
+                <li>{error}</li>
               </div>
             ))}
             

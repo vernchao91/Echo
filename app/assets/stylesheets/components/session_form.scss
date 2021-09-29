@@ -1,19 +1,31 @@
-.register-button {
-  background-color: turquoise;
-  color: rgb(192, 89, 5);
-  border-style: outset;
-  margin: 5px;
-  padding: 3px;
-}
+.session-form-wrapper {
 
+  position: absolute;
+  border: 1px solid black;
 
-.login-button {
-  background-color: turquoise;
-  color: rgb(192, 89, 5);
-  border-style: outset;
-  margin: 5px;
-  padding: 3px;
+  input {
+    box-sizing: border-box;
+    font-size: 16px;
+    outline: none;
+    width: 412px;
+    height: 40px;
+    border-radius: 3px;
+    padding: 10px;
+    background-color: rgb(194, 192, 192);
+    border: 1px solid;
+    transition: border-color .2s ease-in-out;
+  }
+
 }
+// .login-button {
+//   border: none;
+//   background-color: turquoise;
+//   color: rgb(192, 89, 5);
+//   border-style: outset;
+//   margin: 5px;
+//   padding: 3px;
+//   font-weight: 500;
+// }
 
 // .register-button:active {
 //   border-style: inset;
