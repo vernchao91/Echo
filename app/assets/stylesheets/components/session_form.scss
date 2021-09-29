@@ -50,7 +50,7 @@
       font-size: 16px;
       border-radius: 3px;
       text-align: center;
-      background-color: rgb(46, 153, 142);
+      background-color: rgb(37, 126, 117);
       color: white;
     }
 
@@ -80,11 +80,20 @@
     justify-content: center;
     // flex-direction: column;
     
+    .register-link {
+      border: 1px solid;
+      border-radius: 1px solid;
+    }
   }
   .redirect-wrapper-login {
     display: flex;
     justify-content: center;
     // flex-direction: column;
+
+    .login-link {
+      border: 1px solid;
+      border-radius: 1px solid;
+    }
   }
 
   // demo button

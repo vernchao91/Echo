@@ -74,13 +74,13 @@ class SessionForm extends React.Component {
       otherLink = 
       <div className="redirect-wrapper-register">
         <label>Need an Account? </label>
-        <Link to="/register"> Register</Link>
+        <Link className="register-link" to="/register"> Register</Link>
       </div>
     } else {
       otherLink = 
       <div className="redirect-wrapper-login"> 
         <label>Already have an account? </label>
-        <Link to="/login"> Login</Link>
+        <Link className="login-link" to="/login"> Login</Link>
       </div>
     };
     return otherLink
@@ -106,7 +106,6 @@ class SessionForm extends React.Component {
             <div className="form-wrapper">
               <form className="session-form" onSubmit={this.handleSubmit}>
                 {this.inquiryLink()}
-                {this.demoLogin()}
 
                 {this.signupUsername()}
 
@@ -139,6 +138,7 @@ class SessionForm extends React.Component {
                   ))}
                   
                 <button type="submit">{this.props.formType}</button>
+                  {this.demoLogin()}
 
               </form>
             </div>
