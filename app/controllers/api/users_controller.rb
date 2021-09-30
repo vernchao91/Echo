@@ -15,6 +15,15 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def update
+    @server = Server.find_by(id: params[:id])
+    if @server && server.update(server_params)
+      render :show
+    else
+      render @server.errors.full_messages, status: 422
+    end
+  end
+
   def destroy
     @user = User.find_by(id: params[:id])
     if @user
