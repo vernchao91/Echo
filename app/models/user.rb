@@ -15,7 +15,12 @@ class User < ApplicationRecord
   validates :password_digest, presence: true
   validates :password, length: { minimum: 6 }, allow_nil: true
 
-  has_many :servers
+  has_many :owned_servers,
+    foreign_key: :owner_id,
+    class_name: :Server
+
+  # has_many :joined_servers
+  
   
   attr_reader :password
   after_initialize :ensure_session_token
