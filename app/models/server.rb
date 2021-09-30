@@ -13,5 +13,20 @@ class Server < ApplicationRecord
   validates :name, uniqueness: { scope: :owner_id }
 
   belongs_to :owner
-  has_many :channels
+
+  #after_initialize :create_welcome_channel
+  #has_many :channels,
+  #  dependent: :destroy
+
+  #has_many :messages,
+  #  through: :channels,
+  #  source: :messages
+
+  #def create_welcome_channel
+  #  Channel.new(
+  #    name: "general",
+  #    server_id: :self.id
+  #  ).save
+  #end
+
 end
