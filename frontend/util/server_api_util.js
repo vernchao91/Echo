@@ -1,4 +1,4 @@
-// works
+// works -- fetches all servers
 export const fetchServers = () => {
   return $.ajax({
     url: "/api/servers",
@@ -12,26 +12,11 @@ export const fetchServer = (serverId) => {
     method: "GET"
   })
 }
-// works
+// works -- fetches all servers the user has joined
 export const fetchUsersFromServer = (serverId) => {
   return $.ajax({
     url: `api/servers/${serverId}/users`,
     method: "GET"
-  })
-}
-// works
-export const joinServer = (list) => {
-  return $.ajax({
-    url: "/api/lists",
-    method: "POST",
-    data: { list }
-  })
-}
-// test 
-export const leaveServer = (listId) => {
-  return $.ajax({
-    url: `/api/servers/:server_id/lists/${listId}`,
-    method: "DELETE"
   })
 }
 

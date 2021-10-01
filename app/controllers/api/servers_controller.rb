@@ -5,6 +5,7 @@ class Api::ServersController < ApplicationController
     if params[:user_id]
       user = User.find_by(id: params[:user_id])
       @servers = user.joined_servers
+      # @servers = User.find_by(id: params[:user_id]).joined_servers
     else
       # all servers
       @servers = Server.all
