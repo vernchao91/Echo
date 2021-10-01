@@ -6,11 +6,11 @@ Rails.application.routes.draw do
     resource :session, only: [ :create, :destroy ]
  
     resources :users, only: [ :show, :create, :destroy] do
-      resources :servers, only: [ :show, :index, :create, :update, :destroy ]
+      resources :servers, only: [ :index, :create, :update, :destroy ]
       #resources :conversations, only: [ :show, :index, :create, :update, :destroy]
     end
 
-    resources :servers, only: [ :index ] do
+    resources :servers, only: [ :index, :show ] do
       resources :users, only: [ :index ]
       resources :lists, only: [ :destroy ]
      # resources :channels, only: [ :index, :create, :update, :destroy ]
