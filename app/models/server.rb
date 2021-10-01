@@ -17,7 +17,13 @@ class Server < ApplicationRecord
     foreign_key: :owner_id,
     class_name: :User
 
-  # has_many :users,
+  has_many :lists,
+    foreign_key: :server_id,
+    class_name: :List
+
+  has_many :joined_users,
+    through: :lists,
+    source: :user
 
   #after_initialize :create_welcome_channel
   #has_many :channels,

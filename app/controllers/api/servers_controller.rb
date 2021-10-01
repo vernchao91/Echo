@@ -1,12 +1,12 @@
 class Api::ServersController < ApplicationController
 
   def index
-    #if params[:user_id]
-    #  user = User.find_by(id: params[:user_id])
-    #  #  @servers = user.joined_servers
-    #else
-    #end
-    @servers = Server.all
+    if params[:user_id]
+      user = User.find_by(id: params[:user_id])
+      @servers = user.joined_servers
+    else
+      @servers = Server.all
+    end
     render :index
   end
 
@@ -23,6 +23,7 @@ class Api::ServersController < ApplicationController
     @server = Server.new(server_params)
     @server.owner_id = current_user.id
     if @server && @server.save
+     # Channel.create!(server_id: @server.id, name: "General")
       render :show
     else
       render json: @server.errors.full_messages, status: 422

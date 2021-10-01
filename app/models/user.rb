@@ -19,9 +19,15 @@ class User < ApplicationRecord
     foreign_key: :owner_id,
     class_name: :Server
 
-  # has_many :joined_servers
-  
-  
+  has_many :lists,
+    foreign_key: :user_id,
+    dependent: :destroy,
+    class_name: :List
+
+  has_many :joined_servers,
+    through: :lists,
+    source: :server
+
   attr_reader :password
   after_initialize :ensure_session_token
   
