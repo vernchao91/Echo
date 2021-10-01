@@ -1,7 +1,7 @@
 class Api::ServersController < ApplicationController
 
   def index
-    # all servers the user has joined
+    # list of all the servers the user has joined
     if params[:user_id]
       user = User.find_by(id: params[:user_id])
       @servers = user.joined_servers
