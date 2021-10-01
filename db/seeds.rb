@@ -16,15 +16,23 @@ server1 = Server.create!(name: "Summoner's Rift", owner_id: 3)
 server2 = Server.create!(name: "Twisted Treeline", owner_id: 4)
 server3 = Server.create!(name: "Howling Abyss", owner_id: 5)
 
-list1 = List.create!(server_id: 1, user_id: 3)
-list2 = List.create!(server_id: 2, user_id: 3)
-list3 = List.create!(server_id: 3, user_id: 3)
+# demo joined all servers
+list = List.create!(server_id: 1, user_id: 2)
+list1 = List.create!(server_id: 2, user_id: 2)
+list2 = List.create!(server_id: 3, user_id: 2)
 
-list4 = List.create!(server_id: 1, user_id: 4)
-list5 = List.create!(server_id: 2, user_id: 4)
-list6 = List.create!(server_id: 3, user_id: 4)
+# ashe joined all servers
+list3 = List.create!(server_id: 1, user_id: 3)
+list4 = List.create!(server_id: 2, user_id: 3)
+list5 = List.create!(server_id: 3, user_id: 3)
 
-list7 = List.create!(server_id: 1, user_id: 5)
+# alistar joined all servers
+list6 = List.create!(server_id: 1, user_id: 4)
+list7 = List.create!(server_id: 2, user_id: 4)
+list8 = List.create!(server_id: 3, user_id: 4)
+
+# ryze joined server1
+list9 = List.create!(server_id: 1, user_id: 5)
 
 # channel1 = Channel.create!(name: "Tournament", server_id: 1)
 # channel2 = Channel.create!(name: "Scrims", server_id: 1)

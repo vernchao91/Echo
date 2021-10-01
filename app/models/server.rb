@@ -19,6 +19,7 @@ class Server < ApplicationRecord
 
   has_many :lists,
     foreign_key: :server_id,
+    dependent: :destroy,
     class_name: :List
 
   has_many :joined_users,

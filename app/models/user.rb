@@ -17,6 +17,7 @@ class User < ApplicationRecord
 
   has_many :owned_servers,
     foreign_key: :owner_id,
+    dependent: :destroy,
     class_name: :Server
 
   has_many :lists,

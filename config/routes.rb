@@ -15,6 +15,8 @@ Rails.application.routes.draw do
       resources :channels, only: [ :index, :create, :update, :destroy ]
     end
 
+    resources :lists, only: [ :create, :destroy ]
+
   end
 
 end
