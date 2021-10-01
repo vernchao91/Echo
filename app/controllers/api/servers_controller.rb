@@ -1,10 +1,12 @@
 class Api::ServersController < ApplicationController
 
   def index
+    # all servers the user has joined
     if params[:user_id]
       user = User.find_by(id: params[:user_id])
       @servers = user.joined_servers
     else
+      # all servers
       @servers = Server.all
     end
     render :index
@@ -15,7 +17,7 @@ class Api::ServersController < ApplicationController
     if @server
       render :show
     else
-      render json: {}
+      render json: { error: "Server doesn't exist" }, status: 404
     end
   end
 
@@ -23,7 +25,9 @@ class Api::ServersController < ApplicationController
     @server = Server.new(server_params)
     @server.owner_id = current_user.id
     if @server && @server.save
-     # Channel.create!(server_id: @server.id, name: "General")
+      # automatically makes current_user join server
+      List.create!(server_id: @server.id, user_id: current_user.id)
+      # Channel.create!(server_id: @server.id, name: "General")
       render :show
     else
       render json: @server.errors.full_messages, status: 422
@@ -32,10 +36,10 @@ class Api::ServersController < ApplicationController
 
   def update
     @server = Server.find_by(id: params[:id])
-    if @server && @server.update
+    if @server && @server.update(server_params)
       render :show
     elsif !@server
-      render json: { message: "Server doesn't exist" }, status: 404
+      render json: { error: "Server doesn't exist" }, status: 404
     else
       render json: @server.errors.full_messages, status: 422
     end

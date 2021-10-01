@@ -7,16 +7,15 @@ Rails.application.routes.draw do
 
     resources :users, only: [ :show, :create, :destroy] do
       resources :servers, only: [ :show, :index, :create, :update, :destroy ]
-      #resources :conversations, only: [ :index, :create]
+      #resources :conversations, only: [ :show, :index, :create, :update, :destroy]
     end
 
-    resources :servers, only: [ :show ] do
+    resources :servers, only: [ :index ] do
       resources :users, only: [ :index ]
-      resources :channels, only: [ :index, :create, :update, :destroy ]
+     # resources :channels, only: [ :index, :create, :update, :destroy ]
     end
 
     resources :lists, only: [ :create, :destroy ]
-
   end
 
 end

@@ -9,8 +9,9 @@
 #  updated_at :datetime         not null
 #
 class List < ApplicationRecord
+  validates :server_id, :user_id, presence: true
   validates :server_id, uniqueness: { scope: :user_id }
-  
+
   belongs_to :server,
     primary_key: :id,
     foreign_key: :server_id,

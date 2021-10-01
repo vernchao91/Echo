@@ -42,4 +42,4 @@ class Server < ApplicationRecord
     # end
     
     
-  end
+end
