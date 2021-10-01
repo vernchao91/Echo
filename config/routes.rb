@@ -12,10 +12,11 @@ Rails.application.routes.draw do
 
     resources :servers, only: [ :index ] do
       resources :users, only: [ :index ]
+      resources :lists, only: [ :destroy ]
      # resources :channels, only: [ :index, :create, :update, :destroy ]
     end
 
-    resources :lists, only: [ :create, :destroy ]
-  end
+    resources :lists, only: [ :create ]
 
+  end
 end

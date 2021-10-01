@@ -2,17 +2,20 @@ class Api::ListsController < ApplicationController
 
   def create
     @list = List.new(list_params)
-    if @list && @list.save
-      @list.user_id = current_user.id
+    # @list.server_id = params[:server_id]
+    @list.user_id = current_user.id
+    if @list
+      @list.save
       render :show
     else
-      render json: @list.errors.full_messages, status: 422
+      render json: { message: "You have already joined the server" }, status: 200
     end
   end
 
   def destroy
-    @list = List.find_by(id: params[:id])
-    if @list && @list.destroy
+    @list = List.find_by(server_id: params[:server_id])
+    if (@list.user_id == current_user.id)
+      @list.destroy
       render :show
     else
       render json: { error: "User has not joined the server" }, status: 404
