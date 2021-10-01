@@ -4,8 +4,9 @@ class Api::UsersController < ApplicationController
     if params[:server_id]
       server = Server.find_by(id: params[:server_id])
       @users = server.joined_users
-    else
-      
+    #elsif params[:conversation_id]
+    #  conversation = Conversation.find_by(id: params[:conversation_id])
+    #  @users = conversation.user_id
     end
     render :index
   end
