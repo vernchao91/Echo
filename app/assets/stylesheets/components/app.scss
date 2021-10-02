@@ -1,0 +1,26 @@
+.echoapp-wrapper {
+  height: 100vh;
+  width: 100vw;
+  background-image: image-url("background.png");
+  opacity: .75;
+
+  .home-link-wrapper {
+    display: flex;
+
+
+    .home-link {
+      color:white;
+      border-radius: 1 solid white;
+    }
+  }
+
+
+  .server-wrapper {
+    display: grid;
+
+    h2 {
+      color: white;
+      
+    }
+  }
+}

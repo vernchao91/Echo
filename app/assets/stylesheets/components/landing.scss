@@ -113,4 +113,14 @@
 
   }
 
+  .app-link-wrapper {
+    display: flex;
+    justify-content: center;
+
+    .app-link {
+      font-size: 30px;
+      color: white;
+    }
+  }
+
 }

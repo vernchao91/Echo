@@ -5,18 +5,17 @@ import LandingContainer from "./landing/landing_container";
 import SignupFormContainer from "./session/signup_form_container";
 import LoginFormContainer from "./session/login_form_container"
 import Error404 from "./error_404/error_404"
+import EchoAppContainer from "./echo_app/echo_app_container"
 
 const App = () => (
-  <div className="app-wrapper">
     <Switch>
 
-      <ProtectedRoute exact path="/app"/>
+      <ProtectedRoute exact path="/app" component={EchoAppContainer}/>
       <AuthRoute path="/register" component={SignupFormContainer} />
       <AuthRoute path="/login" component={LoginFormContainer} />
       <Route exact path="/" component={ LandingContainer }/>
       <Route component={ Error404 }/>
     </Switch>
-  </div>
 )
 
 export default App

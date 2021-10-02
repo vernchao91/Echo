@@ -10,7 +10,7 @@ class Landing extends React.Component  {
     if (this.props.user) {
       return (
         <div className="Logout">
-          <button className="logout-button" onClick={this.props.logout}>LogOut</button>
+          <button className="logout-button" onClick={this.props.logout}>Log Out</button>
         </div>
       )
     } else {
@@ -26,8 +26,8 @@ class Landing extends React.Component  {
   renderApp(){
     if (this.props.user) {
       return (
-        <div className="">
-          <Link to="/app">Join Servers!</Link>
+        <div className="app-link-wrapper">
+          <Link className="app-link" to="/app">Join Servers!</Link>
         </div>
       )
     }
@@ -51,8 +51,8 @@ class Landing extends React.Component  {
 
         <div className="paragraph">
           <p>Your place to chat</p>
-          <p>{this.renderApp()}</p>
         </div>
+        {this.renderApp()}
           
       </div>
     )
