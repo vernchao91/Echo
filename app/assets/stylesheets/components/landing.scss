@@ -33,6 +33,25 @@
       margin-top: -125px;
       // align-items: flex-end;
     
+      .logout-button {
+        background-color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+        text-align: center;
+        margin: 1px;
+        padding: 4px;
+        height: 16px;
+        width: 55px;
+        font-size: 12px;
+        border-radius: 10px;
+        font-weight: 500;
+        font-family: Arial, Helvetica, sans-serif;
+
+        &:hover {
+          background-color: rgb(12, 178, 184);
+          color:rgb(255, 255, 255)
+        }
+      }
+
       .register-button {
         // display: flex;
         // flex-direction: column;
@@ -44,7 +63,7 @@
         padding: 3px;
         height: 16px;
         width: 55px;
-        font-size: 14px;
+        font-size: 12px;
         border-radius: 10px;
         font-weight: 500;
         font-family: Arial, Helvetica, sans-serif;
@@ -67,7 +86,7 @@
         height: 16px;
         border-radius: 10px;
         font-weight: 500;
-        font-size: 14px;
+        font-size: 12px;
         font-family: Arial, Helvetica, sans-serif;
         padding-top: 2px;
 

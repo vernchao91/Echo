@@ -3,8 +3,6 @@ import * as ServerApiUtil from "../util/server_api_util"
 export const RECEIVE_SERVERS = "RECEIVE_SERVERS"
 export const RECEIVE_SERVER = "RECEIVE_SERVER"
 export const REMOVE_SERVER = "REMOVE_SERVER"
-export const JOIN_SERVER = "JOIN_SERVER"
-export const LEAVE_SERVER = "LEAVE_SERVER"
 
 export const RECEIVE_SERVER_ERRORS = "RECEIVE_SERVER_ERRORS"
 export const REMOVE_SERVER_ERRORS = "REMOVE_SERVER_ERRORS";
@@ -28,18 +26,6 @@ export const removeServer = serverId => {
   return {
     type: REMOVE_SERVER,
     serverId
-  }
-}
-export const joinServer = list => {
-  return {
-    type: JOIN_SERVER,
-    list
-  }
-}
-export const leaveServer = list => {
-  return {
-    type: LEAVE_SERVER,
-    list
   }
 }
 export const receiveServerErrors = errors => {

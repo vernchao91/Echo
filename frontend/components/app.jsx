@@ -9,6 +9,8 @@ import Error404 from "./error_404/error_404"
 const App = () => (
   <div className="app-wrapper">
     <Switch>
+
+      <ProtectedRoute exact path="/app"/>
       <AuthRoute path="/register" component={SignupFormContainer} />
       <AuthRoute path="/login" component={LoginFormContainer} />
       <Route exact path="/" component={ LandingContainer }/>
