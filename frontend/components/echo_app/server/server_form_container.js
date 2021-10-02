@@ -15,7 +15,6 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchServers: () => dispatch(fetchServers()),
     createServer: server => dispatch(createServer(server)),
     updateServer: server => dispatch(updateServer(server)),
     deleteServer: serverId => dispatch(deleteServer(serverId))
