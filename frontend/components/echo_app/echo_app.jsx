@@ -5,7 +5,11 @@ import ServerFormContainer from "./server/server_form_container"
 class EchoApp extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {}
+    // this.state = {}
+  }
+
+  componentDidMount() {
+    // this.props.fetchServers()
   }
 
   render() {
@@ -14,7 +18,7 @@ class EchoApp extends React.Component {
         <div className="home-link-wrapper"> 
           <Link className="home-link" to="/">Home</Link>
         </div>
-
+          {this.props.servers.map(servers => servers.name)}
         <div className="server-wrapper">
           <ServerFormContainer />
           <h2>hi</h2>

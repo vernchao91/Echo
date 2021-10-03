@@ -2,8 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Root from "./components/root"
 import configureStore from "./store/store";
-// import { createServer } from "./actions/server_actions"
-// import * as SAU from "./util/server_api_util"
+import { fetchServers, fetchServer } from "./actions/server_actions"
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("root");
@@ -25,6 +25,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // let store = configureStore();
   window.getState = store.getState;
   window.dispatch = store.dispatch;
+  window.fetchServers = fetchServers
+  window.fetchServer = fetchServer
+
 
   ReactDOM.render(<Root store={store}/>, root)
 })

@@ -1,8 +1,16 @@
-@servers.each do |server|
-  json.set! server.id do
-    json.partial! "api/servers/server", server: server
+# json.set! :servers do
+  @servers.each do |server|
+    json.set! server.id do
+      json.partial! "api/servers/server", server: server
+    end
   end
-end
+# end
+
+# json.servers do 
+#   json.array! @servers do |server|
+#     json.partial! "api/servers/server", server: server
+#   end
+# end
 
 # {
 #   "2": {

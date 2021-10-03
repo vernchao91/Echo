@@ -44,19 +44,21 @@ export const removeServerErrors = errors => {
 // thunk async actions
 
 // fetches all servers 
-export const fetchServers = () => dispatch (
-  ServerApiUtil.fetchServers()
-    .then(servers => dispatch(receiveServers(servers))),
-    err => dispatch(receiveServerErrors(err.responseJSON))
-)
+export const fetchServers = () => dispatch => {
+  return ServerApiUtil.fetchServers()
+    .then(
+      servers => (dispatch(receiveServers(servers))),
+      err => (dispatch(receiveServerErrors(err.responseJSON)))
+    )
+}
 
-export const fetchServer = (serverId) => dispatch (
-  ServerApiUtil.fetchServers(serverId)
+export const fetchServer = (serverId) => dispatch => (
+  ServerApiUtil.fetchServer(serverId)
     .then(server => dispatch(receiveServer(server))),
     err => dispatch(receiveServerErrors(err.responseJSON))
 )
 // fetches all servers the user has joined
-export const fetchUsersFromServer = (serverId) => dispatch (
+export const fetchUsersFromServer = (serverId) => dispatch => (
   ServerApiUtil.fetchUsersFromServer(serverId)
     .then(servers => dispatch(receiveServers(servers))),
     err => dispatch(receiveServerErrors(err.responseJSON))
@@ -74,7 +76,7 @@ export const updateServer = (server) => dispatch => (
     err => dispatch(receiveServerErrors(err.reponseJSON))
 )
 
-export const deleteServer = (serverId) => dispatch (
+export const deleteServer = (serverId) => dispatch => (
   ServerApiUtil.deleteServer(serverId)
     .then(() => dispatch(removeServer(serverId))),
     err => dispatch(receiveServerErrors(err.responseJSON))
