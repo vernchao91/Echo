@@ -51,33 +51,51 @@ export const fetchServers = () => dispatch => {
       err => (dispatch(receiveServerErrors(err.responseJSON)))
     )
 }
+// fetches all servers from the current user has joined
+export const fetchServersFromUser = (userId) => dispatch => {
+  return ServerApiUtil.fetchServersFromUser(userId)
+    .then(
+      servers => dispatch(receiveServers(servers)),
+      err => dispatch(receiveServerErrors(err.responseJSON))
+    )
+}
 
 export const fetchServer = (serverId) => dispatch => (
   ServerApiUtil.fetchServer(serverId)
-    .then(server => dispatch(receiveServer(server))),
-    err => dispatch(receiveServerErrors(err.responseJSON))
+    .then(
+      server => dispatch(receiveServer(server))),
+      err => dispatch(receiveServerErrors(err.responseJSON)
+    )
 )
-// fetches all servers the user has joined
+// fetches all users from particular server
 export const fetchUsersFromServer = (serverId) => dispatch => (
   ServerApiUtil.fetchUsersFromServer(serverId)
-    .then(servers => dispatch(receiveServers(servers))),
-    err => dispatch(receiveServerErrors(err.responseJSON))
+    .then(
+      servers => dispatch(receiveServers(servers))),
+      err => dispatch(receiveServerErrors(err.responseJSON)
+    )
 )
 
 export const createServer = (server) => dispatch => (
   ServerApiUtil.createServer(server)
-    .then(server => dispatch(receiveServer(server))),
-    err => dispatch(receiveServerErrors(err.responseJSON))
+    .then(
+      server => dispatch(receiveServer(server))),
+      err => dispatch(receiveServerErrors(err.responseJSON)
+    )
 )
 
 export const updateServer = (server) => dispatch => (
   ServerApiUtil.updateServer(server)
-    .then(server => dispatch(receiveServer(server))),
-    err => dispatch(receiveServerErrors(err.reponseJSON))
+    .then(
+      server => dispatch(receiveServer(server))),
+      err => dispatch(receiveServerErrors(err.reponseJSON)
+    )
 )
 
 export const deleteServer = (serverId) => dispatch => (
   ServerApiUtil.deleteServer(serverId)
-    .then(() => dispatch(removeServer(serverId))),
-    err => dispatch(receiveServerErrors(err.responseJSON))
+    .then(
+      () => dispatch(removeServer(serverId))),
+      err => dispatch(receiveServerErrors(err.responseJSON)
+    )
 )

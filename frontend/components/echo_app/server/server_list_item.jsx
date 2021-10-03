@@ -1,18 +1,17 @@
 import React from "react";
 
-class ServerForm extends React.Component {
+class ServerListItem extends React.Component {
   constructor(props) {
     super(props)
-    this.state = this.props.server
   }
 
   render() {
     return (
       <div>
-        <h1>hi</h1>
+        {this.props.server.name}
       </div>
     )
   }
 }
 
-export default ServerForm
+export default ServerListItem

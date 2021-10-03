@@ -5,6 +5,13 @@ export const fetchServers = () => {
     method: "GET"
   })
 }
+// test -- fetches all servers the current user has joined
+export const fetchServersFromUser = (userId) => {
+  return $.ajax({
+    url: `/api/users/${userId}/servers`,
+    method: "GET"
+  })
+}
 //works
 export const fetchServer = (serverId) => {
   return $.ajax({
@@ -12,7 +19,7 @@ export const fetchServer = (serverId) => {
     method: "GET"
   })
 }
-// works -- fetches all servers the user has joined
+// works -- fetches all users from particular server
 export const fetchUsersFromServer = (serverId) => {
   return $.ajax({
     url: `api/servers/${serverId}/users`,

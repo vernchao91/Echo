@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Root from "./components/root"
 import configureStore from "./store/store";
-import { fetchServers, fetchServer } from "./actions/server_actions"
+import { fetchServersFromUser, fetchUsersFromServer } from "./util/server_api_util"
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -25,8 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // let store = configureStore();
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.fetchServers = fetchServers
-  window.fetchServer = fetchServer
+  window.fetchServersFromUser = fetchServersFromUser
+  window.fetchUsersFromServer = fetchUsersFromServer
 
 
   ReactDOM.render(<Root store={store}/>, root)
