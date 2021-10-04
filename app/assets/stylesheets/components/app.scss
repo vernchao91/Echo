@@ -1,7 +1,8 @@
 .echoapp-wrapper {
   height: 100vh;
   width: 100vw;
-  background-image: image-url("background.png");
+  // background-image: image-url("background.png");
+  background-color: rgb(43, 144, 226);
   opacity: .75;
 
   .home-link-wrapper {

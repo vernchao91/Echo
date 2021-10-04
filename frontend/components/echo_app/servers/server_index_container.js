@@ -11,6 +11,7 @@ import {
 const mapStateToProps = state => {
   return {
     users: Object.values(state.entities.users),
+    errors: Object.values(state.errors),
     currentUserId: state.session.id,
   }
 }

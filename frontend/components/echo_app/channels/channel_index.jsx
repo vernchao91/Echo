@@ -10,12 +10,11 @@ class ChannelIndex extends React.Component {
       <div>
         <li>
           <p>channel1</p>
-  
         </li>
       </div>
     )
   }
-  
+
 }
 
 

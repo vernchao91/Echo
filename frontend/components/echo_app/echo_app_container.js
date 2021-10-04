@@ -9,6 +9,7 @@ import {
 const mapStateToProps = (state, ownProps) => {
   return {
     servers: Object.values(state.entities.servers),
+    errors: Object.values(state.errors.servers),
     currentUserId: state.session.id,
   }
 }

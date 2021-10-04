@@ -6,14 +6,13 @@ import SignupFormContainer from "./session/signup_form_container";
 import LoginFormContainer from "./session/login_form_container";
 import Error404 from "./error_404/error_404";
 import Main from "./main";
-
 const App = () => (
   <Switch>
 
+    <ProtectedRoute exact path="/app" component={ Main }/>
     <AuthRoute path="/register" component={SignupFormContainer} />
     <AuthRoute path="/login" component={LoginFormContainer} />
     <Route exact path="/" component={ LandingContainer }/>
-    <ProtectedRoute path="/app/servers" component={ Main }/>
     <Route component={ Error404 }/>
   </Switch>
 )

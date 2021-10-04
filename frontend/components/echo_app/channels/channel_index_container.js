@@ -6,13 +6,14 @@ import {
 
 const mapStateToProps = state => {
   return {
-
+    // channels: Object.values(state.enitties.channels),
+    // errors: Object.values(state.errors.channels)
   }
 }
 
 const mapDispatchToProps= dispatch => {
   return {
-
+    // createChannel: (channel) => dispatch(createChannel(channel))
   }
 }
 
