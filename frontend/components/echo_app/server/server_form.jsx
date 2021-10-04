@@ -8,8 +8,8 @@ class ServerForm extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>hi</h1>
+      <div className="server-form-wrapper">
+        <h1>ServerForm</h1>
       </div>
     )
   }

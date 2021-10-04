@@ -19,13 +19,6 @@ export const fetchServer = (serverId) => {
     method: "GET"
   })
 }
-// works -- fetches all users from particular server
-export const fetchUsersFromServer = (serverId) => {
-  return $.ajax({
-    url: `api/servers/${serverId}/users`,
-    method: "GET"
-  })
-}
 
 // works
 export const createServer = server => {

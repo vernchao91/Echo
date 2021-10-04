@@ -41,6 +41,13 @@ export const removeServerErrors = errors => {
   }
 }
 
+export const removeErrors = errors => {
+  return {
+    type: REMOVE_ERRORS,
+    errors
+  }
+}
+
 // thunk async actions
 
 // fetches all servers 
@@ -64,14 +71,6 @@ export const fetchServer = (serverId) => dispatch => (
   ServerApiUtil.fetchServer(serverId)
     .then(
       server => dispatch(receiveServer(server))),
-      err => dispatch(receiveServerErrors(err.responseJSON)
-    )
-)
-// fetches all users from particular server
-export const fetchUsersFromServer = (serverId) => dispatch => (
-  ServerApiUtil.fetchUsersFromServer(serverId)
-    .then(
-      servers => dispatch(receiveServers(servers))),
       err => dispatch(receiveServerErrors(err.responseJSON)
     )
 )

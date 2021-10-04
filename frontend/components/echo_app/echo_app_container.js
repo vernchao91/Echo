@@ -1,9 +1,9 @@
 import { connect } from "react-redux";
 import EchoApp from "./echo_app";
 import { 
-  fetchUsersFromServer, 
   fetchServers,
   updateServer,
+  fetchServersFromUser,
   createServer
 } from "../../actions/server_actions"
 
@@ -17,7 +17,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
   return {
     fetchServers: () => dispatch(fetchServers()),
-    fetchUsersFromServers: serverId => dispatch(fetchUsersFromServer(serverId)),
+    fetchServersFromUser: userId => dispatch(fetchServersFromUser(userId)),
     updateServer: server => dispatch(updateServer(server))
   }
 }

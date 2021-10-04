@@ -7,11 +7,11 @@
   .home-link-wrapper {
     display: flex;
 
-
     .home-link {
       color:white;
       border-radius: 1 solid white;
     }
+
   }
 
 
@@ -22,5 +22,21 @@
       color: white;
       
     }
+
+    .server-index-wrapper {
+
+      h1 {
+        color: white;
+      }
+    }
+
   }
+
+  .server-form-wrapper {
+    h1 {
+      color: white;
+    }
+  }
+
+
 }

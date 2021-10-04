@@ -2,7 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Root from "./components/root"
 import configureStore from "./store/store";
-import { fetchServersFromUser, fetchUsersFromServer } from "./util/server_api_util"
+import { fetchServersFromUser } from "./util/server_api_util"
+import { fetchUsersFromServer } from "./util/user_api_util"
 
 
 document.addEventListener("DOMContentLoaded", () => {

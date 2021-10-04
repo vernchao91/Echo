@@ -8,14 +8,14 @@ import Error404 from "./error_404/error_404"
 import EchoAppContainer from "./echo_app/echo_app_container"
 
 const App = () => (
-    <Switch>
+  <Switch>
 
-      <ProtectedRoute exact path="/app" component={EchoAppContainer}/>
-      <AuthRoute path="/register" component={SignupFormContainer} />
-      <AuthRoute path="/login" component={LoginFormContainer} />
-      <Route exact path="/" component={ LandingContainer }/>
-      <Route component={ Error404 }/>
-    </Switch>
+    <ProtectedRoute exact path="/app" component={EchoAppContainer}/>
+    <AuthRoute path="/register" component={SignupFormContainer} />
+    <AuthRoute path="/login" component={LoginFormContainer} />
+    <Route exact path="/" component={ LandingContainer }/>
+    <Route component={ Error404 }/>
+  </Switch>
 )
 
 export default App
