@@ -10,7 +10,8 @@ class ServerList extends React.Component {
     const { server } = this.props
     return (
       <div className="server-index-wrapper">
-          <Link className="server-link" to={`/api/servers/${server.id}/channels`} >{server.name}</Link>
+          <Link className="server-link" to={`/app/servers/${server.id}/channels`} >{server.name}</Link>
+          {/* <Link className="server-link" to={`/app/servers`} >{server.name}</Link> */}
       </div>
     )
   }

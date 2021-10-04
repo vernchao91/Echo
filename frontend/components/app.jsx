@@ -6,15 +6,20 @@ import SignupFormContainer from "./session/signup_form_container";
 import LoginFormContainer from "./session/login_form_container";
 import Error404 from "./error_404/error_404";
 import Main from "./main";
-const App = () => (
-  <Switch>
+import ChannelIndexContainer from "./echo_app/channels/channel_index_container";
 
-    <ProtectedRoute exact path="/app" component={ Main }/>
-    <AuthRoute path="/register" component={SignupFormContainer} />
-    <AuthRoute path="/login" component={LoginFormContainer} />
-    <Route exact path="/" component={ LandingContainer }/>
-    <Route component={ Error404 }/>
-  </Switch>
+const App = () => (
+  <div>
+    <Switch>
+
+      {/* <Route path="/app/servers/:serverId/channels" component={ChannelIndexContainer}/> */}
+      <Route exact path="/" component={ LandingContainer }/>
+      <AuthRoute path="/register" component={SignupFormContainer} />
+      <AuthRoute path="/login" component={LoginFormContainer} />
+      <ProtectedRoute path="/app" component={ Main }/>
+      <Route component={ Error404 }/>
+    </Switch>
+  </div>
 )
 
 export default App

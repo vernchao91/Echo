@@ -7,13 +7,12 @@ import ChannelIndexContainer from "./echo_app/channels/channel_index_container"
 const Main = () => {
   return (
     <div className= "main">
-      <ProtectedRoute component={EchoAppContainer}/>
+      <EchoAppContainer />
       {/* <Route path="/servers" /> */}
       {/* <Route path="/servers/:serverId" /> */}
-      <Switch>
-        <Route exact path="/servers/:serverId/channels" component={ChannelIndexContainer}/>
-        <ProtectedRoute path="/api/servers/:serverId/channels/:channelId" />
-      </Switch>
+        <Route path="/app/servers/:serverId/channels" component={ChannelIndexContainer}/>
+      {/* <Route path="/app/servers" component={ChannelIndexContainer}/> */}
+      {/* <ProtectedRoute path="/app/servers/:serverId/channels/:channelId" /> */}
     </div>
   )
 }
