@@ -70,8 +70,8 @@ export const removeErrors = errors => {
 export const fetchUsersFromServer = (serverId) => dispatch => (
   UserApiUtil.fetchUsersFromServer(serverId)
     .then(
-      users => dispatch(receiveUsers(users))),
-      err => dispatch(receiveUserErrors(err.responseJSON)
+      users => dispatch(receiveUsers(users)),
+      err => dispatch(receiveUserErrors(err.responseJSON))
     )
 )
 

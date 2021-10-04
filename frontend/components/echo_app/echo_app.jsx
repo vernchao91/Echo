@@ -1,40 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom"
-import ServerFormContainer from "./server/server_form_container"
-import ServerListContainer from "./server/server_list_container"
+import ServerFormContainer from "./servers/server_form_container"
+import ServerIndexItem from "./servers/server_index_item"
 
 class EchoApp extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      selectedServer: 0
-    }
-    this.selectServer = this.selectServer.bind(this)
   }
 
   componentDidMount() {
-    // this.props.fetchServers()
     this.props.fetchServersFromUser(this.props.currentUserId)
   }
 
   showPublicServers() {
-    this.props.fetchServers()
-  }
-
-  selectServer() {
-dfgfd
+    // this.props.fetchServers()
   }
 
   render() {
-    const { servers, updateServer } = this.props;
-    const serverItems = servers.map((server, idx) => (
-      <ServerListContainer
-        key={idx}
-        serverId={server.id}
-        server={server}
-        updateServer={updateServer}
-      />
-    ))
+    const { servers, currentUserId } = this.props;
 
     return (
       <div className="echoapp-wrapper">
@@ -42,7 +25,15 @@ dfgfd
           <Link className="home-link" to="/">Home</Link>
         </div>
         <div className="server-wrapper">
-          {serverItems}
+
+        {servers.map((server, idx) => (
+          <ServerIndexItem
+            key={idx}
+            serverId={server.id}
+            server={server}
+            
+          />
+        ))}
         </div>
         <ServerFormContainer />
       </div>
