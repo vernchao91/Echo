@@ -9,7 +9,8 @@ class EchoApp extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchServersFromUser(this.props.currentUserId)
+    // this.props.fetchServersFromUser(this.props.currentUserId)
+    this.props.fetchServers()
   }
 
   showPublicServers() {
@@ -31,9 +32,9 @@ class EchoApp extends React.Component {
             key={idx}
             serverId={server.id}
             server={server}
-            
           />
         ))}
+
         </div>
         <ServerFormContainer />
       </div>
