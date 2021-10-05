@@ -1,9 +1,11 @@
 .echoapp-wrapper {
   height: 100vh;
   width: 100vw;
+  // position: absolute;
   // background-image: image-url("background.png");
   background-color: rgb(43, 144, 226);
   opacity: .75;
+  z-index: -10;
 
   .home-link-wrapper {
     display: flex;
@@ -15,20 +17,51 @@
 
   }
 
-
   .server-wrapper {
     display: grid;
+    width: 50px;
+
 
     h2 {
       color: white;
-      
+      border-radius: 1px solid black;
     }
 
     .server-index-wrapper {
+      display:flex;
+      justify-content: center;
+      border: 1px solid black;
+      border-radius: 10px;
 
       .server-link {
         color: white;
+
+        font-size: 20px;
+        font-weight: 300;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+
+        transition: 0.1s ease-in-out;
+        border: transparent;
+
       }
+
+      .server-name-tooltip {
+        position: absolute;
+        // content: " ";
+        // top: 50%;
+        // right: 100%; /* To the left of the tooltip */
+        // margin-top: -5px;
+        // border-width: 1px;
+        border-style: solid;
+        // border-color: transparent black transparent transparent;
+      }
+
     }
 
   }
@@ -37,6 +70,21 @@
     h1 {
       color: white;
     }
+  }
+
+  .channel-users-wrapper {
+    display: flex;
+    justify-content: flex-end;
+
+
+    .channel-wrapper {
+
+    }
+
+    .users-wrapper {
+
+    }
+
   }
 
 

@@ -22,21 +22,25 @@ class EchoApp extends React.Component {
 
     return (
       <div className="echoapp-wrapper">
+
         <div className="home-link-wrapper"> 
           <Link className="home-link" to="/">Home</Link>
         </div>
+
         <div className="server-wrapper">
-
-        {servers.map((server, idx) => (
-          <ServerIndexItem
-            key={idx}
-            serverId={server.id}
-            server={server}
-          />
-        ))}
-
+          {servers.map((server, idx) => (
+            <ServerIndexItem
+              key={idx}
+              serverId={server.id}
+              server={server}
+            />
+          ))}
         </div>
-        <ServerFormContainer />
+
+        <div className="create-sersver-form">
+          <ServerFormContainer />
+        </div>
+
       </div>
     )
   }
