@@ -23,18 +23,18 @@ class ServerForm extends React.Component {
 
   render() {
     return (
-      <div className="server-form-wrapper">
-        <form onSubmit={this.handleSubmit}>
-          <label className="label-name">Name</label>
-          <input
-            id="name"
-            type="text"
-            value={this.state.name}
-            onChange={this.update("name")}>
-          </input>
-          <button className="create-server-button">Create Server</button>
-        </form>
-      </div>
+        <div className="server-form-wrapper">
+          <form onSubmit={this.handleSubmit}>
+            <label className="label-name">Name</label>
+            <input
+              id="name"
+              type="text"
+              value={this.state.name}
+              onChange={this.update("name")}>
+            </input>
+            <button className="create-server-button">Create Server</button>
+          </form>
+        </div>
     )
   }
 }
