@@ -6,13 +6,13 @@ import SignupFormContainer from "./session/signup_form_container";
 import LoginFormContainer from "./session/login_form_container";
 import Error404 from "./error_404/error_404";
 import Main from "./main";
-import ChannelIndexContainer from "./echo_app/channels/channel_index_container";
+import Modal from "./modal/modal"
 
 const App = () => (
   <div className="app">
+      <Modal />
     <Switch>
 
-      {/* <Route path="/app/servers/:serverId/channels" component={ChannelIndexContainer}/> */}
       <Route exact path="/" component={ LandingContainer }/>
       <AuthRoute path="/register" component={SignupFormContainer} />
       <AuthRoute path="/login" component={LoginFormContainer} />

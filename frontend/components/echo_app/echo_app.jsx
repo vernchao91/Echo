@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom"
-import ServerFormContainer from "./servers/server_form_container"
 import ServerIndexItem from "./servers/server_index_item"
 
 class EchoApp extends React.Component {
@@ -13,9 +12,14 @@ class EchoApp extends React.Component {
     this.props.fetchServers()
   }
 
+  componentDidUpdate() {
+    this.props.closeModal
+  }
+
   showPublicServers() {
     // this.props.fetchServers()
   }
+
 
   render() {
     const { servers, currentUserId } = this.props;
@@ -37,8 +41,8 @@ class EchoApp extends React.Component {
           ))}
         </div>
 
-        <div className="create-sersver-form">
-          <ServerFormContainer />
+        <div className="create-server-form">
+          {this.props.openModal}
         </div>
 
       </div>

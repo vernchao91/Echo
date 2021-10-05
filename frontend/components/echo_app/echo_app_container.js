@@ -1,10 +1,12 @@
 import { connect } from "react-redux";
+import React from "react";
 import EchoApp from "./echo_app";
 import { 
   fetchServers,
   createServer,
   fetchServersFromUser
 } from "../../actions/server_actions"
+import { openModal, closeModal } from "../../actions/modal_actions"
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -18,7 +20,13 @@ const mapDispatchToProps = dispatch => {
   return {
     fetchServers: () => dispatch(fetchServers()),
     createServer: server => dispatch(createServer(server)),
-    fetchServersFromUser: userId => dispatch(fetchServersFromUser(userId))
+    fetchServersFromUser: userId => dispatch(fetchServersFromUser(userId)),
+    openModal: (
+      <button className="open-modal" onClick={() => dispatch(openModal('createServer'))}>
+        +
+      </button>
+    ),
+    closeModal: () => dispatch(closeModal())
   }
 }
 
