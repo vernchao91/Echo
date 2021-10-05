@@ -14,12 +14,13 @@ const usersReducer = (oldState = {}, action) => {
   
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
-      newState[action.user.id] = action.user
-      return newState
-      // return Object.assign({}, oldState, { [action.user.id]: action.user });
+      // newState[action.user.id] = action.user
+      // return newState
+      return Object.assign({}, oldState, { [action.user.id]: action.user });
 
     case RECEIVE_USERS:
-      return Object.assign({}, oldState, action.users)
+      // return Object.assign({}, oldState, action.users)
+      return action.users
 
     case JOIN_SERVER:
       newState[action.user.id] = action.user

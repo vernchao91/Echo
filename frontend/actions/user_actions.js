@@ -67,6 +67,7 @@ export const removeErrors = errors => {
 }
 
 // thunk async actions
+// fetches all users from particular server
 export const fetchUsersFromServer = (serverId) => dispatch => (
   UserApiUtil.fetchUsersFromServer(serverId)
     .then(
