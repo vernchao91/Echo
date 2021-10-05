@@ -7,7 +7,7 @@ class ChannelIndexItem extends React.Component {
 
   render() {
     return (
-      <div className="">
+      <div className="channel-index-wrapper">
         <p>channelsindex</p>
       </div>
     )

@@ -9,7 +9,7 @@ import Main from "./main";
 import ChannelIndexContainer from "./echo_app/channels/channel_index_container";
 
 const App = () => (
-  <div>
+  <div className="app">
     <Switch>
 
       {/* <Route path="/app/servers/:serverId/channels" component={ChannelIndexContainer}/> */}

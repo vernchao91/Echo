@@ -1,7 +1,7 @@
 .echoapp-wrapper {
   height: 100vh;
   width: 100vw;
-  // position: absolute;
+  position: absolute;
   background-image: image-url("background.png");
   background-color: rgb(43, 144, 226);
   opacity: .85;
@@ -13,7 +13,8 @@
     height: 48px;
     border: transparent;
     transition: 0.1s ease-in-out;
-    border: 1px solid black;
+    border: 1px solid rgb(177, 177, 177);
+
     border-radius: 10px;
 
     .home-link {
@@ -52,6 +53,7 @@
       justify-content: center;
       border: 1px solid rgb(177, 177, 177);
       border-radius: 10px;
+      z-index: 5;
 
       .server-link {
         color: rgb(184, 176, 176);
@@ -75,9 +77,12 @@
 
       .server-name-tooltip {
         position: absolute;
+        // align-items: flex-start;
         border-style: solid;
         background-color: black;
         color: white;
+        left: 50px;
+        margin-top: 12px;
         // content: " ";
         // top: 50%;
         // right: 100%; /* To the left of the tooltip */
@@ -103,19 +108,38 @@
 
   }
 
-  .channel-users-wrapper {
-    display: flex;
-    justify-content: flex-end;
+}
 
-    .channel-wrapper {
+.channel-users-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  border: 1px solid rgb(255, 255, 255);
+  margin-left: 90px;
+  width: 95vw;
+  height: 99vh;
+  // z-index: 5;
 
-    }
+  .channel-wrapper {
+    display: grid;
+    justify-content: flex-start;
+    flex-direction: column;
 
-    .users-wrapper {
-
+    .channel-link {
+      color: white;
     }
 
   }
 
+  .users-wrapper {
+    display: grid;
+    justify-content: flex-end;
+    // width: 50px;
+    
+    .users-link {
+      display: grid;
+      color: white;
+      flex-direction: column;
+    }
+  }
 
 }

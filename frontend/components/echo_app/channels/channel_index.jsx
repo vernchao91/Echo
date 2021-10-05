@@ -30,16 +30,16 @@ class ChannelIndex extends React.Component {
     return (
       <div className="channel-users-wrapper">
         <div className="channel-wrapper">
-          <li>
+          <div className="channel-link">
             channel1
-          </li>
+          </div>
         </div>
         <div className="users-wrapper">
-          <li>
+          <div className="users-link">
             {users.map(user =>
               user.username
               )}
-          </li>
+          </div>
         </div>
       </div>
 

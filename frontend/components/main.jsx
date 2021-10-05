@@ -6,8 +6,9 @@ import ChannelIndexContainer from "./echo_app/channels/channel_index_container"
 
 const Main = () => {
   return (
-    <div className= "main">
-      <EchoAppContainer />
+    <div className="main">
+      <Route component={EchoAppContainer} />
+      {/* <EchoAppContainer /> */}
       {/* <Route path="/servers" /> */}
       {/* <Route path="/servers/:serverId" /> */}
         <Route path="/app/servers/:serverId/channels" component={ChannelIndexContainer}/>
