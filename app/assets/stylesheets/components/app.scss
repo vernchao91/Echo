@@ -5,7 +5,7 @@
   width: 3.75%vw;
   // position: absolute;
   // background-color: rgb(43, 144, 226);
-  opacity: .75;
+  // opacity: .60;
 
   .home-link-wrapper {
     display: grid;
@@ -70,7 +70,7 @@
         border: transparent;
 
         &:hover {
-          color: black;
+          color: rgb(0, 0, 0);
           background-color:rgb(35, 187, 247);
         }
 
@@ -79,12 +79,12 @@
       // tool tip display hovered
       .server-name-tooltip {
         position: absolute;
-        // align-items: flex-start;
         border-style: solid;
         background-color: black;
-        color: white;
+        color: rgb(255, 255, 255);
         left: 50px;
         margin-top: 12px;
+        font-weight: 500;
         // content: " ";
         // top: 50%;
         // right: 100%; /* To the left of the tooltip */
@@ -144,7 +144,7 @@
 
     .server-name-text {
       display: grid;
-      color: white;
+      color: rgb(182, 182, 182);
       flex-direction: column;
     }
 
@@ -164,13 +164,13 @@
       
       .channel-link {
         display: grid;
-        color: white;
+        color: rgb(204, 204, 204);
         flex-direction: column;
       }
     }
   
     .users-wrapper {
-      width: 10%;
+      width: 15%;
       padding-left: 10px;
       border: 1px solid white;
       // display: flex;
@@ -178,7 +178,7 @@
 
       .users-link {
         display: flex;
-        color: white;
+        color: rgb(204, 204, 204);
         flex-direction: row;
         padding-top: 10px;
       }
