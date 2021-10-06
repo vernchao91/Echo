@@ -122,9 +122,23 @@
     //   display: none;
     // }
     
-    // .open-modal-tooltip:hover {
-    //   display: block;
-    // }
+    .open-modal-create {
+      color: rgb(184, 176, 176);
+      font-size: 20px;
+      font-weight: 300;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      transition: 0.1s ease-in-out;
+      border: 1px solid rgb(255, 255, 255);
+      &:hover {
+        color: black;
+        background-color:rgb(35, 187, 247);
+      }
+    }
 
     &:hover {
       color: black;
@@ -158,13 +172,13 @@
     padding: 10px;
 
     .server-owner-button-wrapper {
-      button {
+      .delete-button, .edit-button {
         color: white;
       }
     }
 
     .join-leave-server-button-wrapper {
-      button {
+      .leave-button, .join-button {
         color: white;
       }
     }

@@ -4,6 +4,7 @@ import EditServerForm from "./edit_server_form";
 import { closeModal } from "../../../actions/modal_actions"
 
 const mapStateToProps = (state) => {
+  
   return {
     servers: state.entities.servers,
     errors: Object.values(state.errors.servers)

@@ -3,15 +3,22 @@ import React from "react";
 class EditServerForm extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      name: "",
-      id: this.props.serverId
+    const { servers, serverId } = this.props;
+    if (serverId !== undefined ) {
+      this.state = {
+        name: servers[serverId].name,
+        id: this.props.serverId
+      }
+    } else {
+      this.state = {
+        name: "",
+        id: this.props.serverId
+      }
     }
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleSubmit(e) {
-    console.log(this.props.serverId);
     e.preventDefault();
     const server = Object.assign({}, this.state) 
     this.props.updateServer(server)
@@ -25,6 +32,7 @@ class EditServerForm extends React.Component {
   }
 
   render() {
+
     return (
       <div className="edit-server-form-wrapper">
         <h1>Edit Server</h1>

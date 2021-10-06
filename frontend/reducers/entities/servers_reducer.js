@@ -2,6 +2,7 @@ import {
   RECEIVE_SERVERS,
   RECEIVE_SERVER,
   REMOVE_SERVER,
+  RECEIVE_JOINED_SERVERS,
 } from "../../actions/server_actions"
 
 const serversReducer = (oldState = {}, action) => {
@@ -12,6 +13,10 @@ const serversReducer = (oldState = {}, action) => {
     case RECEIVE_SERVERS:
       // console.log(action.servers);
       return Object.assign({}, oldState, action.servers)
+      // return action.servers
+    
+    case RECEIVE_JOINED_SERVERS:
+      return action.servers
 
     case RECEIVE_SERVER:
       newState[action.server.id] = action.server

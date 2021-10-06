@@ -17,7 +17,7 @@ import { openModal, closeModal } from "../../../actions/modal_actions"
 const mapStateToProps = (state, ownProps) => {
   
   return {
-    users: Object.values(state.entities.users),
+    users: state.entities.users,
     server: state.entities.servers[ownProps.match.params.serverId],
     serverId: ownProps.match.params.serverId,
     currentUserId: state.session.id,

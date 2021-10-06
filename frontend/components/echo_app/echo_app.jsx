@@ -16,7 +16,7 @@ class EchoApp extends React.Component {
   }
 
   showPublicServers() {
-    // this.props.fetchServers()
+    this.props.fetchServersFromUser(this.props.currentUserId)
   }
 
   render() {

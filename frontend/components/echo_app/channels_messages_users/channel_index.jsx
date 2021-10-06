@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import EditServerForm from "../servers/edit_server_form";
 import ChannelIndexItem from "./channel_index_item";
 import Modal from "../../modal/modal"
@@ -7,7 +8,7 @@ import EditServerContainer from "../servers/edit_server_container";
 class ChannelIndex extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { users: this.props.users} 
+    this.state = { users: this.props.users}
   }
 
   componentDidMount() {
@@ -58,23 +59,54 @@ class ChannelIndex extends React.Component {
     )
   }
 
-  renderLeaveJoinEditDeleteServer() {
-    const { currentUserId, serverId, deleteServer, openEditModal, server, joinServer, leaveServer} = this.props
-  
+  renderEditDeleteServer() {
+    const { currentUserId, serverId, deleteServer, joinServer, leaveServer, openEditModal, users, server } = this.props
     if (server === undefined) return;
     if (currentUserId === server.ownerId) {
       return (
         <div className="server-owner-button-wrapper">
-          <button onClick={() => deleteServer(serverId)}>Delete Server</button>
-          <button onClick={openEditModal}>Edit Server</button>
+          <Link className="delete-button" to="/app" onClick={() => deleteServer(serverId)}>Delete Server</Link>
+          <button className="edit-button" onClick={openEditModal}>Edit Server</button>
         </div>
       )
-    } else { return (
+    } else if (users[currentUserId] === undefined) {
+      return (
+        <div className="join-leave-server-button-wrapper">
+          <button className="join-button" onClick={() => joinServer({server_id: serverId})}>Join Server</button>
+        </div>
+      )
+    } else {
+      return (
+        <div className="join-leave-server-button-wrapper">
+          <Link className="leave-button" to="/app" onClick={() => leaveServer(serverId)}>Leave Server</Link>
+        </div>
+        )
+    }
+  }
+
+  renderLeaveJoinsServer() {
+    const { currentUserId, users, serverId, server, joinServer, leaveServer} = this.props
+
+    if (server === undefined) return;
+    console.log(users[currentUserId]);
+    if (users[currentUserId] === undefined) {
+      return ( 
+        <div className="join-leave-server-button-wrapper">
+          <button onClick={() => joinServer({server_id: serverId})}>Join Server</button>
+        </div>
+      )
+    } else if (users[currentUserId] !== server.ownerId){
+      return (
       <div className="join-leave-server-button-wrapper">
-        <button onClick={() => joinServer({server_id: serverId})}>Join Server</button>
         <button onClick={() => leaveServer(serverId)}>Leave Server</button>
       </div>
       )
+    // } else  {
+    //   return (
+    //     <div className="join-leave-server-button-wrapper">
+    //       <button onClick={() => leaveServer(serverId)}>Leave Server</button>
+    //     </div>
+    //     )
     }
   }
   
@@ -87,7 +119,8 @@ class ChannelIndex extends React.Component {
 
         <div className="server-header-wrapper">
           {this.renderServerName()}
-          {this.renderLeaveJoinEditDeleteServer()}
+          {this.renderEditDeleteServer()}
+          {/* {this.renderLeaveJoinsServer()} */}
         </div>
         {modal}
 
@@ -100,7 +133,7 @@ class ChannelIndex extends React.Component {
           </div>
 
           <div className="users-wrapper">
-              {users.map(user =>
+              {Object.values(users).map(user =>
                 <div 
                   key={user.id}
                   className="users-link">
