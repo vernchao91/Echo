@@ -3,7 +3,7 @@ import React from "react";
 import EchoApp from "./echo_app";
 import { 
   fetchServers,
-  createServer,
+  // createServer,
   fetchServersFromUser
 } from "../../actions/server_actions"
 import { openModal, closeModal } from "../../actions/modal_actions"
@@ -19,14 +19,14 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
   return {
     fetchServers: () => dispatch(fetchServers()),
-    createServer: server => dispatch(createServer(server)),
+    // createServer: server => dispatch(createServer(server)),
     fetchServersFromUser: userId => dispatch(fetchServersFromUser(userId)),
     // openModal: (
     //   <button className="open-modal-create" onClick={() => dispatch(openModal('createServer'))}>
     //     +
     //   </button>
     // ),
-    openModal: () => dispatch(openModal('createServer')),
+    openCreateModal: () => dispatch(openModal('createServer')),
     closeModal: () => dispatch(closeModal())
   }
 }

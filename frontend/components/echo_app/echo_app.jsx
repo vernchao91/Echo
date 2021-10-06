@@ -13,16 +13,14 @@ class EchoApp extends React.Component {
   }
 
   componentDidUpdate() {
-    this.props.closeModal
   }
 
   showPublicServers() {
     // this.props.fetchServers()
   }
 
-
   render() {
-    const { servers, openModal, currentUserId } = this.props;
+    const { servers, openCreateModal, currentUserId } = this.props;
 
     return (
       <div className="echoapp-wrapper">
@@ -43,7 +41,7 @@ class EchoApp extends React.Component {
 
         <div className="create-server-button">
           {/* <div className="open-modal-tooltip" >Create Server</div> */}
-          <button className="open-modal-create" onClick={this.props.openModal}>
+          <button className="open-modal-create" onClick={openCreateModal}>
           +
         </button>
       {/* {openModal} */}

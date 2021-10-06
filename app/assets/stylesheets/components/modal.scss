@@ -16,31 +16,35 @@
   font-family: Arial, Helvetica, sans-serif;
   border-radius: 10px;
 
-  // background-color: rgb(255, 255, 255);
-  //       color: rgb(0, 0, 0);
-        // margin: 5px;
-        // padding: 3px;
-        // height: 16px;
-        // font-weight: 500;
-        // font-size: 12px;
-        // padding-top: 2px;
-
-    h1 {
+    .create-form-wrapper {
+      background-color: rgb(218, 216, 216);
+      height: 500px;
+      width: 408px;
+      padding: 32px;
       display: flex;
-      justify-content: center;
-      font-size: 24px;
+      flex-direction: column;
+      // justify-content: center;
+      border-radius: 5px;
+      box-sizing: border-box;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      h1 {
+        display: flex;
+        justify-content: center;
+        font-size: 24px;
+      }
+      .create-server-input {
+        // border-radius: 10px;
+        font-weight: 500;
+        font-family: Arial, Helvetica, sans-serif;
+        border: 1px solid black;
+        border-radius: 5px;
+      }
+      .create-server-button {
+        border: 1px solid black;
+       border-radius: 5px;
+      }
     }
 
-    // .create-server-input {
-    //   // border-radius: 10px;
-    //   font-weight: 500;
-    //   font-family: Arial, Helvetica, sans-serif;
-    //   border: 1px solid black;
-
-    // }
-
-    // .create-server-button {
-    //   border: 1px solid black;
 
     //   .open-modal-create {
     //     border: 1px solid black;

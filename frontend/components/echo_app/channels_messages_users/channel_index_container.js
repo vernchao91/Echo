@@ -4,7 +4,9 @@ import ChannelIndex from "./channel_index";
 
 // } from "../../../actions/channel_actions"
 import {
-  fetchUsersFromServer
+  fetchUsersFromServer,
+  joinServer,
+  leaveServer
 } from "../../../actions/user_actions"
 
 const mapStateToProps = (state, ownProps) => {
@@ -15,6 +17,7 @@ const mapStateToProps = (state, ownProps) => {
     users: Object.values(state.entities.users),
     server: state.entities.servers[ownProps.match.params.serverId],
     serverId: ownProps.match.params.serverId,
+    currentUserId: state.session.id,
     // channels: Object.values(state.enitties.channels),
     errors: Object.values(state.errors)
   }
@@ -23,7 +26,9 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
   return {
     fetchUsersFromServer: (serverId) => dispatch(fetchUsersFromServer(serverId)),
-    createChannel: (channel) => dispatch(createChannel(channel))
+    joinServer:(list) => dispatch(joinServer(list)),
+    leaveServer:(listId) => dispatch(leaveServer(listId))
+    // createChannel: (channel) => dispatch(createChannel(channel))
   }
 }
 

@@ -24,7 +24,7 @@ class CreateServerForm extends React.Component {
 
   render() {
     return (
-      <div className="server-form-wrapper">
+      <div className="create-form-wrapper">
         <h1>Create a Server</h1>
         <form onSubmit={this.handleSubmit}>
           <label className="label-name">Name: </label>

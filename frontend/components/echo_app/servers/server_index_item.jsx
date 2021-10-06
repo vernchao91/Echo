@@ -23,14 +23,16 @@ class ServerIndex extends React.Component {
 
     return (
       <div className="server-index-wrapper">
-        <div className="server-name-tooltip" style={tooltipStyle}>{server.name}</div>
-          <Link
-            className="server-link" 
-            onMouseOver={this.handleMouseIn.bind(this)}
-            onMouseOut={this.handleMouseOut.bind(this)}
-            to={`/app/servers/${server.id}/channels`}>
-            {server.name.charAt(0)}
-          </Link>
+        <div className="server-name-tooltip" style={tooltipStyle}>
+          {server.name}
+        </div>
+        <Link
+          className="server-link" 
+          onMouseOver={this.handleMouseIn.bind(this)}
+          onMouseOut={this.handleMouseOut.bind(this)}
+          to={`/app/servers/${server.id}/channels`}>
+          {server.name.charAt(0)}
+        </Link>
       </div>
     )
   }

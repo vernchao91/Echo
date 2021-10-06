@@ -2,6 +2,7 @@ import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import  CreateServerFormContainer  from "../echo_app/servers/create_server_form_container"
+import EditServerFormContainer from "../echo_app/servers/edit_server_container"
 
 function Modal({modal, closeModal}) {
   if (!modal) {
@@ -13,7 +14,15 @@ function Modal({modal, closeModal}) {
       component = <CreateServerFormContainer />;
       break;
     case 'editServer':
-      // component = <EditServerForm />;
+      component = <EditServerFormContainer />;
+      break;
+    case 'joinServer':
+      break;
+    case 'leaveServer':
+      break;
+    case 'createChannel':
+      break;
+    case 'editChannel':
       break;
     default:
       return null;
