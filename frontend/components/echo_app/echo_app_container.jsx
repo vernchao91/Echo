@@ -21,11 +21,12 @@ const mapDispatchToProps = dispatch => {
     fetchServers: () => dispatch(fetchServers()),
     createServer: server => dispatch(createServer(server)),
     fetchServersFromUser: userId => dispatch(fetchServersFromUser(userId)),
-    openModal: (
-      <button className="open-modal-create" onClick={() => dispatch(openModal('createServer'))}>
-        +
-      </button>
-    ),
+    // openModal: (
+    //   <button className="open-modal-create" onClick={() => dispatch(openModal('createServer'))}>
+    //     +
+    //   </button>
+    // ),
+    openModal: () => dispatch(openModal('createServer')),
     closeModal: () => dispatch(closeModal())
   }
 }

@@ -27,7 +27,7 @@ class CreateServerForm extends React.Component {
       <div className="server-form-wrapper">
         <h1>Create a Server</h1>
         <form onSubmit={this.handleSubmit}>
-          <label className="label-name">Name</label>
+          <label className="label-name">Name: </label>
           <input
             className="create-server-input"
             type="text"

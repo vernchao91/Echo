@@ -42,7 +42,11 @@ class EchoApp extends React.Component {
         </div>
 
         <div className="create-server-button">
-          {openModal}
+          {/* <div className="open-modal-tooltip" >Create Server</div> */}
+          <button className="open-modal-create" onClick={this.props.openModal}>
+          +
+        </button>
+      {/* {openModal} */}
         </div>
 
       </div>

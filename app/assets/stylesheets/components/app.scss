@@ -111,11 +111,26 @@
     transition: 0.1s ease-in-out;
     border: 1px solid rgb(255, 255, 255);
     // border: transparent;
+    // .open-modal-tooltip {
+    //   position: absolute;
+    //   border-style: solid;
+    //   background-color: black;
+    //   color: rgb(255, 255, 255);
+    //   left: 50px;
+    //   margin-top: 12px;
+    //   font-weight: 500;
+    //   display: none;
+    // }
+    
+    // .open-modal-tooltip:hover {
+    //   display: block;
+    // }
 
     &:hover {
       color: black;
       background-color:rgb(35, 187, 247);
     }
+
 
   }
 
