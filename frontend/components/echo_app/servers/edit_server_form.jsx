@@ -4,14 +4,16 @@ class EditServerForm extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      name: this.props.server.name
+      name: "",
+      id: this.props.serverId
     }
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleSubmit(e) {
+    console.log(this.props.serverId);
     e.preventDefault();
-    const server = Object.assign({}, this.state)
+    const server = Object.assign({}, this.state) 
     this.props.updateServer(server)
     this.props.closeModal()
   }

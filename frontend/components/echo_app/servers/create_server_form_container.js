@@ -5,7 +5,8 @@ import CreateServerForm from "./create_server_form"
 import { closeModal } from "../../../actions/modal_actions"
 
 
-const mapStateToProps = state => {
+const mapStateToProps = (state,ownProps) => {
+  
   return {
     errors: Object.values(state.errors.servers),
   }

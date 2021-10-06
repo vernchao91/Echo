@@ -12,9 +12,13 @@ class Api::ListsController < ApplicationController
   end
 
   def destroy
-    @list = List.find_by(id: params[:id])
-    if (@list.user_id == current_user.id)
-      @list.destroy
+    # @list = List.find_by(id: params[:server_id])
+    server_id = params[:server_id]
+    @list = List.find_by(server_id: server_id, user_id: current_user.id)
+    if @list && (@list.user_id == current_user.id) && @list.destroy
+      # @list.destroy
+      # head :no_content
+      @cu = current_user
       render :show
     else
       render json: { error: "User has not joined the server" }, status: 404

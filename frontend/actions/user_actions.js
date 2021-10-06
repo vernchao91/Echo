@@ -24,10 +24,11 @@ export const receiveUser = user => {
     user
   }
 }
-export const removeList = list => {
+
+export const removeUser = user => {
   return {
     type: LEAVE_SERVER,
-    list
+    user
   }
 }
 
@@ -84,10 +85,10 @@ export const joinServer = (list) => dispatch => (
     )
 )
 
-export const leaveServer = (listId) => dispatch => (
-  UserApiUtil.leaveServer(listId)
+export const leaveServer = (serverId) => dispatch => (
+  UserApiUtil.leaveServer(serverId)
     .then(
-      () => dispatch(removeList(listId)),
+      (user) => dispatch(removeUser(user)),
       err => dispatch(receiveListErrors(err.responseJSON))
     )
 )

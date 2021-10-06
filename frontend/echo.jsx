@@ -2,8 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Root from "./components/root"
 import configureStore from "./store/store";
-import { fetchServersFromUser } from "./util/server_api_util"
-import { fetchUsersFromServer } from "./actions/user_actions"
+import { deleteServer } from "./util/server_api_util"
+// import { deleteServer } from "./actions/server_actions"
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -26,8 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // let store = configureStore();
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.fetchServersFromUser = fetchServersFromUser
-  window.fetchUsersFromServer = fetchUsersFromServer
+  window.deleteServer = deleteServer
 
 
   ReactDOM.render(<Root store={store}/>, root)

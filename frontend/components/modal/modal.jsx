@@ -4,17 +4,17 @@ import { connect } from 'react-redux';
 import  CreateServerFormContainer  from "../echo_app/servers/create_server_form_container"
 import EditServerFormContainer from "../echo_app/servers/edit_server_container"
 
-function Modal({modal, closeModal}) {
-  if (!modal) {
+function Modal(props) {
+  if (!props.modal) {
     return null;
   }
   let component;
-  switch (modal) {
+  switch (props.modal) {
     case 'createServer':
       component = <CreateServerFormContainer />;
       break;
     case 'editServer':
-      component = <EditServerFormContainer />;
+      component = <EditServerFormContainer {...props} />;
       break;
     case 'joinServer':
       break;
@@ -28,7 +28,7 @@ function Modal({modal, closeModal}) {
       return null;
   }
   return (
-    <div className="modal-background" onClick={closeModal}>
+    <div className="modal-background" onClick={props.closeModal}>
       <div className="modal-child" onClick={e => e.stopPropagation()}>
         { component }
       </div>

@@ -29,8 +29,9 @@ const usersReducer = (oldState = {}, action) => {
       // return action.users
 
     case LEAVE_SERVER:
-      delete newState[action.listId]
+      delete newState[action.user.id]
       return newState
+      // return action.users
 
     default: 
       return oldState

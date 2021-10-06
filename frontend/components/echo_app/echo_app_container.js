@@ -3,12 +3,11 @@ import React from "react";
 import EchoApp from "./echo_app";
 import { 
   fetchServers,
-  // createServer,
   fetchServersFromUser
 } from "../../actions/server_actions"
 import { openModal, closeModal } from "../../actions/modal_actions"
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
   return {
     servers: Object.values(state.entities.servers),
     errors: Object.values(state.errors.servers),
@@ -19,13 +18,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
   return {
     fetchServers: () => dispatch(fetchServers()),
-    // createServer: server => dispatch(createServer(server)),
     fetchServersFromUser: userId => dispatch(fetchServersFromUser(userId)),
-    // openModal: (
-    //   <button className="open-modal-create" onClick={() => dispatch(openModal('createServer'))}>
-    //     +
-    //   </button>
-    // ),
     openCreateModal: () => dispatch(openModal('createServer')),
     closeModal: () => dispatch(closeModal())
   }

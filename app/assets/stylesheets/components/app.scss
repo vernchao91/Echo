@@ -157,6 +157,17 @@
     align-items: center;
     padding: 10px;
 
+    .server-owner-button-wrapper {
+      button {
+        color: white;
+      }
+    }
+
+    .join-leave-server-button-wrapper {
+      button {
+        color: white;
+      }
+    }
     .server-name-text {
       display: grid;
       color: rgb(182, 182, 182);
