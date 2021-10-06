@@ -122,9 +122,10 @@
 
 }
 
-.channel-users-wrapper {
+.channels-servername-messages-users-wrapper {
   display: flex;
-  justify-content: flex-start;
+  flex-direction: column;
+  // justify-content: flex-start;
   border: 1px solid rgb(255, 255, 255);
   width: 100vw;
   // margin-top: 50px;
@@ -133,32 +134,57 @@
   // overflow: hidden;
   // height: 100vh;
   // z-index: 5;
-
-  .channel-wrapper {
-    display: grid;
-    // justify-content: flex-start;
-    flex-direction: column;
-
-    .channel-link {
-      display: grid;
-      color: white;
-      flex-direction: column;
-
-    }
-
-  }
-
-  .users-wrapper {
+  
+  .server-header-wrapper {
     display: flex;
-    flex-direction: column;
-    // justify-content: flex-end;
-    // width: 50px;
-    
-    .users-link {
+    height: 30px;
+    border: 1px solid white;
+    align-items: center;
+    padding: 10px;
+
+    .server-name-text {
       display: grid;
       color: white;
       flex-direction: column;
     }
+
   }
+
+  .channel-messages-users-wrapper {
+    display: flex;
+    height: 100vh;
+    flex-direction: row;
+    
+    .channel-wrapper {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 5;
+      border: 1px solid white;
+      padding: 10px;
+      
+      .channel-link {
+        display: grid;
+        color: white;
+        flex-direction: column;
+      }
+    }
+  
+    .users-wrapper {
+      width: 10%;
+      padding-left: 10px;
+      border: 1px solid white;
+      // display: flex;
+      // flex-direction: column;
+
+      .users-link {
+        display: flex;
+        color: white;
+        flex-direction: row;
+        padding-top: 10px;
+      }
+    }
+
+  }
+
 
 }
