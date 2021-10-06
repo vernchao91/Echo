@@ -18,10 +18,10 @@ export const receiveUsers = users => {
   }
 }
 
-export const receiveList = list => {
+export const receiveUser = user => {
   return {
     type: JOIN_SERVER,
-    list
+    user
   }
 }
 export const removeList = list => {
@@ -79,7 +79,7 @@ export const fetchUsersFromServer = (serverId) => dispatch => (
 export const joinServer = (list) => dispatch => (
   UserApiUtil.joinServer(list)
     .then(
-      list => dispatch(receiveList(list)),
+      user => dispatch(receiveUser(user)),
       err => dispatch(receiveListErrors(err.responseJSON))
     )
 )

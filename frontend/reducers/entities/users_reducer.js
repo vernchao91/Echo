@@ -23,8 +23,10 @@ const usersReducer = (oldState = {}, action) => {
       return action.users
 
     case JOIN_SERVER:
+      // return Object.assign({}, oldState, action.users)
       newState[action.user.id] = action.user
       return newState
+      // return action.users
 
     case LEAVE_SERVER:
       delete newState[action.listId]

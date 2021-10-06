@@ -15,9 +15,9 @@ export const joinServer = (list) => {
   })
 }
 // test 
-export const leaveServer = (listId) => {
+export const leaveServer = (serverId) => {
   return $.ajax({
-    url: `/api/servers/:server_id/lists/${listId}`,
+    url: `/api/servers/${serverId}/lists/:id`,
     method: "DELETE"
   })
 }
