@@ -59,7 +59,7 @@ class ChannelIndex extends React.Component {
     )
   }
 
-  renderEditDeleteServer() {
+  renderEditDeleteJoinLeaveServer() {
     const { currentUserId, serverId, deleteServer, joinServer, leaveServer, openEditModal, users, server } = this.props
     if (server === undefined) return;
     if (currentUserId === server.ownerId) {
@@ -83,35 +83,9 @@ class ChannelIndex extends React.Component {
         )
     }
   }
-
-  renderLeaveJoinsServer() {
-    const { currentUserId, users, serverId, server, joinServer, leaveServer} = this.props
-
-    if (server === undefined) return;
-    console.log(users[currentUserId]);
-    if (users[currentUserId] === undefined) {
-      return ( 
-        <div className="join-leave-server-button-wrapper">
-          <button onClick={() => joinServer({server_id: serverId})}>Join Server</button>
-        </div>
-      )
-    } else if (users[currentUserId] !== server.ownerId){
-      return (
-      <div className="join-leave-server-button-wrapper">
-        <button onClick={() => leaveServer(serverId)}>Leave Server</button>
-      </div>
-      )
-    // } else  {
-    //   return (
-    //     <div className="join-leave-server-button-wrapper">
-    //       <button onClick={() => leaveServer(serverId)}>Leave Server</button>
-    //     </div>
-    //     )
-    }
-  }
   
   render() {
-    const { currentUserId, serverId, deleteServer, openEditModal, users, joinServer} = this.props
+    const { users} = this.props
     let modal = <Modal name={this.props.modal} serverId={this.props.serverId}/>
 
     return (
@@ -119,7 +93,7 @@ class ChannelIndex extends React.Component {
 
         <div className="server-header-wrapper">
           {this.renderServerName()}
-          {this.renderEditDeleteServer()}
+          {this.renderEditDeleteJoinLeaveServer()}
           {/* {this.renderLeaveJoinsServer()} */}
         </div>
         {modal}
