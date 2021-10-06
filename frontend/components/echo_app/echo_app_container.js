@@ -22,7 +22,7 @@ const mapDispatchToProps = dispatch => {
     createServer: server => dispatch(createServer(server)),
     fetchServersFromUser: userId => dispatch(fetchServersFromUser(userId)),
     openModal: (
-      <button className="open-modal" onClick={() => dispatch(openModal('createServer'))}>
+      <button className="open-modal-create" onClick={() => dispatch(openModal('createServer'))}>
         +
       </button>
     ),

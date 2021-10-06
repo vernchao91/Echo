@@ -22,7 +22,7 @@ class EchoApp extends React.Component {
 
 
   render() {
-    const { servers, currentUserId } = this.props;
+    const { servers, openModal, currentUserId } = this.props;
 
     return (
       <div className="echoapp-wrapper">
@@ -41,8 +41,8 @@ class EchoApp extends React.Component {
           ))}
         </div>
 
-        <div className="create-server-form">
-          {this.props.openModal}
+        <div className="create-server-button">
+          {openModal}
         </div>
 
       </div>

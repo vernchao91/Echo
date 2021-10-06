@@ -8,9 +8,7 @@ import {
 } from "../../../actions/user_actions"
 
 const mapStateToProps = (state, ownProps) => {
-  // console.log("1"+state.entities.users);
-  // const user = dispatch(fetchUsersFromServer(ownProps.match.params.serverId))
-  // console.log(user);
+  const server = state.entities.servers
   
   return {
     users: Object.values(state.entities.users),

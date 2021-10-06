@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { createServer } from "../../../actions/server_actions";
 import CreateServerForm from "./create_server_form"
-import React from "react";
+// import React from "react";
 import { closeModal } from "../../../actions/modal_actions"
 
 

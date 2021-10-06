@@ -6,12 +6,48 @@
   left: 0;
   background: rgba(0, 0, 0, 0.7);
   z-index: 10;
-}
 
-.modal-child {
+  .modal-child {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  background: white;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 10px;
+
+  // background-color: rgb(255, 255, 255);
+  //       color: rgb(0, 0, 0);
+        // margin: 5px;
+        // padding: 3px;
+        // height: 16px;
+        // font-weight: 500;
+        // font-size: 12px;
+        // padding-top: 2px;
+
+    h1 {
+      display: flex;
+      justify-content: center;
+      font-size: 24px;
+    }
+
+    // .create-server-input {
+    //   // border-radius: 10px;
+    //   font-weight: 500;
+    //   font-family: Arial, Helvetica, sans-serif;
+    //   border: 1px solid black;
+
+    // }
+
+    // .create-server-button {
+    //   border: 1px solid black;
+
+    //   .open-modal-create {
+    //     border: 1px solid black;
+    //   }
+
+    // }
+
+  }
 
 }

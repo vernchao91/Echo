@@ -9,8 +9,8 @@ class ChannelIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchUsersFromServer(this.props.serverId).then(
-      (res) => this.setState({ serverId: this.props.serverId,
+    this.props.fetchUsersFromServer(this.props.serverId)
+    .then((res) => this.setState({ serverId: this.props.serverId,
         users: this.props.users
       })
     )
@@ -29,6 +29,9 @@ class ChannelIndex extends React.Component {
     const { users } = this.state
     return (
       <div className="channel-users-wrapper">
+        <div className="server-name-display">
+          {/* {this.props.server.name} */}
+        </div>
         <div className="channel-wrapper">
           <div className="channel-link">
             channel1

@@ -5,7 +5,7 @@
   width: 3.75%vw;
   // position: absolute;
   // background-color: rgb(43, 144, 226);
-  opacity: .85;
+  opacity: .75;
 
   .home-link-wrapper {
     display: grid;
@@ -54,7 +54,8 @@
       border: 1px solid rgb(177, 177, 177);
       border-radius: 10px;
       z-index: 5;
-
+      
+      // server buttons
       .server-link {
         color: rgb(184, 176, 176);
         font-size: 20px;
@@ -75,6 +76,7 @@
 
       }
 
+      // tool tip display hovered
       .server-name-tooltip {
         position: absolute;
         // align-items: flex-start;
@@ -95,18 +97,28 @@
 
   }
 
-  .server-form-wrapper {
-    display: grid;
-    width: 50px;
-    
-    .label-name {
-      color: white;
-    }
-    .create-server-button {
-      color: white;
+  // create server display button
+  .create-server-button {
+    color: rgb(184, 176, 176);
+    font-size: 20px;
+    font-weight: 300;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    transition: 0.1s ease-in-out;
+    border: 1px solid rgb(255, 255, 255);
+    // border: transparent;
+
+    &:hover {
+      color: black;
+      background-color:rgb(35, 187, 247);
     }
 
   }
+
 
 }
 
@@ -115,6 +127,7 @@
   justify-content: flex-start;
   border: 1px solid rgb(255, 255, 255);
   width: 100vw;
+  // margin-top: 50px;
   // min-width: 0;
   // min-height: 0;
   // overflow: hidden;
