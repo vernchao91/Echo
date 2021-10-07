@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import SessionForm from "./session_form"
 import { signup, removeSessionErrors } from"../../actions/session_actions"
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state) => ({
   user: {
     email: "",
     username: "",
@@ -12,7 +12,7 @@ const mapStateToProps = (state, ownProps) => ({
   formType: "Register"
 })
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
+const mapDispatchToProps = (dispatch) => ({
   processForm: (user) => dispatch(signup(user)),
   removeSessionErrors: () => dispatch(removeSessionErrors())
 })

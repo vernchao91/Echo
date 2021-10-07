@@ -8,14 +8,15 @@ import Modal from "./modal/modal"
 const Main = () => {
   return (
     <div className="main">
-      <Modal />
-      <Route component={EchoAppContainer} />
+      {/* <Modal /> */}
+      {/* <Route component={EchoAppContainer} /> */}
+      <Route path="/app/servers/" component={EchoAppContainer} />
       {/* <EchoAppContainer /> */}
       {/* <Route path="/servers" /> */}
       {/* <Route path="/servers/:serverId" /> */}
-        <Route path="/app/servers/:serverId/channels" component={ChannelIndexContainer}/>
+      <Route path="/app/servers/:serverId/channels" component={ChannelIndexContainer}/>
       {/* <Route path="/app/servers" component={ChannelIndexContainer}/> */}
-      {/* <ProtectedRoute path="/app/servers/:serverId/channels/:channelId" /> */}
+      <Route path="/app/servers/:serverId/channels/:channelId" />
     </div>
   )
 }

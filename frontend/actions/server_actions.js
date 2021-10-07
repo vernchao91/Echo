@@ -40,7 +40,6 @@ export const removeServerErrors = () => {
     type: REMOVE_SERVER_ERRORS,
   }
 }
-
 export const removeErrors = () => {
   return {
     type: REMOVE_ERRORS,
@@ -65,7 +64,6 @@ export const fetchServersFromUser = (userId) => dispatch => {
       err => dispatch(receiveServerErrors(err.responseJSON))
     )
 }
-
 export const fetchServer = (serverId) => dispatch => {
   return ServerApiUtil.fetchServer(serverId)
     .then(

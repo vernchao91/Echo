@@ -14,7 +14,7 @@ class ServerIndex extends React.Component {
   handleMouseOut() {
     this.setState({ hover: false })
   }
-  
+
   render() {
     const { server } = this.props
     const tooltipStyle = {

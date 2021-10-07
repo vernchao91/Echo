@@ -1,8 +1,5 @@
 import { connect } from "react-redux";
 import ChannelIndex from "./channel_index";
-// import {
-
-// } from "../../../actions/channel_actions"
 import {
   fetchUsersFromServer,
   joinServer,
@@ -13,16 +10,19 @@ import {
   updateServer
 } from "../../../actions/server_actions"
 import { openModal, closeModal } from "../../../actions/modal_actions"
+import { 
+  fetchChannels 
+} from "../../../actions/channel_actions"
 
 const mapStateToProps = (state, ownProps) => {
   
   return {
     users: state.entities.users,
     server: state.entities.servers[ownProps.match.params.serverId],
+    channels: state.entities.channels,
     serverId: ownProps.match.params.serverId,
     currentUserId: state.session.id,
     modal: state.ui.modal,
-    // channels: Object.values(state.enitties.channels),
     errors: Object.values(state.errors)
   }
 }
@@ -30,13 +30,13 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
   return {
     fetchUsersFromServer: (serverId) => dispatch(fetchUsersFromServer(serverId)),
+    fetchChannels: (serverId) => dispatch(fetchChannels(serverId)),
     joinServer:(list) => dispatch(joinServer(list)),
     leaveServer:(serverId) => dispatch(leaveServer(serverId)),
     deleteServer: (serverId) => dispatch(deleteServer(serverId)),
     updateServer: (server) => dispatch(updateServer(server)),
     openEditModal: () => dispatch(openModal('editServer')),
     closeModal: () => dispatch(closeModal())
-    // createChannel: (channel) => dispatch(createChannel(channel))
   }
 }
 

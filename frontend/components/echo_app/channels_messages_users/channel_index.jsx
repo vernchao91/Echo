@@ -1,18 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import EditServerForm from "../servers/edit_server_form";
-import ChannelIndexItem from "./channel_index_item";
+import ChannelIndexItemContainer from "./channel_index_item_container";
 import Modal from "../../modal/modal"
-import EditServerContainer from "../servers/edit_server_container";
+// import EditServerForm from "../servers/edit_server_form";
+// import EditServerContainer from "../servers/edit_server_container";
 
 class ChannelIndex extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { users: this.props.users}
+    this.state = { 
+      users: this.props.users,
+      channels: this.props.channels
+    }
   }
 
   componentDidMount() {
     this.props.fetchUsersFromServer(this.props.serverId)
+    this.props.fetchChannels(this.props.serverId)
     // .then((res) => this.setState({ serverId: this.props.serverId,
     //     users: this.props.users
     //   })
@@ -21,7 +25,8 @@ class ChannelIndex extends React.Component {
 
   componentDidUpdate(prevProp) {
     if (prevProp.serverId !== this.props.serverId) {
-      this.props.fetchUsersFromServer(this.props.serverId)
+      this.props.fetchUsersFromServer(this.props.serverId),
+      this.props.fetchChannels(this.props.serverId)
     }
     // this.props.fetchUsersFromServer(this.props.serverId)
       // .then((res) => 
@@ -65,7 +70,7 @@ class ChannelIndex extends React.Component {
     if (currentUserId === server.ownerId) {
       return (
         <div className="server-owner-button-wrapper">
-          <Link className="delete-button" to="/app" onClick={() => deleteServer(serverId)}>Delete Server</Link>
+          <Link className="delete-button" to="/app/servers" onClick={() => deleteServer(serverId)}>Delete Server</Link>
           <button className="edit-button" onClick={openEditModal}>Edit Server</button>
         </div>
       )
@@ -78,14 +83,14 @@ class ChannelIndex extends React.Component {
     } else {
       return (
         <div className="join-leave-server-button-wrapper">
-          <Link className="leave-button" to="/app" onClick={() => leaveServer(serverId)}>Leave Server</Link>
+          <Link className="leave-button" to="/app/servers" onClick={() => leaveServer(serverId)}>Leave Server</Link>
         </div>
         )
     }
   }
   
   render() {
-    const { users} = this.props
+    const { users, channels } = this.props
     let modal = <Modal errors={this.props.errors} name={this.props.modal} serverId={this.props.serverId}/>
 
     return (
@@ -100,19 +105,23 @@ class ChannelIndex extends React.Component {
         <div className="channel-messages-users-wrapper">
 
           <div className="channel-wrapper">
-            <div className="channel-link">
-              <ChannelIndexItem />
+            {Object.values(channels).map(channel => 
+            <div
+              key={channel.id}
+              className="channels-link">
+              {channel.name}
             </div>
+              )}
           </div>
 
           <div className="users-wrapper">
-              {Object.values(users).map(user =>
-                <div 
-                  key={user.id}
-                  className="users-link">
-                  {user.username}
-                </div>
-              )}
+            {Object.values(users).map(user =>
+              <div 
+                key={user.id}
+                className="users-link">
+                {user.username}
+              </div>
+            )}
           </div>
           
         </div>
