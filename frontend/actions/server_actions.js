@@ -66,13 +66,13 @@ export const fetchServersFromUser = (userId) => dispatch => {
     )
 }
 
-export const fetchServer = (serverId) => dispatch => (
-  ServerApiUtil.fetchServer(serverId)
+export const fetchServer = (serverId) => dispatch => {
+  return ServerApiUtil.fetchServer(serverId)
     .then(
-      server => dispatch(receiveServer(server))),
-      err => dispatch(receiveServerErrors(err.responseJSON)
-    )
-)
+      server => (dispatch(receiveServer(server))),
+      err => (dispatch(receiveServerErrors(err.responseJSON))
+    ))
+}
 
 export const createServer = (server) => dispatch => {
   return ServerApiUtil.createServer(server)
@@ -82,18 +82,18 @@ export const createServer = (server) => dispatch => {
     ))
 }
 
-export const updateServer = (server) => dispatch => (
-  ServerApiUtil.updateServer(server)
+export const updateServer = (server) => dispatch => {
+  return ServerApiUtil.updateServer(server)
     .then(
-      server => dispatch(receiveServer(server))),
-      err => dispatch(receiveServerErrors(err.reponseJSON)
-    )
-)
+      server => (dispatch(receiveServer(server))),
+      err => (dispatch(receiveServerErrors(err.responseJSON))
+    ))
+}
 
-export const deleteServer = (serverId) => dispatch => (
-  ServerApiUtil.deleteServer(serverId)
+export const deleteServer = (serverId) => dispatch => {
+  return ServerApiUtil.deleteServer(serverId)
     .then(
-      () => dispatch(removeServer(serverId))),
-      err => dispatch(receiveServerErrors(err.responseJSON)
-    )
-)
+      () => (dispatch(removeServer(serverId))),
+      err => (dispatch(receiveServerErrors(err.responseJSON))
+    ))
+}

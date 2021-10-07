@@ -21,9 +21,11 @@ class EditServerForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const server = Object.assign({}, this.state);
-    this.props.updateServer(server).then(()=> {
-      this.props.closeModal()
-    })
+    console.log(this.props.errors);
+    this.props.updateServer(server)
+    // .then(()=> {
+      // this.props.closeModal()
+    // })
   }
 
   componentWillUnmount() {
@@ -50,11 +52,13 @@ class EditServerForm extends React.Component {
               onChange={this.update("name")}>
             </input>
             <button className="edit-server-button">Edit Server</button>
+
             {this.props.errors.map((error, i) => (
-            <div className="session-error-wrapper" key={i}>
-              <li className="session-error">{error}</li>
-            </div>
-          ))}
+              <div className="session-error-wrapper" key={i}>
+                <li className="session-error">{error}</li>
+              </div>
+            ))}
+
           </form>
       </div>
     )

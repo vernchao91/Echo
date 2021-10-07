@@ -13,7 +13,7 @@ class CreateServerForm extends React.Component {
     e.preventDefault();
     const server = Object.assign({}, this.state)
     this.props.createServer(server).then(() => {
-    this.props.closeModal()
+      this.props.closeModal()
     })
   }
   
@@ -30,7 +30,7 @@ class CreateServerForm extends React.Component {
 
   render() {
     return (
-      <div className="create-form-wrapper">
+      <div className="create-server-form-wrapper">
         <h1>Create a Server</h1>
         <form onSubmit={this.handleSubmit}>
           <label className="label-name">Name: </label>
