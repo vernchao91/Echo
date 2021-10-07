@@ -15,7 +15,7 @@ class Landing extends React.Component  {
       )
     } else {
       return (
-        <div>
+        <div className="button-wrapper">
           <Link className="register-button" to="/register">Register</Link>
           <Link className="login-button" to="/login">Login </Link>
         </div>
@@ -35,7 +35,9 @@ class Landing extends React.Component  {
 
   render() {
   return (
-      <div className="landing-wrapper">
+    <div className="landing-wrapper">
+
+      <div className="background-header-wrapper">
         <div className="header-wrapper">
           <h1 className="logo-wrapper">Welcome to Echo!</h1>
           <ul className="social-links-wrapper">
@@ -44,17 +46,23 @@ class Landing extends React.Component  {
             <li>AngelList</li>
             <li>MazeRunner</li>
           </ul>
-          <div className="button-wrapper">
             {this.loginOrLogout()}
-          </div>
         </div>
 
         <div className="paragraph">
-          <p>Your place to chat</p>
+          <p>Your place to belong.</p>
+          <p>Imagine a community that brings people together.</p>
+          <p>You could be in a coding bootcamp, having a gaming session, or even in a study group.</p>
+          <p>Echo makes it convenient to connect and communicate!</p>
         </div>
         {this.renderApp()}
-          
       </div>
+
+      <div>
+      
+      </div>
+
+    </div>
     )
   }
 }
