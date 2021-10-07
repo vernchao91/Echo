@@ -35,17 +35,15 @@ export const receiveServerErrors = errors => {
     errors
   }
 }
-export const removeServerErrors = errors => {
+export const removeServerErrors = () => {
   return {
     type: REMOVE_SERVER_ERRORS,
-    errors
   }
 }
 
-export const removeErrors = errors => {
+export const removeErrors = () => {
   return {
     type: REMOVE_ERRORS,
-    errors
   }
 }
 
@@ -76,13 +74,13 @@ export const fetchServer = (serverId) => dispatch => (
     )
 )
 
-export const createServer = (server) => dispatch => (
-  ServerApiUtil.createServer(server)
+export const createServer = (server) => dispatch => {
+  return ServerApiUtil.createServer(server)
     .then(
-      server => dispatch(receiveServer(server))),
-      err => dispatch(receiveServerErrors(err.responseJSON)
-    )
-)
+      server => (dispatch(receiveServer(server))),
+      err => (dispatch(receiveServerErrors(err.responseJSON))
+    ))
+}
 
 export const updateServer = (server) => dispatch => (
   ServerApiUtil.updateServer(server)

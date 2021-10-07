@@ -38,13 +38,15 @@ function Modal(props) {
 
 const mapStateToProps = state => {
   return {
-    modal: state.ui.modal
+    modal: state.ui.modal,
+    errors: Object.values[state.errors]
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => dispatch(closeModal()),
+    removeErrors:() => dispatch(removeErrors())
   };
 };
 

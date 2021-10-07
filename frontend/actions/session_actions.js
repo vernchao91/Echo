@@ -38,10 +38,10 @@ export const signup = user => dispatch => (
 );
 
 export const login = user => dispatch => (
-  SessionApiUtil.login(user).then(user => (
-    dispatch(receiveCurrentUser(user))
-  ), err => (
-    dispatch(receiveErrors(err.responseJSON))
+  SessionApiUtil.login(user)
+  .then(
+    user => (dispatch(receiveCurrentUser(user))), 
+    err => (dispatch(receiveErrors(err.responseJSON))
   ))
 );
 

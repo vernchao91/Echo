@@ -22,7 +22,8 @@ class EditServerForm extends React.Component {
     e.preventDefault();
     const server = Object.assign({}, this.state) 
     this.props.updateServer(server)
-    this.props.closeModal()
+    console.log(this.props.errors);
+    // this.props.closeModal()
   }
 
   update(field) {

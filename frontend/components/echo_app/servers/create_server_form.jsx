@@ -12,8 +12,13 @@ class CreateServerForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const server = Object.assign({}, this.state)
-    this.props.createServer(server)
+    this.props.createServer(server).then(() => {
     this.props.closeModal()
+    })
+  }
+  
+  componentWillUnmount() {
+    this.props.removeServerErrors();
   }
 
   update(field) {
@@ -21,6 +26,7 @@ class CreateServerForm extends React.Component {
       this.setState({ [field]: e.currentTarget.value })
     }
   }
+
 
   render() {
     return (
@@ -35,6 +41,13 @@ class CreateServerForm extends React.Component {
             onChange={this.update("name")}>
           </input>
           <button className="create-server-button">Create Server</button>
+
+          {this.props.errors.map((error, i) => (
+            <div className="session-error-wrapper" key={i}>
+              <li className="session-error">{error}</li>
+            </div>
+          ))}
+
         </form>
 
       </div>

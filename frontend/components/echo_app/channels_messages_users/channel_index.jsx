@@ -86,7 +86,7 @@ class ChannelIndex extends React.Component {
   
   render() {
     const { users} = this.props
-    let modal = <Modal name={this.props.modal} serverId={this.props.serverId}/>
+    let modal = <Modal errors={this.props.errors} name={this.props.modal} serverId={this.props.serverId}/>
 
     return (
       <div className="channels-servername-messages-users-wrapper">
@@ -94,7 +94,6 @@ class ChannelIndex extends React.Component {
         <div className="server-header-wrapper">
           {this.renderServerName()}
           {this.renderEditDeleteJoinLeaveServer()}
-          {/* {this.renderLeaveJoinsServer()} */}
         </div>
         {modal}
 
