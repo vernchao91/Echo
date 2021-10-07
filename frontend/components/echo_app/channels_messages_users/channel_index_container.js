@@ -15,7 +15,6 @@ import {
 } from "../../../actions/channel_actions"
 
 const mapStateToProps = (state, ownProps) => {
-  
   return {
     users: state.entities.users,
     server: state.entities.servers[ownProps.match.params.serverId],

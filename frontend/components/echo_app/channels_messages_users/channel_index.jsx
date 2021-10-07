@@ -2,8 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ChannelIndexItemContainer from "./channel_index_item_container";
 import Modal from "../../modal/modal"
-// import EditServerForm from "../servers/edit_server_form";
-// import EditServerContainer from "../servers/edit_server_container";
 
 class ChannelIndex extends React.Component {
   constructor(props) {
@@ -17,6 +15,7 @@ class ChannelIndex extends React.Component {
   componentDidMount() {
     this.props.fetchUsersFromServer(this.props.serverId)
     this.props.fetchChannels(this.props.serverId)
+    console.log("ci-mount");
     // .then((res) => this.setState({ serverId: this.props.serverId,
     //     users: this.props.users
     //   })
@@ -28,6 +27,7 @@ class ChannelIndex extends React.Component {
       this.props.fetchUsersFromServer(this.props.serverId),
       this.props.fetchChannels(this.props.serverId)
     }
+    console.log("ci-update");
     // this.props.fetchUsersFromServer(this.props.serverId)
       // .then((res) => 
       // this.setState({ serverId: this.props.serverId,
@@ -48,13 +48,6 @@ class ChannelIndex extends React.Component {
   // componentWillUnmount() {
   //   this.props.fetchUsersFromServer(this.props.serverId)
   // }
-
-  handleDropdown(field) {
-    return e => {
-        e.preventDefault();
-        this.setState({ dropdown: field })
-    }
-}
 
   renderServerName() {
     return ( 
@@ -106,12 +99,12 @@ class ChannelIndex extends React.Component {
 
           <div className="channel-wrapper">
             {Object.values(channels).map(channel => 
-            <div
+            <ChannelIndexItemContainer
               key={channel.id}
-              className="channels-link">
-              {channel.name}
-            </div>
-              )}
+              className="channels-link"
+              channel={channel}
+            />
+            )}
           </div>
 
           <div className="users-wrapper">
