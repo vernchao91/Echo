@@ -41,8 +41,14 @@
   .server-wrapper {
     display: grid;
     width: 50px;
-
-
+    overflow: scroll;
+    scrollbar-width: none;
+    // overflow-y: hidden;
+    // white-space: nowrap;
+    // scroll-behavior: smooth;
+    // .server-wrapper::-webkit-scrollbar {
+    //   // display:none;
+    // }
     h2 {
       color: white;
       border-radius: 1px solid black;
@@ -166,6 +172,7 @@
   
   .server-header-wrapper {
     display: flex;
+    
     height: 30px;
     border: 1px solid white;
     align-items: center;
@@ -174,12 +181,17 @@
     .server-owner-button-wrapper {
       .delete-button, .edit-button {
         color: white;
+        margin-left: 10px;
+        // padding: 10px;
       }
     }
 
     .join-leave-server-button-wrapper {
       .leave-button, .join-button {
         color: white;
+        margin-left: 10px;
+
+        // padding: 10px;
       }
     }
     .server-name-text {

@@ -9,7 +9,7 @@ class Landing extends React.Component  {
   loginOrLogout() {
     if (this.props.user) {
       return (
-        <div className="Logout">
+        <div className="logout-wrapper">
           <button className="logout-button" onClick={this.props.logout}>Log Out</button>
         </div>
       )
@@ -41,10 +41,10 @@ class Landing extends React.Component  {
         <div className="header-wrapper">
           <h1 className="logo-wrapper">Welcome to Echo!</h1>
           <ul className="social-links-wrapper">
-            <li>LinkedIn</li>
-            <li>GitHub</li>
-            <li>AngelList</li>
-            <li>MazeRunner</li>
+            <a href="https://www.linkedin.com/in/vern-chao-a8201a1ba/">LinkedIn</a>
+            <a href="https://github.com/vernchao91">GitHub</a>
+            <a href="https://angel.co/u/vern-chien-chao">AngelList</a>
+            <a href="https://vernchao91.github.io/Maze_Runner/">MazeRunner</a>
           </ul>
             {this.loginOrLogout()}
         </div>
