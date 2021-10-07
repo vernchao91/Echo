@@ -23,9 +23,9 @@ class EditServerForm extends React.Component {
     const server = Object.assign({}, this.state);
     console.log(this.props.errors);
     this.props.updateServer(server)
-    // .then(()=> {
-      // this.props.closeModal()
-    // })
+    .then(()=> {
+      this.props.closeModal()
+    })
   }
 
   componentWillUnmount() {
