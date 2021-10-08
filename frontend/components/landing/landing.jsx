@@ -39,7 +39,7 @@ class Landing extends React.Component  {
 
       <div className="background-header-wrapper">
         <div className="header-wrapper">
-          <h1 className="logo-wrapper">Welcome to Echo!</h1>
+          <div className="logo-wrapper"></div>
           <ul className="social-links-wrapper">
             <a href="https://www.linkedin.com/in/vern-chao-a8201a1ba/">LinkedIn</a>
             <a href="https://github.com/vernchao91">GitHub</a>
