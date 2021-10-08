@@ -20,25 +20,36 @@
 }
 
 .session-form-wrapper {
-
-  // shared form styling
-
   position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   min-height: 580px;
   top: 0;
   left: 0;
-  // font-family: $roboto;
+  background-image: image-url("echo-background2.jpg");
+  background-size: 100%, 100%;
+  // background-attachment: fixed;
+  // background-repeat: no-repeat;
 
   .session-form {
-    // border: 1px solid black;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    .session-form-header {
+      font-size: 25px;
+    }
+
+    .demo-login {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+    }
 
     .label-email, .label-username, .label-password {
       display: flex;
@@ -52,6 +63,7 @@
       text-align: center;
       background-color: rgb(37, 126, 117);
       color: white;
+      width: 65%;
     }
 
     input {
@@ -75,38 +87,56 @@
 
   // inquiry text and link
 
-  .redirect-wrapper-register {
+  .redirect-wrapper-login {
     display: flex;
-    justify-content: center;
-    // flex-direction: column;
-    
+    justify-content: space-between;
+    .register-account{
+      align-self: flex-start;
+    }
     .register-link {
       border: 1px solid;
       border-radius: 1px solid;
     }
   }
   .redirect-wrapper-login {
-    display: flex;
-    justify-content: center;
-    // flex-direction: column;
-
-    .login-link {
-      border: 1px solid;
-      border-radius: 1px solid;
+    width: 65%;
+    .register-account {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50%
     }
+    .register-link {
+      display: flex;
+      justify-content: center;
+      border: 1px solid;
+      border-radius: 5px;
+      background-color: rgb(37, 126, 117);
+      color: white;
+      border-color: black;
+      width: 50%;
+    }
+    
   }
+
 
   // demo button
   .demo-wrapper {
     display: flex;
-    justify-content: center;
-    flex-direction: column;
-
-    button {
+    align-items: center;
+    // height: 50px;
+    width: 65%;
+    .demo-text {
+      width: 50%;
+    }
+    .demo-login {
       background-color: rgb(37, 126, 117);
+      border-radius: 5px;
       color: white;
       font-size: 16px;
       border: 1px solid black;
+      width: 50%;
+      // height: 23px;
     }
 
   }
@@ -114,7 +144,7 @@
   // login form
 
   .form-box-Login {
-    width: 784px;
+    width: 700px;
     height: 408px;
     padding: 32px;
     display: flex;
@@ -122,10 +152,13 @@
     border-radius: 5px;
     box-sizing: border-box;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-
+    background-color: rgba(255, 255, 255, 0.685);
+    
     .form-wrapper {
       display: flex;
-      flex-direction: column;
+      // align-items: center;
+      justify-content: flex-start;
+
     }
 
   }
@@ -137,8 +170,7 @@
   // register form
 
   .form-box-Register {
-    background-color: $form-color;
-    width: 784px;
+    width: 700px;
     height: 408px;
     padding: 32px;
     display: flex;
@@ -146,10 +178,27 @@
     border-radius: 5px;
     box-sizing: border-box;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.685);
 
-    .form-wrapper {
+    .redirect-wrapper-register {
       display: flex;
-      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width:65%;
+      .login-account {
+        width: 50%;
+        // align-self: flex-start;
+      }
+      .login-link {
+        display: flex;
+        justify-content: center;
+        border: 1px solid;
+        border-radius: 5px;
+        background-color: rgb(37, 126, 117);
+        color: white;
+        border-color: black;
+        width: 50%;
+      }
     }
   }
 
@@ -158,31 +207,3 @@
   }
 
 }
-
-
-
-// .login-button {
-//   border: none;
-//   background-color: turquoise;
-//   color: rgb(192, 89, 5);
-//   border-style: outset;
-//   margin: 5px;
-//   padding: 3px;
-//   font-weight: 500;
-// }
-
-// .register-button:active {
-//   border-style: inset;
-// }
-
-// .login-button:active {
-//   border-style: inset;
-// }
-
-// .splash {
-//   background-image: image-url("bg.png");
-//   height: 800px;
-//   background-size: cover, contain;
-//   background-repeat: no-repeat;
-//   background-attachment: fixed;
-// }

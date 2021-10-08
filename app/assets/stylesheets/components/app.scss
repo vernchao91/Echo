@@ -219,26 +219,6 @@
     height: 100vh;
     flex-direction: row;
     justify-content: space-between;
-    
-    .channel-wrapper {
-      display: flex;
-      flex-direction: column;
-      // flex-grow: 5;
-      border: 1px solid white;
-      padding-left: 17px;
-      width: 10%;
-      
-      .channel-index-wrapper {
-        display: grid;
-        color: rgb(204, 204, 204);
-        flex-direction: column;
-        padding-top: 15px;
-        .channel-button {
-          width: 75%;
-        }
-      }
-
-    }
   
     .message-wrapper {
       display: flex;

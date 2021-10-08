@@ -21,6 +21,7 @@ class ChannelIndexItem extends React.Component {
     return (
       <div className="channel-index-wrapper">
         <Link className="channel-button" to={`/app/servers/${channel.serverId}/channels/${channel.id}/messages`}>{channel.name}</Link>
+        <Link className="cog"> <i class="fas fa-cog" /> </Link>
       </div>
     )
   }

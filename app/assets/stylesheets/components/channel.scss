@@ -1,0 +1,24 @@
+.channel-wrapper {
+  display: flex;
+  flex-direction: column;
+  // flex-grow: 5;
+  border: 1px solid white;
+  padding: 15px;
+  width: 10%;
+  
+  .channel-index-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: rgb(204, 204, 204);
+    padding-top: 15px;
+    .channel-button {
+      width: 50%
+    }
+    .cog {
+      display: flex;
+      align-items: flex-end;
+      // justify-content: flex-end;
+    }
+  }
+}

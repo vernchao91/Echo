@@ -42,8 +42,8 @@ class SessionForm extends React.Component {
     if (this.props.formType === "Login") {
       return (
         <div className="demo-wrapper">
-          <span></span>
-          <button type="submit" onClick={this.handleDemoSubmit}>Demo Login</button>
+          <span className="demo-text">Login with a demo account!</span>
+          <button className="demo-login" type="submit" onClick={this.handleDemoSubmit}>Demo Login</button>
         </div>
       )
     }
@@ -72,14 +72,14 @@ class SessionForm extends React.Component {
     let otherLink;
     if (this.props.formType === "Login") {
       otherLink = 
-      <div className="redirect-wrapper-register">
-        <label>Need an Account? </label>
+      <div className="redirect-wrapper-login">
+        <label className="register-account">      Need an account?</label>
         <Link className="register-link" to="/register"> Register</Link>
       </div>
     } else {
       otherLink = 
-      <div className="redirect-wrapper-login"> 
-        <label>Already have an account? </label>
+      <div className="redirect-wrapper-register"> 
+        <label className="login-account">Already have an account? </label>
         <Link className="login-link" to="/login"> Login</Link>
       </div>
     };
@@ -103,9 +103,8 @@ class SessionForm extends React.Component {
         </header>
         <div className="session-form-wrapper">
           <div className={ formBox }>
-            <div className="form-wrapper">
               <form className="session-form" onSubmit={this.handleSubmit}>
-                {this.inquiryLink()}
+                <div className="session-form-header">Welcome to Echo! </div>
 
                 {this.signupUsername()}
 
@@ -138,10 +137,10 @@ class SessionForm extends React.Component {
                   ))}
                   
                 <button type="submit">{this.props.formType}</button>
-                  {this.demoLogin()}
 
+                  {this.inquiryLink()}
+                  {this.demoLogin()}
               </form>
-            </div>
           </div>
         </div>
       </>

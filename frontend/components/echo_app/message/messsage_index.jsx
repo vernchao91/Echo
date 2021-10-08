@@ -27,8 +27,6 @@ class MessageIndex extends React.Component {
         </div>
         <div className="messages">
           <p>Message PlaceHolder</p>
-          <i class="fas fa-cog">i</i>
-          <i class="fas fa-cog">iii</i>
           <p>message 2</p>
           <p>message 3</p>
 

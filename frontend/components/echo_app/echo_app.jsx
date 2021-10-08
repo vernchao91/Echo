@@ -5,12 +5,23 @@ import ServerIndexItem from "./servers/server_index_item"
 class EchoApp extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {servers: this.props.servers}
+    this.state = {
+      servers: this.props.servers,
+    }
+    console.log(this.state);
+    console.log("ea-constructor");
   }
 
   componentDidMount() {
     // this.props.fetchServersFromUser(this.props.currentUserId)
     this.props.fetchServers()
+    // .then(reponse => {
+    //   this.setState({
+    //     servers: reponse.servers
+    //   })
+    // })
+    console.log("ea-mount");
+    console.log(this.state);
   }
 
   componentDidUpdate() {
