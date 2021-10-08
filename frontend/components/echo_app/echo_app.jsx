@@ -5,6 +5,7 @@ import ServerIndexItem from "./servers/server_index_item"
 class EchoApp extends React.Component {
   constructor(props) {
     super(props)
+    this.state = {servers: this.props.servers}
   }
 
   componentDidMount() {
@@ -17,6 +18,8 @@ class EchoApp extends React.Component {
 
   showPublicServers() {
     this.props.fetchServersFromUser(this.props.currentUserId)
+  }
+  setServers(){
   }
 
   render() {

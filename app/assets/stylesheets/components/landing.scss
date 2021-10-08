@@ -32,26 +32,31 @@
       width: 50%;
       justify-content: space-around;
       a {
-        color:rgb(197, 197, 197);
+        margin-top: 15px;
+        color:rgb(255, 255, 255);
         height: 20px;
+        // border-radius: 10px;
+        // border: 1px solid white;
+
       }
     }
 
     .logout-wrapper {
       display: flex;
       justify-content: flex-end;
-      width: 147px;
+      width: 187px;
       .logout-button {
         background-color: rgb(255, 255, 255);
         color: rgb(0, 0, 0);
         text-align: center;
-        margin: 5px;
+        margin: 15px;
         padding: 3px;
         height: 20px;
         width: 55px;
         font-size: 12px;
         border-radius: 10px;
         font-weight: 500;
+        
         font-family: Arial, Helvetica, sans-serif;
         &:hover {
           background-color: rgb(12, 178, 184);
@@ -74,7 +79,7 @@
         background-color: rgb(255, 255, 255);
         color: rgb(0, 0, 0);
         text-align: center;
-        margin: 5px;
+        margin: 15px;
         padding: 3px;
         height: 20px;
         width: 60px;
@@ -97,7 +102,7 @@
         align-items: center;
         background-color: rgb(255, 255, 255);
         color: rgb(0, 0, 0);
-        margin: 5px;
+        margin: 15px;
         padding: 3px;
         height: 20px;
         width: 55px;
@@ -121,22 +126,53 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    // width: 100%;
     margin-top: 100px;
-    
+
     p {
       font-size: 30px;
       color: white;
     }
-
+    
+    // p:nth-child(1) {
+    //   font-size: 30px;
+    //   color: white;
+    // }
+    // p:nth-child(2) {
+    //   font-size: 25px;
+    //   color: rgb(208, 236, 255);
+    // }
+    // p:nth-child(3) {
+    //   font-size: 25px;
+    //   color: rgb(0, 76, 163);
+    // }
+    // p:nth-child(4) {
+    //   font-size: 25px;
+    //   color: rgb(0, 60, 255);
+    // }
+    
   }
+
 
   .app-link-wrapper {
     display: flex;
     justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    padding-right: 10px;
+    margin-top: 20px;
 
     .app-link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      // height: 100%;
+      width: 200px;
       font-size: 30px;
       color: white;
+      background-color: rgba(0, 76, 163, 0.719);
+      border-radius: 30px;
+
     }
   }
 

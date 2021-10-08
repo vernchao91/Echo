@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "react-router-dom"
 
 class ChannelIndexItem extends React.Component {
   constructor(props) {
@@ -7,23 +8,19 @@ class ChannelIndexItem extends React.Component {
   }
 
   componentDidMount() {
-    console.log("cii-mount");
   }
   componentDidUpdate() {
-
   }
   createChannel() {
-    // this.setState((prevState))
   }
-  // editChannel() {
-  //   this.setState((prevState) => ({channel: this.state.channel}))
-  // }
+  editChannel() {
+  }
 
   render() {
-    const { channel, channels } = this.props
+    const { channel } = this.props
     return (
       <div className="channel-index-wrapper">
-        <p>{channel.name}</p>
+        <Link className="channel-button" to={`/app/servers/${channel.serverId}/channels/${channel.id}/messages`}>{channel.name}</Link>
       </div>
     )
   }

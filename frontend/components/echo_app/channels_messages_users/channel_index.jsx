@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import ChannelIndexItemContainer from "./channel_index_item_container";
 import Modal from "../../modal/modal"
+import MessageIndexContainer from "../message/message_index_container"
 
 class ChannelIndex extends React.Component {
   constructor(props) {
@@ -15,7 +17,6 @@ class ChannelIndex extends React.Component {
   componentDidMount() {
     this.props.fetchUsersFromServer(this.props.serverId)
     this.props.fetchChannels(this.props.serverId)
-    console.log("ci-mount");
     // .then((res) => this.setState({ serverId: this.props.serverId,
     //     users: this.props.users
     //   })
@@ -27,22 +28,6 @@ class ChannelIndex extends React.Component {
       this.props.fetchUsersFromServer(this.props.serverId),
       this.props.fetchChannels(this.props.serverId)
     }
-    console.log("ci-update");
-    // this.props.fetchUsersFromServer(this.props.serverId)
-      // .then((res) => 
-      // this.setState({ serverId: this.props.serverId,
-      //     users: this.props.users
-      //   })
-      // )
-    // } else {
-      // if (prevProp.users !== this.props.users) {
-      //   this.props.fetchUsersFromServer(this.props.serverId)
-      // }
-    //     .then((res) => this.setState({ serverId: this.props.serverId,
-    //         users: this.props.users
-    //       })
-    //     )
-      // }
   }
 
   // componentWillUnmount() {
@@ -85,8 +70,9 @@ class ChannelIndex extends React.Component {
   render() {
     const { users, channels } = this.props
     let modal = <Modal errors={this.props.errors} name={this.props.modal} serverId={this.props.serverId}/>
-
+    
     return (
+      
       <div className="channels-servername-messages-users-wrapper">
 
         <div className="server-header-wrapper">
@@ -98,14 +84,17 @@ class ChannelIndex extends React.Component {
         <div className="channel-messages-users-wrapper">
 
           <div className="channel-wrapper">
+            
             {Object.values(channels).map(channel => 
             <ChannelIndexItemContainer
-              key={channel.id}
-              className="channels-link"
-              channel={channel}
+            className="channels-link"
+            key={channel.id}
+            channel={channel}
+            serverId={channel.serverId}
             />
             )}
           </div>
+            <Route path="/app/servers/:serverId/channels/:channelId/messages" component={MessageIndexContainer}/>
 
           <div className="users-wrapper">
             {Object.values(users).map(user =>

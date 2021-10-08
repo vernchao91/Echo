@@ -31,18 +31,18 @@ class Server < ApplicationRecord
     dependent: :destroy,
     class_name: :Channel
 
-  # after_create :create_welcome_channel
+  after_create :create_welcome_channel
   
   #has_many :messages,
   #  through: :channels,
   #  source: :messages
   
-  # def create_welcome_channel
-  #   Channel.new(
-  #      name: "Welcome",
-  #      server_id: self.id
-  #    ).save
-  # end
+  def create_welcome_channel
+    Channel.new(
+       name: "Welcome",
+       server_id: self.id
+     ).save
+  end
     
     
 end

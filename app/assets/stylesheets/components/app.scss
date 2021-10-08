@@ -41,9 +41,8 @@
   .server-wrapper {
     display: grid;
     width: 50px;
-    overflow: scroll;
-    scrollbar-width: none;
-    // overflow-y: hidden;
+    // overflow: scroll;
+    overflow-y: hidden;
     // white-space: nowrap;
     // scroll-behavior: smooth;
     // .server-wrapper::-webkit-scrollbar {
@@ -160,7 +159,7 @@
 .channels-servername-messages-users-wrapper {
   display: flex;
   flex-direction: column;
-  // justify-content: flex-start;
+  justify-content: flex-start;
   border: 1px solid rgb(255, 255, 255);
   width: 100vw;
   // margin-top: 50px;
@@ -169,6 +168,17 @@
   // overflow: hidden;
   // height: 100vh;
   // z-index: 5;
+  // .message-wrapper {
+  //   display: flex;
+  //   flex-direction: column;
+  //   height: 800px;
+  //   justify-content:end;
+  //   padding: 10px;
+  //   width: 20%;
+  //   p {
+  //       color: rgb(204, 204, 204);
+  //   }
+  // }
   
   .server-header-wrapper {
     display: flex;
@@ -208,24 +218,55 @@
     display: flex;
     height: 100vh;
     flex-direction: row;
+    justify-content: space-between;
     
     .channel-wrapper {
       display: flex;
       flex-direction: column;
-      flex-grow: 5;
+      // flex-grow: 5;
       border: 1px solid white;
-      padding: 10px;
+      padding-left: 17px;
+      width: 10%;
       
-      .channels-link {
+      .channel-index-wrapper {
         display: grid;
         color: rgb(204, 204, 204);
         flex-direction: column;
+        padding-top: 15px;
+        .channel-button {
+          width: 75%;
+        }
       }
+
     }
   
+    .message-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 15px;
+      // border: 1px solid white;
+      width: 75%;
+      .message-header{
+        border-bottom: 1px solid white;
+
+        h1{
+          font-size: 25px;
+          color: rgb(204, 204, 204);
+
+        }
+      }
+      .messages {
+        align-self: flex-start;
+        p {
+          color: rgb(204, 204, 204);
+        }  
+      }
+    }
+    
     .users-wrapper {
-      width: 15%;
-      padding-left: 10px;
+      width: 10%;
+      padding-left: 15px;
       border: 1px solid white;
       // display: flex;
       // flex-direction: column;
