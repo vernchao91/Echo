@@ -48,7 +48,7 @@ class Landing extends React.Component  {
             <a href="https://www.linkedin.com/in/vern-chao-a8201a1ba/">LinkedIn</a>
             <a href="https://github.com/vernchao91">GitHub</a>
             <a href="https://angel.co/u/vern-chien-chao">AngelList</a>
-            <a href="https://vernchao91.github.io/Maze_Runner/">MazeRunner</a>
+            {/* <a href="https://vernchao91.github.io/Maze_Runner/">MazeRunner</a> */}
           </ul>
             {this.loginOrLogout()}
         </div>
