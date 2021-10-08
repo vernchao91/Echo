@@ -39,7 +39,7 @@ class Server < ApplicationRecord
   
   def create_welcome_channel
     Channel.new(
-       name: "Welcome",
+       name: "General",
        server_id: self.id
      ).save
   end
