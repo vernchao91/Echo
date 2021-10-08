@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom"
-import ServerIndexItem from "./servers/server_index_item"
+import { Link } from "react-router-dom";
+import ServerIndexItem from "./servers/server_index_item";
 
 class EchoApp extends React.Component {
   constructor(props) {
@@ -52,6 +52,7 @@ class EchoApp extends React.Component {
             />
           ))}
         </div>
+        {/* <Modal  */}
 
         <div className="create-server-button">
           {/* <div className="open-modal-tooltip" >Create Server</div> */}
