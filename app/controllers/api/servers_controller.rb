@@ -24,6 +24,9 @@ class Api::ServersController < ApplicationController
   def create
     @server = Server.new(server_params)
     @server.owner_id = current_user.id
+    if @server.name.length == 0
+      @server.name = current_user.username + "'s Server"
+    end
     if @server && @server.save
       # automatically makes current_user join server
       List.create!(server_id: @server.id, user_id: current_user.id)
