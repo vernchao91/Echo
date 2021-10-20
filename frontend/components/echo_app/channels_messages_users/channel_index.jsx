@@ -30,10 +30,6 @@ class ChannelIndex extends React.Component {
     }
   }
 
-  // componentWillUnmount() {
-  //   this.props.fetchUsersFromServer(this.props.serverId)
-  // }
-
   renderServerName() {
     return ( 
     <div className="server-name-text">
@@ -95,7 +91,7 @@ class ChannelIndex extends React.Component {
             )}
           </div>
             <Route path="/app/servers/:serverId/channels/:channelId/messages" component={MessageIndexContainer}/>
-
+            
           <div className="users-wrapper">
             {Object.values(users).map(user =>
               <div 
