@@ -87,8 +87,6 @@ class SessionForm extends React.Component {
   }
 
   render() {
-
-    // div-wrapper
     const formBox = `form-box-${this.props.formType}`
 
     return (
