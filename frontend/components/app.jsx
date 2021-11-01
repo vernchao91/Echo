@@ -10,7 +10,6 @@ import Main from "./main";
 const App = () => (
   <div className="app">
     <Switch>
-
       <Route exact path="/" component={ LandingContainer }/>
       <AuthRoute path="/register" component={SignupFormContainer} />
       <AuthRoute path="/login" component={LoginFormContainer} />

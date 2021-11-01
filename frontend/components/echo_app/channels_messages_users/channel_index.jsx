@@ -16,11 +16,9 @@ class ChannelIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchUsersFromServer(this.props.serverId)
+      .then((state) => this.setState({users: this.props.users}))
     this.props.fetchChannels(this.props.serverId)
-    // .then((res) => this.setState({ serverId: this.props.serverId,
-    //     users: this.props.users
-    //   })
-    // )
+      .then((state) => this.setState({channels: this.props.channels}))
   }
 
   componentDidUpdate(prevProp) {
@@ -66,9 +64,9 @@ class ChannelIndex extends React.Component {
   render() {
     const { users, channels } = this.props
     let modal = <Modal errors={this.props.errors} name={this.props.modal} serverId={this.props.serverId}/>
-    
+    console.log(this.state)
     return (
-      
+
       <div className="channels-servername-messages-users-wrapper">
 
         <div className="server-header-wrapper">
@@ -81,19 +79,19 @@ class ChannelIndex extends React.Component {
 
           <div className="channel-wrapper">
             
-            {Object.values(channels).map(channel => 
+            {channels.map(channel => 
             <ChannelIndexItemContainer
-            className="channels-link"
-            key={channel.id}
-            channel={channel}
-            serverId={channel.serverId}
+              className="channels-link"
+              key={channel.id}
+              channel={channel}
+              serverId={channel.serverId}
             />
             )}
           </div>
             <Route path="/app/servers/:serverId/channels/:channelId/messages" component={MessageIndexContainer}/>
             
           <div className="users-wrapper">
-            {Object.values(users).map(user =>
+            {users.map(user =>
               <div 
                 key={user.id}
                 className="users-link">

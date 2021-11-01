@@ -16,13 +16,13 @@ import {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    users: state.entities.users,
+    users: Object.values(state.entities.users),
+    channels: Object.values(state.entities.channels),
+    errors: Object.values(state.errors),
     server: state.entities.servers[ownProps.match.params.serverId],
-    channels: state.entities.channels,
     serverId: ownProps.match.params.serverId,
     currentUserId: state.session.id,
     modal: state.ui.modal,
-    errors: Object.values(state.errors)
   }
 }
 

@@ -43,7 +43,7 @@ class EchoApp extends React.Component {
     }
   }
 
-  createServer() {
+  createServerForm() {
     return (
       <div className="create-server-form-wrapper-background" onClick={() => this.handleCloseModal()}>
         <div className="create-server-form-wrapper" onClick={e => e.stopPropagation()}>
@@ -100,7 +100,7 @@ class EchoApp extends React.Component {
             +
           </button>
           <Modal isOpen={this.state.modal} className="overlay" ariaHideApp={false}>
-            {this.createServer()}
+            {this.createServerForm()}
           </Modal>
         </div>
 

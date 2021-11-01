@@ -10,9 +10,9 @@ function Modal(props) {
   }
   let component;
   switch (props.modal) {
-    case 'createServer':
-      component = <CreateServerFormContainer />;
-      break;
+    // case 'createServer':
+    //   component = <CreateServerFormContainer />;
+    //   break;
     case 'editServer':
       component = <EditServerFormContainer {...props} />;
       break;
