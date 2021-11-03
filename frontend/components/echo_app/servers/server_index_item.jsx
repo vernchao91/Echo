@@ -4,7 +4,11 @@ import { Link } from "react-router-dom";
 class ServerIndex extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { hover: false }
+    this.state = { 
+      hover: false 
+    }
+    this.handleMouseIn = this.handleMouseIn.bind(this);
+    this.handleMouseOut = this.handleMouseOut.bind(this)
   }
 
   handleMouseIn() {
@@ -27,9 +31,9 @@ class ServerIndex extends React.Component {
           {server.name}
         </div>
         <Link
-          className="server-link" 
-          onMouseOver={this.handleMouseIn.bind(this)}
-          onMouseOut={this.handleMouseOut.bind(this)}
+          className="server-link"
+          onMouseOver={this.handleMouseIn}
+          onMouseOut={this.handleMouseOut}
           to={`/app/servers/${server.id}/channels`}>
           {server.name.charAt(0)}
         </Link>

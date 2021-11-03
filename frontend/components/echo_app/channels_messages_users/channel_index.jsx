@@ -23,8 +23,10 @@ class ChannelIndex extends React.Component {
 
   componentDidUpdate(prevProp) {
     if (prevProp.serverId !== this.props.serverId) {
-      this.props.fetchUsersFromServer(this.props.serverId),
+      this.props.fetchUsersFromServer(this.props.serverId)
+        .then((state) => this.setState({users: this.props.users}))
       this.props.fetchChannels(this.props.serverId)
+        .then((state) => this.setState({channels: this.props.channels}))
     }
   }
 
@@ -39,6 +41,7 @@ class ChannelIndex extends React.Component {
   renderEditDeleteJoinLeaveServer() {
     const { currentUserId, serverId, deleteServer, joinServer, leaveServer, openEditModal, users, server } = this.props
     if (server === undefined) return;
+    console.log(currentUserId)
     if (currentUserId === server.ownerId) {
       return (
         <div className="server-owner-button-wrapper">
@@ -46,7 +49,8 @@ class ChannelIndex extends React.Component {
           <button className="edit-button" onClick={openEditModal}>Edit Server</button>
         </div>
       )
-    } else if (users[currentUserId] === undefined) {
+    } else if (users[currentUserId] === "undefined") {
+      console.log(users[currentUserId])
       return (
         <div className="join-leave-server-button-wrapper">
           <button className="join-button" onClick={() => joinServer({server_id: serverId})}>Join Server</button>
@@ -57,14 +61,13 @@ class ChannelIndex extends React.Component {
         <div className="join-leave-server-button-wrapper">
           <Link className="leave-button" to="/app/servers" onClick={() => leaveServer(serverId)}>Leave Server</Link>
         </div>
-        )
+      )
     }
   }
   
   render() {
     const { users, channels } = this.props
     let modal = <Modal errors={this.props.errors} name={this.props.modal} serverId={this.props.serverId}/>
-    console.log(this.state)
     return (
 
       <div className="channels-servername-messages-users-wrapper">

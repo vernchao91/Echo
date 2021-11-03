@@ -6,6 +6,8 @@ import {
   createServer, 
   removeServerErrors
 } from "../../actions/server_actions"
+import { logout } from "../../actions/session_actions"
+
 
 const mapStateToProps = (state) => {
   return {
@@ -17,6 +19,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
   return {
+    logout: () => dispatch(logout()),
     fetchServers: () => dispatch(fetchServers()),
     fetchServersFromUser: userId => dispatch(fetchServersFromUser(userId)),
     createServer: server => dispatch(createServer(server)),

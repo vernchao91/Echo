@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ServerIndexItem from "./servers/server_index_item";
 import Modal from "react-modal";
+import { IoLogOutOutline } from "react-icons/io5";
 
 class EchoApp extends React.Component {
   constructor(props) {
@@ -103,7 +104,9 @@ class EchoApp extends React.Component {
             {this.createServerForm()}
           </Modal>
         </div>
-
+        <div className="logout-icon-wrapper">
+          <IoLogOutOutline onClick={this.props.logout} className="logout-icon"/>
+        </div>
       </div>
     )
   }
