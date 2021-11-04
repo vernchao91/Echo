@@ -4,7 +4,7 @@ import Landing from "./landing"
 
 const mSTP = (state) => {
   return {
-    user: state.entities.users[state.session.id]
+    userId: state.session.id
   };
 };
 

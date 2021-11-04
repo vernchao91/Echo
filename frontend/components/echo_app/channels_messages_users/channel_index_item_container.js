@@ -5,7 +5,8 @@ import {
   fetchChannel,
   createChannel,
   updateChannel,
-  deleteChannel
+  deleteChannel,
+  removeChannelErrors
 } from "../../../actions/channel_actions";
 
 const mapStateToProps = state => {
@@ -23,7 +24,8 @@ const mapDispatchToProps = dispatch => {
     fetchChannel: (channel) => dispatch(fetchChannel(channel)),
     createChannel: (channel) => dispatch(createChannel(channel)),
     updateChannel: (channel) => dispatch(updateChannel(channel)),
-    deleteChannel:  () => dispatch(deleteChannel(channel))
+    deleteChannel:  (channelId) => dispatch(deleteChannel(channelId)),
+    removeChannelErrors: () => dispatch(removeChannelErrors()),
   }
 }
 

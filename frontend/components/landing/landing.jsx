@@ -7,7 +7,7 @@ class Landing extends React.Component  {
   }
 
   loginOrLogout() {
-    if (this.props.user) {
+    if (this.props.userId) {
       return (
         <div className="logout-wrapper">
           <button className="logout-button" onClick={this.props.logout}>Log Out</button>
@@ -24,7 +24,7 @@ class Landing extends React.Component  {
   }
 
   renderApp(){
-    if (this.props.user) {
+    if (this.props.userId) {
       return (
         <div className="app-link-wrapper">
           <Link className="app-link" to="/app/servers">Join Servers!</Link>

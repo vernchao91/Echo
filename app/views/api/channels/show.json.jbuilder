@@ -1,4 +1,4 @@
-json.partial! "api/servers/server", server: @server
+json.partial! "api/channels/channel", channel: @channel
 
 # {
 #   id: "5", 

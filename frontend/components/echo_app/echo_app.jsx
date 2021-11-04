@@ -34,8 +34,7 @@ class EchoApp extends React.Component {
     e.preventDefault();
     const server = Object.assign({}, this.state)
     this.props.createServer(server)
-      .then(() => {this.handleCloseModal()
-    })
+      .then(() => {this.handleCloseModal()})
   }
 
   update(field) {
@@ -59,8 +58,8 @@ class EchoApp extends React.Component {
               </input>
               <button className="create-server-button">Create Server</button>
               {this.props.errors.map((error, i) => (
-                <div className="session-error-wrapper" key={i}>
-                  <li className="session-error">{error}</li>
+                <div className="server-error-wrapper" key={i}>
+                  <li className="server-error">{error}</li>
                 </div>
               ))}
           </form>

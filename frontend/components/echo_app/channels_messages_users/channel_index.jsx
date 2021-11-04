@@ -41,7 +41,6 @@ class ChannelIndex extends React.Component {
   renderEditDeleteJoinLeaveServer() {
     const { currentUserId, serverId, deleteServer, joinServer, leaveServer, openEditModal, users, server } = this.props
     if (server === undefined) return;
-    console.log(currentUserId)
     if (currentUserId === server.ownerId) {
       return (
         <div className="server-owner-button-wrapper">
@@ -49,14 +48,13 @@ class ChannelIndex extends React.Component {
           <button className="edit-button" onClick={openEditModal}>Edit Server</button>
         </div>
       )
-    } else if (users[currentUserId] === "undefined") {
-      console.log(users[currentUserId])
+    } else if (!users[currentUserId]) {
       return (
         <div className="join-leave-server-button-wrapper">
           <button className="join-button" onClick={() => joinServer({server_id: serverId})}>Join Server</button>
         </div>
       )
-    } else {
+    } else if (users[currentUserId]) {
       return (
         <div className="join-leave-server-button-wrapper">
           <Link className="leave-button" to="/app/servers" onClick={() => leaveServer(serverId)}>Leave Server</Link>
@@ -81,8 +79,7 @@ class ChannelIndex extends React.Component {
         <div className="channel-messages-users-wrapper">
 
           <div className="channel-wrapper">
-            
-            {channels.map(channel => 
+            {Object.values(channels).map(channel => 
             <ChannelIndexItemContainer
               className="channels-link"
               key={channel.id}
@@ -91,10 +88,10 @@ class ChannelIndex extends React.Component {
             />
             )}
           </div>
+          
             <Route path="/app/servers/:serverId/channels/:channelId/messages" component={MessageIndexContainer}/>
-            
           <div className="users-wrapper">
-            {users.map(user =>
+            {Object.values(users).map(user => 
               <div 
                 key={user.id}
                 className="users-link">

@@ -16,8 +16,8 @@ import {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    users: Object.values(state.entities.users),
-    channels: Object.values(state.entities.channels),
+    users: state.entities.users,
+    channels: state.entities.channels,
     errors: Object.values(state.errors),
     server: state.entities.servers[ownProps.match.params.serverId],
     serverId: ownProps.match.params.serverId,
