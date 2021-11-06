@@ -39,7 +39,7 @@ class ChannelIndexItem extends React.Component {
     this.props.removeChannelErrors();
   }
 
-  createEditChannel() {
+  editChannelForm() {
     return (
       <div className="create-channel-form-wrapper" >
         <button onClick={() => this.handleCloseModal()}>X</button>
@@ -68,7 +68,7 @@ class ChannelIndexItem extends React.Component {
     return (
       <div className="channel-index-wrapper">
         <Modal isOpen={this.state.modal} className="overlay" ariaHideApp={false}>
-          {this.createEditChannel()}
+          {this.editChannelForm()}
         </Modal>
         <Link className="channel-button" to={`/app/servers/${channel.serverId}/channels/${channel.id}/messages`}>{channel.name}</Link>
         <button className="cog" onClick={() => this.handleOpenModal()}> <i className="fas fa-cog" /> </button>

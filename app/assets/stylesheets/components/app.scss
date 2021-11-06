@@ -149,6 +149,31 @@
       border-radius: 10px;
     }
   }
+
+  .home-icon-wrapper {
+    color: rgb(184, 176, 176);
+    font-size: 20px;
+    font-weight: 300;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    transition: 0.1s ease-in-out;
+    border: 1px solid rgb(255, 255, 255);
+    margin-top: 5px;
+    .home-icon {
+      width: 25px;
+      height: 43px;
+    }
+    &:hover {
+      background-color:rgb(18, 168, 85);
+      color: black;
+      cursor: pointer;
+      border-radius: 10px;
+    }
+  }
   .logout-icon-wrapper {
     color: rgb(184, 176, 176);
     font-size: 20px;
@@ -198,8 +223,6 @@
         margin-left: 10px;
       }
     }
-
-
 
     .join-leave-server-button-wrapper {
       .leave-button, .join-button {

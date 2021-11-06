@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ServerIndexItem from "./servers/server_index_item";
 import Modal from "react-modal";
-import { IoLogOutOutline } from "react-icons/io5";
+import { IoLogOutOutline, IoHomeOutline } from "react-icons/io5";
 
 class EchoApp extends React.Component {
   constructor(props) {
@@ -23,11 +23,11 @@ class EchoApp extends React.Component {
 
   handleOpenModal() {
     this.setState({modal: true,  name: ""})
-    this.props.removeServerErrors();
   }
-
+  
   handleCloseModal() {
     this.setState({modal: false})
+    this.props.removeServerErrors();
   }
 
   handleSubmit(e) {
@@ -102,6 +102,9 @@ class EchoApp extends React.Component {
           <Modal isOpen={this.state.modal} className="overlay" ariaHideApp={false}>
             {this.createServerForm()}
           </Modal>
+        </div>
+        <div className="home-icon-wrapper">
+          <Link to="/"><IoHomeOutline className="home-icon"/> </Link>
         </div>
         <div className="logout-icon-wrapper">
           <IoLogOutOutline onClick={this.props.logout} className="logout-icon"/>
