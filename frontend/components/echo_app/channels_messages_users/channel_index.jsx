@@ -27,15 +27,15 @@ class ChannelIndex extends React.Component {
     this.props.fetchUsersFromServer(this.props.serverId)
       .then((state) => this.setState({users: this.props.users}))
     this.props.fetchChannels(this.props.serverId)
-    .then((state) => this.setState({channels: this.props.channels}))
+      .then((state) => this.setState({channels: this.props.channels}))
   }
   
   componentDidUpdate(prevProp) {
     if (prevProp.serverId !== this.props.serverId) {
       this.props.fetchUsersFromServer(this.props.serverId)
-      .then((state) => this.setState({users: this.props.users}))
+        .then((state) => this.setState({users: this.props.users}))
       this.props.fetchChannels(this.props.serverId)
-      .then((state) => this.setState({channels: this.props.channels}))
+        .then((state) => this.setState({channels: this.props.channels}))
     }
   }
   
