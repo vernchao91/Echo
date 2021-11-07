@@ -1,0 +1,20 @@
+.message-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px;
+  width: 77%;
+  .message-header{
+    border-bottom: 1px solid white;
+    h1{
+      font-size: 25px;
+      color: rgb(204, 204, 204);
+    }
+  }
+  .messages {
+    align-self: flex-start;
+    p {
+      color: rgb(204, 204, 204);
+    }  
+  }
+}

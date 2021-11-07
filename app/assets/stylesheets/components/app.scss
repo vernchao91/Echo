@@ -5,6 +5,7 @@
   align-items: center;
   height: 100vh;
   width: 3.75%;
+  min-width: 72px;
 
   .home-link-wrapper {
     display: grid;
@@ -197,6 +198,7 @@
   justify-content: flex-start;
   border: 1px solid rgb(255, 255, 255);
   width: 96.25%;
+  min-width: 865px;
   
   .server-header-wrapper {
     display: flex;
@@ -232,34 +234,10 @@
     height: 100vh;
     flex-direction: row;
     justify-content: space-between;
-  
-    .message-wrapper {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 15px;
-      width: 65%;
-      .message-header{
-        border-bottom: 1px solid white;
-
-        h1{
-          font-size: 25px;
-          color: rgb(204, 204, 204);
-
-        }
-      }
-      .messages {
-        align-self: flex-start;
-        p {
-          color: rgb(204, 204, 204);
-        }  
-      }
-    }
-    
     .users-wrapper {
-      width: 12%;
-      min-width: 239px;
-      padding-left: 15px;
+      // width: 12%;
+      min-width: 229px;
+      padding-left: 10px;
       border: 1px solid white;
       .users-link {
         display: flex;

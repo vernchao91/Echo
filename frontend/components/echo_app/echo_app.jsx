@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ServerIndexItem from "./servers/server_index_item";
+import ServerIndexItemContainer from "./servers/server_index_container";
 import Modal from "react-modal";
 import { IoLogOutOutline, IoHomeOutline } from "react-icons/io5";
 
@@ -88,7 +88,7 @@ class EchoApp extends React.Component {
 
         <div className="server-wrapper">
           {servers.map((server, idx) => (
-            <ServerIndexItem
+            <ServerIndexItemContainer
               key={idx}
               serverId={server.id}
               server={server}
