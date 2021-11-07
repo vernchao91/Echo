@@ -13,7 +13,10 @@ class ChannelIndex extends React.Component {
       users: this.props.users,
       channels: this.props.channels,
       modal: false,
-      channel: {name: ""}
+      channel: {
+        name: "",
+        server_id: this.props.serverId
+      }
     }
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
@@ -47,7 +50,7 @@ class ChannelIndex extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const channel = Object.assign({}, this.state.channel)
-    this.props.createChannel(channel)
+    this.props.createChannel(this.state.channel)
       .then(() => {this.handleCloseModal()})
   }
 

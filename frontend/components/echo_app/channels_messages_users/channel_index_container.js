@@ -12,7 +12,8 @@ import {
 import { openModal, closeModal } from "../../../actions/modal_actions"
 import { 
   fetchChannels,
-  createChannel 
+  createChannel,
+  removeChannelErrors
 } from "../../../actions/channel_actions"
 
 const mapStateToProps = (state, ownProps) => {
@@ -37,7 +38,8 @@ const mapDispatchToProps = dispatch => {
     deleteServer: (serverId) => dispatch(deleteServer(serverId)),
     updateServer: (server) => dispatch(updateServer(server)),
     openEditModal: () => dispatch(openModal('editServer')),
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => dispatch(closeModal()),
+    removeChannelErrors: () => dispatch(removeChannelErrors()),
   }
 }
 
