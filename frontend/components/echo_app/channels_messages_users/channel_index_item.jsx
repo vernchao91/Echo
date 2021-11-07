@@ -31,7 +31,7 @@ class ChannelIndexItem extends React.Component {
   }
 
   handleOpenModal() {
-    this.setState({modal: true,  name: ""})
+    this.setState({modal: true})
   }
 
   handleCloseModal() {
@@ -65,7 +65,6 @@ class ChannelIndexItem extends React.Component {
 
   render() {
     const { channel } = this.props
-    // if (!channel) return null
     return (
       <div className="channel-index-wrapper">
         <Modal isOpen={this.state.modal} className="overlay" ariaHideApp={false}>
