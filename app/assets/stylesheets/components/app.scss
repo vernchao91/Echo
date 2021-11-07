@@ -257,7 +257,8 @@
     }
     
     .users-wrapper {
-      width: 10%;
+      width: 12%;
+      min-width: 239px;
       padding-left: 15px;
       border: 1px solid white;
       .users-link {
