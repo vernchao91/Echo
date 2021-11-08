@@ -8,12 +8,13 @@ import {
   removeChannelErrors
 } from "../../../actions/channel_actions";
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
   return {
     servers: Object.values(state.entities.servers),
     channels: Object.values(state.entities.channels),
     errors: Object.values(state.errors.channels),
     currentUserId: state.session.id,
+    // server: state.entities.servers[ownProps.match.params.serverId],
   }
 }
 

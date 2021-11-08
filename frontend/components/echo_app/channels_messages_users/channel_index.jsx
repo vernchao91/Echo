@@ -2,9 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Route, Switch } from "react-router-dom";
 import ChannelIndexItemContainer from "./channel_index_item_container";
-import Modal from "../../modal/modal"
-import MessageIndexContainer from "../message/message_index_container"
-import Modal2 from "react-modal"
+import Modal from "../../modal/modal";
+import MessageIndexContainer from "../message/message_index_container";
+import Modal2 from "react-modal";
+import { IoCloseCircleOutline } from "react-icons/io5";
 
 class ChannelIndex extends React.Component {
   constructor(props) {
@@ -71,11 +72,13 @@ class ChannelIndex extends React.Component {
     this.props.removeChannelErrors();
   }
 
+
+
   // create channel function
   createChannelForm() {
     return (
       <div className="create-channel-form-wrapper">
-        <button onClick={this.handleCloseModal}>X</button>
+        <button onClick={this.handleCloseModal}><IoCloseCircleOutline/></button>
         <form className="create-channel-form" onSubmit={this.handleSubmit}>
           <h1>Create Text Channel</h1>
           <label className="create-channel-label">Channel Name:</label>
@@ -129,8 +132,12 @@ class ChannelIndex extends React.Component {
     )
   }
 
+  renderCreateChannelButton() {
+    
+  }
+
   render() {
-    const { users, channels } = this.props
+    const { users, channels, server } = this.props
     let modal = <Modal errors={this.props.errors} name={this.props.modal} serverId={this.props.serverId}/>
     return (
       <div className="channels-servername-messages-users-wrapper">
@@ -159,6 +166,7 @@ class ChannelIndex extends React.Component {
               key={channel.id}
               channel={channel}
               serverId={channel.serverId}
+              server={this.props.server}
             />
             )}
           </div>
