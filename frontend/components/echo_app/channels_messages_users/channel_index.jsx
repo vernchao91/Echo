@@ -133,7 +133,8 @@ class ChannelIndex extends React.Component {
   }
 
   renderCreateChannelButton() {
-    
+    if(!this.props.server) return null
+    if(this.props.server.ownerId === this.props.currentUserId) return <button className="create-channel-button" onClick={this.handleOpenModal}>+</button>
   }
 
   render() {
@@ -154,7 +155,8 @@ class ChannelIndex extends React.Component {
 
             <div className="channel-header-wrapper">
               <h1 className="channel-header">Text Channels</h1>
-              <button className="create-channel-button" onClick={this.handleOpenModal}>+</button>
+              {this.renderCreateChannelButton()}
+              {/* <button className="create-channel-button" onClick={this.handleOpenModal}>+</button> */}
             </div>
 
             <Modal2 isOpen={this.state.modal} className="overlay" ariaHideApp={false}>

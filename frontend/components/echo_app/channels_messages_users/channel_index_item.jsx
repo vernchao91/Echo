@@ -74,7 +74,6 @@ class ChannelIndexItem extends React.Component {
   renderEditChannelButton() {
     if(!this.props.server) return null
     if(this.props.server.ownerId === this.props.currentUserId) return <button className="cog" onClick={() => this.handleOpenModal()}> <i className="fas fa-cog" /> </button>
-    
   }
 
   render() {
