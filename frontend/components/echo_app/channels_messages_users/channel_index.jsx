@@ -64,9 +64,11 @@ class ChannelIndex extends React.Component {
     this.props.removeChannelErrors();
   }
 
+  // create channel function
   createChannelForm() {
     return (
       <div className="create-channel-form-wrapper">
+        <button onClick={this.handleCloseModal}>X</button>
         <form className="create-channel-form" onSubmit={this.handleSubmit}>
           <h1>Create Text Channel</h1>
           <label className="create-channel-label">Channel Name:</label>
@@ -124,7 +126,6 @@ class ChannelIndex extends React.Component {
     const { users, channels } = this.props
     let modal = <Modal errors={this.props.errors} name={this.props.modal} serverId={this.props.serverId}/>
     return (
-
       <div className="channels-servername-messages-users-wrapper">
 
         <div className="server-header-wrapper">
@@ -136,8 +137,12 @@ class ChannelIndex extends React.Component {
         <div className="channel-messages-users-wrapper">
 
           <div className="channel-wrapper">
-            <h1>Text Channels</h1>
-            <button onClick={() => this.handleOpenModal()}>+</button>
+
+            <div className="channel-header-wrapper">
+              <h1 className="channel-header">Text Channels</h1>
+              <button className="create-channel-button" onClick={() => this.handleOpenModal()}>+</button>
+            </div>
+
             <Modal2 isOpen={this.state.modal} className="overlay" ariaHideApp={false}>
               {this.createChannelForm()}
             </Modal2> 
@@ -150,7 +155,9 @@ class ChannelIndex extends React.Component {
             />
             )}
           </div>
+
             <Route path="/app/servers/:serverId/channels/:channelId/messages" component={MessageIndexContainer}/>
+
           <div className="users-wrapper">
             {Object.values(users).map(user => 
               <div 
@@ -164,7 +171,6 @@ class ChannelIndex extends React.Component {
         </div>
 
       </div>
-
     )
   }
   
