@@ -78,7 +78,7 @@ class ChannelIndex extends React.Component {
           />
           {this.props.errors.map((error, i) => (
             <div className="channel-error-wrapper" key={i}>
-              <li className="channel-error">{error}</li>
+              <ul className="channel-error">{error}</ul>
             </div>
           ))}
           <button> Create Channel</button>
