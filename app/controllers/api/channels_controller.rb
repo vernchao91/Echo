@@ -22,8 +22,9 @@ class Api::ChannelsController < ApplicationController
   end
 
   def create
+    server = Server.find_by(id: params[:server_id])
     @channel = Channel.new(channel_params)
-    @channel.server_id = params[:server_id]
+    # @channel.server_id = server.id
     if @channel && @channel.save
       render :show
     else
@@ -35,7 +36,7 @@ class Api::ChannelsController < ApplicationController
     @channel = Channel.find_by(id: params[:id])
     if @channel && @channel.update(channel_params)
       render :show
-    elsif !channel
+    elsif !@channel
       render json: { error: "Server doesn't exist" }, status: 404
     else
       render json: @channel.errors.full_messages, status: 404

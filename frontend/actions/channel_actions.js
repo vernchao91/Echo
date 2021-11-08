@@ -82,3 +82,5 @@ export const deleteChannel = (channelId) => dispatch => {
       err => (dispatch(receiveChannelErrors(err.responseJSON)))
     )
 }
+
+//  11.2  65%   12%

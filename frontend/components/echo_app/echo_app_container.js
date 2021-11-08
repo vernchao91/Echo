@@ -1,11 +1,13 @@
 import { connect } from "react-redux";
-import React from "react";
 import EchoApp from "./echo_app";
-import { 
+import {
   fetchServers,
-  fetchServersFromUser
+  fetchServersFromUser,
+  createServer, 
+  removeServerErrors
 } from "../../actions/server_actions"
-import { openModal, closeModal } from "../../actions/modal_actions"
+import { logout } from "../../actions/session_actions"
+
 
 const mapStateToProps = (state) => {
   return {
@@ -17,10 +19,11 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
   return {
+    logout: () => dispatch(logout()),
     fetchServers: () => dispatch(fetchServers()),
     fetchServersFromUser: userId => dispatch(fetchServersFromUser(userId)),
-    openCreateModal: () => dispatch(openModal('createServer')),
-    closeModal: () => dispatch(closeModal())
+    createServer: server => dispatch(createServer(server)),
+    removeServerErrors: () => dispatch(removeServerErrors())
   }
 }
 

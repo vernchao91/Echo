@@ -16,35 +16,6 @@
   font-family: Arial, Helvetica, sans-serif;
   border-radius: 10px;
 
-    .create-server-form-wrapper {
-      background-color: rgb(218, 216, 216);
-      height: 500px;
-      width: 408px;
-      padding: 32px;
-      display: flex;
-      flex-direction: column;
-      // justify-content: center;
-      border-radius: 5px;
-      box-sizing: border-box;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-      h1 {
-        display: flex;
-        justify-content: center;
-        font-size: 24px;
-      }
-      .create-server-input {
-        // border-radius: 10px;
-        font-weight: 500;
-        font-family: Arial, Helvetica, sans-serif;
-        border: 1px solid black;
-        border-radius: 5px;
-      }
-      .create-server-button {
-        border: 1px solid black;
-       border-radius: 5px;
-      }
-    }
-
     .edit-server-form-wrapper {
       background-color: rgb(218, 216, 216);
       height: 500px;
@@ -52,7 +23,6 @@
       padding: 32px;
       display: flex;
       flex-direction: column;
-      // justify-content: center;
       border-radius: 5px;
       box-sizing: border-box;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
@@ -62,7 +32,6 @@
         font-size: 24px;
       }
       .edit-server-input {
-        // border-radius: 10px;
         font-weight: 500;
         font-family: Arial, Helvetica, sans-serif;
         border: 1px solid black;
@@ -74,12 +43,53 @@
       }
     }
 
-    //   .open-modal-create {
-    //     border: 1px solid black;
-    //   }
+  }
 
-    // }
+}
 
+.ReactModal__Overlay {
+  height: 1px;
+}
+
+.create-server-form-wrapper-background {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .create-server-form-wrapper {
+    height: auto;
+    width: auto;
+  
+    .create-server-form {
+      background-color: rgb(253, 253, 253);
+      height: 500px;
+      width: 408px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      border-radius: 5px;
+      box-sizing: border-box;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+  
+    h1 {
+      display: flex;
+      justify-content: center;
+      font-size: 24px;
+    }
+    .create-server-input {
+      font-weight: 500;
+      font-family: Arial, Helvetica, sans-serif;
+      border: 1px solid black;
+      border-radius: 5px;
+    }
+    .create-server-button {
+      border: 1px solid black;
+      border-radius: 5px;
+    }
   }
 
 }

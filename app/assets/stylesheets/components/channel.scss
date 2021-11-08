@@ -1,11 +1,22 @@
 .channel-wrapper {
   display: flex;
   flex-direction: column;
-  // flex-grow: 5;
   border: 1px solid white;
   padding: 15px;
-  width: 10%;
-  
+  width: 11.2%;
+  min-width: 206.75px;
+  .channel-header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .channel-header {
+      color: white;
+    }
+    .create-channel-button{
+      font-size: 25px;
+      color: white;
+    }
+  }
   .channel-index-wrapper {
     display: flex;
     flex-direction: row;
@@ -21,4 +32,10 @@
       // justify-content: flex-end;
     }
   }
+}
+
+.create-channel-form-wrapper {
+  background-color: rgb(255, 255, 255);
+  height: 100vh;
+  width: 100vw;
 }

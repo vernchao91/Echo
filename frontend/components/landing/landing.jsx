@@ -7,7 +7,7 @@ class Landing extends React.Component  {
   }
 
   loginOrLogout() {
-    if (this.props.user) {
+    if (this.props.userId) {
       return (
         <div className="logout-wrapper">
           <button className="logout-button" onClick={this.props.logout}>Log Out</button>
@@ -24,7 +24,7 @@ class Landing extends React.Component  {
   }
 
   renderApp(){
-    if (this.props.user) {
+    if (this.props.userId) {
       return (
         <div className="app-link-wrapper">
           <Link className="app-link" to="/app/servers">Join Servers!</Link>
@@ -45,10 +45,10 @@ class Landing extends React.Component  {
             </div>
           </div>
           <ul className="social-links-wrapper">
-            <a href="https://www.linkedin.com/in/vern-chao-a8201a1ba/">LinkedIn</a>
-            <a href="https://github.com/vernchao91">GitHub</a>
-            <a href="https://angel.co/u/vern-chien-chao">AngelList</a>
-            {/* <a href="https://vernchao91.github.io/Maze_Runner/">MazeRunner</a> */}
+            <a href="https://www.linkedin.com/in/vern-chao-a8201a1ba/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/vernchao91" target="_blank">GitHub</a>
+            <a href="https://angel.co/u/vern-chien-chao" target="_blank">AngelList</a>
+            <a href="https://vernchao91.github.io/Maze_Runner/" target="_blank">MazeRunner</a>
           </ul>
             {this.loginOrLogout()}
         </div>

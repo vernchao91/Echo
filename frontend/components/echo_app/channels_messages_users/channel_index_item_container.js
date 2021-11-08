@@ -3,9 +3,9 @@ import ChannelIndexItem from "./channel_index_item"
 import {
   fetchChannels,
   fetchChannel,
-  createChannel,
   updateChannel,
-  deleteChannel
+  deleteChannel,
+  removeChannelErrors
 } from "../../../actions/channel_actions";
 
 const mapStateToProps = state => {
@@ -21,9 +21,9 @@ const mapDispatchToProps = dispatch => {
   return {
     fetchChannels: (channels) => dispatch(fetchChannels(channels)),
     fetchChannel: (channel) => dispatch(fetchChannel(channel)),
-    createChannel: (channel) => dispatch(createChannel(channel)),
     updateChannel: (channel) => dispatch(updateChannel(channel)),
-    deleteChannel:  () => dispatch(deleteChannel(channel))
+    deleteChannel:  (channelId) => dispatch(deleteChannel(channelId)),
+    removeChannelErrors: () => dispatch(removeChannelErrors()),
   }
 }
 

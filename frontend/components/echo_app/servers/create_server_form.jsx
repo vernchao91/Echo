@@ -12,8 +12,8 @@ class CreateServerForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const server = Object.assign({}, this.state)
-    this.props.createServer(server).then(() => {
-      this.props.closeModal()
+    this.props.createServer(server)
+      .then(() => {this.props.closeModal()
     })
   }
   
@@ -27,12 +27,11 @@ class CreateServerForm extends React.Component {
     }
   }
 
-
   render() {
     return (
-      <div className="create-server-form-wrapper">
+      <div className="create-server-form-wrapper" onClick={e => e.stopPropagation()}>
+        <form className="create-server-form" onSubmit={this.handleSubmit} >
         <h1>Create a Server</h1>
-        <form onSubmit={this.handleSubmit}>
           <label className="label-name">Name: </label>
           <input
             className="create-server-input"
@@ -47,9 +46,7 @@ class CreateServerForm extends React.Component {
               <li className="session-error">{error}</li>
             </div>
           ))}
-
         </form>
-
       </div>
     )
   }

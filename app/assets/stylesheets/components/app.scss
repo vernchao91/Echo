@@ -1,8 +1,11 @@
 .echoapp-wrapper {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
-  width: 3.75%vw;
+  width: 3.75%;
+  min-width: 72px;
 
   .home-link-wrapper {
     display: grid;
@@ -10,12 +13,17 @@
     height: 48px;
     border: transparent;
     transition: 0.1s ease-in-out;
-    border: 1px solid rgb(177, 177, 177);
-    border-radius: 10px;
-
+    border: 2px solid rgb(177, 177, 177);
+    border-radius: 50%;
+    margin-top: 5px;
+    &:hover {
+      border-radius: 10px;
+      color: rgb(0, 0, 0);
+      background-color: rgb(27, 55, 148);
+    }
     .home-link {
       color: white;
-      font-size: 20px;
+      font-size: 15px;
       font-weight: 300;
       display: flex;
       justify-content: center;
@@ -25,11 +33,6 @@
       border-radius: 10px;
       transition: 0.1s ease-in-out;
       border: transparent;
-
-      &:hover {
-        color: black;
-        background-color:rgb(102, 198, 228);
-      }
     }
   }
   /* Hide scrollbar for Chrome, Safari and Opera */
@@ -38,12 +41,15 @@
   }
 
   .server-wrapper {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     width: 50px;
+    // hide scrollbar
     scrollbar-width: none;  /* Firefox */
     -ms-overflow-style: none;  /* IE and Edge */
     // overflow-y: hidden;
     overflow-y: scroll;
+
     h2 {
       color: white;
       border-radius: 1px solid black;
@@ -51,9 +57,18 @@
     .server-index-wrapper {
       display:flex;
       justify-content: center;
-      border: 1px solid rgb(177, 177, 177);
-      border-radius: 10px;
-      // z-index: 5;
+      border: 1px solid rgb(255, 255, 255);
+      border-radius: 50%;
+      width: auto;
+      height: auto;
+      margin-top: 7.5px;
+      transition: 0.1s ease-in-out;
+
+      &:hover {
+        border-radius: 10px;
+        color: rgb(0, 0, 0);
+        background-color: rgb(20, 65, 211);
+      }
       
       // server buttons
       .server-link {
@@ -69,32 +84,19 @@
         transition: 0.1s ease-in-out;
         border: transparent;
 
-        &:hover {
-          color: rgb(0, 0, 0);
-          background-color:rgb(35, 187, 247);
-        }
-
       }
 
       // tool tip display hovered
       .server-name-tooltip {
         position: absolute;
-        border-style: solid;
+        border: 1px solid rgba(255, 255, 255, 0.274);
         background-color: black;
         color: rgb(255, 255, 255);
         left: 50px;
         margin-top: 12px;
         font-weight: 500;
-        // content: " ";
-        // top: 50%;
-        // right: 100%; /* To the left of the tooltip */
-        // margin-top: -5px;
-        // border-width: 1px;
-        // border-color: transparent black transparent transparent;
       }
-
     }
-
   }
 
   // create server display button
@@ -107,21 +109,11 @@
     align-items: center;
     width: 48px;
     height: 48px;
-    border-radius: 10px;
+    border-radius: 50%;
     transition: 0.1s ease-in-out;
     border: 1px solid rgb(255, 255, 255);
-    // border: transparent;
-    // .open-modal-tooltip {
-    //   position: absolute;
-    //   border-style: solid;
-    //   background-color: black;
-    //   color: rgb(255, 255, 255);
-    //   left: 50px;
-    //   margin-top: 12px;
-    //   font-weight: 500;
-    //   display: none;
-    // }
-    
+    margin-top: 5px;
+
     .open-modal-create {
       color: rgb(184, 176, 176);
       font-size: 20px;
@@ -131,24 +123,73 @@
       align-items: center;
       width: 48px;
       height: 48px;
-      border-radius: 10px;
+      border-radius: 50%;
       transition: 0.1s ease-in-out;
       border: 1px solid rgb(255, 255, 255);
       &:hover {
+        font-size: 25px;
         color: black;
-        background-color:rgb(35, 187, 247);
+        background-color:rgb(16, 151, 77);
+        border-radius: 10px;
       }
     }
-
     &:hover {
       color: black;
-      background-color:rgb(35, 187, 247);
+      background-color:rgb(18, 168, 85);
+      border-radius: 10px;
     }
-
-
   }
 
+  .home-icon-wrapper {
+    color: rgb(184, 176, 176);
+    font-size: 20px;
+    font-weight: 300;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    transition: 0.1s ease-in-out;
+    border: 1px solid rgb(255, 255, 255);
+    margin-top: 5px;
+    .home-icon {
+      width: 25px;
+      height: 43px;
+    }
+    &:hover {
+      background-color:rgb(18, 168, 85);
+      color: black;
+      cursor: pointer;
+      border-radius: 10px;
+    }
+  }
+  .logout-icon-wrapper {
+    color: rgb(184, 176, 176);
+    font-size: 20px;
+    font-weight: 300;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    transition: 0.1s ease-in-out;
+    border: 1px solid rgb(255, 255, 255);
+    margin-top: 5px;
+    .logout-icon {
+      width: 30px;
+      height: 48px;
+      padding-left: 5px;
+    }
+    &:hover {
+      background-color:rgb(18, 168, 85);
 
+      color: black;
+      cursor: pointer;
+      border-radius: 10px;
+    }
+  }
 }
 
 .channels-servername-messages-users-wrapper {
@@ -156,24 +197,8 @@
   flex-direction: column;
   justify-content: flex-start;
   border: 1px solid rgb(255, 255, 255);
-  width: 100vw;
-  // margin-top: 50px;
-  // min-width: 0;
-  // min-height: 0;
-  // overflow: hidden;
-  // height: 100vh;
-  // z-index: 5;
-  // .message-wrapper {
-  //   display: flex;
-  //   flex-direction: column;
-  //   height: 800px;
-  //   justify-content:end;
-  //   padding: 10px;
-  //   width: 20%;
-  //   p {
-  //       color: rgb(204, 204, 204);
-  //   }
-  // }
+  width: 96.25%;
+  min-width: 865px;
   
   .server-header-wrapper {
     display: flex;
@@ -187,18 +212,13 @@
       .delete-button, .edit-button {
         color: white;
         margin-left: 10px;
-        // padding: 10px;
       }
     }
-
-
 
     .join-leave-server-button-wrapper {
       .leave-button, .join-button {
         color: white;
         margin-left: 10px;
-
-        // padding: 10px;
       }
     }
     .server-name-text {
@@ -214,38 +234,11 @@
     height: 100vh;
     flex-direction: row;
     justify-content: space-between;
-  
-    .message-wrapper {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 15px;
-      // border: 1px solid white;
-      width: 75%;
-      .message-header{
-        border-bottom: 1px solid white;
-
-        h1{
-          font-size: 25px;
-          color: rgb(204, 204, 204);
-
-        }
-      }
-      .messages {
-        align-self: flex-start;
-        p {
-          color: rgb(204, 204, 204);
-        }  
-      }
-    }
-    
     .users-wrapper {
-      width: 10%;
-      padding-left: 15px;
+      // width: 12%;
+      min-width: 229px;
+      padding-left: 10px;
       border: 1px solid white;
-      // display: flex;
-      // flex-direction: column;
-
       .users-link {
         display: flex;
         color: rgb(204, 204, 204);
@@ -253,7 +246,6 @@
         padding-top: 10px;
       }
     }
-
   }
 
 

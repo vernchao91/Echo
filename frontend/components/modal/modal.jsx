@@ -1,7 +1,7 @@
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
-import  CreateServerFormContainer  from "../echo_app/servers/create_server_form_container"
+// import  CreateServerFormContainer  from "../echo_app/servers/create_server_form_container"
 import EditServerFormContainer from "../echo_app/servers/edit_server_container"
 
 function Modal(props) {
@@ -10,9 +10,9 @@ function Modal(props) {
   }
   let component;
   switch (props.modal) {
-    case 'createServer':
-      component = <CreateServerFormContainer />;
-      break;
+    // case 'createServer':
+    //   component = <CreateServerFormContainer />;
+    //   break;
     case 'editServer':
       component = <EditServerFormContainer {...props} />;
       break;
