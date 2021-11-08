@@ -5,18 +5,25 @@
   padding: 15px;
   width: 11.2%;
   min-width: 206.75px;
+
   .channel-header-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 18px;
     .channel-header {
-      color: white;
+      color: rgb(204, 204, 204);
     }
     .create-channel-button{
       font-size: 25px;
-      color: white;
+      // height: 18px;
+      color: rgb(204, 204, 204);
+      &:hover {
+        color: white;
+      }
     }
   }
+
   .channel-index-wrapper {
     display: flex;
     flex-direction: row;

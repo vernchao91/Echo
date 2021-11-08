@@ -103,11 +103,11 @@
   .create-server-button {
     color: rgb(184, 176, 176);
     font-size: 20px;
-    font-weight: 300;
+    // font-weight: 300;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 48px;
+    width: 50px;
     height: 48px;
     border-radius: 50%;
     transition: 0.1s ease-in-out;
@@ -117,7 +117,7 @@
     .open-modal-create {
       color: rgb(184, 176, 176);
       font-size: 20px;
-      font-weight: 300;
+      // font-weight: 300;
       display: flex;
       justify-content: center;
       align-items: center;

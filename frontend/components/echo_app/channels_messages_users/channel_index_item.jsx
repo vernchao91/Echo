@@ -1,6 +1,8 @@
-import React from "react"
-import { Link } from "react-router-dom"
-import Modal from "react-modal"
+import React from "react";
+import { Link } from "react-router-dom";
+import Modal from "react-modal";
+import { IoCloseCircleOutline } from "react-icons/io5";
+
 
 class ChannelIndexItem extends React.Component {
   constructor(props) {
@@ -48,7 +50,7 @@ class ChannelIndexItem extends React.Component {
   editChannelForm() {
     return (
       <div className="create-channel-form-wrapper" >
-        <button onClick={() => this.handleCloseModal()}>X</button>
+        <button onClick={this.handleCloseModal}><IoCloseCircleOutline/></button>
         <form className="create-channel-form" onSubmit={this.handleSubmit}>
           <h1>Overview</h1>
           <input
@@ -69,6 +71,11 @@ class ChannelIndexItem extends React.Component {
     )
   }
 
+  renderEditChannelButton() {
+    if(!this.props.server) return null
+    if(this.props.server.ownerId === this.props.currentUserId) return <button className="cog" onClick={() => this.handleOpenModal()}> <i className="fas fa-cog" /> </button>
+  }
+
   render() {
     const { channel } = this.props
     return (
@@ -77,7 +84,8 @@ class ChannelIndexItem extends React.Component {
           {this.editChannelForm()}
         </Modal>
         <Link className="channel-button" to={`/app/servers/${channel.serverId}/channels/${channel.id}/messages`}>{channel.name}</Link>
-        <button className="cog" onClick={() => this.handleOpenModal()}> <i className="fas fa-cog" /> </button>
+        {/* <button className="cog" onClick={() => this.handleOpenModal()}> <i className="fas fa-cog" /> </button> */}
+        {this.renderEditChannelButton()}
       </div>
     )
   }
