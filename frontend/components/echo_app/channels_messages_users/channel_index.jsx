@@ -51,12 +51,19 @@ class ChannelIndex extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const channel = Object.assign({}, this.state.channel)
-    this.props.createChannel(this.state.channel)
+    console.log(channel)
+    this.props.createChannel(channel)
       .then(() => {this.handleCloseModal()})
   }
 
   handleOpenModal() {
-    this.setState({modal: true,  name: ""})
+    this.setState({
+      modal: true,
+      channel: {
+        ...this.state.channel,
+        name: ""
+      }
+    })
   }
 
   handleCloseModal() {
@@ -140,7 +147,7 @@ class ChannelIndex extends React.Component {
 
             <div className="channel-header-wrapper">
               <h1 className="channel-header">Text Channels</h1>
-              <button className="create-channel-button" onClick={() => this.handleOpenModal()}>+</button>
+              <button className="create-channel-button" onClick={this.handleOpenModal}>+</button>
             </div>
 
             <Modal2 isOpen={this.state.modal} className="overlay" ariaHideApp={false}>

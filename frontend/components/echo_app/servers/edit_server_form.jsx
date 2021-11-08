@@ -38,7 +38,6 @@ class EditServerForm extends React.Component {
   }
 
   render() {
-
     return (
       <div className="edit-server-form-wrapper">
         <h1>Edit Server</h1>
