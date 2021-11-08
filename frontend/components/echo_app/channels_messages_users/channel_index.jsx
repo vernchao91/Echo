@@ -41,9 +41,10 @@ class ChannelIndex extends React.Component {
   
   update(field) {
     return (e) => {
-      this.setState({ channel: {
-      ...this.state.channel,
-      [field]: e.currentTarget.value }
+      this.setState({ 
+        channel: {
+        ...this.state.channel,
+        [field]: e.currentTarget.value }
     })}
   }
 

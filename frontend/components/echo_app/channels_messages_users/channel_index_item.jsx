@@ -31,12 +31,18 @@ class ChannelIndexItem extends React.Component {
   }
 
   handleOpenModal() {
-    this.setState({modal: true})
+    this.setState({
+      modal: true,
+      channel: {
+        ...this.state.channel,
+        name: this.props.channel.name
+      }
+    })
   }
 
   handleCloseModal() {
-    this.setState({modal: false})
     this.props.removeChannelErrors();
+    this.setState({modal: false})
   }
 
   editChannelForm() {
@@ -58,7 +64,7 @@ class ChannelIndexItem extends React.Component {
             </div>
           ))}
         </form>
-        <button onClick={() => this.props.deleteChannel(this.props.channel.id).then(() => this.handleCloseModal())}>Delete Channel</button>
+        <button onClick={() => this.props.deleteChannel(this.props.channel.id)}>Delete Channel</button>
       </div>
     )
   }
