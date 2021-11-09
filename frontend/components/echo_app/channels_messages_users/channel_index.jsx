@@ -14,11 +14,13 @@ class ChannelIndex extends React.Component {
       users: this.props.users,
       channels: this.props.channels,
       modal: false,
+      serverId: this.props.serverId,
       channel: {
         name: "",
-        server_id: this.props.serverId
+        serverId: this.props.serverId
       }
     }
+    console.log(this.props)
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -34,9 +36,9 @@ class ChannelIndex extends React.Component {
   componentDidUpdate(prevProp) {
     if (prevProp.serverId !== this.props.serverId) {
       this.props.fetchUsersFromServer(this.props.serverId)
-        .then((state) => this.setState({users: this.props.users}))
+        .then((state) => this.setState({users: this.props.users, serverId: this.props.serverId}))
       this.props.fetchChannels(this.props.serverId)
-        .then((state) => this.setState({channels: this.props.channels}))
+        .then((state) => this.setState({channels: this.props.channels, serverId: this.props.serverId}))
     }
   }
   
@@ -52,7 +54,7 @@ class ChannelIndex extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const channel = Object.assign({}, this.state.channel)
-    console.log(channel)
+    channel.serverId = this.props.serverId
     this.props.createChannel(channel)
       .then(() => {this.handleCloseModal()})
   }
@@ -71,8 +73,6 @@ class ChannelIndex extends React.Component {
     this.setState({modal: false})
     this.props.removeChannelErrors();
   }
-
-
 
   // create channel function
   createChannelForm() {
