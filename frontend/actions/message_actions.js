@@ -46,8 +46,15 @@ export const removeErrors = () => {
 
 // thunk async actions
 
-export const fetchMessages = (channelId) => dispatch => {
-  return MessageApiUtil.fetchMessages(channelId)
+export const fetchChannelMessages = (channelId) => dispatch => {
+  return MessageApiUtil.fetchChannelMessages(channelId)
+    .then(
+      messages => (dispatch(receiveMessages(messages))),
+      err => (dispatch(receiveMessageErrors(err.responseJSON)))
+    )
+}
+export const fetchConversationMessages = (conversationId) => dispatch => {
+  return MessageApiUtil.fetchConversationMessages(conversationId)
     .then(
       messages => (dispatch(receiveMessages(messages))),
       err => (dispatch(receiveMessageErrors(err.responseJSON)))

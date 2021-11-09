@@ -166,13 +166,14 @@ class ChannelIndex extends React.Component {
               className="channels-link"
               key={channel.id}
               channel={channel}
+              channelId={channel.id}
               serverId={channel.serverId}
               server={this.props.server}
             />
             )}
           </div>
 
-            <Route path="/app/servers/:serverId/channels/:channelId/messages" component={MessageIndexContainer}/>
+            <Route path="/app/servers/:serverId/channels/:channelId/messages" component={MessageIndexContainer} />
 
           <div className="users-wrapper">
             {Object.values(users).map(user => 

@@ -8,7 +8,6 @@ Rails.application.routes.draw do
  
     resources :users, only: [ :show, :create, :destroy] do
       resources :servers, only: [ :index, :create, :update, :destroy ]
-      #resources :conversations, only: [ :show, :index, :create, :update, :destroy]
     end
 
     resources :servers, only: [ :index, :show ] do

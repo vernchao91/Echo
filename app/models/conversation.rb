@@ -10,6 +10,7 @@
 #
 class Conversation < ApplicationRecord
   validates :owner_id, :user_id, presence: true
+  validates :owner_id, uniqueness: { scope: :user_id }
 
   belongs_to :owner,
     primary_key: :id,
@@ -24,7 +25,7 @@ class Conversation < ApplicationRecord
   #has_many :lists,
   #  as: :listable,
   #  dependent: :destroy 
-  
+
   #has_many :joined_users,
   #  through: :lists,
   #  source: :user

@@ -3,12 +3,24 @@ import React from "react";
 class MessageIndex extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { }
-    // console.log(this.props);
+    this.state = { 
+      channelId: this.props.channelId,
+      messages: []
+    };
+    this.bottom = React.createRef();
   }
 
   componentDidMount() {
-    // this.props.channels(this.props.channelId)
+    this.props.fetchChannelMessages(this.props.channelId);
+  }
+
+  componentDidUpdate(prevProp) {
+    if (prevProp.channelId !== this.props.channelId) {
+      this.props.fetchChannelMessages(this.props.channelId);
+    }
+    if (this.bottom.current) {
+      this.bottom.current.scrollIntoView();
+    }
   }
 
   renderChannelName() {
@@ -19,17 +31,18 @@ class MessageIndex extends React.Component {
       </h1>
     )
   }
+  
   render() {
+    if (!this.props.channel) return null
     return (
       <div className="message-wrapper">
         <div className="message-header">
           {this.renderChannelName()}
         </div>
         <div className="messages">
-          <p>Message PlaceHolder</p>
-          <p>message 2</p>
-          <p>message 3</p>
-
+          {Object.values(this.props.messages).map((message, i) => 
+            <ul key={i}>{message.body}</ul>
+          )}
         </div>
       </div>
     )
