@@ -143,9 +143,9 @@ channel23 = Channel.create!(name: "Smack Board", server_id: 8)
 channel24 = Channel.create!(name: "Announcements", server_id: 10)
 channel25 = Channel.create!(name: "Questions queue", server_id: 10)
 channel26 = Channel.create!(name: "Standups", server_id: 10)
-
 channel27 = Channel.create!(name: "ARAM?!?!?!", server_id: 15)
 channel28 = Channel.create!(name: "Ranked", server_id: 5)
 channel29 = Channel.create!(name: "Duels", server_id: 5)
 channel30 = Channel.create!(name: "Questions queue", server_id: 14)
 channel31 = Channel.create!(name: "Announcements", server_id: 14)
+

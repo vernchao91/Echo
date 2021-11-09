@@ -32,11 +32,7 @@ class Server < ApplicationRecord
     class_name: :Channel
 
   after_create :create_welcome_channel
-  
-  #has_many :messages,
-  #  through: :channels,
-  #  source: :messages
-  
+
   def create_welcome_channel
     Channel.new(
        name: "General",
