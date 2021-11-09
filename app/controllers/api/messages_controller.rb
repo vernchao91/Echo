@@ -16,6 +16,15 @@ class Api::MessagesController < ApplicationController
     render :index
   end
 
+  def show
+    @message = Message.find_by(id: params[:id])
+    if @message
+      render :show
+    else
+      render json: { error: "Message doesn't exist" }, status: 404
+    end
+  end
+
   def create
     if params[:channel_id]
       channel = Channel.find_by(id: params[:channel_id])

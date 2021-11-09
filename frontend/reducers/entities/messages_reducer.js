@@ -1,8 +1,8 @@
-// import {
-//   RECEIVE_MESSAGES,
-//   RECEIVE_MESSAGE,
-//   REMOVE_MESSAGE,
-// } from "../../actions/message_actions"
+import {
+  RECEIVE_MESSAGES,
+  RECEIVE_MESSAGE,
+  REMOVE_MESSAGE,
+} from "../../actions/message_actions"
 
 const messagesReducer = (oldState = {}, action) => {
   Object.freeze(oldState);

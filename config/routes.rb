@@ -18,11 +18,11 @@ Rails.application.routes.draw do
     end
 
     resources :channels, only: [ :show ] do 
-      resources :messages, only: [ :create, :index, :update, :destroy ]
+      resources :messages, only: [ :create, :show, :index, :update, :destroy ]
     end
 
     resources :conversations, only: [ :index, :show, :create, :destroy ] do
-      resources :messages, only: [ :create, :index, :update, :destroy ]
+      resources :messages, only: [ :create, :show, :index, :update, :destroy ]
     end
 
     resources :lists, only: [ :create ]
