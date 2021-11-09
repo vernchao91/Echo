@@ -148,4 +148,3 @@ channel28 = Channel.create!(name: "Ranked", server_id: 5)
 channel29 = Channel.create!(name: "Duels", server_id: 5)
 channel30 = Channel.create!(name: "Questions queue", server_id: 14)
 channel31 = Channel.create!(name: "Announcements", server_id: 14)
-

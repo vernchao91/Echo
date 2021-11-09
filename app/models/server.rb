@@ -31,6 +31,10 @@ class Server < ApplicationRecord
     dependent: :destroy,
     class_name: :Channel
 
+  #has_many :lists,
+  #  as: :listable,
+  #  dependent: :destroy
+
   after_create :create_welcome_channel
 
   def create_welcome_channel

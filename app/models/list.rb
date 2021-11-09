@@ -23,7 +23,6 @@ class List < ApplicationRecord
     foreign_key: :server_id,
     class_name: :Server
 
-
   #belongs_to :listable,
   #  polymorphic: true
 end
