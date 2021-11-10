@@ -20,7 +20,6 @@ class ChannelIndex extends React.Component {
         serverId: this.props.serverId
       }
     }
-    console.log(this.props)
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -101,7 +100,7 @@ class ChannelIndex extends React.Component {
 
   renderEditDeleteJoinLeaveServer() {
     const { currentUserId, serverId, deleteServer, joinServer, leaveServer, openEditModal, users, server } = this.props
-    if (server === undefined) return;
+    if (server === undefined) return null;
     if (currentUserId === server.ownerId) {
       return (
         <div className="server-owner-button-wrapper">
@@ -156,7 +155,6 @@ class ChannelIndex extends React.Component {
             <div className="channel-header-wrapper">
               <h1 className="channel-header">Text Channels</h1>
               {this.renderCreateChannelButton()}
-              {/* <button className="create-channel-button" onClick={this.handleOpenModal}>+</button> */}
             </div>
 
             <Modal2 isOpen={this.state.modal} className="overlay" ariaHideApp={false}>
@@ -167,13 +165,14 @@ class ChannelIndex extends React.Component {
               className="channels-link"
               key={channel.id}
               channel={channel}
+              channelId={channel.id}
               serverId={channel.serverId}
               server={this.props.server}
             />
             )}
           </div>
 
-            <Route path="/app/servers/:serverId/channels/:channelId/messages" component={MessageIndexContainer}/>
+          <Route path="/app/servers/:serverId/channels/:channelId/messages" component={MessageIndexContainer} />
 
           <div className="users-wrapper">
             {Object.values(users).map(user => 

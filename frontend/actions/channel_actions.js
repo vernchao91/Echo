@@ -8,7 +8,6 @@ export const RECEIVE_CHANNEL_ERRORS = "RECEIVE_CHANNEL_ERRORS";
 export const REMOVE_CHANNEL_ERRORS = "REMOVE_CHANNEL_ERRORS";
 export const REMOVE_ERRORS = "REMOVE_ERRORS";
 
-
 // regular sync actions
 export const receiveChannels = channels => {
   return {

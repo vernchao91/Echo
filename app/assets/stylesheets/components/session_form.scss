@@ -123,6 +123,9 @@
       width: 50%;
     }
     .demo-login {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       background-color: rgb(37, 126, 117);
       border-radius: 5px;
       color: white;

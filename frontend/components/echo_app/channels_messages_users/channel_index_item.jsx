@@ -44,7 +44,7 @@ class ChannelIndexItem extends React.Component {
 
   handleCloseModal() {
     this.props.removeChannelErrors();
-    this.setState({modal: false})
+    this.setState({ modal: false })
   }
 
   editChannelForm() {
@@ -84,7 +84,6 @@ class ChannelIndexItem extends React.Component {
           {this.editChannelForm()}
         </Modal>
         <Link className="channel-button" to={`/app/servers/${channel.serverId}/channels/${channel.id}/messages`}>{channel.name}</Link>
-        {/* <button className="cog" onClick={() => this.handleOpenModal()}> <i className="fas fa-cog" /> </button> */}
         {this.renderEditChannelButton()}
       </div>
     )

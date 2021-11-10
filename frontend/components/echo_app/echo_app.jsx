@@ -104,7 +104,7 @@ class EchoApp extends React.Component {
           </Modal>
         </div>
         <div className="home-icon-wrapper">
-          <Link to="/"><IoHomeOutline className="home-icon"/> </Link>
+          <Link to="/"><IoHomeOutline className="home-icon"/></Link>
         </div>
         <div className="logout-icon-wrapper">
           <IoLogOutOutline onClick={this.props.logout} className="logout-icon"/>

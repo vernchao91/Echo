@@ -7,6 +7,9 @@ import {
   deleteChannel,
   removeChannelErrors
 } from "../../../actions/channel_actions";
+import {
+  fetchChannelMessages
+} from "../../../actions/message_actions"
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -25,6 +28,7 @@ const mapDispatchToProps = dispatch => {
     updateChannel: (channel) => dispatch(updateChannel(channel)),
     deleteChannel:  (channelId) => dispatch(deleteChannel(channelId)),
     removeChannelErrors: () => dispatch(removeChannelErrors()),
+    fetchChannelMessages: channelId => dispatch(fetchChannelMessages(channelId))
   }
 }
 
