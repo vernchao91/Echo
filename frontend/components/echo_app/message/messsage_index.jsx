@@ -53,6 +53,7 @@ class MessageIndex extends React.Component {
         } 
     });
   }
+  
   handleSubmit(e) {
     e.preventDefault();
     const newMessage = Object.assign({}, this.state.message)
