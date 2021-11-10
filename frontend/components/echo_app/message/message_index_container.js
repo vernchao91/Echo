@@ -8,14 +8,12 @@ import {
 } from "../../../actions/message_actions"
 
 const mapStateToProps = (state, ownProps) => {
-  const users = Object.values(state.entities.users)
-  // const username = user.username
   return {
     channelId: ownProps.match.params.channelId,
     channel: state.entities.channels[ownProps.match.params.channelId],
     messages: state.entities.messages,
     currentUserId: state.session.id,
-    users,
+    users: state.entities.users
   }
 }
 

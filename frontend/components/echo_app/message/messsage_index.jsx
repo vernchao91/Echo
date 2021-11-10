@@ -25,10 +25,9 @@ class MessageIndex extends React.Component {
   
   render() {
     if (!this.props.channel || !this.props.users || !this.props.users) return null
-    console.log(this.props);
     const { users, messages, channel, currentUserId } = this.props
     const user = users[currentUserId]
-    if (!user) return null
+    // if (!user) return null
     return (
       <div className="messages-wrapper">
         <div className="messages-header">
