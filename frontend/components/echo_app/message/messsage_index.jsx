@@ -22,26 +22,26 @@ class MessageIndex extends React.Component {
       this.bottom.current.scrollIntoView();
     }
   }
-
-  renderChannelName() {
-    if (!this.props.channel) return 
-    return (
-      <h1>
-        <em># {this.props.channel.name}</em>
-      </h1>
-    )
-  }
   
   render() {
-    if (!this.props.channel) return null
+    if (!this.props.channel || !this.props.users || !this.props.users) return null
+    console.log(this.props);
+    const { users, messages, channel, currentUserId } = this.props
+    const user = users[currentUserId]
+    if (!user) return null
     return (
-      <div className="message-wrapper">
-        <div className="message-header">
-          {this.renderChannelName()}
+      <div className="messages-wrapper">
+        <div className="messages-header">
+          <h1>
+            <em># {channel.name}</em>
+          </h1>
         </div>
         <div className="messages">
-          {Object.values(this.props.messages).map((message, i) => 
-            <ul key={i}>{message.body}</ul>
+          {Object.values(messages).map((message, i) =>
+            <div className="message" key={i}>
+              <ul>{user.username}</ul>
+              <ul>{message.body}</ul>
+            </div>
           )}
         </div>
       </div>
