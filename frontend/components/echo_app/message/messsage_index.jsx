@@ -17,23 +17,28 @@ class MessageIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchChannelMessages(this.props.channelId);
     App.cable.subscriptions.create(
       { channel: "ChatChannel" },
       { received: data => {
+        this.props.fetchChannelMessages(this.props.channelId);
         this.setState({
-          messages: this.state.messages.concat(data.message)
-        });},
+          messages: Object.values(this.props.messages).concat(data)
+        });
+      },
         speak: function(data) { return this.perform("speak", data) }
       }
     );
-    // this.bottom.current.scrollIntoView();
+    if (this.bottom.current) {
+      this.bottom.current.scrollIntoView();
+    }
   }
 
   componentDidUpdate(prevProp) {
     if (prevProp.channelId !== this.props.channelId) {
       this.props.fetchChannelMessages(this.props.channelId)
-        // .then(this.setState({}))
+        this.setState({
+          messages: Object.values(this.props.messages)
+        })
     }
     if (this.bottom.current) {
       this.bottom.current.scrollIntoView();
@@ -41,21 +46,29 @@ class MessageIndex extends React.Component {
   }
 
   update(field) {
-    return (e) =>
-      this.setState({ message : {
+    return (e) => this.setState({ 
+        message : {
         ...this.state.message,
         [field]: e.currentTarget.value 
-      } 
-      });
+        } 
+    });
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    App.cable.subscriptions.subscriptions[1].speak({ message: this.state.message });
-    this.setState({ message: {
-      ...this.state.message,
-      body: "" 
-    }});
+    const newMessage = Object.assign({}, this.state.message)
+    newMessage.messageableId= this.props.channelId
+    App.cable.subscriptions.subscriptions[1].speak({ message: newMessage })
+    this.props.fetchChannelMessages(this.props.channelId)
+      .then(
+        this.setState({
+          message: {
+            ...this.state.message,
+            body: ""
+          },
+          messages: Object.values(this.props.messages)
+        })
+      )
   }
 
   displayUsernameAndBody(message, i) {
@@ -73,8 +86,7 @@ class MessageIndex extends React.Component {
   
   render() {
     if (!this.props.channel || !this.props.users || !this.props.users) return null
-    const { users, messages, channel, currentUserId } = this.props
-    const user = users[currentUserId]
+    const { channel } = this.props
     return (
       <div className="messages-wrapper">
 
@@ -86,7 +98,7 @@ class MessageIndex extends React.Component {
 
         <div className="messages-display-input-wrapper">
           <div className="messages-display">
-            {Object.values(messages).map((message, i) => (
+            {Object.values(this.props.messages).map((message, i) => (
               this.displayUsernameAndBody(message, i)
             )
             )}

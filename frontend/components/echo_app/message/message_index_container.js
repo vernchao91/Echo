@@ -2,6 +2,7 @@ import { connect } from "react-redux"
 import MessageIndex from "./messsage_index"
 import { 
   fetchChannelMessages,
+  fetchMessage,
   createMessage,
   updateMessage,
   deleteMessage
@@ -20,6 +21,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
   return {
     fetchChannelMessages: (channelId) => dispatch(fetchChannelMessages(channelId)),
+    fetchChannelMessage: (messageId) => dispatch(fetchChannelMessage(messageId)),
     createMessage: (message) => dispatch(createMessage(message)),
     updateMessage: (message) => dispatch(updateMessage(message)),
     deleteMessage: () => dispatch(deleteMessage(message)),

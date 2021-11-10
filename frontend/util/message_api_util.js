@@ -4,15 +4,21 @@ export const fetchChannelMessages = channelId => {
     method: "GET"
   })
 }
+export const fetchChannelMessage = messageId => {
+  return $.ajax({
+    url: `api/channels/:channel_id/messages/${messageId}`,
+    method: "GET"
+  })
+}
 export const fetchConversationMessages = conversationId => {
   return $.ajax({
     url: `api/conversations/${conversationId}/messages`,
     method: "GET"
   })
 }
-export const fetchMessage = messageId => {
+export const fetchConversationMessage = messageId => {
   return $.ajax({
-    url: `api/channels/:channel_id/messages/${messageId}`,
+    url: `api/conversations/:conversation_id/messages/${messageId}`,
     method: "GET"
   })
 }

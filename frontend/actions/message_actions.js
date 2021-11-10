@@ -53,10 +53,24 @@ export const fetchChannelMessages = (channelId) => dispatch => {
       err => (dispatch(receiveMessageErrors(err.responseJSON)))
     )
 }
+export const fetchChannelMessage = (messageId) => dispatch => {
+  return MessageApiUtil.fetchChannelMessage(messageId)
+    .then(
+      message => (dispatch(receiveMessage(message))),
+      err => (dispatch(receiveMessageErrors(err.responseJSON)))
+    )
+}
 export const fetchConversationMessages = (conversationId) => dispatch => {
   return MessageApiUtil.fetchConversationMessages(conversationId)
     .then(
       messages => (dispatch(receiveMessages(messages))),
+      err => (dispatch(receiveMessageErrors(err.responseJSON)))
+    )
+}
+export const fetchConversationMessage = (messageId) => dispatch => {
+  return MessageApiUtil.fetchConversationMessage(messageId)
+    .then(
+      message => (dispatch(receiveMessage(message))),
       err => (dispatch(receiveMessageErrors(err.responseJSON)))
     )
 }
