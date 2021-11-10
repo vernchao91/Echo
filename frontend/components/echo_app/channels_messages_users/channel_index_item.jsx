@@ -17,10 +17,6 @@ class ChannelIndexItem extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  // componentDidMount() {
-  //   this.props.fetchChannelMessages(this.props.channelId);
-  // }
-
   update(field) {
     return (e) => {
       this.setState({ channel: {
