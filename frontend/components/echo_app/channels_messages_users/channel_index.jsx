@@ -100,7 +100,7 @@ class ChannelIndex extends React.Component {
 
   renderEditDeleteJoinLeaveServer() {
     const { currentUserId, serverId, deleteServer, joinServer, leaveServer, openEditModal, users, server } = this.props
-    if (server === undefined) return;
+    if (server === undefined) return null;
     if (currentUserId === server.ownerId) {
       return (
         <div className="server-owner-button-wrapper">

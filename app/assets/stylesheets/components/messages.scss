@@ -2,22 +2,43 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 15px;
+  padding: 25px;
   width: 77%;
   .messages-header{
     border-bottom: 1px solid white;
-    h1{
+    h1 {
       font-size: 25px;
       color: rgb(204, 204, 204);
     }
   }
-  .messages {
+  .messages-display-input-wrapper {
+    height: auto;
+    width: 100%;
     align-self: flex-start;
-    ul {
-      color: rgb(204, 204, 204);
-    }  
-  }
-  .message {
-    
+    .message {
+      padding-top: 15px;
+      h1 {
+        color: rgb(255, 255, 255);
+        padding-bottom: 5px;
+      }
+      ul {
+        color: rgb(255, 255, 255);
+      }
+    }
+    .message-form-wrapper {
+      display: flex;
+      align-items: center;
+      margin-top: 25px;
+      min-height: 40px;
+      background-color: rgb(117, 117, 117);
+      border-radius: 5px;
+      min-width: 100%;
+      height: auto;
+      .message-input {
+        padding-left: 10px;
+        color: white;
+        min-width: 540px;
+      }
+    }
   }
 }
