@@ -7,33 +7,33 @@ class MessageIndex extends React.Component {
       message: {
         body: "",
         messageableId: this.props.channelId,
-        messageableType: "Channnel",
+        messageableType: "Channel",
         authorId: this.props.currentUserId,
       },
-      messages: []
+      messages: Object.values(this.props.messages)
     };
     this.bottom = React.createRef();
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   componentDidMount() {
+    this.props.fetchChannelMessages(this.props.channelId);
     App.cable.subscriptions.create(
       { channel: "ChatChannel" },
       { received: data => {
-        this.props.fetchChannelMessages(this.props.channelId);
         this.setState({
           messages: this.state.messages.concat(data.message)
         });},
-        speak: function(data) {
-          return this.perform("speak", data);
-        }
+        speak: function(data) { return this.perform("speak", data) }
       }
     );
+    // this.bottom.current.scrollIntoView();
   }
 
   componentDidUpdate(prevProp) {
     if (prevProp.channelId !== this.props.channelId) {
-      this.props.fetchChannelMessages(this.props.channelId);
+      this.props.fetchChannelMessages(this.props.channelId)
+        // .then(this.setState({}))
     }
     if (this.bottom.current) {
       this.bottom.current.scrollIntoView();
@@ -51,11 +51,11 @@ class MessageIndex extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    App.cable.subscriptions.subscriptions[0].speak({ message: this.state.message });
+    App.cable.subscriptions.subscriptions[1].speak({ message: this.state.message });
     this.setState({ message: {
       ...this.state.message,
       body: "" 
-      }});
+    }});
   }
 
   displayUsernameAndBody(message, i) {
@@ -85,11 +85,13 @@ class MessageIndex extends React.Component {
         </div>
 
         <div className="messages-display-input-wrapper">
-          {Object.values(messages).map((message, i) => (
-            this.displayUsernameAndBody(message, i)
-          )
-          )}
-
+          <div className="messages-display">
+            {Object.values(messages).map((message, i) => (
+              this.displayUsernameAndBody(message, i)
+            )
+            )}
+          <div ref={this.bottom}/>
+          </div>
           <div className="message-form-wrapper">
             <form className="message-form" onSubmit={this.handleSubmit}>
               <input 
