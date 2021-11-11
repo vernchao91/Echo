@@ -139,6 +139,7 @@ class ChannelIndex extends React.Component {
   render() {
     const { users, channels, server } = this.props
     let modal = <Modal errors={this.props.errors} name={this.props.modal} serverId={this.props.serverId}/>
+    if (!users || !channels || !server) return null
     return (
       <div className="channels-servername-messages-users-wrapper">
 

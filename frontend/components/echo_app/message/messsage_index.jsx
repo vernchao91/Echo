@@ -17,9 +17,11 @@ class MessageIndex extends React.Component {
   }
 
   componentDidMount() {
+    this.props.fetchChannelMessages(this.props.channelId);
     App.cable.subscriptions.create(
       { channel: "ChatChannel" },
       { received: data => {
+        console.log("cdm");
         this.props.fetchChannelMessages(this.props.channelId);
         this.setState({
           messages: Object.values(this.props.messages).concat(data)
@@ -35,32 +37,38 @@ class MessageIndex extends React.Component {
 
   componentDidUpdate(prevProp) {
     if (prevProp.channelId !== this.props.channelId) {
+      console.log("cdu");
       this.props.fetchChannelMessages(this.props.channelId)
-        this.setState({
-          messages: Object.values(this.props.messages)
-        })
+        // this.setState({
+        //   messages: Object.values(this.props.messages)
+        // })
     }
     if (this.bottom.current) {
       this.bottom.current.scrollIntoView();
     }
   }
+  componentWillUnmount() {
+    console.log("cwu");
+  }
 
   update(field) {
-    return (e) => this.setState({ 
+    return (e) => this.setState({
         message : {
         ...this.state.message,
         [field]: e.currentTarget.value 
         } 
     });
   }
-  
+
   handleSubmit(e) {
     e.preventDefault();
     const newMessage = Object.assign({}, this.state.message)
     newMessage.messageableId= this.props.channelId
     App.cable.subscriptions.subscriptions[1].speak({ message: newMessage })
-    this.props.fetchChannelMessages(this.props.channelId)
-      .then(
+    
+    console.log("hs")
+    // this.props.fetchChannelMessages(this.props.channelId)
+    //   .then(
         this.setState({
           message: {
             ...this.state.message,
@@ -68,7 +76,7 @@ class MessageIndex extends React.Component {
           },
           messages: Object.values(this.props.messages)
         })
-      )
+    //   )
   }
 
   displayUsernameAndBody(message, i) {

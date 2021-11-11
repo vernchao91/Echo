@@ -3,11 +3,15 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 20px;
-  width: 77%;
-  // height: 775px;
+  min-width: 384px;
+  width: 60%;
+  min-height: 480px;
+  // height: calc(100% - 30px);
   .messages-header{
     border-bottom: 1px solid white;
+    min-height: 30px;
     h1 {
+      min-height: 30px;
       font-size: 25px;
       color: rgb(204, 204, 204);
     }
@@ -17,18 +21,27 @@
     display: none;
   }
   .messages-display-input-wrapper {
-    // display: flex;
-    // justify-content: space-between;
-    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     width: 100%;
-    align-self: flex-start;
+    min-height: 553px;
+    height: 95%;
+
     .messages-display {
-      height: 745px;
-      min-height: auto;
-      width: 100%;
-      overflow-y: scroll;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      overflow-y: auto;
       scrollbar-width: none;  /* Firefox */
       -ms-overflow-style: none;  /* IE and Edge */
+      // max-width: 1200px;
+      min-width: 384px;
+      width: 100%;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      min-height: 493px;
+      max-height: 100%;
     }
     .message {
       padding-top: 15px;
@@ -44,14 +57,19 @@
       display: flex;
       align-items: center;
       margin-top: 10px;
-      height: 40px;
+      min-height: 40px;
       background-color: rgb(117, 117, 117);
       border-radius: 5px;
-      min-width: 100%;
-      .message-input {
-        padding-left: 10px;
-        color: white;
-        min-width: 540px;
+      height: 50px;
+      width: 100%;
+      min-height: 50px;
+      .message-form {
+        width: 100%;
+        .message-input {
+          padding-left: 10px;
+          color: white;
+          width: 96%;
+        }
       }
     }
   }
