@@ -123,11 +123,14 @@ class MessageIndex extends React.Component {
 
         <div className="messages-display-input-wrapper">
           <div className="messages-display">
+            <div className="messages-pushed-to-bottom"/>
             {Object.values(this.props.messages).map((message, i) => (
               this.displayUsernameAndBody(message, i)
             )
             )}
+
           <div ref={this.bottom}/>
+
           </div>
           <div className="message-form-wrapper">
             <form className="message-form" onSubmit={this.handleSubmit}>
