@@ -10,6 +10,7 @@ class MessageIndex extends React.Component {
         messageableType: "Channel",
         authorId: this.props.currentUserId,
       },
+      channelId: this.props.channelId,
       messages: Object.values(this.props.messages)
     };
     this.bottom = React.createRef();
@@ -17,11 +18,18 @@ class MessageIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchChannelMessages(this.props.channelId);
+    console.log("cdm1");
+    console.log(this.state.channelId);
+    this.props.fetchChannelMessages(this.props.channelId)
+      .then(this.setState({channelId: this.props.channelId}))
+    this.setState({channelId: this.props.channelId})
     App.cable.subscriptions.create(
       { channel: "ChatChannel" },
       { received: data => {
-        console.log("cdm");
+        console.log("cdm2state");
+        console.log(this.state.channelId);
+        console.log("cdm2props");
+        console.log(this.props.channelId);
         this.props.fetchChannelMessages(this.props.channelId);
         this.setState({
           messages: Object.values(this.props.messages).concat(data)
@@ -35,20 +43,30 @@ class MessageIndex extends React.Component {
     }
   }
 
-  componentDidUpdate(prevProp) {
+  componentDidUpdate(prevProp, prevState) {
     if (prevProp.channelId !== this.props.channelId) {
       console.log("cdu");
+      console.log(prevProp.channelId);
+      console.log("-1");
+      console.log(this.state.channelId);
+      console.log("-2");
+      console.log(this.props.channelId);
       this.props.fetchChannelMessages(this.props.channelId)
-        // this.setState({
-        //   messages: Object.values(this.props.messages)
-        // })
+      this.setState({ channelId: this.props.channelId })
+      console.log(this.state.channelId);
+    }
+    if (prevState.channelId !== this.state.channelId) {
+      this.setState({ channelId: this.props.channelId })
+      console.log("-3");
+      console.log(this.state.channelId);
     }
     if (this.bottom.current) {
       this.bottom.current.scrollIntoView();
     }
   }
   componentWillUnmount() {
-    console.log("cwu");
+    console.log("unmount");
+    App.cable.subscriptions.subscriptions[0].unsubscribe()
   }
 
   update(field) {
@@ -63,19 +81,18 @@ class MessageIndex extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const newMessage = Object.assign({}, this.state.message)
-    newMessage.messageableId= this.props.channelId
-    App.cable.subscriptions.subscriptions[1].speak({ message: newMessage })
-    
+    newMessage.messageableId= this.state.channelId
+    App.cable.subscriptions.subscriptions[0].speak({ message: newMessage })
     console.log("hs")
-    // this.props.fetchChannelMessages(this.props.channelId)
-    //   .then(
-        this.setState({
-          message: {
-            ...this.state.message,
-            body: ""
-          },
-          messages: Object.values(this.props.messages)
-        })
+    console.log(this.state.channelId);
+      this.setState({
+        message: {
+          ...this.state.message,
+          body: ""
+        },
+        messages: Object.values(this.props.messages),
+        channelId: this.props.channelId
+      })
     //   )
   }
 

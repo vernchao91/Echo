@@ -4,7 +4,7 @@
   justify-content: space-between;
   padding: 20px;
   min-width: 384px;
-  width: 60%;
+  width: 100%;
   min-height: 480px;
   // height: calc(100% - 30px);
   .messages-header{
@@ -17,29 +17,28 @@
     }
   }
   /* Hide scrollbar for Chrome, Safari and Opera */
-  .messages-display::-webkit-scrollbar {
-    display: none;
-  }
+  // .messages-display::-webkit-scrollbar {
+    // display: none;
+  // }
   .messages-display-input-wrapper {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: flex-start;
     width: 100%;
     min-height: 553px;
     height: 95%;
 
     .messages-display {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      overflow-y: auto;
-      scrollbar-width: none;  /* Firefox */
-      -ms-overflow-style: none;  /* IE and Edge */
-      // max-width: 1200px;
-      min-width: 384px;
-      width: 100%;
+      // display: flex;
+      // flex-direction: column;
+      // justify-content: flex-end;
+      overflow-y: scroll;
+      // scrollbar-width: none;  /* Firefox */
+      // -ms-overflow-style: none;  /* IE and Edge */
       word-wrap: break-word;
       overflow-wrap: break-word;
+      min-width: 384px;
+      width: 100%;
       min-height: 493px;
       max-height: 100%;
     }
