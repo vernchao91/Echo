@@ -14,26 +14,35 @@ class MessageIndex extends React.Component {
       messages: Object.values(this.props.messages)
     };
     this.bottom = React.createRef();
-    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.subscription = null
   }
 
   componentDidMount() {
     console.log("cdm1");
     console.log(this.state.channelId);
     this.props.fetchChannelMessages(this.props.channelId)
-      .then(this.setState({channelId: this.props.channelId}))
-    this.setState({channelId: this.props.channelId})
+      .then(() => this.setState({
+        channelId: this.props.channelId,
+        messages: Object.values(this.props.messages)
+      }))
+    // this.setState({channelId: this.props.channelId})
     App.cable.subscriptions.create(
-      { channel: "ChatChannel" },
+      { channel: "ChatChannel", id: this.props.channelId},
       { received: data => {
         console.log("cdm2state");
         console.log(this.state.channelId);
         console.log("cdm2props");
         console.log(this.props.channelId);
-        this.props.fetchChannelMessages(this.props.channelId);
-        this.setState({
-          messages: Object.values(this.props.messages).concat(data)
-        });
+        console.log("data")
+        console.log(data);
+        console.log("State");
+        console.log(this.state);
+        this.props.fetchChannelMessages(this.props.channelId)
+          .then((state) => this.setState({
+            messages: Object.values(state.messages).concat(data.message)
+          })
+        )
       },
         speak: function(data) { return this.perform("speak", data) }
       }
@@ -47,12 +56,21 @@ class MessageIndex extends React.Component {
     if (prevProp.channelId !== this.props.channelId) {
       console.log("cdu");
       console.log(prevProp.channelId);
-      console.log("-1");
+      console.log("^prevPropCID");
       console.log(this.state.channelId);
-      console.log("-2");
+      console.log("^statePropCID");
       console.log(this.props.channelId);
+      console.log("^propCID");
       this.props.fetchChannelMessages(this.props.channelId)
-      this.setState({ channelId: this.props.channelId })
+      .then(() => this.setState({
+          message: {
+            ...this.state.message,
+            body: ""
+          },
+          channelId: this.props.channelId,
+          messages: Object.values(this.props.messages)
+        })
+      )
       console.log(this.state.channelId);
     }
     if (prevState.channelId !== this.state.channelId) {
@@ -83,21 +101,18 @@ class MessageIndex extends React.Component {
     const newMessage = Object.assign({}, this.state.message)
     newMessage.messageableId= this.state.channelId
     App.cable.subscriptions.subscriptions[0].speak({ message: newMessage })
-    console.log("hs")
-    console.log(this.state.channelId);
-      this.setState({
-        message: {
-          ...this.state.message,
-          body: ""
-        },
-        messages: Object.values(this.props.messages),
-        channelId: this.props.channelId
-      })
-    //   )
+    this.setState(state => ({
+      message: {
+        ...this.state.message,
+        body: ""
+      },
+      messages: this.state.messages.concat(newMessage),
+      channelId: this.props.channelId
+    }))
   }
 
   displayUsernameAndBody(message, i) {
-    if (!this.props.channel || !this.props.users || !this.props.users) return null
+    if (!this.props.channel || !this.props.users || !this.props.messages) return null
     const { users } = this.props
     const user = users[message.authorId]
     if (!user) return null
@@ -110,8 +125,9 @@ class MessageIndex extends React.Component {
   }
   
   render() {
-    if (!this.props.channel || !this.props.users || !this.props.users) return null
-    const { channel } = this.props
+    if (!this.props.channel || !this.props.users || !this.props.messages) return null;
+    const { channel } = this.props;
+    const { users } = this.props;
     return (
       <div className="messages-wrapper">
 
@@ -124,9 +140,18 @@ class MessageIndex extends React.Component {
         <div className="messages-display-input-wrapper">
           <div className="messages-display">
             <div className="messages-pushed-to-bottom"/>
-            {Object.values(this.props.messages).map((message, i) => (
-              this.displayUsernameAndBody(message, i)
-            )
+            {Object.values(this.state.messages).map((message, i) => {
+              // this.displayUsernameAndBody(message, i)
+              const { users } = this.props
+              const user = users[message.authorId]
+              if (!user) return null
+              return (
+                <div className="message" key={i}>
+                  <h1>{user.username}</h1>
+                  <ul>{message.body}</ul>
+                </div>
+                )
+            }
             )}
 
           <div ref={this.bottom}/>
