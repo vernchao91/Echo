@@ -17,6 +17,9 @@ class ChannelIndexItem extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentWillUnmount() {
+    console.log("cwu channel index item");
+  }
   update(field) {
     return (e) => {
       this.setState({ channel: {

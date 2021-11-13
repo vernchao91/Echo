@@ -25,6 +25,10 @@ class ChannelIndex extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentWillUnmount() {
+    console.log("cwu channel index");
+  }
+
   componentDidMount() {
     this.props.fetchUsersFromServer(this.props.serverId)
       .then((state) => this.setState({users: this.props.users}))
@@ -33,6 +37,7 @@ class ChannelIndex extends React.Component {
   }
   
   componentDidUpdate(prevProp) {
+    console.log("cdu channel index");
     if (prevProp.serverId !== this.props.serverId) {
       this.props.fetchUsersFromServer(this.props.serverId)
         .then((state) => this.setState({users: this.props.users, serverId: this.props.serverId}))
