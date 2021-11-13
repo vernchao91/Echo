@@ -5,6 +5,7 @@
   padding: 15px;
   width: 11.2%;
   min-width: 206.75px;
+  max-width: 238.87px;
 
   .channel-header-wrapper {
     display: flex;
@@ -35,7 +36,6 @@
     .cog {
       display: flex;
       align-items: flex-end;
-      // justify-content: flex-end;
     }
   }
 }

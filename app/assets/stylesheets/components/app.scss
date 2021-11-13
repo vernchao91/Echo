@@ -4,6 +4,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
+  max-width: 72px;
   width: 3.75%;
   min-width: 72px;
 
@@ -199,15 +200,16 @@
   border: 1px solid rgb(255, 255, 255);
   width: 96.25%;
   min-width: 865px;
+  max-height: 100vh;
   
   .server-header-wrapper {
     display: flex;
-    
-    height: 30px;
+    min-height: 18px;
+    height: 18px;
     border: 1px solid white;
     align-items: center;
     padding: 10px;
-
+    // z-index: 1;
     .server-owner-button-wrapper {
       .delete-button, .edit-button {
         color: white;
@@ -231,7 +233,7 @@
 
   .channel-messages-users-wrapper {
     display: flex;
-    height: 100vh;
+    height: calc(100% - 40px);
     flex-direction: row;
     justify-content: space-between;
     .users-wrapper {

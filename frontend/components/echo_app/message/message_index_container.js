@@ -2,7 +2,7 @@ import { connect } from "react-redux"
 import MessageIndex from "./messsage_index"
 import { 
   fetchChannelMessages,
-  fetchMessage,
+  fetchChannelMessage,
   createMessage,
   updateMessage,
   deleteMessage

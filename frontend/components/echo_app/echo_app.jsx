@@ -78,7 +78,7 @@ class EchoApp extends React.Component {
 
   render() {
     const { servers } = this.props;
-
+    if (!this.props.servers) return null
     return (
       <div className="echoapp-wrapper">
 
