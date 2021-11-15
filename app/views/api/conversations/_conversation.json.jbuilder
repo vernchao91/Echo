@@ -1,4 +1,4 @@
-json.extract! conversation, :id, :owner_id, :user_id
+json.extract! conversation, :id, :owner_id, :user_id, :pending
 
 # {
 #   id: "5", 
