@@ -40,7 +40,7 @@ class Api::MessagesController < ApplicationController
 
 
   def update
-
+    
   end
 
   def destroy
