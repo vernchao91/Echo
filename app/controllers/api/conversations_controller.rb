@@ -26,7 +26,7 @@ class Api::ConversationsController < ApplicationController
   end
 
   def update
-    @conversation = Conversation.find_by(id: params:[:id])
+    @conversation = Conversation.find_by(id: params[:id])
     if @conversation and @conversation.update(conversation_params)
       render :show
     elsif !@conversation
