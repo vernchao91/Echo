@@ -9,18 +9,23 @@ class ConversationIndex extends React.Component {
     return (
       <div className="conversation-page">
 
-        <div className="conversation-page-header"> 
-          Header
-        </div>
-
-        <div className="conversation-index-message-wrapper">
           <div className="conversation-index-wrapper">
-            List
+            <div className="conversation-index-header-wrapper">
+              List Header
+            </div>
+            <div className="conversation-list-wrapper">
+              List
+            </div>
           </div>
+
           <div className="conversation-message-wrapper">
-            Messages
+            <div className="conversation-message-header-wrapper">
+              Messages Header
+            </div>
+            <div className="conversation-message">
+              Messages
+            </div>
           </div>
-        </div>
 
       </div>
     )
