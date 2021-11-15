@@ -236,3 +236,11 @@ message29 = Message.create!(body: "Reply here if anyone is interested and reserv
 #message78 = Message.create!(body: "", author_id: , messageable_id: , messageable_type: "")
 #message79 = Message.create!(body: "", author_id: , messageable_id: , messageable_type: "")
 #message80 = Message.create!(body: "", author_id: , messageable_id: , messageable_type: "")
+
+# conversation = Conversation.create!(owner_id: , user_id: )
+conversation1 = Conversation.create!(owner_id: 2, user_id: 3)
+conversation2 = Conversation.create!(owner_id: 4, user_id: 2)
+conversation3 = Conversation.create!(owner_id: 5, user_id: 4)
+conversation4 = Conversation.create!(owner_id: 5, user_id: 6)
+conversation5 = Conversation.create!(owner_id: 6, user_id: 7)
+conversation6 = Conversation.create!(owner_id: 7, user_id: 5)

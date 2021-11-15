@@ -29,6 +29,17 @@ class User < ApplicationRecord
     through: :lists,
     source: :server
 
+  has_many :started_conversations,
+    foreign_key: :owner_id,
+    dependent: :destroy,
+    class_name: :Conversation
+
+  has_many :received_conversations,
+    foreign_key: :user_id,
+    dependent: :destroy,
+    class_name: :Conversation
+
+
   attr_reader :password
   after_initialize :ensure_session_token
   

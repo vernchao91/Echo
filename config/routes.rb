@@ -8,6 +8,7 @@ Rails.application.routes.draw do
  
     resources :users, only: [ :show, :create, :destroy] do
       resources :servers, only: [ :index, :create, :update, :destroy ]
+      resources :conversations, only: [ :index, :show, :create, :destroy ]
     end
 
     resources :servers, only: [ :index, :show ] do
@@ -20,7 +21,7 @@ Rails.application.routes.draw do
       resources :messages, only: [ :create, :show, :index, :update, :destroy ]
     end
 
-    resources :conversations, only: [ :index, :show, :create, :destroy ] do
+    resources :conversations, only: [ :show ] do
       resources :messages, only: [ :create, :show, :index, :update, :destroy ]
     end
 
