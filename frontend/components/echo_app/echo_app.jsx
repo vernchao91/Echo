@@ -83,7 +83,7 @@ class EchoApp extends React.Component {
       <div className="echoapp-wrapper">
 
         <div className="home-link-wrapper"> 
-          <Link className="home-link" to="/">Home</Link>
+          <Link className="home-link" to="/app/conversations">DMs</Link>
         </div>
 
         <div className="server-wrapper">

@@ -109,7 +109,7 @@ class ChannelIndex extends React.Component {
     if (currentUserId === server.ownerId) {
       return (
         <div className="server-owner-button-wrapper">
-          <Link className="delete-button" to="/app/servers" onClick={() => deleteServer(serverId)}>Delete Server</Link>
+          <Link className="delete-button" to="/app" onClick={() => deleteServer(serverId)}>Delete Server</Link>
           <button className="edit-button" onClick={openEditModal}>Edit Server</button>
         </div>
       )
@@ -122,7 +122,7 @@ class ChannelIndex extends React.Component {
     } else if (users[currentUserId]) {
       return (
         <div className="join-leave-server-button-wrapper">
-          <Link className="leave-button" to="/app/servers" onClick={() => leaveServer(serverId)}>Leave Server</Link>
+          <Link className="leave-button" to="/app" onClick={() => leaveServer(serverId)}>Leave Server</Link>
         </div>
       )
     }
