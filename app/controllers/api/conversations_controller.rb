@@ -25,6 +25,17 @@ class Api::ConversationsController < ApplicationController
     end
   end
 
+  def update
+    @conversation = Conversation.find_by(id: params:[:id])
+    if @conversation and @conversation.update(conversation_params)
+      render :show
+    elsif !@conversation
+      render json: { error: "Conversation doesn't exist" }, status: 404
+    else
+      render json: @conversation.errors.full_messages, status: 422
+    end
+  end
+
   def destroy
     @conversation = Conversation.find_by(id: params[:id])
     if @conversation && @conversation.destroy
