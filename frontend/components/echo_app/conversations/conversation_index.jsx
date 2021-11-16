@@ -76,17 +76,14 @@ class ConversationIndex extends React.Component {
             </div>
           </div>
 
-          <div className="conversation-friendpage-wrapper">
-            
-          </div>
-          <div className="conversation-message-wrapper">
+          {/* <div className="conversation-message-wrapper">
             <div className="conversation-message-header-wrapper">
               Messages Header
             </div>
             <div className="conversation-message">
               Messages
             </div>
-          </div>
+          </div> */}
 
       </div>
     )

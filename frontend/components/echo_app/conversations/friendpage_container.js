@@ -1,9 +1,9 @@
 import { connect } from "react-redux";
 import FriendPage from "./friendpage";
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProp) => {
   return {
-
+    
   }
 }
 
