@@ -19,10 +19,26 @@ class PendingIndex extends React.Component {
 
   componentDidUpdate(prevProps, prevState) {
     console.log("cdu");
-    if (Object.values(prevProps.conversations).length !== Object.values(this.props.conversations).length) {
-      console.log("if");
-      this.setState({ conversations: this.props.conversations });
+    let hash = {};
+    if (Object.values(prevProps.conversations).length !== Object.values(this.props.conversations).length || this.checkFalse()) {
+      console.log(this.state.conversations);
+      const conversations = Object.values(this.props.conversations)
+      for (let i = 0; i < conversations.length; i++) {
+        if (conversations[i].pending) {
+          hash[i + 1] = conversations[i]
+        }
+      }
+      console.log(hash);
+      this.setState({ conversations: hash });
     }
+  }
+
+  checkFalse() { 
+    let falseConvo = false 
+    Object.values(this.props.conversations).forEach(convo => { 
+      if (!convo.pending) falseConvo = true
+    })
+    return falseConvo 
   }
 
   componentWillUnmount() {
@@ -34,12 +50,12 @@ class PendingIndex extends React.Component {
     let outgoingArr = []
 
     Object.values(this.state.conversations).map((conversation, i) => {
-      if(conversation.ownerId === this.props.currentUserId) {
+      if (conversation.ownerId === this.props.currentUserId) {
         if (conversation.pending) {
-          outgoingArr.push({displayId: conversation.userId, username: conversation.userUsername, id: conversation.id})
+          outgoingArr.push({displayId: conversation.userId, username: conversation.userUsername, id: conversation.id, pending: conversation.pending})
         }
       } else if(conversation.pending) {
-        incomingArr.push({displayId: conversation.ownerId, username: conversation.ownerUsername, id: conversation.id})
+        incomingArr.push({displayId: conversation.ownerId, username: conversation.ownerUsername, id: conversation.id, pending: conversation.pending})
       }
     })
     console.log("pending render");
@@ -54,7 +70,7 @@ class PendingIndex extends React.Component {
               {conversation.username}
             </Link>
             <div className="pending-friends-index-item-button-wrapper">
-              <IoCheckmarkCircleOutline onClick={() => this.props.updateConversation()}/>
+              <IoCheckmarkCircleOutline onClick={() => this.props.updateConversation(({id: conversation.id, pending: false}))}/>
               <IoCloseCircleOutline onClick={() => this.props.deleteConversation(conversation.id)}/>
             </div>
           </div>

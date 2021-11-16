@@ -10,7 +10,7 @@
 #  updated_at :datetime         not null
 #
 class Conversation < ApplicationRecord
-  validates :owner_id, :user_id, :pending, presence: true
+  validates :owner_id, :user_id, presence: true
   validates :owner_id, uniqueness: { scope: :user_id }
   
 
