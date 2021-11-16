@@ -1,7 +1,7 @@
 import React from "react";
 import { IoCheckmarkCircleOutline, IoCloseCircleOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
-
+import IncomingPendingIndexItemContainer from "./incoming_pending_index_item_container";
 
 class PendingIndex extends React.Component {
   constructor(props) {
@@ -41,15 +41,22 @@ class PendingIndex extends React.Component {
         <div className="pending-incoming-index-wrapper">
           <h1>Incoming Pending Invites - {incomingArr.length}</h1>
           {incomingArr.map((conversation, i) =>
-          <div className="pending-friends-index-item" key={i}>
-            <Link to={`/app/conversations/${conversation.id}/messages`}>
-              {conversation.username}
-            </Link>
-            <div className="pending-friends-index-item-button-wrapper">
-              <IoCheckmarkCircleOutline onClick={() => this.props.updateConversation()}/>
-              <IoCloseCircleOutline onClick={() => this.props.deleteConversation(conversation.id)}/>
-            </div>
-          </div>
+          <IncomingPendingIndexItemContainer
+            key={i}
+            currentUserId={this.props.currentUserId}
+            conversation={conversation}
+            updateConversation={this.props.updateConversation}
+            deleteConversation={this.props.deleteConversation}
+          />
+          // <div className="pending-friends-index-item" key={i}>
+          //   <Link to={`/app/conversations/${conversation.id}/messages`}>
+          //     {conversation.username}
+          //   </Link>
+          //   <div className="pending-friends-index-item-button-wrapper">
+          //     <IoCheckmarkCircleOutline onClick={() => this.props.updateConversation()}/>
+          //     <IoCloseCircleOutline onClick={() => this.props.deleteConversation(conversation.id)}/>
+          //   </div>
+          // </div>
           )}
         </div>
 
