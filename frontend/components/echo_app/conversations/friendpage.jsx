@@ -3,7 +3,7 @@ import React from "react";
 class FriendPage extends React.Component {
   constructor(props) {
     super(props)
-    
+
   }
 
   render() {
@@ -11,9 +11,11 @@ class FriendPage extends React.Component {
       <div className="friendpage-wrapper">
 
         <div className="friendpage-header-wrapper">
-          
+          Header
         </div>
-        Friend Page
+        <div className="">
+          Friend Page  
+        </div>
       </div>
     )
   }
