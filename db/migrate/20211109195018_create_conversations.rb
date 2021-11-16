@@ -3,6 +3,8 @@ class CreateConversations < ActiveRecord::Migration[5.2]
     create_table :conversations do |t|
       t.integer :owner_id, null: false
       t.integer :user_id, null: false
+      t.string :owner_username, null: false
+      t.string :user_username, null: false
       t.boolean :pending, default: true, null: false
       t.timestamps
     end

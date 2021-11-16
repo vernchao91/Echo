@@ -1,27 +1,83 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { IoPeopleOutline } from "react-icons/io5";
+import Modal from "react-modal";
 
 class ConversationIndex extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
+    this.state = {
+      conversations: this.props.conversations,
+      modal: false
+    }
+    this.handleOpenModal = this.handleOpenModal.bind(this)
+    this.handleCloseModal = this.handleCloseModal.bind(this)
   };
 
+  componentDidMount() {
+    console.log("cdm convesation");
+    this.props.fetchConversations(this.props.currentUserId)
+      .then(() => this.setState({conversations: this.props.conversations}))
+  }
+
+  handleOpenModal() {
+    this.setState({
+      modal: true,
+    })
+  }
+  handleCloseModal() {
+    this.setState({ modal: false });
+    this.props.removeConversationErorrs();
+  }
+
   render() {
+    let arr = []
+
+    Object.values(this.state.conversations).map((conversation, i) => {
+      if(conversation.ownerId === this.props.currentUserId) {
+        arr.push({id: conversation.userId, username: conversation.userUsername})
+      } else {
+        arr.push({id: conversation.ownerId, username: conversation.ownerUsername})
+      }
+      // return arr.map((conversation, i) => 
+      //   <div className="conversation-link-wrapper" key={i}>
+      //     <Link className="conversation-link" to={`/app/conversations/${conversation.id}/messages`}>
+      //       {conversation.username}
+      //     </Link>
+      //   </div>
+      // )
+    })
+
     return (
       <div className="conversation-page">
 
           <div className="conversation-index-wrapper">
             <div className="conversation-index-header-wrapper">
-              List Header
+              Search Bar Maybe
             </div>
+
             <div className="conversation-list-wrapper">
-              List
+              <Link className="conversation-friendpage-link" to="/app/conversations/friendpage">
+                <IoPeopleOutline/>
+                Friends
+              </Link>
+              <div className="conversation-dm-modal">
+                <p>Direct Messages</p>
+                <button onClick={this.handleOpenModal}>+</button>
+                <Modal isOpen={this.state.modal} className="overlay" ariaHideApp={false}></Modal>
+              </div>
+              <div className="conversation-link-wrapper">
+                {arr.map((conversation, i) =>
+                  <Link key={i} className="conversation-link" to={`/app/conversations/${conversation.id}/messages`}>
+                    <ul>{conversation.username}</ul>
+                  </Link>
+                )}
+              </div>
             </div>
           </div>
 
           <div className="conversation-friendpage-wrapper">
-            
           </div>
-
           <div className="conversation-message-wrapper">
             <div className="conversation-message-header-wrapper">
               Messages Header

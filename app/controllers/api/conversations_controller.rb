@@ -1,8 +1,8 @@
 class Api::ConversationsController < ApplicationController
   def index
-    user = User.find_by(id: params[:user_id])
+    # user = User.find_by(id: params[:user_id])
     # @conversations = (user.started_conversations + user.received_conversations)
-    @conversations = Conversation.where("owner_id = ? OR user_id = ?", user.id, user.id)
+    @conversations = Conversation.where("owner_id = ? OR user_id = ?", current_user.id, current_user.id)
     render :index
   end
 
@@ -18,6 +18,7 @@ class Api::ConversationsController < ApplicationController
   def create
     @conversation = Conversation.new(conversation_params)
     @conversation.owner_id = current_user.id
+    @conversation.owner_username = current_user.username
     if @conversation && @conversation.save
       render :show
     else
@@ -47,7 +48,7 @@ class Api::ConversationsController < ApplicationController
 
   private
   def conversation_params
-    params.require(:conversation).permit(:owner_id, :user_id, :pending)
+    params.require(:conversation).permit(:owner_id, :user_id, :pending, :owner_username, :user_username)
   end
 
 end

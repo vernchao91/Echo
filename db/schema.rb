@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 2021_11_09_195018) do
   create_table "conversations", force: :cascade do |t|
     t.integer "owner_id", null: false
     t.integer "user_id", null: false
+    t.string "owner_username", null: false
+    t.string "user_username", null: false
     t.boolean "pending", default: true, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -10,7 +10,7 @@
 #  updated_at :datetime         not null
 #
 class Conversation < ApplicationRecord
-  validates :owner_id, :user_id, presence: true
+  validates :owner_id, :user_id, :pending, presence: true
   validates :owner_id, uniqueness: { scope: :user_id }
   
 
@@ -23,6 +23,10 @@ class Conversation < ApplicationRecord
     primary_key: :id,
     foreign_key: :user_id,
     class_name: :User
+  
+  has_many :messages,
+    as: :messageable,
+    dependent: :destroy
 
   #has_many :lists,
   #  as: :listable,
