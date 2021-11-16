@@ -6,12 +6,14 @@ import {
   createConversation,
   updateConversation,
   deleteConversation,
+  removeConversationErrors
 } from "../../../actions/conversation_actions"
 
 const mapStateToProps = (state, ownProps) => {
   return {
     conversations: state.entities.conversations,
-    currentUserId: state.session.id
+    currentUserId: state.session.id,
+    conversationId: ownProps.match.params.convesationId
   }
 }
 
@@ -21,7 +23,8 @@ const mapDispatchToProps = dispatch => {
     fetchConversation: (conversationId) => dispatch(fetchConversation(conversationId)),
     createConversation: (conversation) => dispatch(createConversation(conversation)),
     updateConversation: (conversation) => dispatch(updateConversation(conversation)),
-    deleteConversation: (conversationId) => dispatch(deleteConversation(conversationId))
+    deleteConversation: (conversationId) => dispatch(deleteConversation(conversationId)),
+    removeConversationErrors: () => dispatch(removeConversationErrors())
   }
 }
 
