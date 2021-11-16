@@ -39,13 +39,6 @@ class ConversationIndex extends React.Component {
       } else {
         arr.push({id: conversation.ownerId, username: conversation.ownerUsername})
       }
-      // return arr.map((conversation, i) => 
-      //   <div className="conversation-link-wrapper" key={i}>
-      //     <Link className="conversation-link" to={`/app/conversations/${conversation.id}/messages`}>
-      //       {conversation.username}
-      //     </Link>
-      //   </div>
-      // )
     })
 
     return (
