@@ -9,24 +9,10 @@ class FriendPage extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      friends: {
-
-      },
-      pending: {
-
-      }
     }
   }
   componentDidMount() {
     
-  }
-
-  renderAllFriends() {
-
-  }
-
-  renderPendingConversations() {
-
   }
 
   render() {
