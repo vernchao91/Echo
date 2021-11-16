@@ -241,6 +241,6 @@ message29 = Message.create!(body: "Reply here if anyone is interested and reserv
 conversation1 = Conversation.create!(owner_id: 2, user_id: ashe.id, owner_username: demo.username, user_username: ashe.username)
 conversation2 = Conversation.create!(owner_id: alistar.id, user_id: 2, owner_username: alistar.username, user_username: demo.username)
 conversation3 = Conversation.create!(owner_id: 2, user_id: ryze.id, owner_username: demo.username, user_username: ryze.username)
-conversation4 = Conversation.create!(owner_id: 2, user_id: wraith.id, owner_username: demo.username, user_username: wraith.username)
+conversation4 = Conversation.create!(owner_id: wraith.id, user_id: 2, owner_username: wraith.username, user_username: demo.username)
 conversation5 = Conversation.create!(owner_id: 2, user_id: pathfinder.id, owner_username: demo.username, user_username: pathfinder.username)
 conversation6 = Conversation.create!(owner_id: jett.id, user_id: 2, owner_username: jett.username, user_username: demo.username)

@@ -20,11 +20,20 @@ class ConversationIndex extends React.Component {
       .then(() => this.setState({conversations: this.props.conversations}))
   }
 
+  componentDidUpdate(prevProps) {
+    if (prevProps.conversations !== this.props.conversations) {
+      console.log(prevProps);
+      console.log(this.props);
+      this.setState({conversations: this.props.conversations})
+    }
+  }
+
   handleOpenModal() {
     this.setState({
       modal: true,
     })
   }
+
   handleCloseModal() {
     this.setState({ modal: false });
     this.props.removeConversationErorrs();
@@ -34,9 +43,9 @@ class ConversationIndex extends React.Component {
     let arr = []
 
     Object.values(this.state.conversations).map((conversation, i) => {
-      if(conversation.ownerId === this.props.currentUserId) {
+      if(conversation.ownerId === this.props.currentUserId && !conversation.pending) {
         arr.push({displayId: conversation.userId, username: conversation.userUsername, id: conversation.id})
-      } else {
+      } else if (conversation.userId === this.props.currentUserId && !conversation.pending) {
         arr.push({displayId: conversation.ownerId, username: conversation.ownerUsername, id: conversation.id})
       }
     })
