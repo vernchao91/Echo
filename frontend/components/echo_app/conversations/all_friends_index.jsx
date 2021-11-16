@@ -17,7 +17,7 @@ class AllFriends extends React.Component {
   }
 
   render() {
-    console.log("allfriends render");
+    console.log("all friends render");
     return (
       <div>
         All Friends

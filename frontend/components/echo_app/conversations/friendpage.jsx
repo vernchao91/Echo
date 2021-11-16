@@ -35,7 +35,7 @@ class FriendPage extends React.Component {
 
         <div className="friendpage-header-wrapper">
           <IoPeopleOutline className="friend-icon"/>
-          <div className="friendpage-friends"><button className="friendlist-buttons">Friends</button></div>
+          <div className="friendpage-friends"><h1 className="friendlist-buttons">Friends</h1></div>
           <div className="friendpage-all">
             <Link to="/app/conversations/friendpage/all" className="friendlist-buttons">All</Link>
           </div>
@@ -43,10 +43,12 @@ class FriendPage extends React.Component {
             <Link to="/app/conversations/friendpage/pending" className="friendlist-buttons">Pending</Link>
           </div>
         </div>
+
         <div className="friendpage-index-wrapper">
           <Route path="/app/conversations/friendpage/all" component={AllFriendsIndexContainer}/>
           <Route path="/app/conversations/friendpage/pending" component={PendingIndexContainer}/>
         </div>
+
       </div>
     )
   }
