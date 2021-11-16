@@ -13,7 +13,7 @@ class FriendPage extends React.Component {
         <div className="friendpage-header-wrapper">
           Header
         </div>
-        <div className="">
+        <div className="friendpage-index-wrapper">
           Friend Page  
         </div>
       </div>

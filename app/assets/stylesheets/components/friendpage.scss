@@ -1,9 +1,17 @@
 .friendpage-wrapper {
   display: flex;
+  flex-direction: column;
   color: white;
   border: 1px solid white;
   width: 100%;
   .friendpage-header-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border: 1px solid white;
+    height: 18px;
+  }
+  .friendpage-index-wrapper {
     
   }
 }
