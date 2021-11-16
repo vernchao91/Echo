@@ -1,7 +1,6 @@
 import React from "react";
-import { IoCheckmarkCircleOutline, IoCloseCircleOutline } from "react-icons/io5";
-import { Link } from "react-router-dom";
-import IncomingPendingIndexItemContainer from "./incoming_pending_index_item_container";
+import IncomingPendingIndexItem from "./incoming_pending_index_item";
+import OutgoingPendingIndexItem from "./outgoing_pending_index_item"
 
 class PendingIndex extends React.Component {
   constructor(props) {
@@ -39,9 +38,9 @@ class PendingIndex extends React.Component {
       <div className="pending-index-wrapper">
 
         <div className="pending-incoming-index-wrapper">
-          <h1>Incoming Pending Invites - {incomingArr.length}</h1>
+          <h1>Incoming Pending Invites</h1>
           {incomingArr.map((conversation, i) =>
-          <IncomingPendingIndexItemContainer
+          <IncomingPendingIndexItem
             key={i}
             currentUserId={this.props.currentUserId}
             conversation={conversation}
@@ -61,17 +60,23 @@ class PendingIndex extends React.Component {
         </div>
 
         <div className="pending-outgoing-index-wrapper">
-          <h1>Outgoing Pending Invites - {outgoingArr.length}</h1>
+          <h1>Outgoing Pending Invites</h1>
           {outgoingArr.map((conversation, i) =>
-            <div className="pending-friends-index-item" key={i}>
-              <Link to={`/app/conversations/${conversation.id}/messages`}>
-                {conversation.username}
-              </Link>
-              <div className="all-friends-index-item-button-wrapper">
-                <IoCheckmarkCircleOutline onClick={() => this.props.updateConversation()}/>
-                <IoCloseCircleOutline onClick={() => this.props.deleteConversation(conversation.id)}/>
-              </div>
-            </div>
+            <OutgoingPendingIndexItem
+            key={i}
+            currentUserId={this.props.currentUserId}
+            conversation={conversation}
+            deleteConversation={this.props.deleteConversation}
+          />
+            // <div className="pending-friends-index-item" key={i}>
+            //   <Link to={`/app/conversations/${conversation.id}/messages`}>
+            //     {conversation.username}
+            //   </Link>
+            //   <div className="all-friends-index-item-button-wrapper">
+            //     <IoCheckmarkCircleOutline onClick={() => this.props.updateConversation()}/>
+            //     <IoCloseCircleOutline onClick={() => this.props.deleteConversation(conversation.id)}/>
+            //   </div>
+            // </div>
           )}
         </div>
 
