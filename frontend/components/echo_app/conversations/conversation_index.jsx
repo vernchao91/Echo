@@ -35,9 +35,9 @@ class ConversationIndex extends React.Component {
 
     Object.values(this.state.conversations).map((conversation, i) => {
       if(conversation.ownerId === this.props.currentUserId) {
-        arr.push({id: conversation.userId, username: conversation.userUsername})
+        arr.push({displayId: conversation.userId, username: conversation.userUsername, id: conversation.id})
       } else {
-        arr.push({id: conversation.ownerId, username: conversation.ownerUsername})
+        arr.push({displayId: conversation.ownerId, username: conversation.ownerUsername, id: conversation.id})
       }
     })
 

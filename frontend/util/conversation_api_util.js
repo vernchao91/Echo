@@ -20,7 +20,7 @@ export const createConversation = (conversation) => {
 }
 export const updateConversation = (conversation) => {
   return $.ajax({
-    url: `/api/users/${conversation.ownerId}/conversations/${conversation.id}`,
+    url: `/api/users/${conversation.userId}/conversations/${conversation.id}`,
     method: "PATCH",
     data: { conversation }
   })

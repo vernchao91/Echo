@@ -71,13 +71,13 @@ export const updateConversation = (conversation) => dispatch => {
   return ConversationApiUtil.updateConversation(conversation)
     .then(
       conversation => (dispatch(receiveConversation(conversation))),
-      err => (dispatch(receiveChannelErrors(err.responseJSON)))
+      err => (dispatch(receiveConversationErrors(err.responseJSON)))
     )
 }
 export const deleteConversation = (conversationId) => dispatch => {
   return ConversationApiUtil.deleteConversation(conversationId)
     .then(
       () => (dispatch(removeConversation(conversationId))),
-      err => (dispatch(receiveChannelErrors(err.responseJSON)))
+      err => (dispatch(receiveConversationErrors(err.responseJSON)))
     )
 }

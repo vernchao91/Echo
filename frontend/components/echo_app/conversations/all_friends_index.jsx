@@ -14,7 +14,6 @@ class AllFriends extends React.Component {
   componentDidMount() {
     this.props.fetchConversations(this.props.currentUserId)
       .then(() => this.setState({conversations: this.props.conversations}))
-    // this.setState({conversations: this.props.conversations})
     console.log(this.props.conversations);
     console.log("cdm all friends");
     console.log(this.props);
@@ -30,21 +29,22 @@ class AllFriends extends React.Component {
     Object.values(this.state.conversations).map((conversation, i) => {
       if(conversation.ownerId === this.props.currentUserId) {
         if (!conversation.pending) {
-          arr.push({id: conversation.userId, username: conversation.userUsername})
+          arr.push({displayId: conversation.userId, username: conversation.userUsername, id: conversation.id})
         }
       } else {
         if (!conversation.pending) {
-          arr.push({id: conversation.ownerId, username: conversation.ownerUsername})
+          arr.push({displayId: conversation.ownerId, username: conversation.ownerUsername, id: conversation.id})
         }
       }
     })
+    console.log(arr);
 
     console.log("all friends render");
     return (
       <div className="all-friends-index-wrapper">
         <div className="all-friends-index-header">
           <h1 className="all-friends-header">
-            ALL FRIENDS  -  {arr.length}
+            ALL FRIENDS - {arr.length}
           </h1>
         </div>
 
