@@ -29,9 +29,13 @@ class AllFriends extends React.Component {
 
     Object.values(this.state.conversations).map((conversation, i) => {
       if(conversation.ownerId === this.props.currentUserId) {
-        arr.push({id: conversation.userId, username: conversation.userUsername})
+        if (!conversation.pending) {
+          arr.push({id: conversation.userId, username: conversation.userUsername})
+        }
       } else {
-        arr.push({id: conversation.ownerId, username: conversation.ownerUsername})
+        if (!conversation.pending) {
+          arr.push({id: conversation.ownerId, username: conversation.ownerUsername})
+        }
       }
     })
 
@@ -40,7 +44,7 @@ class AllFriends extends React.Component {
       <div className="all-friends-index-wrapper">
         <div className="all-friends-index-header">
           <h1 className="all-friends-header">
-            ALL FRIENDS - {arr.length}
+            ALL FRIENDS  -  {arr.length}
           </h1>
         </div>
 
