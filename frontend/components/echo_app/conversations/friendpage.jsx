@@ -13,9 +13,9 @@ class FriendPage extends React.Component {
 
         <div className="friendpage-header-wrapper">
           <IoPeopleOutline className="friend-icon"/>
-          <ul>Friends</ul>
-          <ul>All</ul>
-          <ul>Pending</ul>
+          <div className="friendpage-friends"><ul>Friends</ul></div>
+          <div className="friendpage-all"><ul>All</ul></div>
+          <div className="friendpage-pending"><ul>Pending</ul></div>
         </div>
         <div className="friendpage-index-wrapper">
           Friend Page  

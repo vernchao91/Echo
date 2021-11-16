@@ -9,14 +9,29 @@
     // justify-content: center;
     align-items: center;
     padding: 10px;
+    padding-left: 15px;
     border: 1px solid white;
     height: 18px;
     .friend-icon {
-      padding-right: 10px;
+      margin-right: 10px;
       font-size: 20px;
     }
+    .friendpage-friends {
+      border-right: 1px solid white;
+    }
+    .friendpage-all {
+      margin-left: 20px;
+      ul:hover {
+        cursor: pointer;
+      }
+    }
+    .friendpage-pending {
+      ul:hover {
+        cursor: pointer;
+      }
+    }
     ul {
-      padding-right: 10px;
+      margin-right: 15px;
     }
   }
   .friendpage-index-wrapper {
