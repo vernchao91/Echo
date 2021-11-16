@@ -15,8 +15,6 @@ const Main = () => {
       <Route path="/app/conversations" component={ConversationIndexContainer}/>
       {/* <Route path="/app/conversations/:conversationsId/messages" component={ConversationMessageContainer}/> */}
       <Route path="/app/conversations/friendpage" component={FriendPageContainer} />
-      {/* <Route path="/app/conversations/friendpage/pending" component={FriendPageContainer} /> */}
-
     </div>
   )
 }

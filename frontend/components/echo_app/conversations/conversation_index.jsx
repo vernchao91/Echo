@@ -57,7 +57,7 @@ class ConversationIndex extends React.Component {
             </div>
 
             <div className="conversation-list-wrapper">
-              <Link className="conversation-friendpage-link" to="/app/conversations/friendpage">
+              <Link className="conversation-friendpage-link" to="/app/conversations/friendpage/all">
                 <IoPeopleOutline/>
                 Friends
               </Link>

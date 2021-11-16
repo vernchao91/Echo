@@ -6,31 +6,33 @@
   width: 100%;
   .friendpage-header-wrapper {
     display: flex;
-    // justify-content: center;
     align-items: center;
     padding: 10px;
     padding-left: 15px;
     border: 1px solid white;
     height: 18px;
     .friend-icon {
-      margin-right: 10px;
-      font-size: 20px;
+      margin-right: 5px;
+      font-size: 25px;
     }
     .friendpage-friends {
+      font-weight: 500;
       border-right: 1px solid white;
     }
     .friendpage-all {
       margin-left: 20px;
-      ul:hover {
+      // &:hover {
+      // }
+      button:hover {
         cursor: pointer;
       }
     }
     .friendpage-pending {
-      ul:hover {
+      button:hover {
         cursor: pointer;
       }
     }
-    ul {
+    .friendlist-buttons {
       margin-right: 15px;
     }
   }
