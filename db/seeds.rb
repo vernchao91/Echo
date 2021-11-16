@@ -243,4 +243,4 @@ conversation2 = Conversation.create!(owner_id: 4, user_id: 2, owner_username: al
 conversation3 = Conversation.create!(owner_id: 2, user_id: 4, owner_username: ryze.username, user_username: alistar.username)
 conversation4 = Conversation.create!(owner_id: 2, user_id: 6, owner_username: ryze.username, user_username: wraith.username)
 conversation5 = Conversation.create!(owner_id: 2, user_id: 7, owner_username: wraith.username, user_username: pathfinder.username)
-conversation6 = Conversation.create!(owner_id: 3, user_id: 2, owner_username: pathfinder.username, user_username: ryze.username)
+conversation6 = Conversation.create!(owner_id: 5, user_id: 2, owner_username: pathfinder.username, user_username: ryze.username)
