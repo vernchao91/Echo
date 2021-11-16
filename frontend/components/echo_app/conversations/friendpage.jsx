@@ -12,7 +12,7 @@ class FriendPage extends React.Component {
       <div className="friendpage-wrapper">
 
         <div className="friendpage-header-wrapper">
-          <IoPeopleOutline/>
+          <IoPeopleOutline className="friend-icon"/>
           <ul>Friends</ul>
           <ul>All</ul>
           <ul>Pending</ul>

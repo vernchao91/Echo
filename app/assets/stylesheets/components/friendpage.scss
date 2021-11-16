@@ -6,15 +6,23 @@
   width: 100%;
   .friendpage-header-wrapper {
     display: flex;
+    // justify-content: center;
+    align-items: center;
     padding: 10px;
     border: 1px solid white;
     height: 18px;
-    width: 100%;
+    .friend-icon {
+      padding-right: 10px;
+      font-size: 20px;
+    }
+    ul {
+      padding-right: 10px;
+    }
   }
   .friendpage-index-wrapper {
     // display: flex;
     // border: 1px solid white;
-    // height: 100%;
-    // width: 100%;
+    height: 100%;
+    width: 100%;
   }
 }
