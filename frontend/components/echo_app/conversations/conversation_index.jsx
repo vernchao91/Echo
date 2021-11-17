@@ -22,8 +22,6 @@ class ConversationIndex extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps.conversations !== this.props.conversations) {
-      console.log(prevProps);
-      console.log(this.props);
       this.setState({conversations: this.props.conversations})
     }
   }
@@ -53,39 +51,30 @@ class ConversationIndex extends React.Component {
     return (
       <div className="conversation-page">
 
-          <div className="conversation-index-wrapper">
-            <div className="conversation-index-header-wrapper">
-              Search Bar Maybe
-            </div>
-
-            <div className="conversation-list-wrapper">
-              <Link className="conversation-friendpage-link" to="/app/conversations/friendpage/all">
-                <IoPeopleOutline/>
-                Friends
-              </Link>
-              <div className="conversation-dm-modal">
-                <p>Direct Messages</p>
-                <button onClick={this.handleOpenModal}>+</button>
-                <Modal isOpen={this.state.modal} className="overlay" ariaHideApp={false}></Modal>
-              </div>
-              <div className="conversation-link-wrapper">
-                {arr.map((conversation, i) =>
-                  <Link key={i} className="conversation-link" to={`/app/conversations/${conversation.id}/messages`}>
-                    <ul>{conversation.username}</ul>
-                  </Link>
-                )}
-              </div>
-            </div>
+        <div className="conversation-index-wrapper">
+          <div className="conversation-index-header-wrapper">
+            Search Bar Maybe
           </div>
 
-          {/* <div className="conversation-message-wrapper">
-            <div className="conversation-message-header-wrapper">
-              Messages Header
+          <div className="conversation-list-wrapper">
+            <Link className="conversation-friendpage-link" to="/app/conversations/friendpage/all">
+              <IoPeopleOutline/>
+              Friends
+            </Link>
+            <div className="conversation-dm-modal">
+              <p>Direct Messages</p>
+              <button onClick={this.handleOpenModal}>+</button>
+              <Modal isOpen={this.state.modal} className="overlay" ariaHideApp={false}></Modal>
             </div>
-            <div className="conversation-message">
-              Messages
+            <div className="conversation-link-wrapper">
+              {arr.map((conversation, i) =>
+                <Link key={i} className="conversation-link" to={`/app/conversations/${conversation.id}/messages`}>
+                  <ul>{conversation.username}</ul>
+                </Link>
+              )}
             </div>
-          </div> */}
+          </div>
+        </div>
 
       </div>
     )

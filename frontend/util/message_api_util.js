@@ -22,23 +22,43 @@ export const fetchConversationMessage = messageId => {
     method: "GET"
   })
 }
-export const createMessage = message => {
+export const createChannelMessage = message => {
   return $.ajax({
     url: `/api/channels/${message.messageableId}/messages`,
     method: "POST",
     data: { message }
   })
 }
-export const updateMessage = (message) => {
+export const updateChannelMessage = (message) => {
   return $.ajax({
     url: `/api/channels/${message.messageableId}/messages/${message.id}`,
     method: "PATCH",
     data: { message }
   })
 }
-export const deleteMessage = (messageId) => {
+export const deleteChannelMessage = (messageId) => {
   return $.ajax({
     url: `/api/channels/:channel_id/messages/${messageId}`,
+    method: "DELETE"
+  })
+}
+export const createConversationMessage = message => {
+  return $.ajax({
+    url: `/api/conversations/${message.messageableId}/messages`,
+    method: "POST",
+    data: { message }
+  })
+}
+export const updateConversationMessage = (message) => {
+  return $.ajax({
+    url: `/api/conversations/${message.messageableId}/messages/${message.id}`,
+    method: "PATCH",
+    data: { message }
+  })
+}
+export const deleteConversationMessage = (messageId) => {
+  return $.ajax({
+    url: `/api/conversations/:conversation_id/messages/${messageId}`,
     method: "DELETE"
   })
 }

@@ -13,7 +13,7 @@ const Main = () => {
       <Route path="/app" component={EchoAppContainer} />
       <Route path="/app/servers/:serverId/channels" component={ChannelIndexContainer}/>
       <Route path="/app/conversations" component={ConversationIndexContainer}/>
-      {/* <Route path="/app/conversations/:conversationsId/messages" component={ConversationMessageContainer}/> */}
+      <Route path="/app/conversations/:conversationsId/messages" component={ConversationMessageContainer}/>
       <Route path="/app/conversations/friendpage" component={FriendPageContainer} />
     </div>
   )

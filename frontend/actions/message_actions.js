@@ -74,22 +74,22 @@ export const fetchConversationMessage = (messageId) => dispatch => {
       err => (dispatch(receiveMessageErrors(err.responseJSON)))
     )
 }
-export const createMessage = (message) => dispatch => {
-  return MessageApiUtil.createMessage(message)
+export const createChannelMessage = (message) => dispatch => {
+  return MessageApiUtil.createChannelMessage(message)
     .then(
       message => (dispatch(receiveMessage(message))),
       err => (dispatch(receiveMessageErrors(err.responseJSON)))
     )
 }
-export const updateMessage = (message) => dispatch => {
-  return MessageApiUtil.updateMessage(message)
+export const updateChannelMessage = (message) => dispatch => {
+  return MessageApiUtil.updateChannelMessage(message)
     .then(
       message => (dispatch(receiveMessage(message))),
       err => (dispatch(receiveMessageErrors(err.responseJSON)))
     )
 }
-export const deleteMessage = (messageId) => dispatch => {
-  return MessageApiUtil.deleteMessage(messageId)
+export const deleteChannelMessage = (messageId) => dispatch => {
+  return MessageApiUtil.deleteChannelMessage(messageId)
     .then(
       () => (dispatch(removeMessage(messageId))),
       err => (dispatch(receiveMessageErrors(err.responseJSON)))

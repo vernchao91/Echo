@@ -11,6 +11,7 @@ class FriendPage extends React.Component {
     this.state = {
     }
   }
+  
   componentDidMount() {
     
   }
