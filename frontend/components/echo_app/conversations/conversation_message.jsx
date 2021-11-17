@@ -1,9 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom"
-import { IoPeopleOutline } from "react-icons/io5";
-import { Route } from "react-router-dom";
-import AllFriendsIndexContainer from "./all_friends_index_container";
-import PendingIndexContainer from "./pending_index_container";
+import { Link } from "react-router-dom";
 
 class ConversationMessage extends React.Component {
   constructor(props) {
@@ -18,6 +14,7 @@ class ConversationMessage extends React.Component {
       conversationId: this.props.conversationId,
       messages: Object.values(this.props.messages)
     };
+    console.log(this.props);
     this.bottom = React.createRef();
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -29,7 +26,7 @@ class ConversationMessage extends React.Component {
         messages: Object.values(this.props.messages)
       }))
     App.cable.subscriptions.create(
-      { channel: "ChatChannel", id: this.props.conversationId},
+      { channel: "DMChannel", id: this.props.conversationId},
       { received: data => {
         this.props.fetchConversationMessages(this.props.conversationId)
           .then((state) => this.setState({
@@ -87,13 +84,34 @@ class ConversationMessage extends React.Component {
   }
 
   render() {
+    // const { conversation, convesationId, conversations } = this.props;
+    // if (!conversation, !convesationId, !conversations) return null
+    const { currentUserId, conversation } = this.props
+    if (!currentUserId || !conversation) return null
     return (
       <div className="conversation-message-wrapper">
+
         <div className="conversation-message-header-wrapper">
-          Messages Header
+          {/* @{this.props.conversation.username} */}
         </div>
-        <div className="conversation-message">
-          Messages
+
+        <div className="conversation-message-display-wrapper">
+          <div className="conversation-messages-display">
+            {Object.values(this.state.messages).map((message, i) => {
+              let username
+              if (message.authorId !== currentUserId) {
+                username = conversation.ownerUsername
+              } else {
+                username = conversation.userUsername
+              }
+              return (
+                <div className="message" key={i}>
+                  <h1>{username}</h1>
+                  <ul>{message.body}</ul>
+                </div>
+              )
+            })}
+          </div>
         </div>
       </div>
     )

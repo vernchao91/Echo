@@ -10,18 +10,6 @@ export const fetchChannelMessage = messageId => {
     method: "GET"
   })
 }
-export const fetchConversationMessages = conversationId => {
-  return $.ajax({
-    url: `api/conversations/${conversationId}/messages`,
-    method: "GET"
-  })
-}
-export const fetchConversationMessage = messageId => {
-  return $.ajax({
-    url: `api/conversations/:conversation_id/messages/${messageId}`,
-    method: "GET"
-  })
-}
 export const createChannelMessage = message => {
   return $.ajax({
     url: `/api/channels/${message.messageableId}/messages`,
@@ -40,6 +28,18 @@ export const deleteChannelMessage = (messageId) => {
   return $.ajax({
     url: `/api/channels/:channel_id/messages/${messageId}`,
     method: "DELETE"
+  })
+}
+export const fetchConversationMessages = conversationId => {
+  return $.ajax({
+    url: `api/conversations/${conversationId}/messages`,
+    method: "GET"
+  })
+}
+export const fetchConversationMessage = messageId => {
+  return $.ajax({
+    url: `api/conversations/:conversation_id/messages/${messageId}`,
+    method: "GET"
   })
 }
 export const createConversationMessage = message => {

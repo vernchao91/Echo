@@ -44,8 +44,7 @@ export const removeErrors = () => {
   }
 }
 
-// thunk async actions
-
+// channel message functions
 export const fetchChannelMessages = (channelId) => dispatch => {
   return MessageApiUtil.fetchChannelMessages(channelId)
     .then(
@@ -55,20 +54,6 @@ export const fetchChannelMessages = (channelId) => dispatch => {
 }
 export const fetchChannelMessage = (messageId) => dispatch => {
   return MessageApiUtil.fetchChannelMessage(messageId)
-    .then(
-      message => (dispatch(receiveMessage(message))),
-      err => (dispatch(receiveMessageErrors(err.responseJSON)))
-    )
-}
-export const fetchConversationMessages = (conversationId) => dispatch => {
-  return MessageApiUtil.fetchConversationMessages(conversationId)
-    .then(
-      messages => (dispatch(receiveMessages(messages))),
-      err => (dispatch(receiveMessageErrors(err.responseJSON)))
-    )
-}
-export const fetchConversationMessage = (messageId) => dispatch => {
-  return MessageApiUtil.fetchConversationMessage(messageId)
     .then(
       message => (dispatch(receiveMessage(message))),
       err => (dispatch(receiveMessageErrors(err.responseJSON)))
@@ -92,6 +77,22 @@ export const deleteChannelMessage = (messageId) => dispatch => {
   return MessageApiUtil.deleteChannelMessage(messageId)
     .then(
       () => (dispatch(removeMessage(messageId))),
+      err => (dispatch(receiveMessageErrors(err.responseJSON)))
+    )
+}
+
+// conversaion message functions
+export const fetchConversationMessages = (conversationId) => dispatch => {
+  return MessageApiUtil.fetchConversationMessages(conversationId)
+    .then(
+      messages => (dispatch(receiveMessages(messages))),
+      err => (dispatch(receiveMessageErrors(err.responseJSON)))
+    )
+}
+export const fetchConversationMessage = (messageId) => dispatch => {
+  return MessageApiUtil.fetchConversationMessage(messageId)
+    .then(
+      message => (dispatch(receiveMessage(message))),
       err => (dispatch(receiveMessageErrors(err.responseJSON)))
     )
 }
