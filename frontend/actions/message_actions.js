@@ -95,3 +95,24 @@ export const deleteChannelMessage = (messageId) => dispatch => {
       err => (dispatch(receiveMessageErrors(err.responseJSON)))
     )
 }
+export const createConversationMessage = (message) => dispatch => {
+  return MessageApiUtil.createConversationMessage(message)
+    .then(
+      message => (dispatch(receiveMessage(message))),
+      err => (dispatch(receiveMessageErrors(err.responseJSON)))
+    )
+}
+export const updateConversationMessage = (message) => dispatch => {
+  return MessageApiUtil.updateConversationMessage(message)
+    .then(
+      message => (dispatch(receiveMessage(message))),
+      err => (dispatch(receiveMessageErrors(err.responseJSON)))
+    )
+}
+export const deleteConversationMessage = (messageId) => dispatch => {
+  return MessageApiUtil.deleteConversationMessage(messageId)
+    .then(
+      () => (dispatch(removeMessage(messageId))),
+      err => (dispatch(receiveMessageErrors(err.responseJSON)))
+    )
+}

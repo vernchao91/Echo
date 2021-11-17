@@ -15,7 +15,6 @@ class MessageIndex extends React.Component {
     };
     this.bottom = React.createRef();
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.subscription = null
   }
 
   componentDidMount() {

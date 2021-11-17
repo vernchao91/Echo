@@ -10,8 +10,8 @@ import {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    channelId: ownProps.match.params.channelId,
     channel: state.entities.channels[ownProps.match.params.channelId],
+    channelId: ownProps.match.params.channelId,
     messages: state.entities.messages,
     currentUserId: state.session.id,
     users: state.entities.users

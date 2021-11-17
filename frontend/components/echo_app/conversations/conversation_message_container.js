@@ -1,14 +1,24 @@
 import { connect } from "react-redux";
 import ConversationMessage from "./conversation_message";
 import { 
-
+  fetchConversationMessages,
+  fetchConversationMessage,
+  createConversationMessage,
+  updateConversationMessage,
+  deleteConversationMessage
+} from "../../../actions/message_actions";
+import { 
+  fetchConversations,
+  fetchConversation
 } from "../../../actions/conversation_actions"
 
 const mapStateToProps = (state, ownProps) => {
   return {
     conversations: state.entities.conversations,
+    conversationId: ownProps.match.params.convesationId,
+    messages: state.entities.messages,
     currentUserId: state.session.id,
-    conversationId: ownProps.match.params.convesationId
+    users: state.entities.users
   }
 }
 
@@ -16,10 +26,11 @@ const mapDispatchToProps = dispatch => {
   return {
     fetchConversations: () => dispatch(fetchConversations()),
     fetchConversation: (conversationId) => dispatch(fetchConversation(conversationId)),
-    createConversation: (conversation) => dispatch(createConversation(conversation)),
-    updateConversation: (conversation) => dispatch(updateConversation(conversation)),
-    deleteConversation: (conversationId) => dispatch(deleteConversation(conversationId)),
-    removeConversationErrors: () => dispatch(removeConversationErrors())
+    fetchConversationMessages: (conversationId) => dispatch(fetchConversationMessages(conversationId)),
+    fetchConversationMessage: (messageId) => dispatch(fetchConversationMessage(messageId)),
+    createConversationMessage: (message) => dispatch(createConversationMessage(message)),
+    updateConversationMessage: (message) => dispatch(updateConversationMessage(message)),
+    deleteConversationMessage: () => dispatch(deleteConversationMessage(message)),
   }
 }
 

@@ -1,12 +1,13 @@
 import { connect } from "react-redux";
 import ConversationIndex from "./conversation_index";
 import { 
-  fetchChannelMessages,
-  fetchChannelMessage,
-  createConversationMessage,
-  updateConversationMessage,
-  deleteConversationMessage
-} from "../../../actions/message_actions";
+  fetchConversations,
+  fetchConversation,
+  createConversation,
+  updateConversation,
+  deleteConversation,
+  removeConversationErrors
+} from "../../../actions/conversation_actions"
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -20,11 +21,10 @@ const mapDispatchToProps = dispatch => {
   return {
     fetchConversations: () => dispatch(fetchConversations()),
     fetchConversation: (conversationId) => dispatch(fetchConversation(conversationId)),
-    fetchConversationMessages: (channelId) => dispatch(fetchChannelMessages(channelId)),
-    fetchConversationMessage: (messageId) => dispatch(fetchChannelMessage(messageId)),
-    createConversationMessage: (message) => dispatch(createConversationMessage(message)),
-    updateConversationMessage: (message) => dispatch(updateConversationMessage(message)),
-    deleteConversationMessage: () => dispatch(deleteConversationMessage(message)),
+    createConversation: (conversation) => dispatch(createConversation(conversation)),
+    updateConversation: (conversation) => dispatch(updateConversation(conversation)),
+    deleteConversation: (conversationId) => dispatch(deleteConversation(conversationId)),
+    removeConversationErrors: () => dispatch(removeConversationErrors())
   }
 }
 
