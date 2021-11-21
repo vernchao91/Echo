@@ -123,7 +123,7 @@ class ConversationMessage extends React.Component {
     const { currentUserId, conversation } = this.props
     if (!currentUserId || !conversation) return null
     return (
-      <div className="conversation-message-wrapper">
+      <div className="conversation-messages-wrapper">
 
         {this.renderUsername()}
 
@@ -145,6 +145,7 @@ class ConversationMessage extends React.Component {
               )
             })}
             <div ref={this.bottom}/>
+          </div>
 
             <div className="message-form-wrapper">
               <form className="message-form" onSubmit={this.handleSubmit}>
@@ -157,9 +158,8 @@ class ConversationMessage extends React.Component {
                 />
               </form>
             </div>
-          </div>
+            
         </div>
-
       </div>
     )
   }

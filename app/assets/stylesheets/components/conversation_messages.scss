@@ -1,10 +1,14 @@
-.conversation-message-wrapper {
+.conversation-messages-wrapper {
   display: flex;
   flex-direction: column;
-  color: white;
-  border: 1px solid white;
+  justify-content: space-between;
+  min-width: 384px;
   width: 100%;
+  min-height: 480px;
+  border-bottom: 1px solid white;
+
   .conversation-message-header-wrapper {
+    color: white;
     display: flex;
     align-items: center;
     padding: 10px;
@@ -12,9 +16,70 @@
     border: 1px solid white;
     height: 18px;
   }
-  .message-display-input-wrapper {
-    .messages-display {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  // .messages-display::-webkit-scrollbar {
+  //   display: none;
+  // }
+  .messages-display-input-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-left: 20px;
+    // margin-right: 100px;
+    margin-bottom: 20px;
+    width: calc(100% - 40px);
+    min-height: 553px;
+    height: 95%;
 
+    .messages-display {
+      display: flex;
+      flex-direction: column;
+      // justify-content will make parent div scrollbar disappear and inactive
+      overflow-y: auto;
+      scrollbar-width: thin;  /* Firefox */
+      scrollbar-color: rgb(82, 82, 82) rgb(255, 255, 255);
+      // -ms-overflow-style: none;  /* IE and Edge */
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      // margin: 20px;
+      min-width: 384px;
+      width: 100%;
+      min-height: 493px;
+      height: 100%;
+    }
+    // dummy div to push messages to the bottom of the page
+    .messages-pushed-to-bottom {
+      border: 1px solid red;
+      height: 100%;
+    }
+    .message {
+      padding-top: 15px;
+      h1 {
+        color: rgb(255, 255, 255);
+        padding-bottom: 5px;
+      }
+      ul {
+        color: rgb(255, 255, 255);
+      }
+    }
+    .message-form-wrapper {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+      min-height: 40px;
+      background-color: rgb(117, 117, 117);
+      border-radius: 5px;
+      height: 50px;
+      width: 100%;
+      min-height: 50px;
+      .message-form {
+        width: 100%;
+        .message-input {
+          padding-left: 10px;
+          color: white;
+          width: 96%;
+        }
+      }
     }
   }
 }

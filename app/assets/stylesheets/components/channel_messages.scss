@@ -17,9 +17,9 @@
     }
   }
   /* Hide scrollbar for Chrome, Safari and Opera */
-  .messages-display::-webkit-scrollbar {
-    display: none;
-  }
+  // .messages-display::-webkit-scrollbar {
+  //   display: none;
+  // }
   .messages-display-input-wrapper {
     display: flex;
     flex-direction: column;
@@ -32,7 +32,8 @@
       flex-direction: column;
       // justify-content will make parent div scrollbar disappear and inactive
       overflow-y: scroll;
-      // scrollbar-width: none;  /* Firefox */
+      scrollbar-width: thin;  /* Firefox */
+      scrollbar-color: rgb(82, 82, 82) rgb(255, 255, 255);
       // -ms-overflow-style: none;  /* IE and Edge */
       word-wrap: break-word;
       overflow-wrap: break-word;
