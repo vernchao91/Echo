@@ -150,8 +150,7 @@ class MessageIndex extends React.Component {
                   <ul>{message.body}</ul>
                 </div>
                 )
-            }
-            )}
+            })}
 
           <div ref={this.bottom}/>
 

@@ -13,7 +13,6 @@ import {
 } from "../../../actions/conversation_actions"
 
 const mapStateToProps = (state, ownProps) => {
-  console.log(ownProps);
   return {
     conversations: state.entities.conversations,
     conversationId: ownProps.match.params.conversationId,

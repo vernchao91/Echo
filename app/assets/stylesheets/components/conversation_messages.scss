@@ -1,0 +1,20 @@
+.conversation-message-wrapper {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  border: 1px solid white;
+  width: 100%;
+  .conversation-message-header-wrapper {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    padding-left: 15px;
+    border: 1px solid white;
+    height: 18px;
+  }
+  .conversation-message-display-wrapper {
+    .conversation-messages-display {
+
+    }
+  }
+}
