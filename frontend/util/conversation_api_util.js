@@ -13,7 +13,7 @@ export const fetchConversation = (conversationId) => {
 }
 export const createConversation = (conversation) => {
   return $.ajax({
-    url: `/api/users/${conversation.ownerId}/conversations`,
+    url: `/api/users/:user_id/conversations`,
     method: "POST",
     data: { conversation }
   })

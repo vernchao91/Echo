@@ -17,6 +17,8 @@ class Api::ConversationsController < ApplicationController
 
   def create
     @conversation = Conversation.new(conversation_params)
+    user = User.find_by(username: @conversation.user_username)
+    @conversation.user_id = user.id
     @conversation.owner_id = current_user.id
     @conversation.owner_username = current_user.username
     if @conversation && @conversation.save

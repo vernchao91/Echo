@@ -14,6 +14,7 @@ class User < ApplicationRecord
   validates :username, :email, presence: true, uniqueness: true
   validates :password_digest, presence: true
   validates :password, length: { minimum: 6 }, allow_nil: true
+  validates :username, length: { maximum: 20 }
 
   has_many :owned_servers,
     foreign_key: :owner_id,

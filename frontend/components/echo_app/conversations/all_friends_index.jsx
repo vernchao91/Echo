@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { IoEllipsisVerticalOutline, IoChatboxEllipsesOutline } from "react-icons/io5"
+import { IoCloseCircleOutline, IoChatboxOutline } from "react-icons/io5"
 
 class AllFriends extends React.Component {
   constructor(props) {
@@ -44,7 +44,7 @@ class AllFriends extends React.Component {
       <div className="all-friends-index-wrapper">
         <div className="all-friends-index-header">
           <h1 className="all-friends-header">
-            ALL FRIENDS - {arr.length}
+            All Friends   -   {arr.length}
           </h1>
         </div>
 
@@ -53,9 +53,9 @@ class AllFriends extends React.Component {
           <ul>{conversation.username}</ul>
           <div className="all-friends-index-item-button-wrapper">
             <Link to={`/app/conversations/${conversation.id}/messages`}>
-              <IoChatboxEllipsesOutline/>
+              <IoChatboxOutline/>
             </Link>
-            <IoEllipsisVerticalOutline/>
+            <IoCloseCircleOutline/>
           </div>
         </div>
         )}

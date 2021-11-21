@@ -8,10 +8,10 @@ class ConversationIndex extends React.Component {
     super(props);
     this.state = {
       conversations: this.props.conversations,
-      modal: false
+      // modal: false
     }
-    this.handleOpenModal = this.handleOpenModal.bind(this)
-    this.handleCloseModal = this.handleCloseModal.bind(this)
+    // this.handleOpenModal = this.handleOpenModal.bind(this)
+    // this.handleCloseModal = this.handleCloseModal.bind(this)
   };
 
   componentDidMount() {
@@ -26,16 +26,16 @@ class ConversationIndex extends React.Component {
     }
   }
 
-  handleOpenModal() {
-    this.setState({
-      modal: true,
-    })
-  }
+  // handleOpenModal() {
+  //   this.setState({
+  //     modal: true,
+  //   })
+  // }
 
-  handleCloseModal() {
-    this.setState({ modal: false });
-    this.props.removeConversationErorrs();
-  }
+  // handleCloseModal() {
+  //   this.setState({ modal: false });
+  //   this.props.removeConversationErorrs();
+  // }
 
   render() {
     let arr = []
@@ -63,8 +63,8 @@ class ConversationIndex extends React.Component {
             </Link>
             <div className="conversation-dm-modal">
               <p>Direct Messages</p>
-              <button onClick={this.handleOpenModal}>+</button>
-              <Modal isOpen={this.state.modal} className="overlay" ariaHideApp={false}></Modal>
+              {/* <button onClick={this.handleOpenModal}>+</button> */}
+              {/* <Modal isOpen={this.state.modal} className="overlay" ariaHideApp={false}></Modal> */}
             </div>
             <div className="conversation-link-wrapper">
               {arr.map((conversation, i) =>

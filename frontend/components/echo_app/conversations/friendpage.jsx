@@ -4,6 +4,7 @@ import { IoPeopleOutline } from "react-icons/io5";
 import { Route } from "react-router-dom";
 import AllFriendsIndexContainer from "./all_friends_index_container";
 import PendingIndexContainer from "./pending_index_container";
+import SearchUserContainer from "./search_user_container"
 
 class FriendPage extends React.Component {
   constructor(props) {
@@ -29,11 +30,15 @@ class FriendPage extends React.Component {
           <div className="friendpage-pending">
             <Link to="/app/conversations/friendpage/pending" className="friendlist-buttons">Pending</Link>
           </div>
+          <div>
+            <Link to="/app/conversations/friendpage/searchuser" className="friendlist-buttons">Add Friend</Link>
+          </div>
         </div>
 
         <div className="friendpage-index-wrapper">
           <Route path="/app/conversations/friendpage/all" component={AllFriendsIndexContainer}/>
           <Route path="/app/conversations/friendpage/pending" component={PendingIndexContainer}/>
+          <Route path="/app/conversations/friendpage/searchuser" component={SearchUserContainer}/>
         </div>
 
       </div>
