@@ -127,8 +127,8 @@ class ConversationMessage extends React.Component {
 
         {this.renderUsername()}
 
-        <div className="conversation-message-display-wrapper">
-          <div className="conversation-messages-display">
+        <div className="messages-display-input-wrapper">
+          <div className="messages-display">
             <div className="messages-pushed-to-bottom"/>
             {Object.values(this.state.messages).map((message, i) => {
               let username
