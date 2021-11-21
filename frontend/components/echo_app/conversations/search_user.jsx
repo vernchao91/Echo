@@ -5,21 +5,31 @@ class SearchUser extends React.Component {
     super(props);
     this.state = {
       user_username: "",
-      errors: this.props.errors
     }
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
+  componentWillUnmount() {
+
+  }
+
   handleSubmit(e) {
     e.preventDefault();
-    const user = Object.assign({}, this.state.user_username);
-    this.props.createConversation(user)
-      .then(this.setState({user_username: ""}))
+    const user = this.state.user_username;
+    this.props.createConversation({user_username: user})
   }
 
   update(field) {
     return (e) => {
       this.setState({ [field]: e.currentTarget.value })
+    }
+  }
+
+  renderCursor() {
+    if(!this.state.user_username.length) {
+      return {
+        cursor: "not-allowed"
+      }
     }
   }
 
@@ -32,7 +42,11 @@ class SearchUser extends React.Component {
           <p>You can add a friend by their Username. It's cAsE sEnSiTiVe!</p>
         </div>
 
-        <div className="search-user-input-form-wrapper">
+        <div className={
+          !this.state.user_username ?
+          "search-user-input-form-wrapper2" :
+          "invalid"
+        } className="search-user-input-form-wrapper">
           <form className="search-user-input-form" onSubmit={this.handleSubmit}>
             <input
               type="text"
@@ -41,9 +55,13 @@ class SearchUser extends React.Component {
               value={this.state.user_username}
               onChange={this.update("user_username")}
             />
-            <button className="send-friend-request-button">Send Friend Request</button>
+            <button disabled={!this.state.user_username} style={this.renderCursor()} className="send-friend-request-button">Send Friend Request</button>
           </form>
         </div>
+
+          {this.props.errors.conversations.map((error, i) => 
+            <ul className="search-user-error" key={i}>{error}</ul>
+          )}
 
       </div>
     )

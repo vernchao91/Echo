@@ -17,14 +17,18 @@ class Api::ConversationsController < ApplicationController
 
   def create
     @conversation = Conversation.new(conversation_params)
-    user = User.find_by(username: @conversation.user_username)
-    @conversation.user_id = user.id
     @conversation.owner_id = current_user.id
     @conversation.owner_username = current_user.username
-    if @conversation && @conversation.save
-      render :show
+    user = User.find_by(username: @conversation.user_username)
+    if user == nil
+      render json: [ "User not found" ], status: 422
     else
-      render json: @conversation.errors.full_messages, status: 422
+      @conversation.user_id = user.id
+      if @conversation && @conversation.save
+        render :show
+      else
+        render json: @conversation.errors.full_messages, status: 422
+      end
     end
   end
 

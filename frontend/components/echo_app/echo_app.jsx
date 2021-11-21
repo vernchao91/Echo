@@ -26,7 +26,7 @@ class EchoApp extends React.Component {
   }
   
   handleCloseModal() {
-    this.setState({modal: false})
+    this.setState({modal: false, name: ""})
     this.props.removeServerErrors();
   }
 

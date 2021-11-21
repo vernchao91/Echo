@@ -7,7 +7,7 @@ import {
 const mapStateToProps = state => {
   return {
     currentUserId: state.session.id,
-    errors: Object.values(state.errors)
+    errors: state.errors
   }
 }
 
