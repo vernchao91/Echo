@@ -30,7 +30,7 @@ class FriendPage extends React.Component {
           <div className="friendpage-pending">
             <Link to="/app/conversations/friendpage/pending" className="friendlist-buttons">Pending</Link>
           </div>
-          <div>
+          <div className="friendpage-add">
             <Link to="/app/conversations/friendpage/searchuser" className="friendlist-buttons">Add Friend</Link>
           </div>
         </div>
