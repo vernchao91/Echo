@@ -19,7 +19,6 @@ class EchoApp extends React.Component {
 
   componentDidMount() {
     this.props.fetchServers();
-    
   }
 
   handleOpenModal() {
