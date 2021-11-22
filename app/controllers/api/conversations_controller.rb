@@ -26,15 +26,15 @@ class Api::ConversationsController < ApplicationController
       @conversation2 = Conversation.find_by(user_id: current_user.id, owner_id: user.id)
       @conversation.user_id = user.id
       if (!@conversation2 || (@conversation.owner_id == @conversation2.user_id || @conversation2.user_id == @conversation.user_id)) && (@conversation2 && @conversation2.pending)
-        render json: [ "There is already a friend request pending Awaiting your reponse." ], status: 404
+        render json: [ "The user has already sent you a friend request. Awaiting your reponse." ], status: 404
       elsif (@conversation2 && !@conversation2.pending)
         render json: [ "You are already friends with this user." ], status: 404
       elsif (@conversation.owner_id == @conversation.user_id)
-        render json: [ "You cannot add yourself as a friend.  Sorry :( You can make friends in the Public Servers!" ], status: 404
+        render json: [ "You cannot add yourself as a friend. Sorry :( You can make friends in the Public Servers!" ], status: 404
       elsif @conversation && @conversation.save
         render :show
       else
-        render json: [ "You have already sent a friend request. Awaiting response from user." ], status: 404
+        render json: [ "You have already sent a friend request to this user. Awaiting response." ], status: 404
       end
     end
   end
