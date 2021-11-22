@@ -87,7 +87,10 @@ class ChannelIndexItem extends React.Component {
         <Modal isOpen={this.state.modal} className="overlay" ariaHideApp={false}>
           {this.editChannelForm()}
         </Modal>
-        <Link className="channel-button" to={`/app/servers/${channel.serverId}/channels/${channel.id}/messages`}>{channel.name}</Link>
+        <div className="channel-index-item">
+          <p>#</p>
+          <Link className="channel-button" to={`/app/servers/${channel.serverId}/channels/${channel.id}/messages`}>{channel.name}</Link>
+        </div>
         {this.renderEditChannelButton()}
       </div>
     )

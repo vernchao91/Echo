@@ -29,14 +29,20 @@
     flex-direction: row;
     justify-content: space-between;
     color: rgb(204, 204, 204);
-    padding-top: 15px;
-    padding-left: 10px;
-    .channel-button {
-      width: 50%
-    }
-    .cog {
+    margin-top: 15px;
+    margin-left: 10px;
+    .channel-index-item {
       display: flex;
-      align-items: flex-end;
+      p {
+        margin-right: 5px;
+      }
+      .channel-button {
+        width: 50%
+      }
+      .cog {
+        display: flex;
+        align-items: flex-end;
+      }
     }
   }
 }

@@ -15,30 +15,40 @@
     height: 18px;
     .friend-icon {
       margin-right: 5px;
+      margin-left: 10px;
       font-size: 25px;
     }
     .friendpage-friends {
-      font-weight: 500;
+      font-weight: 600;
+      font-size: 16px;
       border-right: 1px solid white;
     }
     .friendpage-all {
-      margin-left: 30px;
-      button:hover {
+      font-weight: 500;
+      color:rgb(173, 173, 173);
+      margin-left: 20px;
+      a:hover {
+        color: rgb(220, 220, 220);
         cursor: pointer;
       }
     }
     .friendpage-pending {
-      button:hover {
+      font-weight: 500;
+      color: rgb(173, 173, 173);
+      a:hover {
+        color: rgb(220, 220, 220);
         cursor: pointer;
       }
     }
     .friendpage-add {
+      font-weight: 500;
       a {
         color: rgb(9, 167, 9)
       }
     }
     .friendlist-buttons {
-      margin-right: 30px;
+      margin-right: 20px;
+      font-size: 15px;
     }
   }
 
