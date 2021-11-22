@@ -101,17 +101,19 @@
 
     .pending-index-wrapper {
       h1 {
+        font-weight: 600;
+        font-size: 15px;
         border-bottom: 1px solid rgb(173, 173, 173);
         padding-bottom: 15px;
         padding-top: 15px;
       }
+      
       .pending-incoming-index-wrapper {
-        h2 {
-          border-bottom: 1px solid rgb(173, 173, 173);
-          padding-bottom: 15px;
-          padding-top: 15px;
-        }
-
+        // h2 {
+        //   border-bottom: 1px solid rgb(173, 173, 173);
+        //   padding-bottom: 15px;
+        //   padding-top: 15px;
+        // }
         .pending-friends-index-item {
           display: flex;
           justify-content: space-between;
@@ -120,7 +122,18 @@
           padding-top: 15px;
           padding-bottom: 15px;
           border-bottom: 1px solid rgb(173, 173, 173);
-
+          .pending-friends-index-username {
+            i {
+              color:rgb(235, 235, 235);
+              font-weight: 600;
+              font-size: 15px;
+            }
+            p {
+              color: rgb(180, 180, 180);
+              padding-top: 3px;
+              font-size: 12px;
+            }
+          }
           .pending-friends-index-item-button-wrapper {
             display: flex;
             svg {
@@ -136,11 +149,11 @@
         }
       }
       .pending-outgoing-index-wrapper {
-        h2 {
-          border-bottom: 1px solid rgb(173, 173, 173);
-          padding-top: 15px;
-          padding-bottom: 15px;
-        }
+        // h2 {
+        //   border-bottom: 1px solid rgb(173, 173, 173);
+        //   padding-top: 15px;
+        //   padding-bottom: 15px;
+        // }
         .pending-friends-index-item {
           display: flex;
           justify-content: space-between;
@@ -149,6 +162,18 @@
           padding-top: 15px;
           padding-bottom: 15px;
           border-bottom: 1px solid rgb(173, 173, 173);
+          .pending-friends-index-username {
+            i {
+              color: rgb(235,235,235);
+              font-weight: 600;
+              font-size: 15px;
+            }
+            P {
+              color: rgb(172, 172, 172);
+              padding-top: 3px;
+              font-size: 12px;
+            }
+          }
           .pending-friends-index-item-button-wrapper {
             display: flex;
             svg {

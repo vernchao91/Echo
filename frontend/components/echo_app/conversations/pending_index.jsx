@@ -36,7 +36,7 @@ class PendingIndex extends React.Component {
     console.log("pending render");
     return (
       <div className="pending-index-wrapper">
-          <h1>Pending Invites</h1>
+        <h1>Pending Invites</h1>
 
         <div className="pending-incoming-index-wrapper">
           {/* <h2>Incoming Pending Invites</h2> */}

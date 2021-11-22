@@ -15,7 +15,7 @@ class IncomingPendingIndexItem extends React.Component {
     return (
       <div className="pending-friends-index-item">
         <div className="pending-friends-index-username">
-          {this.props.conversation.username}
+          <i>{this.props.conversation.username}</i>
           <p>Incoming Friend Request</p>
         </div>
         <div className="pending-friends-index-item-button-wrapper">
