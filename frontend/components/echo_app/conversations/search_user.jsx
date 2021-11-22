@@ -21,18 +21,17 @@ class SearchUser extends React.Component {
 
   update(field) {
     return (e) => {
+      this.props.removeConversationErrors();
       this.setState({ [field]: e.currentTarget.value })
     }
   }
 
   renderCursor() {
     if(!this.state.user_username.length) {
-      return {
-        cursor: "not-allowed"
-      }
+      return { cursor: "not-allowed", opacity: "0.5" }
     }
   }
-
+  
   render() {
     return (
       <div className="search-user-wrapper">
@@ -43,17 +42,17 @@ class SearchUser extends React.Component {
         </div>
 
         <div className={
-          !this.state.user_username ?
-          "search-user-input-form-wrapper2" :
-          "invalid"
-        } className="search-user-input-form-wrapper">
+          this.props.errors.conversations.length === 0 ?
+          "search-user-input-form-wrapper" :
+          "search-user-input-form-wrapper2"
+        }>
           <form className="search-user-input-form" onSubmit={this.handleSubmit}>
             <input
               type="text"
               className="search-user-input"
               placeholder="Enter a Username"
               value={this.state.user_username}
-              onChange={this.update("user_username")}
+              onChange={this.update('user_username')}
             />
             <button disabled={!this.state.user_username} style={this.renderCursor()} className="send-friend-request-button">Send Friend Request</button>
           </form>

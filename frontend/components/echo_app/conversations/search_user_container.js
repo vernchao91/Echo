@@ -1,7 +1,8 @@
 import { connect } from "react-redux";
 import SearchUser from "./search_user";
 import {
-  createConversation,
+  createConversation, 
+  removeConversationErrors,
 } from "../../../actions/conversation_actions"
 
 const mapStateToProps = state => {
@@ -13,7 +14,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    createConversation: conversation => dispatch(createConversation(conversation))
+    createConversation: conversation => dispatch(createConversation(conversation)),
+    removeConversationErrors: () => dispatch(removeConversationErrors())
   }
 }
 
