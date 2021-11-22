@@ -10,13 +10,15 @@ class SearchUser extends React.Component {
   }
 
   componentWillUnmount() {
-
+    this.props.removeConversationErrors();
+    this.setState({user_username: ""})
   }
 
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state.user_username;
     this.props.createConversation({user_username: user})
+      .then(() => this.setState({user_username: ""}))
   }
 
   update(field) {

@@ -40,7 +40,6 @@ class User < ApplicationRecord
     dependent: :destroy,
     class_name: :Conversation
 
-
   attr_reader :password
   after_initialize :ensure_session_token
   

@@ -20,11 +20,14 @@ class Api::ConversationsController < ApplicationController
     @conversation.owner_id = current_user.id
     @conversation.owner_username = current_user.username
     user = User.find_by(username: @conversation.user_username)
-    if user == nil
-      render json: [ "User not found, Double check that the capitalization, spelling, and numbers are correct." ], status: 422
+    if user.nil?
+      render json: [ "User not found, Double check that the capitalization, spelling, or numbers are correct." ], status: 422
     else
+      @conversation2 = Conversation.find_by(user_id: current_user.id, owner_id: user.id)
       @conversation.user_id = user.id
-      if @conversation && @conversation.save
+      if (!@conversation2 || @conversation2.user_id == @conversation.owner_id) || (@conversation.user_id == @conversation2.owner_id) 
+        render json: [ "You are already friends with this user or there is already a friend request pending." ], status: 404
+      elsif @conversation && @conversation.save
         render :show
       else
         render json: @conversation.errors.full_messages, status: 422
