@@ -31,7 +31,7 @@ class SearchUser extends React.Component {
       return { cursor: "not-allowed", opacity: "0.5" }
     }
   }
-  
+
   render() {
     return (
       <div className="search-user-wrapper">
