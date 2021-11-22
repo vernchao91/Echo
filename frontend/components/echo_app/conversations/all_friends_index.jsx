@@ -1,6 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { IoCloseCircleOutline, IoChatboxOutline } from "react-icons/io5";
 import AllFriendsIndexItem from "./all_friends_index_item";
 
 class AllFriends extends React.Component {
@@ -17,6 +15,7 @@ class AllFriends extends React.Component {
   }
 
   componentWillUnmount() {
+
   }
 
   render() {
@@ -48,15 +47,6 @@ class AllFriends extends React.Component {
           conversation={conversation}
           deleteConversation={this.props.deleteConversation}
         />
-        // <div className="all-friends-index-item" key={i}>
-        //   <ul>{conversation.username}</ul>
-        //   <div className="all-friends-index-item-button-wrapper">
-        //     <Link to={`/app/conversations/${conversation.id}/messages`}>
-        //       <IoChatboxOutline/>
-        //     </Link>
-        //     <IoCloseCircleOutline onClick={() => this.props.deleteConversation(conversation.id)}/>
-        //   </div>
-        // </div>
         )}
 
       </div>

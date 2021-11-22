@@ -11,15 +11,15 @@ class AllFriendsIndexItem extends React.Component {
   }
 
   render() {
-    if (this.state.conversation === null) return null
+    if (!this.state.conversation) return null
     return(
       <div className="all-friends-index-item">
           <ul>{this.state.conversation.username}</ul>
           <div className="all-friends-index-item-button-wrapper">
             <Link to={`/app/conversations/${this.state.conversation.id}/messages`}>
-              <IoChatboxOutline/>
+              <IoChatboxOutline className="chatbox-outline"/>
             </Link>
-            <IoCloseCircleOutline onClick={() => this.props.deleteConversation(this.state.conversation.id).then(this.setState({conversation: null}))}/>
+            <IoCloseCircleOutline className="closecircle-outline" onClick={() => this.props.deleteConversation(this.state.conversation.id).then(this.setState({conversation: null}))}/>
           </div>
         </div>
     )
