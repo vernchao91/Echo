@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { IoCloseCircleOutline, IoChatboxOutline } from "react-icons/io5"
+import { IoCloseCircleOutline, IoChatboxOutline } from "react-icons/io5";
+import AllFriendsIndexItem from "./all_friends_index_item";
 
 class AllFriends extends React.Component {
   constructor(props) {
@@ -8,19 +9,14 @@ class AllFriends extends React.Component {
     this.state = {
       conversations: this.props.conversations
     }
-    console.log("all friends constructor");
   }
 
   componentDidMount() {
     this.props.fetchConversations(this.props.currentUserId)
       .then(() => this.setState({conversations: this.props.conversations}))
-    console.log(this.props.conversations);
-    console.log("cdm all friends");
-    console.log(this.props);
   }
 
   componentWillUnmount() {
-    console.log("cwu all friends");
   }
 
   render() {
@@ -37,27 +33,30 @@ class AllFriends extends React.Component {
         }
       }
     })
-    console.log(arr);
 
-    console.log("all friends render");
     return (
       <div className="all-friends-index-wrapper">
         <div className="all-friends-index-header">
           <h1 className="all-friends-header">
-            All Friends   -   {arr.length}
+            All Friends
           </h1>
         </div>
 
         {arr.map((conversation, i) =>
-        <div className="all-friends-index-item" key={i}>
-          <ul>{conversation.username}</ul>
-          <div className="all-friends-index-item-button-wrapper">
-            <Link to={`/app/conversations/${conversation.id}/messages`}>
-              <IoChatboxOutline/>
-            </Link>
-            <IoCloseCircleOutline/>
-          </div>
-        </div>
+        <AllFriendsIndexItem 
+          key={i}
+          conversation={conversation}
+          deleteConversation={this.props.deleteConversation}
+        />
+        // <div className="all-friends-index-item" key={i}>
+        //   <ul>{conversation.username}</ul>
+        //   <div className="all-friends-index-item-button-wrapper">
+        //     <Link to={`/app/conversations/${conversation.id}/messages`}>
+        //       <IoChatboxOutline/>
+        //     </Link>
+        //     <IoCloseCircleOutline onClick={() => this.props.deleteConversation(conversation.id)}/>
+        //   </div>
+        // </div>
         )}
 
       </div>

@@ -21,7 +21,7 @@ class Api::ConversationsController < ApplicationController
     @conversation.owner_username = current_user.username
     user = User.find_by(username: @conversation.user_username)
     if user == nil
-      render json: [ "User not found, It's cAsE sEnSiTiVe!" ], status: 422
+      render json: [ "User not found, Double check that the capitalization, spelling, and numbers are correct." ], status: 422
     else
       @conversation.user_id = user.id
       if @conversation && @conversation.save
