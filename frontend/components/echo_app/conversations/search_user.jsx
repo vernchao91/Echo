@@ -5,6 +5,8 @@ class SearchUser extends React.Component {
     super(props);
     this.state = {
       user_username: "",
+      success: "",
+      border: ""
     }
     this.handleSubmit = this.handleSubmit.bind(this)
   }
@@ -18,13 +20,13 @@ class SearchUser extends React.Component {
     e.preventDefault();
     const user = this.state.user_username;
     this.props.createConversation({user_username: user})
-      .then(() => this.setState({user_username: ""}))
+      .then(() => this.setState({success: `Success! Your friend request to ${user} was sent.`, user_username: "", border: "1px solid rgb(82, 189, 40)"}))
   }
 
   update(field) {
     return (e) => {
       this.props.removeConversationErrors();
-      this.setState({ [field]: e.currentTarget.value })
+      this.setState({ [field]: e.currentTarget.value, success: "", border: "" })
     }
   }
 
@@ -48,7 +50,7 @@ class SearchUser extends React.Component {
           "search-user-input-form-wrapper" :
           "search-user-input-form-wrapper2"
         }>
-          <form className="search-user-input-form" onSubmit={this.handleSubmit}>
+          <form style={{border: this.state.border, height: "50px", borderRadius: "5px"}} className="search-user-input-form" onSubmit={this.handleSubmit}>
             <input
               type="text"
               className="search-user-input"
@@ -59,10 +61,10 @@ class SearchUser extends React.Component {
             <button disabled={!this.state.user_username} style={this.renderCursor()} className="send-friend-request-button">Send Friend Request</button>
           </form>
         </div>
-
           {this.props.errors.conversations.map((error, i) => 
             <ul className="search-user-error" key={i}>{error}</ul>
           )}
+            <p className="search-user-success">{this.state.success}</p>
 
       </div>
     )

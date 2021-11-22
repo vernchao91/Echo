@@ -23,6 +23,7 @@
     
     .search-user-input-form {
       display: flex;
+      align-items: center;
       justify-content: space-between;
       width: 100%;
       .search-user-input {
@@ -53,6 +54,7 @@
     border: 1px solid red;
     .search-user-input-form {
       display: flex;
+      align-items: center;
       justify-content: space-between;
       width: 100%;
       .search-user-input {
@@ -71,6 +73,12 @@
         height: 35px;
       }
     }
+  }
+  .search-user-success {
+    color: rgb(66, 148, 34);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 12px;
   }
   .search-user-error {
     color: red;
