@@ -36,9 +36,10 @@ class PendingIndex extends React.Component {
     console.log("pending render");
     return (
       <div className="pending-index-wrapper">
+          <h1>Pending Invites</h1>
 
         <div className="pending-incoming-index-wrapper">
-          <h1>Incoming Pending Invites</h1>
+          {/* <h2>Incoming Pending Invites</h2> */}
           {incomingArr.map((conversation, i) =>
           <IncomingPendingIndexItem
             key={i}
@@ -47,20 +48,11 @@ class PendingIndex extends React.Component {
             updateConversation={this.props.updateConversation}
             deleteConversation={this.props.deleteConversation}
           />
-          // <div className="pending-friends-index-item" key={i}>
-          //   <Link to={`/app/conversations/${conversation.id}/messages`}>
-          //     {conversation.username}
-          //   </Link>
-          //   <div className="pending-friends-index-item-button-wrapper">
-          //     <IoCheckmarkCircleOutline onClick={() => this.props.updateConversation()}/>
-          //     <IoCloseCircleOutline onClick={() => this.props.deleteConversation(conversation.id)}/>
-          //   </div>
-          // </div>
           )}
         </div>
 
         <div className="pending-outgoing-index-wrapper">
-          <h1>Outgoing Pending Invites</h1>
+          {/* <h2>Outgoing Pending Invites</h2> */}
           {outgoingArr.map((conversation, i) =>
             <OutgoingPendingIndexItem
             key={i}
@@ -68,15 +60,6 @@ class PendingIndex extends React.Component {
             conversation={conversation}
             deleteConversation={this.props.deleteConversation}
           />
-            // <div className="pending-friends-index-item" key={i}>
-            //   <Link to={`/app/conversations/${conversation.id}/messages`}>
-            //     {conversation.username}
-            //   </Link>
-            //   <div className="all-friends-index-item-button-wrapper">
-            //     <IoCheckmarkCircleOutline onClick={() => this.props.updateConversation()}/>
-            //     <IoCloseCircleOutline onClick={() => this.props.deleteConversation(conversation.id)}/>
-            //   </div>
-            // </div>
           )}
         </div>
 

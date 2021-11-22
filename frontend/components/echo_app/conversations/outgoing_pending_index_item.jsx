@@ -14,9 +14,10 @@ class OutgoingPendingIndexItem extends React.Component {
     if(this.state.conversation === null) return null
     return (
       <div className="pending-friends-index-item">
-        {/* <Link to={`/app/conversations/${this.props.conversation.id}/messages`}> */}
+        <div className="pending-friends-index-username">
           {this.props.conversation.username}
-        {/* </Link> */}
+          <p>Outgoing Friend Request</p>
+        </div>
         <div className="pending-friends-index-item-button-wrapper">
           <IoCloseCircleOutline onClick={() => this.props.deleteConversation(this.props.conversation.id).then(this.setState({conversation: null}))}/>
         </div>

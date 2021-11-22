@@ -100,8 +100,13 @@
     }
 
     .pending-index-wrapper {
+      h1 {
+        border-bottom: 1px solid rgb(173, 173, 173);
+        padding-bottom: 15px;
+        padding-top: 15px;
+      }
       .pending-incoming-index-wrapper {
-        h1 {
+        h2 {
           border-bottom: 1px solid rgb(173, 173, 173);
           padding-bottom: 15px;
           padding-top: 15px;
@@ -131,7 +136,7 @@
         }
       }
       .pending-outgoing-index-wrapper {
-        h1 {
+        h2 {
           border-bottom: 1px solid rgb(173, 173, 173);
           padding-top: 15px;
           padding-bottom: 15px;
