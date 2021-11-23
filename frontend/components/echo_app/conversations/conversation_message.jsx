@@ -96,14 +96,16 @@ class ConversationMessage extends React.Component {
     if (!currentUserId || !conversation) return null
     if(conversation.ownerId === currentUserId) {
       return (
-        <div className="conversation-message-header-wrapper">
-          <p>@</p><p>{conversation.userUsername}</p>
+        <div className="conversation-message-header-wrapper"> 
+          <ul className="conversation-messages-header-at">@</ul> 
+          <ul className="@username">{conversation.userUsername}</ul>
         </div>
       )
     } else {
       return (
-        <div className="conversation-message-header-wrapper">
-          @ {conversation.ownerUsername}
+        <div className="conversation-message-header-wrapper"> 
+          <ul className="conversation-message-header-at">@</ul> 
+          <ul className="conversation-message-header-username">{conversation.ownerUsername}</ul>
         </div>
       )
     }

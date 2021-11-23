@@ -34,10 +34,10 @@ class OutgoingPendingIndexItem extends React.Component {
           <p>Outgoing Friend Request</p>
         </div>
         <div className="pending-friends-index-item-button-wrapper">
-          <div className="outgoing-pending-tooltip" style={tooltipStyle}>
-            {/* <IoChatboxOutline className="tooltip-bubble"/> */}
+          {/* <div className="outgoing-pending-tooltip" style={tooltipStyle}>
+            <IoChatboxOutline className="tooltip-bubble"/>
             <p className="tooltip-bubble-text">Cancel</p>
-          </div>
+          </div> */}
           <IoCloseCircleOutline 
             className="close-circle" 
             onClick={() => this.props.deleteConversation(this.props.conversation.id).then(this.setState({conversation: null}))}

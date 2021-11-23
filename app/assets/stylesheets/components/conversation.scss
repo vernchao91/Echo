@@ -25,22 +25,57 @@
       flex-direction: column;
       padding: 15px;
       height: 100%;
-    }
-  }
-  .conversation-message-wrapper {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid white;
-    width: 100%;
-    min-height: 553px;
-    .conversation-message-header-wrapper {
-      padding: 10px;
-      border: 1px solid white;
-      height: 18px;
-    }
-    .conversation-message {
-      padding: 15px;
+      .conversation-friendpage-link {
+        display: flex;
+        align-items: center;
+        .conversation-friendpage-icon {
+          font-size: 25px;
+        }
+        .conversation-friendpage-text {
+          font-weight: 550;
+          font-size: 15px;
+          margin-left: 10px;
+        }
+      }
+      .conversation-dm-modal {
+        p {
+          font-size: 14px;
+          font-weight: 600;
+          margin-top: 10px;
+        }
+      }
+      .conversation-link-wrapper {
+        .conversation-link {
+          ul {
+            margin-top: 10px;
+            padding-left: 15px;
+            font-size: 14px;
+            font-weight: 600;
+          }
+        }
+      }
     }
   }
   
+}
+.conversation-messages-wrapper {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid white;
+  width: 100%;
+  min-height: 553px;
+  .conversation-message-header-wrapper {
+    padding: 10px;
+    border: 1px solid white;
+    height: 18px;
+    .conversation-message-header-at {
+      color: rgb(185, 185, 185);
+      margin-right: 5px;
+    }
+    .conversation-message-header-username {
+      font-size: 15px;
+      font-weight: 550;
+      color:rgb(235, 235, 235)
+    }
+  }
 }

@@ -58,8 +58,8 @@ class ConversationIndex extends React.Component {
 
           <div className="conversation-list-wrapper">
             <Link className="conversation-friendpage-link" to="/app/conversations/friendpage/all">
-              <IoPeopleOutline/>
-              Friends
+              <IoPeopleOutline className="conversation-friendpage-icon"/>
+              <p className="conversation-friendpage-text">Friends</p>
             </Link>
             <div className="conversation-dm-modal">
               <p>Direct Messages</p>
