@@ -154,12 +154,23 @@
           }
           .pending-friends-index-item-button-wrapper {
             display: flex;
-            svg {
+            .checkmark-circle {
               display: flex;
               align-items: center;
               font-size: 30px;
               margin-right: 10px;
               &:hover {
+                color: green;
+                cursor: pointer;
+              }
+            }
+            .close-circle {
+              display: flex;
+              align-items: center;
+              font-size: 30px;
+              margin-right: 10px;
+              &:hover {
+                color: red;
                 cursor: pointer;
               }
             }
@@ -167,11 +178,6 @@
         }
       }
       .pending-outgoing-index-wrapper {
-        // h2 {
-        //   border-bottom: 1px solid rgb(173, 173, 173);
-        //   padding-top: 15px;
-        //   padding-bottom: 15px;
-        // }
         .pending-friends-index-item {
           display: flex;
           justify-content: space-between;
@@ -194,12 +200,23 @@
           }
           .pending-friends-index-item-button-wrapper {
             display: flex;
-            svg {
+            .checkmark-circle {
               display: flex;
               align-items: center;
               font-size: 30px;
               margin-right: 10px;
               &:hover {
+                color: green;
+                cursor: pointer;
+              }
+            }
+            .close-circle {
+              display: flex;
+              align-items: center;
+              font-size: 30px;
+              margin-right: 10px;
+              &:hover {
+                color: red;
                 cursor: pointer;
               }
             }

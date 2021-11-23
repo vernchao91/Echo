@@ -6,12 +6,28 @@ class OutgoingPendingIndexItem extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      conversation: this.props.conversation
+      conversation: this.props.conversation,
+      hover: false
     }
+    this.handleMouseIn = this.handleMouseIn.bind(this);
+    this.handleMouseOut = this.handleMouseOut.bind(this);
+  }
+
+  handleMouseIn() {
+    this.setState({ hover: true })
+  }
+  
+  handleMouseOut() {
+    this.setState({ hover: false })
   }
 
   render() {
     if(this.state.conversation === null) return null
+
+    const tooltipStyle = {
+      display: this.state.hover ? 'block' : "none"
+    }
+
     return (
       <div className="pending-friends-index-item">
         <div className="pending-friends-index-username">
@@ -19,7 +35,15 @@ class OutgoingPendingIndexItem extends React.Component {
           <p>Outgoing Friend Request</p>
         </div>
         <div className="pending-friends-index-item-button-wrapper">
-          <IoCloseCircleOutline onClick={() => this.props.deleteConversation(this.props.conversation.id).then(this.setState({conversation: null}))}/>
+          <div className="incoming-pending-tooltip" style={tooltipStyle}>
+            <p>Cancel</p>
+          </div>
+          <IoCloseCircleOutline 
+            className="close-circle" 
+            onClick={() => this.props.deleteConversation(this.props.conversation.id).then(this.setState({conversation: null}))}
+            onMouseOver={this.handleMouseIn}
+            onMouseOut={this.handleMouseOut}
+          />
         </div>
       </div>
     )

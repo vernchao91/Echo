@@ -8,7 +8,7 @@ class ServerIndex extends React.Component {
       hover: false 
     }
     this.handleMouseIn = this.handleMouseIn.bind(this);
-    this.handleMouseOut = this.handleMouseOut.bind(this)
+    this.handleMouseOut = this.handleMouseOut.bind(this);
   }
 
   handleMouseIn() {
@@ -24,7 +24,7 @@ class ServerIndex extends React.Component {
     const tooltipStyle = {
       display: this.state.hover ? 'block' : "none"
     }
-
+    if (!server) return null
     return (
       <div className="server-index-wrapper">
         <div className="server-name-tooltip" style={tooltipStyle}>

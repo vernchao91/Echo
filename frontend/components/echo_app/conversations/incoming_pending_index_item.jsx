@@ -18,8 +18,8 @@ class IncomingPendingIndexItem extends React.Component {
           <p>Incoming Friend Request</p>
         </div>
         <div className="pending-friends-index-item-button-wrapper">
-          <IoCheckmarkCircleOutline onClick={() => this.props.updateConversation(({id: this.props.conversation.id, pending: false})).then(this.setState({conversation: null}))}/>
-          <IoCloseCircleOutline onClick={() => this.props.deleteConversation(this.props.conversation.id).then(this.setState({conversation: null}))}/>
+          <IoCheckmarkCircleOutline className="checkmark-circle" onClick={() => this.props.updateConversation(({id: this.props.conversation.id, pending: false})).then(this.setState({conversation: null}))}/>
+          <IoCloseCircleOutline className="close-circle" onClick={() => this.props.deleteConversation(this.props.conversation.id).then(this.setState({conversation: null}))}/>
         </div>
       </div>
     )
