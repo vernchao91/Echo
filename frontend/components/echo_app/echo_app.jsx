@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ServerIndexItemContainer from "./servers/server_index_container";
 import Modal from "react-modal";
-import { IoLogOutOutline, IoHomeOutline } from "react-icons/io5";
+import { IoLogOutOutline, IoHomeOutline, IoCompassOutline } from "react-icons/io5";
 
 class EchoApp extends React.Component {
   constructor(props) {
@@ -10,11 +10,14 @@ class EchoApp extends React.Component {
     this.state = {
       servers: this.props.servers,
       modal: false,
-      name: ""
+      name: "",
+      hover: false
     }
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleMouseIn = this.handleMouseIn.bind(this);
+    this.handleMouseOut = this.handleMouseOut.bind(this);
   }
 
   componentDidMount() {
@@ -41,6 +44,14 @@ class EchoApp extends React.Component {
     return (e) => {
       this.setState({ [field]: e.currentTarget.value })
     }
+  }
+
+  handleMouseIn() {
+    this.setState({ hover: true })
+  }
+  
+  handleMouseOut() {
+    this.setState({ hover: false })
   }
 
   createServerForm() {
@@ -82,8 +93,8 @@ class EchoApp extends React.Component {
     return (
       <div className="echoapp-wrapper">
 
-        <div className="home-link-wrapper"> 
-          <Link className="home-link" to="/app/conversations">DMs</Link>
+        <div className="conversation-link-wrapper"> 
+          <Link className="conversation-link" to="/app/conversations">DMs</Link>
         </div>
 
         <div className="server-wrapper">
@@ -95,6 +106,7 @@ class EchoApp extends React.Component {
             />
           ))}
         </div>
+
         <div className="create-server-button">
           <button className="open-modal-create" onClick={() => this.handleOpenModal()}>
             +
@@ -103,12 +115,21 @@ class EchoApp extends React.Component {
             {this.createServerForm()}
           </Modal>
         </div>
+
+        <div className="explore-icon-wrapper">
+            <Link to="/app/servers/explore">
+              <IoCompassOutline className="explore-icon"/>
+            </Link>
+        </div>
+
         <div className="home-icon-wrapper">
           <Link to="/"><IoHomeOutline className="home-icon"/></Link>
         </div>
+
         <div className="logout-icon-wrapper">
           <IoLogOutOutline onClick={this.props.logout} className="logout-icon"/>
         </div>
+
       </div>
     )
   }

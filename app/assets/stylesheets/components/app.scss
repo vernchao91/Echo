@@ -8,7 +8,7 @@
   width: 3.75%;
   min-width: 72px;
 
-  .home-link-wrapper {
+  .conversation-link-wrapper {
     display: grid;
     width: 48px;
     height: 48px;
@@ -20,9 +20,9 @@
     &:hover {
       border-radius: 10px;
       color: rgb(0, 0, 0);
-      background-color: rgb(27, 55, 148);
+      background-color: rgb(58, 94, 211);
     }
-    .home-link {
+    .conversation-link {
       color: white;
       font-size: 15px;
       font-weight: 300;
@@ -64,16 +64,15 @@
       height: auto;
       margin-top: 7.5px;
       transition: 0.1s ease-in-out;
-
       &:hover {
         border-radius: 10px;
         color: rgb(0, 0, 0);
-        background-color: rgb(20, 65, 211);
+        background-color: rgb(58, 94, 211);
       }
       
       // server buttons
       .server-link {
-        color: rgb(184, 176, 176);
+        color: rgb(202, 202, 202);
         font-size: 20px;
         font-weight: 300;
         display: flex;
@@ -103,23 +102,9 @@
 
   // create server display button
   .create-server-button {
-    color: rgb(184, 176, 176);
-    font-size: 20px;
-    // font-weight: 300;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    height: 48px;
-    border-radius: 50%;
-    transition: 0.1s ease-in-out;
-    border: 1px solid rgb(255, 255, 255);
-    margin-top: 5px;
-
     .open-modal-create {
-      color: rgb(184, 176, 176);
-      font-size: 20px;
-      // font-weight: 300;
+      color: rgb(44, 189, 104);
+      font-size: 25px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -129,19 +114,45 @@
       transition: 0.1s ease-in-out;
       border: 1px solid rgb(255, 255, 255);
       &:hover {
-        font-size: 25px;
-        color: black;
-        background-color:rgb(16, 151, 77);
+        color: white;
+        background-color:rgb(18, 168, 85);
         border-radius: 10px;
       }
     }
+  }
+  // explore server display button
+  .explore-icon-wrapper{
+    color: rgb(184, 176, 176);
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    transition: 0.1s ease-in-out;
+    border: 1px solid rgb(255, 255, 255);
+    margin-top: 5px;
     &:hover {
-      color: black;
       background-color:rgb(18, 168, 85);
+      cursor: pointer;
       border-radius: 10px;
+      .explore-icon {
+        color: white;
+      }
+    }
+    .explore-icon{
+      padding-top: 5px;
+      font: 40px;
+      width: 25px;
+      height: 43px;
+      color:rgb(18, 168, 85);
+      &:hover {
+        color: white;
+      }
     }
   }
-
+  // home server display button
   .home-icon-wrapper {
     color: rgb(184, 176, 176);
     font-size: 20px;
@@ -155,17 +166,25 @@
     transition: 0.1s ease-in-out;
     border: 1px solid rgb(255, 255, 255);
     margin-top: 5px;
+    &:hover {
+      background-color:rgb(18, 168, 85);
+      cursor: pointer;
+      border-radius: 10px;
+      .home-icon {
+        color: white;
+      }
+    }
     .home-icon {
       width: 25px;
       height: 43px;
-    }
-    &:hover {
-      background-color:rgb(18, 168, 85);
-      color: black;
-      cursor: pointer;
-      border-radius: 10px;
+      color:rgb(18, 168, 85);
+      &:hover {
+        color: white;
+      }
     }
   }
+  
+  // logout server display button
   .logout-icon-wrapper {
     color: rgb(184, 176, 176);
     font-size: 20px;
@@ -179,14 +198,25 @@
     transition: 0.1s ease-in-out;
     border: 1px solid rgb(255, 255, 255);
     margin-top: 5px;
+    &:hover {
+      background-color:rgb(18, 168, 85);
+      cursor: pointer;
+      border-radius: 10px;
+      .logout-icon {
+        color: white;
+      }
+    }
     .logout-icon {
       width: 30px;
       height: 48px;
       padding-left: 5px;
+      color:rgb(18, 168, 85);
+      &:hover {
+        color: white;
+      }
     }
     &:hover {
       background-color:rgb(18, 168, 85);
-
       color: black;
       cursor: pointer;
       border-radius: 10px;
