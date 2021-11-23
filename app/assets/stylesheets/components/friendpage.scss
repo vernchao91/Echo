@@ -187,6 +187,7 @@
           padding-top: 15px;
           padding-bottom: 15px;
           border-bottom: 1px solid rgb(173, 173, 173);
+          height: 39px;
           .pending-friends-index-username {
             i {
               color: rgb(235,235,235);
@@ -201,15 +202,20 @@
           }
           .pending-friends-index-item-button-wrapper {
             display: flex;
+            flex-direction: column;
             .outgoing-pending-tooltip {
+              position: static;
+              // top: -20px;
+              margin-bottom: 20px;
               .tooltip-bubble {
-                position: relative;
-                font-size: 50px;
-                // left: 50px;
+                // position: relative;
+                // font-size: 50px;
+                // left: 25px;
+                // margin: 50px;
               }
               .tooltip-bubble-text {
                 position: absolute;
-                margin-bottom: 50px;
+                // margin-bottom: 50px;
                 // bottom: 50px;
               }
             }
@@ -228,6 +234,7 @@
               align-items: center;
               font-size: 30px;
               margin-right: 10px;
+              position: static;
               &:hover {
                 color: red;
                 cursor: pointer;

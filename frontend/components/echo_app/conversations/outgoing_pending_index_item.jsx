@@ -35,7 +35,7 @@ class OutgoingPendingIndexItem extends React.Component {
         </div>
         <div className="pending-friends-index-item-button-wrapper">
           <div className="outgoing-pending-tooltip" style={tooltipStyle}>
-            <IoChatboxOutline className="tooltip-bubble"/>
+            {/* <IoChatboxOutline className="tooltip-bubble"/> */}
             <p className="tooltip-bubble-text">Cancel</p>
           </div>
           <IoCloseCircleOutline 
