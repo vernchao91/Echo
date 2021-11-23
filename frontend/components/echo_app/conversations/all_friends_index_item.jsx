@@ -14,14 +14,14 @@ class AllFriendsIndexItem extends React.Component {
     if (!this.state.conversation) return null
     return(
       <div className="all-friends-index-item">
-          <ul>{this.state.conversation.username}</ul>
-          <div className="all-friends-index-item-button-wrapper">
-            <Link to={`/app/conversations/${this.state.conversation.id}/messages`}>
-              <IoChatboxOutline className="chatbox-outline"/>
-            </Link>
-            <IoCloseCircleOutline className="closecircle-outline" onClick={() => this.props.deleteConversation(this.state.conversation.id).then(this.setState({conversation: null}))}/>
-          </div>
+        <ul>{this.state.conversation.username}</ul>
+        <div className="all-friends-index-item-button-wrapper">
+          <Link to={`/app/conversations/${this.state.conversation.id}/messages`}>
+            <IoChatboxOutline className="chatbox-outline"/>
+          </Link>
+          <IoCloseCircleOutline className="closecircle-outline" onClick={() => this.props.deleteConversation(this.state.conversation.id).then(this.setState({conversation: null}))}/>
         </div>
+      </div>
     )
   }
 }
