@@ -46,10 +46,9 @@ server10 = Server.create!(name: "App Academy", owner_id:17)
 server11 = Server.create!(name: "Jett's server", owner_id:9)
 server12 = Server.create!(name: "Wraith's server", owner_id:6)
 server13 = Server.create!(name: "Manga Talks", owner_id: 20)
-server14 = Server.create!(name: "Stack Overflow", owner_id: 17)
-server15 = Server.create!(name: "Jimmy's Server", owner_id: 17)
+server14 = Server.create!(name: "Stack Overflow", owner_id: kuno.id)
+server15 = Server.create!(name: "Kuno's Server", owner_id: kuno.id)
 server16 = Server.create!(name: "Overwatch", owner_id: 21)
-
 
 # demo joined servers
 

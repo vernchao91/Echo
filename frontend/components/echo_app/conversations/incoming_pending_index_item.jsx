@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { IoCheckmarkCircleOutline, IoCloseCircleOutline } from "react-icons/io5";
 
 class IncomingPendingIndexItem extends React.Component {
