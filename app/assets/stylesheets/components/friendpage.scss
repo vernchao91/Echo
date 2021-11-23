@@ -177,6 +177,7 @@
           }
         }
       }
+      
       .pending-outgoing-index-wrapper {
         .pending-friends-index-item {
           display: flex;
@@ -200,6 +201,15 @@
           }
           .pending-friends-index-item-button-wrapper {
             display: flex;
+            .outgoing-pending-tooltip {
+              .tooltip-bubble {
+                left: 50px;
+                size: 30px;
+              }
+              .tooltip-bubble-text {
+                bottom: 50px;
+              }
+            }
             .checkmark-circle {
               display: flex;
               align-items: center;

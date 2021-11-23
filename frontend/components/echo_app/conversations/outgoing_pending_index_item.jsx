@@ -1,6 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { IoCheckmarkCircleOutline, IoCloseCircleOutline } from "react-icons/io5";
+import { IoChatboxOutline, IoCloseCircleOutline } from "react-icons/io5";
 
 class OutgoingPendingIndexItem extends React.Component {
   constructor(props) {
@@ -35,8 +34,9 @@ class OutgoingPendingIndexItem extends React.Component {
           <p>Outgoing Friend Request</p>
         </div>
         <div className="pending-friends-index-item-button-wrapper">
-          <div className="incoming-pending-tooltip" style={tooltipStyle}>
-            <p>Cancel</p>
+          <div className="outgoing-pending-tooltip" style={tooltipStyle}>
+            <IoChatboxOutline className="tooltip-bubble"/>
+            <p className="tooltip-bubble-text">Cancel</p>
           </div>
           <IoCloseCircleOutline 
             className="close-circle" 
