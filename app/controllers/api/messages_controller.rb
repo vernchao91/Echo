@@ -40,11 +40,21 @@ class Api::MessagesController < ApplicationController
 
 
   def update
-    
+    @message = Message.find_by(id: params[:id])
+    if @message && @message.update(message_params)
+      render :show
+    else
+      render @message.errors.full_messages, status: 422
+    end
   end
 
   def destroy
-
+    @message = Message.find_by(id: params[:id])
+    if @message && @message.destroy
+      render :show
+    else
+      render @message.errors.full_messages, status: 422
+    end
   end
 
   private

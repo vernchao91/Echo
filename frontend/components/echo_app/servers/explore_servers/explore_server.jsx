@@ -12,7 +12,7 @@ class ExploreServer extends React.Component {
 
         </div>
         <div className="explore server-show-wrapper">
-
+          
         </div>
       </div>
     )

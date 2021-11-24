@@ -109,11 +109,11 @@ class EchoApp extends React.Component {
           </Modal>
         </div>
 
-        {/* <div className="explore-icon-wrapper">
+        <div className="explore-icon-wrapper">
             <Link to="/app/servers/explore">
               <IoCompassOutline className="explore-icon"/>
             </Link>
-        </div> */}
+        </div>
 
         <div className="home-icon-wrapper">
           <Link to="/"><IoHomeOutline className="home-icon"/></Link>
