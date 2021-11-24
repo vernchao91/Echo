@@ -1,5 +1,5 @@
 # json.extract! @list, :id, :server_id, :user_id
-json.extract! @list.user, :id, :username, :email
+json.extract! @list.server, :id, :name, :owner_id
 
 # @users.each do |user|
 #   json.set! user.id do 

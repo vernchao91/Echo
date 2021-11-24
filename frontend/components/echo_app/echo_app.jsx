@@ -21,7 +21,8 @@ class EchoApp extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchServers();
+    this.props.fetchServersFromUser(this.props.currentUserId)
+      .then(() => this.setState({servers: this.props.servers}))
   }
 
   handleOpenModal() {
@@ -77,14 +78,6 @@ class EchoApp extends React.Component {
         </div>  
       </div>
     )
-  }
-
-  showPublicServers() {
-    this.props.fetchServersFromUser(this.props.currentUserId)
-  }
-
-  setServers(){
-
   }
 
   render() {

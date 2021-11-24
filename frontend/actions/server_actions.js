@@ -9,6 +9,11 @@ export const RECEIVE_SERVER_ERRORS = "RECEIVE_SERVER_ERRORS";
 export const REMOVE_SERVER_ERRORS = "REMOVE_SERVER_ERRORS";
 export const REMOVE_ERRORS = "REMOVE_ERRORS";
 
+export const JOIN_SERVER = "JOIN_SERVER";
+export const LEAVE_SERVER = "LEAVE_SERVER";
+
+export const RECEIVE_LIST_ERRORS = "RECEIVE_LIST_ERRORS";
+export const REMOVE_LIST_ERRORS = "REMOVE_LIST_ERRORS";
 
 // regular sync actions
 export const receiveServers = servers => {
@@ -46,6 +51,20 @@ export const removeErrors = () => {
   }
 }
 
+// list table
+export const receiveListErrors = errors => {
+  return {
+    type: RECEIVE_LIST_ERRORS,
+    errors
+  }
+}
+
+export const removeListErrors = errors => {
+  return {
+    type: REMOVE_LIST_ERRORS,
+    errors
+  }
+}
 // thunk async actions
 
 // fetches all servers 
@@ -95,3 +114,18 @@ export const deleteServer = (serverId) => dispatch => {
       err => (dispatch(receiveServerErrors(err.responseJSON))
     ))
 }
+
+export const joinServer = (list) => dispatch => (
+  ServerApiUtil.joinServer(list)
+    .then(
+      (server) => dispatch(receiveServer(server)),
+      err => dispatch(receiveListErrors(err.responseJSON))
+    )
+)
+export const leaveServer = (serverId) => dispatch => (
+  ServerApiUtil.leaveServer(serverId)
+    .then(
+      () => dispatch(removeServer(serverId)),
+      err => dispatch(receiveListErrors(err.responseJSON))
+    )
+)

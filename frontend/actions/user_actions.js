@@ -1,14 +1,15 @@
-import * as UserApiUtil from "../util/user_api_util"
+import * as UserApiUtil from "../util/user_api_util";
 
-export const RECEIVE_USERS = "RECEIVE_USERS"
-export const JOIN_SERVER = "JOIN_SERVER"
-export const LEAVE_SERVER = "LEAVE_SERVER"
+export const RECEIVE_USERS = "RECEIVE_USERS";
+export const JOIN_SERVER = "JOIN_SERVER";
+export const LEAVE_SERVER = "LEAVE_SERVER";
 
-export const RECEIVE_LIST_ERRORS = "RECEIVE_LIST_ERRORS"
-export const REMOVE_LIST_ERRORS = "REMOVE_LIST_ERRORS"
-export const RECEIVE_USER_ERRORS = "RECEIVE_USER_ERRORS"
-export const REMOVE_USER_ERRORS = "REMOVE_USER_ERRORS"
-export const REMOVE_ERRORS = "REMOVE_ERRORS"
+export const RECEIVE_LIST_ERRORS = "RECEIVE_LIST_ERRORS";
+export const REMOVE_LIST_ERRORS = "REMOVE_LIST_ERRORS";
+
+export const RECEIVE_USER_ERRORS = "RECEIVE_USER_ERRORS";
+export const REMOVE_USER_ERRORS = "REMOVE_USER_ERRORS";
+export const REMOVE_ERRORS = "REMOVE_ERRORS";
 
 // regular sync actions
 export const receiveUsers = users => {

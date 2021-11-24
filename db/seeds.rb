@@ -57,6 +57,11 @@ list = List.create!(server_id: 1, user_id: mercy.id)
 list1 = List.create!(server_id: 1, user_id: 2)
 list2 = List.create!(server_id: 2, user_id: 2)
 list3 = List.create!(server_id: 3, user_id: 2)
+list3 = List.create!(server_id: 4, user_id: 2)
+list3 = List.create!(server_id: 5, user_id: 2)
+list3 = List.create!(server_id: 6, user_id: 2)
+list3 = List.create!(server_id: 7, user_id: 2)
+list3 = List.create!(server_id: 8, user_id: 2)
 
 # users joined LoL
 list4 = List.create!(server_id: 1, user_id: 3)

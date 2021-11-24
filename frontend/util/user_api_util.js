@@ -5,8 +5,6 @@ export const fetchUsersFromServer = (serverId) => {
     method: "GET"
   })
 }
-
-// works
 export const joinServer = (list) => {
   return $.ajax({
     url: "/api/lists",
@@ -14,7 +12,6 @@ export const joinServer = (list) => {
     data: { list }
   })
 }
-// test 
 export const leaveServer = (serverId) => {
   return $.ajax({
     url: `/api/servers/${serverId}/lists/:id`,

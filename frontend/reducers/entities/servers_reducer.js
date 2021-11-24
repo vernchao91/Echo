@@ -3,6 +3,8 @@ import {
   RECEIVE_SERVER,
   REMOVE_SERVER,
   RECEIVE_JOINED_SERVERS,
+  JOIN_SERVER,
+  LEAVE_SERVER
 } from "../../actions/server_actions"
 
 const serversReducer = (oldState = {}, action) => {
@@ -18,6 +20,14 @@ const serversReducer = (oldState = {}, action) => {
 
     case RECEIVE_SERVER:
       newState[action.server.id] = action.server
+      return newState
+
+    case JOIN_SERVER:
+      newState[action.server.id] = action.server
+      return newState
+
+    case LEAVE_SERVER:
+      delete newState[action.serverId]
       return newState
 
     case REMOVE_SERVER:

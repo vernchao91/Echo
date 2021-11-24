@@ -3,7 +3,7 @@ import EchoApp from "./echo_app";
 import {
   fetchServers,
   fetchServersFromUser,
-  createServer, 
+  createServer,
   removeServerErrors
 } from "../../actions/server_actions"
 import { logout } from "../../actions/session_actions"

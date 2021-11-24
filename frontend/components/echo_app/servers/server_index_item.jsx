@@ -24,7 +24,7 @@ class ServerIndex extends React.Component {
     const tooltipStyle = {
       display: this.state.hover ? 'block' : "none"
     }
-    if (!server) return null
+    if (server.name === undefined) return null
     return (
       <div className="server-index-wrapper">
         <div className="server-name-tooltip" style={tooltipStyle}>
@@ -40,7 +40,6 @@ class ServerIndex extends React.Component {
       </div>
     )
   }
-
 }
 
 export default ServerIndex

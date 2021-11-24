@@ -26,7 +26,6 @@ class ChannelIndex extends React.Component {
   }
 
   componentWillUnmount() {
-    console.log("cwu channel index");
   }
 
   componentDidMount() {
@@ -37,7 +36,6 @@ class ChannelIndex extends React.Component {
   }
   
   componentDidUpdate(prevProp) {
-    console.log("cdu channel index");
     if (prevProp.serverId !== this.props.serverId) {
       this.props.fetchUsersFromServer(this.props.serverId)
         .then((state) => this.setState({users: this.props.users, serverId: this.props.serverId}))
@@ -106,6 +104,7 @@ class ChannelIndex extends React.Component {
   renderEditDeleteJoinLeaveServer() {
     const { currentUserId, serverId, deleteServer, joinServer, leaveServer, openEditModal, users, server } = this.props
     if (server === undefined) return null;
+    console.log(serverId);
     if (currentUserId === server.ownerId) {
       return (
         <div className="server-owner-button-wrapper">

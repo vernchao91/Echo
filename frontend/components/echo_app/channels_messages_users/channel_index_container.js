@@ -2,12 +2,14 @@ import { connect } from "react-redux";
 import ChannelIndex from "./channel_index";
 import {
   fetchUsersFromServer,
-  joinServer,
-  leaveServer,
+  // joinServer,
+  // leaveServer,
 } from "../../../actions/user_actions"
 import {
   deleteServer,
-  updateServer
+  updateServer,
+  joinServer,
+  leaveServer,
 } from "../../../actions/server_actions"
 import { openModal, closeModal } from "../../../actions/modal_actions"
 import { 

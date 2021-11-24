@@ -36,3 +36,16 @@ export const deleteServer = (serverId) => {
     method: "DELETE"
   })
 }
+export const joinServer = (list) => {
+  return $.ajax({
+    url: "/api/lists",
+    method: "POST",
+    data: { list }
+  })
+}
+export const leaveServer = (serverId) => {
+  return $.ajax({
+    url: `/api/servers/${serverId}/lists/:id`,
+    method: "DELETE"
+  })
+}
