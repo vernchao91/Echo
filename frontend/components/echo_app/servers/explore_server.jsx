@@ -7,8 +7,13 @@ class ExploreServer extends React.Component {
 
   render() {
     return (
-      <div>
-        Explore Server
+      <div className="explore-server-wrapper">
+        <div className="explore-server-index-wrapper">
+
+        </div>
+        <div className="explore server-show-wrapper">
+
+        </div>
       </div>
     )
   }
