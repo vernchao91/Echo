@@ -53,7 +53,7 @@ class ConversationIndex extends React.Component {
 
         <div className="conversation-index-wrapper">
           <div className="conversation-index-header-wrapper">
-            Search Bar Maybe
+            Conversations
           </div>
 
           <div className="conversation-list-wrapper">

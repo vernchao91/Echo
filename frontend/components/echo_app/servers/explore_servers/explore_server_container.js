@@ -1,5 +1,8 @@
 import { connect } from "react-redux";
 import ExploreServer from "./explore_server";
+import {
+  fetchServers
+} from "../../../../actions/server_actions"
 
 const mapStateToProps = state => {
   return {
@@ -7,9 +10,9 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = state => {
+const mapDispatchToProps = dispatch => {
   return {
-    
+    fetchServers: () => dispatchEvent(fetchServers())
   }
 }
 

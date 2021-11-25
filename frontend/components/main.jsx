@@ -14,8 +14,6 @@ const Main = () => {
       <Route path="/app" component={EchoAppContainer} />
       <Route path="/app/servers/:serverId/channels" component={ChannelIndexContainer}/>
       <Route path="/app/servers/explore" component={ExploreServerContainer}/>
-      {/* <Route path="/app/servers/explore/home" component={}/>
-      <Route path="/app/servers/explore/gaming" component={}/> */}
       <Route path="/app/conversations" component={ConversationIndexContainer}/>
       <Route path="/app/conversations/:conversationId/messages" component={ConversationMessageContainer}/>
       <Route path="/app/conversations/friendpage" component={FriendPageContainer} />

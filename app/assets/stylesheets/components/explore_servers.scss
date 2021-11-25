@@ -1,8 +1,39 @@
-// .explore-server-wrapper {
-//   .explore-server-index-wrapper {
+.explore-server-wrapper {
+  display: flex;
+  color: white;
+  border: 1px solid white;
+  max-height: 100vh;
 
-//   }
-//   .explore-server-show-wrapper {
+  // explore page
+  .explore-server-index-wrapper {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid white;
+    min-width: 236.75px;
+    max-width: 236.75px;
+    .explore-header-wrapper {
+      p {
+        font-weight: 600;
+        font-size: 20px;
+        color: white;
+      }
+    }
+    .explore-server-index {
+      display: flex;
+      flex-direction: row;
+      // justify-content: flex-start;
+      .explore-compass-icon {
+        color: white;
+      }
+      .explore-gaming-icon {
+        color: white;
+      }
+      p {
+        color: white;
+      }
+    }
+  }
 
-//   }
-// }
+
+  // changeable component home/gaming/music/sciencetech
+}
