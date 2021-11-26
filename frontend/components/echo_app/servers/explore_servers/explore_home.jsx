@@ -8,7 +8,9 @@ class ExploreHome extends React.Component {
   render() {
     return (
       <div className="explore-home-wrapper">
-        Explore Home
+        <div className="">
+          Explore Home
+        </div>
       </div>
     )
   }
