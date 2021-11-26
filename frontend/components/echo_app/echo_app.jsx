@@ -25,6 +25,10 @@ class EchoApp extends React.Component {
       .then(() => this.setState({servers: this.props.servers}))
   }
 
+  componentDidUpdate() {
+    
+  }
+
   handleOpenModal() {
     this.setState({modal: true,  name: ""})
   }

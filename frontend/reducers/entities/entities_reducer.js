@@ -7,6 +7,8 @@ import conversationsReducer from "./conversations_reducer";
 
 const entitiesReducer = combineReducers({
   servers: serversReducer,
+  // exploreServers: exploreServersReducer,
+  // joinedServers: joinedServersReducer,
   channels: channelsReducer, 
   messages: messagesReducer,
   users: usersReducer,
