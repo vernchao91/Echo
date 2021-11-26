@@ -6,13 +6,13 @@ import {
 
 const mapStateToProps = state => {
   return {
-
+    servers: state.entities.servers
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchServers: () => dispatchEvent(fetchServers())
+    fetchServers: () => dispatch(fetchServers())
   }
 }
 

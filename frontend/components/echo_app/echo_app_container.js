@@ -11,7 +11,7 @@ import { logout } from "../../actions/session_actions"
 
 const mapStateToProps = (state) => {
   return {
-    servers: Object.values(state.entities.servers),
+    servers: (state.entities.servers),
     errors: Object.values(state.errors.servers),
     currentUserId: state.session.id,
   }

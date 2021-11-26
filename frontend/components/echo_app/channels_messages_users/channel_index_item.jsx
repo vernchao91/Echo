@@ -18,7 +18,6 @@ class ChannelIndexItem extends React.Component {
   }
 
   componentWillUnmount() {
-    // console.log("cwu channel index item");
   }
   update(field) {
     return (e) => {

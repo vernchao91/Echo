@@ -15,7 +15,6 @@ class ConversationIndex extends React.Component {
   };
 
   componentDidMount() {
-    console.log("cdm convesation");
     this.props.fetchConversations(this.props.currentUserId)
       .then(() => this.setState({conversations: this.props.conversations}))
   }

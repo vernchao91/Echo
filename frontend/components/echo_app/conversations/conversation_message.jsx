@@ -42,7 +42,6 @@ class ConversationMessage extends React.Component {
   }
 
   componentWillUnmount() {
-    // console.log("unmount");
     App.cable.subscriptions.subscriptions[0].unsubscribe()
   }
 

@@ -166,7 +166,6 @@ class ChannelIndex extends React.Component {
             </Modal2> 
             {Object.values(channels).map(channel => 
             <ChannelIndexItemContainer
-              className="channels-link"
               key={channel.id}
               channel={channel}
               channelId={channel.id}

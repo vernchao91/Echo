@@ -11,13 +11,11 @@ class PendingIndex extends React.Component {
   }
 
   componentDidMount() {
-    console.log("cdm pending friends");
     this.props.fetchConversations(this.props.currentUserId)
       .then(() => this.setState({conversations: this.props.conversations}))
   }
 
   componentWillUnmount() {
-    console.log("cwu pending friends");
   }
 
   render() {
@@ -33,7 +31,6 @@ class PendingIndex extends React.Component {
         incomingArr.push({displayId: conversation.ownerId, username: conversation.ownerUsername, id: conversation.id})
       }
     })
-    console.log("pending render");
     return (
       <div className="pending-index-wrapper">
         <h1>Pending Invites</h1>

@@ -18,8 +18,6 @@ class MessageIndex extends React.Component {
   }
 
   componentDidMount() {
-    // console.log("cdm1");
-    // console.log(this.state.channelId);
     this.props.fetchChannelMessages(this.props.channelId)
       .then(() => this.setState({
         channelId: this.props.channelId,
@@ -29,14 +27,6 @@ class MessageIndex extends React.Component {
     App.cable.subscriptions.create(
       { channel: "ChatChannel", id: this.props.channelId},
       { received: data => {
-        // console.log("cdm2state");
-        // console.log(this.state.channelId);
-        // console.log("cdm2props");
-        // console.log(this.props.channelId);
-        // console.log("data")
-        // console.log(data);
-        // console.log("State");
-        // console.log(this.state);
         this.props.fetchChannelMessages(this.props.channelId)
           .then((state) => this.setState({
             messages: Object.values(state.messages).concat(data.message)
@@ -53,13 +43,6 @@ class MessageIndex extends React.Component {
 
   componentDidUpdate(prevProp, prevState) {
     if (prevProp.channelId !== this.props.channelId) {
-      // console.log("cdu");
-      // console.log(prevProp.channelId);
-      // console.log("^prevPropCID");
-      // console.log(this.state.channelId);
-      // console.log("^statePropCID");
-      // console.log(this.props.channelId);
-      // console.log("^propCID");
       this.props.fetchChannelMessages(this.props.channelId)
       .then(() => this.setState({
           message: {
@@ -70,19 +53,15 @@ class MessageIndex extends React.Component {
           messages: Object.values(this.props.messages)
         })
       )
-      // console.log(this.state.channelId);
     }
     if (prevState.channelId !== this.state.channelId) {
       this.setState({ channelId: this.props.channelId })
-      // console.log("-3");
-      // console.log(this.state.channelId);
     }
     if (this.bottom.current) {
       this.bottom.current.scrollIntoView();
     }
   }
   componentWillUnmount() {
-    // console.log("unmount");
     App.cable.subscriptions.subscriptions[0].unsubscribe()
   }
 

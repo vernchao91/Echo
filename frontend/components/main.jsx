@@ -6,15 +6,15 @@ import ChannelIndexContainer from "./echo_app//channels_messages_users/channel_i
 import ConversationIndexContainer from "./echo_app/conversations/conversation_index_container";
 import ConversationMessageContainer from "./echo_app/conversations/conversation_message_container";
 import FriendPageContainer from "./echo_app/conversations/friendpage_container";
-import ExploreServerContainer from "./echo_app/servers/explore_servers/explore_server_container";
-import ExploreHomeContainer from "./echo_app/servers/explore_servers/explore_home_container"
+import ExplorePageContainer from "./echo_app/servers/explore_page/explore_page_container";
+import ExploreHomeContainer from "./echo_app/servers/explore_page/explore_home_container"
 
 const Main = () => {
   return (
     <div className="main">
       <Route path="/app" component={EchoAppContainer} />
       <Route path="/app/servers/:serverId/channels" component={ChannelIndexContainer}/>
-      <Route path="/app/servers/explore" component={ExploreServerContainer}/>
+      <Route path="/app/servers/explore" component={ExplorePageContainer}/>
       <Route path="/app/servers/explore/home" component={ExploreHomeContainer}/>
       {/* <Route path="/app/servers/explore/gaming" component={ExploreGamingContainer}/>
         <Route path="/app/servers/explore/music" component={ExploreMusicContainer}/>
