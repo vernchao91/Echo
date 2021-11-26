@@ -6,7 +6,7 @@ import {
 
 const mapStateToProps = state => {
   return {
-    servers: state.entities.servers
+    servers: state.entities.exploreServers
   }
 }
 

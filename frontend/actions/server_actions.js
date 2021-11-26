@@ -1,9 +1,11 @@
 import * as ServerApiUtil from "../util/server_api_util"
 
-export const RECEIVE_SERVERS = "RECEIVE_SERVERS";
-export const RECEIVE_JOINED_SERVERS = "RECEIVE_SERVERS";
+export const RECEIVE_EXPLORE_SERVERS = "RECEIVE_EXPLORE_SERVERS";
+export const RECEIVE_JOINED_SERVERS = "RECEIVE_JOINED_SERVERS";
 export const RECEIVE_SERVER = "RECEIVE_SERVER";
 export const REMOVE_SERVER = "REMOVE_SERVER";
+export const CLEAR_EXPLORE_SERVERS = "CLEAR_EXPLORE_SERVERS";
+export const CLEAR_JOINED_SERVERS = "CLEAR_JOINED_SERVERS";
 
 export const RECEIVE_SERVER_ERRORS = "RECEIVE_SERVER_ERRORS";
 export const REMOVE_SERVER_ERRORS = "REMOVE_SERVER_ERRORS";
@@ -16,9 +18,15 @@ export const RECEIVE_LIST_ERRORS = "RECEIVE_LIST_ERRORS";
 export const REMOVE_LIST_ERRORS = "REMOVE_LIST_ERRORS";
 
 // regular sync actions
-export const receiveServers = servers => {
+export const receiveExploreServers = servers => {
   return {
-    type: RECEIVE_SERVERS,
+    type: RECEIVE_EXPLORE_SERVERS,
+    servers
+  }
+}
+export const receiveJoinedServers = servers => {
+  return {
+    type: RECEIVE_JOINED_SERVERS,
     servers
   }
 }
@@ -32,6 +40,16 @@ export const removeServer = serverId => {
   return {
     type: REMOVE_SERVER,
     serverId
+  }
+}
+export const clearExploreServers = () => {
+  return {
+    type: CLEAR_EXPLORE_SERVERS,
+  }
+}
+export const clearJoinedServers = () => {
+  return {
+    type: CLEAR_JOINED_SERVERS,
   }
 }
 export const receiveServerErrors = errors => {
@@ -65,13 +83,13 @@ export const removeListErrors = errors => {
     errors
   }
 }
-// thunk async actions
 
+// thunk async actions
 // fetches all servers 
 export const fetchServers = () => dispatch => {
   return ServerApiUtil.fetchServers()
     .then(
-      servers => (dispatch(receiveServers(servers))),
+      servers => (dispatch(receiveExploreServers(servers))),
       err => (dispatch(receiveServerErrors(err.responseJSON)))
     )
 }
@@ -79,7 +97,7 @@ export const fetchServers = () => dispatch => {
 export const fetchServersFromUser = (userId) => dispatch => {
   return ServerApiUtil.fetchServersFromUser(userId)
     .then(
-      servers => dispatch(receiveServers(servers)),
+      servers => dispatch(receiveJoinedServers(servers)),
       err => dispatch(receiveServerErrors(err.responseJSON))
     )
 }

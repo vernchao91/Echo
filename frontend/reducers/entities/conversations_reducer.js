@@ -2,6 +2,7 @@ import {
   RECEIVE_CONVERSATIONS,
   RECEIVE_CONVERSATION,
   REMOVE_CONVERSATION,
+  CLEAR_CONVERSATIONS,
 } from "../../actions/conversation_actions"
 
 const conversationsReducer = (oldState = {}, action) => {
@@ -15,6 +16,9 @@ const conversationsReducer = (oldState = {}, action) => {
     case RECEIVE_CONVERSATION:
       newState[action.conversation.id] = action.conversation
       return newState
+
+    case CLEAR_CONVERSATIONS:
+      return {}
 
     case REMOVE_CONVERSATION:
       delete newState[action.conversationId]

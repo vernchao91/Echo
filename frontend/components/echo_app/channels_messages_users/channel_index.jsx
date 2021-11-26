@@ -26,6 +26,8 @@ class ChannelIndex extends React.Component {
   }
 
   componentWillUnmount() {
+    this.props.clearUsers();
+    this.props.clearChannels();
   }
 
   componentDidMount() {

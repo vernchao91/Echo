@@ -5,7 +5,8 @@ import {
   fetchConversationMessage,
   createConversationMessage,
   updateConversationMessage,
-  deleteConversationMessage
+  deleteConversationMessage,
+  clearMessages
 } from "../../../actions/message_actions";
 import { 
   fetchConversations,
@@ -32,6 +33,7 @@ const mapDispatchToProps = dispatch => {
     createConversationMessage: (message) => dispatch(createConversationMessage(message)),
     updateConversationMessage: (message) => dispatch(updateConversationMessage(message)),
     deleteConversationMessage: () => dispatch(deleteConversationMessage(message)),
+    clearMessages: () => dispatch(clearMessages())
   }
 }
 

@@ -25,7 +25,7 @@ class EchoApp extends React.Component {
       .then(() => this.setState({servers: this.props.servers}))
   }
 
-  componentDidUpdate() {
+  componentWillUnmount() {
     
   }
 
@@ -85,7 +85,7 @@ class EchoApp extends React.Component {
   }
 
   render() {
-    if (!this.state.servers) return null
+    if (!this.props.servers) return null
     return (
       <div className="echoapp-wrapper">
 
@@ -94,7 +94,7 @@ class EchoApp extends React.Component {
         </div>
 
         <div className="server-wrapper">
-          {Object.values(this.state.servers).map((server, idx) => (
+          {Object.values(this.props.servers).map((server, idx) => (
             <ServerIndexItemContainer
               key={idx}
               serverId={server.id}

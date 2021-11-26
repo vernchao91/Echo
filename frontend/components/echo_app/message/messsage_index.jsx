@@ -62,7 +62,8 @@ class MessageIndex extends React.Component {
     }
   }
   componentWillUnmount() {
-    App.cable.subscriptions.subscriptions[0].unsubscribe()
+    App.cable.subscriptions.subscriptions[0].unsubscribe();
+    this.props.clearMessages()
   }
 
   update(field) {

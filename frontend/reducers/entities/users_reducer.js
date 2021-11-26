@@ -4,8 +4,7 @@ import {
 
 import {
   RECEIVE_USERS,
-  JOIN_SERVER,
-  LEAVE_SERVER,
+  CLEAR_USERS
 } from "../../actions/user_actions"
 
 const usersReducer = (oldState = {}, action) => {
@@ -14,24 +13,13 @@ const usersReducer = (oldState = {}, action) => {
   
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
-      // newState[action.user.id] = action.user
-      // return newState
       return Object.assign({}, oldState, { [action.user.id]: action.user });
 
     case RECEIVE_USERS:
-      // return Object.assign({}, oldState, action.users)
       return action.users
-
-    // case JOIN_SERVER:
-    //   // return Object.assign({}, oldState, action.users)
-    //   newState[action.user.id] = action.user
-    //   return newState
-    //   // return action.users
-
-    // case LEAVE_SERVER:
-    //   delete newState[action.user.id]
-    //   return newState
-    //   // return action.users
+    
+    case CLEAR_USERS:
+      return {}
 
     default: 
       return oldState

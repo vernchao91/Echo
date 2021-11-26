@@ -2,6 +2,7 @@ import {
   RECEIVE_CHANNELS,
   RECEIVE_CHANNEL,
   REMOVE_CHANNEL,
+  CLEAR_CHANNELS
 } from "../../actions/channel_actions"
 
 const channelsReducer = (oldState = {}, action) => {
@@ -16,9 +17,13 @@ const channelsReducer = (oldState = {}, action) => {
       newState[action.channel.id] = action.channel
       return newState
 
+    case CLEAR_CHANNELS:
+      return {}
+
     case REMOVE_CHANNEL:
       delete newState[action.channelId]
       return newState
+
 
     default:
       return oldState

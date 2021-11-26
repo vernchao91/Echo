@@ -3,6 +3,7 @@ import * as MessageApiUtil from "../util/message_api_util"
 export const RECEIVE_MESSAGES = "RECEIVE_MESSAGES";
 export const RECEIVE_MESSAGE = "RECEIVE_MESSAGE";
 export const REMOVE_MESSAGE = "REMOVE_MESSAGE";
+export const CLEAR_MESSAGES = "CLEAR_MESSAGES";
 
 export const RECEIVE_MESSAGE_ERRORS = "RECEIVE_MESSAGE_ERRORS";
 export const REMOVE_MESSAGE_ERRORS = "REMOVE_MESSAGE_ERRORS";
@@ -25,6 +26,11 @@ export const removeMessage = messageId => {
   return {
     type: REMOVE_MESSAGE,
     messageId
+  }
+}
+export const clearMessages = () => {
+  return {
+    type: CLEAR_MESSAGES
   }
 }
 export const receiveMessageErrors = errors => {

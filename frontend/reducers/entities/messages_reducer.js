@@ -2,6 +2,7 @@ import {
   RECEIVE_MESSAGES,
   RECEIVE_MESSAGE,
   REMOVE_MESSAGE,
+  CLEAR_MESSAGES
 } from "../../actions/message_actions"
 
 const messagesReducer = (oldState = {}, action) => {
@@ -15,6 +16,9 @@ const messagesReducer = (oldState = {}, action) => {
     case RECEIVE_MESSAGE:
       newState[action.message.id] = action.message
       return newState
+
+    case CLEAR_MESSAGES:
+      return {}
 
     case REMOVE_MESSAGE:
       delete newState[action.messagelId]

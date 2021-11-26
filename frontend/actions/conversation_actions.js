@@ -3,6 +3,7 @@ import * as ConversationApiUtil from "../util/conversation_api_util"
 export const RECEIVE_CONVERSATIONS = "RECEIVE_CONVERSATIONS";
 export const RECEIVE_CONVERSATION = "RECEIVE_CONVERSATION";
 export const REMOVE_CONVERSATION = "REMOVE_CONVERSATION";
+export const CLEAR_CONVERSATIONS = "CLEAR_CONVERSATIONS";
 
 export const RECEIVE_CONVERSATION_ERRORS = "RECEIVE_CONVERSATION_ERRORS";
 export const REMOVE_CONVERSATION_ERRORS = "REMOVE_CONVERSATION_ERRORS";
@@ -25,6 +26,11 @@ export const removeConversation = conversationId => {
   return {
     type: REMOVE_CONVERSATION,
     conversationId
+  }
+}
+export const clearConversations = () => {
+  return {
+    type: CLEAR_CONVERSATIONS
   }
 }
 export const receiveConversationErrors = errors => {

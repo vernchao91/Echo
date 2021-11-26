@@ -5,7 +5,8 @@ import {
   fetchChannelMessage,
   createChannelMessage,
   updateChannelMessage,
-  deleteChannelMessage
+  deleteChannelMessage,
+  clearMessages
 } from "../../../actions/message_actions";
 
 const mapStateToProps = (state, ownProps) => {
@@ -25,6 +26,7 @@ const mapDispatchToProps = dispatch => {
     createChannelMessage: (message) => dispatch(createChannelMessage(message)),
     updateChannelMessage: (message) => dispatch(updateChannelMessage(message)),
     deleteChannelMessage: () => dispatch(deleteChannelMessage(message)),
+    clearMessages: () => dispatch(clearMessages())
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(MessageIndex)
