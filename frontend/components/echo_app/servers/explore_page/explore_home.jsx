@@ -21,7 +21,7 @@ class ExploreHome extends React.Component {
           />
         </div> */}
 
-        <div className=" explore-home-featured-index-wrapper">
+        <div className=" explore-home-featured-header">
           <p>Featured Communities</p>
           <div className="explore-home-featured-index">
             {Object.values(this.props.servers).map((server, i) => 
@@ -32,7 +32,6 @@ class ExploreHome extends React.Component {
             )}
           </div>
         </div>
-
       </div>
     )
   }

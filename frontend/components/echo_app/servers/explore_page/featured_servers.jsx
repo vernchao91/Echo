@@ -7,8 +7,10 @@ class FeaturedServers extends React.Component {
 
   render() {
     return (
-      <div>
-        Featured Servers
+      <div className="featured-servers-index-item-wrapper">
+        <div className="server-index-item">
+          {this.props.server.name}
+        </div>
       </div>
     )
   }

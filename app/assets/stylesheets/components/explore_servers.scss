@@ -9,27 +9,45 @@
     display: flex;
     flex-direction: column;
     border: 1px solid white;
+    padding: 15px;
     min-width: 236.75px;
     max-width: 236.75px;
     .explore-header-wrapper {
       p {
         font-weight: 600;
-        font-size: 20px;
+        font-size: 24px;
         color: white;
+        padding-bottom: 15px;
       }
     }
     .explore-server-index {
       display: flex;
       flex-direction: row;
-      // justify-content: flex-start;
+      align-items: center;
       .explore-compass-icon {
-        color: white;
+        color: rgb(204, 204, 204);
+        padding-right: 10px;
+        font-size: 26px;
       }
       .explore-gaming-icon {
-        color: white;
+        color: rgb(204, 204, 204);
+        padding-right: 10px;
+        font-size: 26px;
+      }
+      .explore-music-icon {
+        color: rgb(204, 204, 204);
+        padding-right: 10px;
+        font-size: 26px;
+      }
+      .explore-sciencetech-icon {
+        color: rgb(204, 204, 204);
+        padding-right: 10px;
+        font-size: 26px;
       }
       p {
-        color: white;
+        color: rgb(204, 204, 204);
+        font-size: 15px;
+        font-weight: 525;
       }
     }
   }
@@ -40,6 +58,15 @@
 .explore-home-wrapper {
   color: white;
   width: 100%;
+  padding: 30px;
+  .explore-home-featured-header {
+    p {
+      font-weight: 550;
+      font-size: 20px;
+      color: white;
+      padding-bottom: 15px;
+    }
+  }
 }
 // .explore-gaming-wrapper {
 
