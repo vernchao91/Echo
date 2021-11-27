@@ -14,16 +14,13 @@
 
   .header-wrapper {
     display: flex;
-    // flex-direction: column;
     justify-content: space-between;
     color: white;
     height: 20%;
-    
     .logo-wrapper {
       display: flex;
       justify-content: flex-start;
       font-size: 30px;
-      // width: 20%;
     }
 
     .social-links-wrapper {
@@ -36,16 +33,12 @@
         margin-top: 15px;
         color:rgb(255, 255, 255);
         height: 20px;
-        // border-radius: 10px;
-        // border: 1px solid white;
-
       }
     }
     .logo-wrapper {
       .logo-text{
         padding-top: 5px;
       }
-
     }
     .logout-wrapper {
       display: flex;
@@ -73,11 +66,6 @@
     .button-wrapper {
       display: flex;
       justify-content: flex-start;
-      // margin-left: 200px;
-      // flex-direction: row;
-      // margin-top: -125px;
-      // align-items: flex-end;
-
       .register-button {
         display: flex;
         justify-content: center;
@@ -93,7 +81,6 @@
         border-radius: 10px;
         font-weight: 500;
         font-family: Arial, Helvetica, sans-serif;
-
         &:hover {
           background-color: rgb(12, 178, 184);
           color:rgb(255, 255, 255)
