@@ -1,7 +1,6 @@
 .echoapp-wrapper {
   display: flex;
   flex-direction: column;
-  // justify-content: center;
   align-items: center;
   height: 100vh;
   max-width: 72px;
@@ -48,7 +47,6 @@
     // hide scrollbar
     scrollbar-width: none;  /* Firefox */
     -ms-overflow-style: none;  /* IE and Edge */
-    // overflow-y: hidden;
     overflow-y: scroll;
 
     h2 {
@@ -95,7 +93,6 @@
         left: 50px;
         margin-top: 12px;
         font-weight: 500;
-        // z-index: 5;
       }
     }
   }
@@ -241,7 +238,6 @@
     border: 1px solid white;
     align-items: center;
     padding: 10px;
-    // z-index: 1;
     .server-owner-button-wrapper {
       .delete-button, .edit-button {
         color: white;
@@ -260,7 +256,6 @@
       color: rgb(182, 182, 182);
       flex-direction: column;
     }
-
   }
 
   .channel-messages-users-wrapper {
