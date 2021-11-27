@@ -29,8 +29,9 @@ class ChannelIndex extends React.Component {
     this.props.clearUsers();
     this.props.clearChannels();
   }
-
+  
   componentDidMount() {
+    console.log("mount channel indexx");
     this.props.fetchUsersFromServer(this.props.serverId)
       .then((state) => this.setState({users: this.props.users}))
     this.props.fetchChannels(this.props.serverId)
@@ -178,8 +179,11 @@ class ChannelIndex extends React.Component {
           </div>
 
           <Route path="/app/servers/:serverId/channels/:channelId/messages" component={MessageIndexContainer} />
-
+            
           <div className="users-wrapper">
+            <div className="">
+              
+            </div>
             {Object.values(users).map(user => 
               <div 
                 key={user.id}
