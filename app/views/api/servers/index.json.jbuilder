@@ -1,7 +1,7 @@
 @servers.each do |server|
     json.set! server.id do
       json.users server.joined_users do |user|
-        json.user user.username
+        user.username
       end
       json.partial! "api/servers/server", server: server
     end
@@ -9,6 +9,9 @@
 
 # {
 #   "2": {
+#       users: {
+#           
+#       }
 #       "id": 2,
 #       "username": "demo",
 #       "email": "demo@gmail.com"
