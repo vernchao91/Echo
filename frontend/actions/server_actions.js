@@ -85,7 +85,7 @@ export const removeListErrors = errors => {
 }
 
 // thunk async actions
-// fetches all servers 
+// fetches all servers
 export const fetchServers = () => dispatch => {
   return ServerApiUtil.fetchServers()
     .then(

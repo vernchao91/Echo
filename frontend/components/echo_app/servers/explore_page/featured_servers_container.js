@@ -1,5 +1,8 @@
 import { connect } from "react-redux";
 import FeaturedServers from "./featured_servers";
+import { 
+  joinServer
+} from "../../../../actions/server_actions";
 
 const mapStateToProps = state => {
   return {
@@ -9,7 +12,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-
+    joinServer: (list) => dispatch(joinServer(list)),
   }
 }
 

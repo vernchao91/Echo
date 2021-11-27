@@ -57,14 +57,48 @@
 // changeable component home/gaming/music/sciencetech
 .explore-home-wrapper {
   color: white;
-  width: 100%;
+  width: calc(100% - 340.75px);
+  min-width: 305.25px;
   padding: 30px;
   .explore-home-featured-header {
-    p {
+    .explore-home-header {
       font-weight: 550;
       font-size: 20px;
       color: white;
       padding-bottom: 15px;
+    }
+  }
+  .explore-home-featured-index {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    .featured-servers-index-item-wrapper {
+      border: 1px solid white;
+      border-radius: 5px;
+      padding: 15px;
+      margin-right: 15px;
+      margin-bottom: 15px;
+      width: 300px;
+      .server-index-name-wrapper {
+        display: flex;
+        .verified-checkmark {
+          color: green;
+          font-size: 20px;
+          padding-right: 5px;
+        }
+        .server-index-name {
+          font-size: 15px;
+          font-weight: 600;
+          color: white;
+        }
+      }
+      .server-index-members {
+        p {
+          font-size: 14px;
+          color: rgb(212, 212, 212);
+        }
+      }
     }
   }
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import FeaturedServers from "./featured_servers";
+import FeaturedServersContainer from "./featured_servers_container";
 
 class ExploreHome extends React.Component {
   constructor(props) {
@@ -22,16 +22,16 @@ class ExploreHome extends React.Component {
         </div> */}
 
         <div className=" explore-home-featured-header">
-          <p>Featured Communities</p>
+          <p className="explore-home-header">Featured Communities</p>
+        </div>
           <div className="explore-home-featured-index">
             {Object.values(this.props.servers).map((server, i) => 
-              <FeaturedServers
+              <FeaturedServersContainer
                 key={i}
                 server={server}
               />
             )}
           </div>
-        </div>
       </div>
     )
   }
