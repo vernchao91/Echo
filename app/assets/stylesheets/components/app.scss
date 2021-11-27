@@ -269,19 +269,20 @@
     flex-direction: row;
     justify-content: space-between;
     .users-wrapper {
-      // width: 12%;
       min-width: 229px;
-      padding-top: 5px;
+      padding-top: 15px;
       padding-left: 15px;
       border: 1px solid white;
+      .users-total {
+        color: rgb(204, 204, 204);
+      }
       .users-link {
         display: flex;
         color: rgb(204, 204, 204);
         flex-direction: row;
         padding-top: 10px;
+        padding-left: 20px;
       }
     }
   }
-
-
 }

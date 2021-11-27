@@ -29,7 +29,6 @@ class Api::MessagesController < ApplicationController
     if params[:channel_id]
       channel = Channel.find_by(id: params[:channel_id])
       @message = Message.new(message_params)
-    #elsif params[:conversation_id]
     end
     if @message && @message.save
         render :show

@@ -41,7 +41,6 @@
       // -ms-overflow-style: none;  /* IE and Edge */
       word-wrap: break-word;
       overflow-wrap: break-word;
-      // margin: 20px;
       min-width: 384px;
       width: 100%;
       min-height: 493px;
@@ -49,7 +48,6 @@
     }
     // dummy div to push messages to the bottom of the page
     .messages-pushed-to-bottom {
-      border: 1px solid red;
       height: 100%;
     }
     .message {

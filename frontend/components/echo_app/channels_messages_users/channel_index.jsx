@@ -181,13 +181,11 @@ class ChannelIndex extends React.Component {
           <Route path="/app/servers/:serverId/channels/:channelId/messages" component={MessageIndexContainer} />
             
           <div className="users-wrapper">
-            <div className="">
-              
+            <div className="users-total">
+              Members - {Object.values(users).length}
             </div>
             {Object.values(users).map(user => 
-              <div 
-                key={user.id}
-                className="users-link">
+              <div key={user.id} className="users-link">
                 {user.username}
               </div>
             )}
