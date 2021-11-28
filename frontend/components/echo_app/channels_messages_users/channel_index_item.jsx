@@ -52,6 +52,9 @@ class ChannelIndexItem extends React.Component {
   editChannelForm() {
     return (
       <div className="create-channel-form-wrapper" >
+        <div className="create-channel-left">
+          <p className="left-side-overview">Overview</p>
+        </div>
         <button onClick={this.handleCloseModal}><IoCloseCircleOutline/></button>
         <form className="create-channel-form" onSubmit={this.handleSubmit}>
           <h1>Overview</h1>

@@ -6,7 +6,7 @@ import { closeModal } from "../../../actions/modal_actions"
 const mapStateToProps = (state) => {
   
   return {
-    servers: state.entities.servers,
+    servers: state.entities.joinedServers,
     errors: Object.values(state.errors.servers)
   }
 }
