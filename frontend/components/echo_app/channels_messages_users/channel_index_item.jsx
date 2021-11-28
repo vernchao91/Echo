@@ -23,15 +23,19 @@ class ChannelIndexItem extends React.Component {
 
   update(field) {
     return (e) => {
-      this.setState({ channel: {
-      ...this.state.channel,
-      [field]: e.currentTarget.value },
-      border: "",
-    })}
+      this.setState({ 
+        channel: {
+          ...this.state.channel,
+          [field]: e.currentTarget.value 
+        },
+        border: "",
+      })
+    }
   }
 
   handleSubmit(e) {
     e.preventDefault();
+    this.props.removeChannelErrors();
     const channel = Object.assign({}, this.state.channel)
     this.props.updateChannel(channel)
       .then(() => {this.handleCloseModal()})
@@ -65,11 +69,12 @@ class ChannelIndexItem extends React.Component {
         </div>
 
         <div className={this.props.errors.length === 0 ? "edit-channel-right-wrapper-1" : "edit-channel-right-wrapper-2"}>
-          <form className="edit-channel-form" style={{border: this.state.border, height: "50px", borderRadius: "3px"}}>
+          <form className="edit-channel-form" >
             <h1>OVERVIEW</h1>
             <h2>CHANNEL NAME</h2>
 
             <input
+              style={{border: this.state.border, borderRadius: "3px"}}
               className="edit-channel-input"
               type="text"
               value={this.state.channel.name}

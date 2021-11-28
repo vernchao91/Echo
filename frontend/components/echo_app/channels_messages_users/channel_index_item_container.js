@@ -17,7 +17,6 @@ const mapStateToProps = (state, ownProps) => {
     channels: Object.values(state.entities.channels),
     errors: Object.values(state.errors.channels),
     currentUserId: state.session.id,
-    // server: state.entities.servers[ownProps.match.params.serverId],
   }
 }
 
