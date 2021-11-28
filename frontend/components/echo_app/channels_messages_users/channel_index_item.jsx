@@ -10,6 +10,7 @@ class ChannelIndexItem extends React.Component {
     this.state = {
       channel: this.props.channel,
       channelId: this.props.channel.id,
+      border: "",
       modal: false,
     }
     this.handleOpenModal = this.handleOpenModal.bind(this);
@@ -19,11 +20,13 @@ class ChannelIndexItem extends React.Component {
 
   componentWillUnmount() {
   }
+
   update(field) {
     return (e) => {
       this.setState({ channel: {
       ...this.state.channel,
-      [field]: e.currentTarget.value }
+      [field]: e.currentTarget.value },
+      border: "",
     })}
   }
 
@@ -61,8 +64,8 @@ class ChannelIndexItem extends React.Component {
           </div>
         </div>
 
-        <div className="edit-channel-right-wrapper">
-          <form className="edit-channel-form">
+        <div className={this.props.errors.length === 0 ? "edit-channel-right-wrapper-1" : "edit-channel-right-wrapper-2"}>
+          <form className="edit-channel-form" style={{border: this.state.border, height: "50px", borderRadius: "3px"}}>
             <h1>OVERVIEW</h1>
             <h2>CHANNEL NAME</h2>
 
@@ -73,6 +76,14 @@ class ChannelIndexItem extends React.Component {
               onChange={this.update("name")}
             />
 
+            <div className="dummy-div-for-error"></div>
+
+            {this.props.errors.map((error, i) => (
+              <div className="channel-error-wrapper" key={i}>
+                <ul className="channel-error">{error}</ul>
+              </div>
+            ))}
+
             <div className="edit-channel-right-button-wrapper">
               <button onClick={() => this.setState({channel : { ...this.state.channel, name: this.props.channel.name}})} className="reset-channel-button">
                 Reset
@@ -80,11 +91,6 @@ class ChannelIndexItem extends React.Component {
               <button onClick={this.handleSubmit} className="edit-channel-button">Save Changes</button>
             </div>
 
-            {this.props.errors.map((error, i) => (
-              <div className="channel-error-wrapper" key={i}>
-                <li className="channel-error">{error}</li>
-              </div>
-            ))}
 
           </form>
           <button className="edit-channel-right-close-modal" onClick={this.handleCloseModal} ><IoCloseCircleOutline/></button>

@@ -71,7 +71,7 @@
     }
   }
 
-  .edit-channel-right-wrapper {
+  .edit-channel-right-wrapper-1 {
     background-color: #36393f;
     display: flex;
     width: 65.15%;
@@ -93,7 +93,7 @@
         text-transform: uppercase;
         color: #b9bbbe;
         font-weight: 550;
-        font-size: 13px;
+        font-size: 12px;
         padding-bottom: 10px;
       }
       .edit-channel-input {
@@ -105,18 +105,109 @@
         padding: 10px;
         height: 20px;
       }
+      .dummy-div-for-error {
+        display: block;
+        height: 20px;
+      }
       .edit-channel-right-button-wrapper {
-        padding-top: 10px;
+        padding-top: 15px;
         .reset-channel-button {
-          
+          font-weight: 550;
+          font-size: 12px;
+          color:rgb(204, 204, 204);
+          padding-right: 10px;
+          height: 20px;
+
         }
         .edit-channel-button {
           background-color:#69e376b0;
+          border-radius: 3px;
+          font-weight: 550;
+          font-size: 12px;
+          height: 20px;
+          padding: 5px;
+          color:rgb(255, 255, 255);
         }
       }
       .channel-error-wrapper {
+        padding-top: 5px;
         .channel-error {
+          color: red;
+          font-size: 12px;
+        }
+      }
+    }
+    .edit-channel-right-close-modal {
+      display: flex;
+      // color: red;
+      color: #72767d;
+      font-size: 45px;
+      padding-top: 60px;
+    }
+  }
+  .edit-channel-right-wrapper-2 {
+    background-color: #36393f;
+    display: flex;
+    width: 65.15%;
+    .edit-channel-form {
+      display: flex;
+      flex-direction: column;
+      padding: 60px 40px 80px;
+      width: 650px;
+      min-width: 460px;
+      min-height: 100%;
+      h1 {
+        text-transform: uppercase;
+        color: #fff;
+        font-weight: 550;
+        font-size: 15px;
+        padding-bottom: 15px;
+      }
+      h2 {
+        text-transform: uppercase;
+        color: #b9bbbe;
+        font-weight: 550;
+        font-size: 12px;
+        padding-bottom: 10px;
+      }
+      .edit-channel-input {
+        border-radius: 3px;
+        color: #dcddde;
+        font-size: 15px;
+        background-color: #2f3136;
+        border: 1px solid red;
+        padding: 10px;
+        height: 20px;
+      }
+      .dummy-div-for-error {
+        display: none;
+        height: 20px;
+      }
+      .channel-error-wrapper {
+        padding-top: 5px;
+        .channel-error {
+          color: red;
+          font-size: 12px;
+        }
+      }
+      .edit-channel-right-button-wrapper {
+        padding-top: 15px;
+        .reset-channel-button {
+          font-weight: 550;
+          font-size: 12px;
+          color:rgb(204, 204, 204);
+          padding-right: 10px;
+          height: 20px;
 
+        }
+        .edit-channel-button {
+          background-color:#69e376b0;
+          border-radius: 3px;
+          font-weight: 550;
+          font-size: 12px;
+          height: 20px;
+          padding: 5px;
+          color:rgb(255, 255, 255);
         }
       }
     }

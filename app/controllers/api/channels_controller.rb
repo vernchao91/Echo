@@ -39,7 +39,7 @@ class Api::ChannelsController < ApplicationController
     elsif !@channel
       render json: { error: "Server doesn't exist" }, status: 404
     else
-      render json: @channel.errors.full_messages, status: 404
+      render json: { error: "This field is required" }, status: 404
     end
   end
 
