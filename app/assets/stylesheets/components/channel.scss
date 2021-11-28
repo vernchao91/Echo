@@ -44,8 +44,88 @@
   }
 }
 
-.create-channel-form-wrapper {
-  background-color: rgb(255, 255, 255);
+
+.edit-channel-form-wrapper {
   height: 100vh;
   width: 100vw;
+  display: flex;
+  flex-direction: row;
+  .edit-channel-left-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    background-color: #2f3136;
+    width: 34.85%;
+    .edit-channel-left {
+      width: 218px;
+      padding: 60px 6px 60px 20px;
+      .left-side-channel-name {
+        color: #b9bbbe;
+      }
+      .left-side-overview {
+        color: #b9bbbe;
+        
+      }
+      .left-side-delete-button {
+        color: red;
+      }
+    }
+  }
+
+  .edit-channel-right-wrapper {
+    background-color: #36393f;
+    display: flex;
+    width: 65.15%;
+    .edit-channel-form {
+      display: flex;
+      flex-direction: column;
+      padding: 60px 40px 80px;
+      width: 650px;
+      min-width: 460px;
+      min-height: 100%;
+      h1 {
+        text-transform: uppercase;
+        color: #fff;
+        font-weight: 550;
+        font-size: 15px;
+        padding-bottom: 15px;
+      }
+      h2 {
+        text-transform: uppercase;
+        color: #b9bbbe;
+        font-weight: 550;
+        font-size: 13px;
+        padding-bottom: 10px;
+      }
+      .edit-channel-input {
+        border-radius: 3px;
+        color: #dcddde;
+        font-size: 15px;
+        background-color: #2f3136;
+        border: 1px solid black;
+        padding: 10px;
+        height: 20px;
+      }
+      .edit-channel-right-button-wrapper {
+        padding-top: 10px;
+        .reset-channel-button {
+          
+        }
+        .edit-channel-button {
+          background-color:#69e376b0;
+        }
+      }
+      .channel-error-wrapper {
+        .channel-error {
+
+        }
+      }
+    }
+    .edit-channel-right-close-modal {
+      display: flex;
+      // color: red;
+      color: #72767d;
+      font-size: 45px;
+      padding-top: 60px;
+    }
+  }
 }

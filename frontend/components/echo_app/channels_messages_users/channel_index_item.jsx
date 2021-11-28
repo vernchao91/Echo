@@ -51,34 +51,43 @@ class ChannelIndexItem extends React.Component {
 
   editChannelForm() {
     return (
-      <div className="create-channel-form-wrapper" >
+      <div className="edit-channel-form-wrapper" >
 
-        <div className="create-channel-left-wrapper">
-          <div className="create-channel-left">
+        <div className="edit-channel-left-wrapper">
+          <div className="edit-channel-left">
             <ul className="left-side-channel-name"># {this.state.channel.name}</ul>
             <ul className="left-side-overview">Overview</ul>
             <button className="left-side-delete-button" onClick={() => this.props.deleteChannel(this.props.channel.id)}>Delete Channel</button>
           </div>
         </div>
 
-        <div className="create-channel-right-wrapper">
-          <form className="create-channel-form" onSubmit={this.handleSubmit}>
+        <div className="edit-channel-right-wrapper">
+          <form className="edit-channel-form">
             <h1>OVERVIEW</h1>
             <h2>CHANNEL NAME</h2>
+
             <input
-              className="create-channel-input"
+              className="edit-channel-input"
               type="text"
               value={this.state.channel.name}
               onChange={this.update("name")}
             />
-            <button className="create-channel-button">Save Changes</button>
+
+            <div className="edit-channel-right-button-wrapper">
+              <button onClick={() => this.setState({channel : { ...this.state.channel, name: this.props.channel.name}})} className="reset-channel-button">
+                Reset
+              </button>
+              <button onClick={this.handleSubmit} className="edit-channel-button">Save Changes</button>
+            </div>
+
             {this.props.errors.map((error, i) => (
               <div className="channel-error-wrapper" key={i}>
                 <li className="channel-error">{error}</li>
               </div>
             ))}
+
           </form>
-          <button onClick={this.handleCloseModal} className="create-channel-right-close-modal"><IoCloseCircleOutline/></button>
+          <button className="edit-channel-right-close-modal" onClick={this.handleCloseModal} ><IoCloseCircleOutline/></button>
         </div>
 
       </div>
