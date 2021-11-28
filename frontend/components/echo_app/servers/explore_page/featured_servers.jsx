@@ -16,18 +16,19 @@ class FeaturedServers extends React.Component {
   }
 
   render() {
+    const { server, joinServer } = this.props
     return (
-      <div className="featured-servers-index-item-wrapper">
+      <Link className="featured-servers-index-item-wrapper" to={`/app/servers/${server.id}/channels`} onClick={() => joinServer({server_id: server.id})}>
 
         <div className="server-index-name-wrapper">
           <HiBadgeCheck className="verified-checkmark"/>
-          <button className="server-index-name" onClick={() => this.props.joinServer({server_id: this.props.server.id})}>
-            {this.props.server.name}
-          </button>
+          <div className="server-index-name">
+            {server.name}
+          </div>
         </div>
         {this.displayMembers()}
 
-      </div>
+      </Link>
     )
   }
 }
