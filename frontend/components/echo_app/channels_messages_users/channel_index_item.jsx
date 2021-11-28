@@ -77,9 +77,8 @@ class ChannelIndexItem extends React.Component {
               </div>
             ))}
           </form>
+          <button onClick={this.handleCloseModal} className="create-channel-right-close-modal"><IoCloseCircleOutline/></button>
         </div>
-
-          <button onClick={this.handleCloseModal}><IoCloseCircleOutline/></button>
 
       </div>
     )

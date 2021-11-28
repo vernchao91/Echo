@@ -19,12 +19,18 @@
   }
   .create-channel-right-wrapper {
     background-color: #36393f;
+    display: flex;
     width: 64.85%;
     .create-channel-form {
+      // background-color: #36393f;
       padding: 60px 40px 80px;
       max-width: 740px;
       min-width: 460px;
       min-height: 100%;
+      h1 {
+        text-transform: uppercase;
+        color: #fff;
+      }
       .create-channel-input {
 
       }
@@ -36,6 +42,11 @@
 
         }
       }
+    }
+    .create-channel-right-close-modal {
+      // color: red;
+      color: #72767d;
+      font-size: 45px;
     }
   }
 }
