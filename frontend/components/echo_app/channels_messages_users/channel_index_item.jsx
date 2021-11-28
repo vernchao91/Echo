@@ -23,6 +23,7 @@ class ChannelIndexItem extends React.Component {
 
   update(field) {
     return (e) => {
+      this.props.removeChannelErrors();
       this.setState({ 
         channel: {
           ...this.state.channel,
