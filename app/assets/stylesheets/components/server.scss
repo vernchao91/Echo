@@ -1,3 +1,42 @@
-.edit-server-form-wrapper {
-  
+.create-channel-form-wrapper {
+  display: flex;
+  flex-direction: row;
+  .create-channel-left-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    background-color: #2f3136;
+    width: 35.15%;
+    .create-channel-left {
+      width: 218px;
+      padding: 60px 6px 60px 20px;
+      ul {
+        color: #b9bbbe;
+      }
+      button {
+        color: red;
+      }
+    }
+
+    }
+  .create-channel-right-wrapper {
+    background-color: #36393f;
+    width: 64.85%;
+    .create-channel-form {
+      padding: 60px 40px 80px;
+      max-width: 740px;
+      min-width: 460px;
+      min-height: 100%;
+      .create-channel-input {
+
+      }
+      .create-channel-button {
+
+      }
+      .channel-error-wrapper {
+        .channel-error {
+
+        }
+      }
+    }
+  }
 }

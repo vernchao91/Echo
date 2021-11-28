@@ -52,26 +52,35 @@ class ChannelIndexItem extends React.Component {
   editChannelForm() {
     return (
       <div className="create-channel-form-wrapper" >
-        <div className="create-channel-left">
-          <p className="left-side-overview">Overview</p>
+
+        <div className="create-channel-left-wrapper">
+          <div className="create-channel-left">
+            <ul className="left-side=channel-name"># {this.state.channel.name}</ul>
+            <ul className="left-side-overview">Overview</ul>
+            <button onClick={() => this.props.deleteChannel(this.props.channel.id)}>Delete Channel</button>
+          </div>
         </div>
-        <button onClick={this.handleCloseModal}><IoCloseCircleOutline/></button>
-        <form className="create-channel-form" onSubmit={this.handleSubmit}>
-          <h1>Overview</h1>
-          <input
-            className="create-channel-input"
-            type="text"
-            value={this.state.channel.name}
-            onChange={this.update("name")}
-          />
-          <button className="create-channel-button">Update Channel</button>
-          {this.props.errors.map((error, i) => (
-            <div className="channel-error-wrapper" key={i}>
-              <li className="channel-error">{error}</li>
-            </div>
-          ))}
-        </form>
-        <button onClick={() => this.props.deleteChannel(this.props.channel.id)}>Delete Channel</button>
+
+        <div className="create-channel-right-wrapper">
+          <form className="create-channel-form" onSubmit={this.handleSubmit}>
+            <h1>Overview</h1>
+            <input
+              className="create-channel-input"
+              type="text"
+              value={this.state.channel.name}
+              onChange={this.update("name")}
+            />
+            <button className="create-channel-button">Save Changes</button>
+            {this.props.errors.map((error, i) => (
+              <div className="channel-error-wrapper" key={i}>
+                <li className="channel-error">{error}</li>
+              </div>
+            ))}
+          </form>
+        </div>
+
+          <button onClick={this.handleCloseModal}><IoCloseCircleOutline/></button>
+
       </div>
     )
   }
