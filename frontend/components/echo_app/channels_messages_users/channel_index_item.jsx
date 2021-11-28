@@ -55,15 +55,16 @@ class ChannelIndexItem extends React.Component {
 
         <div className="create-channel-left-wrapper">
           <div className="create-channel-left">
-            <ul className="left-side=channel-name"># {this.state.channel.name}</ul>
+            <ul className="left-side-channel-name"># {this.state.channel.name}</ul>
             <ul className="left-side-overview">Overview</ul>
-            <button onClick={() => this.props.deleteChannel(this.props.channel.id)}>Delete Channel</button>
+            <button className="left-side-delete-button" onClick={() => this.props.deleteChannel(this.props.channel.id)}>Delete Channel</button>
           </div>
         </div>
 
         <div className="create-channel-right-wrapper">
           <form className="create-channel-form" onSubmit={this.handleSubmit}>
-            <h1>Overview</h1>
+            <h1>OVERVIEW</h1>
+            <h2>CHANNEL NAME</h2>
             <input
               className="create-channel-input"
               type="text"

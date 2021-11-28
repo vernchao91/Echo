@@ -5,14 +5,18 @@
     display: flex;
     justify-content: flex-end;
     background-color: #2f3136;
-    width: 35.15%;
+    width: 34.85%;
     .create-channel-left {
       width: 218px;
       padding: 60px 6px 60px 20px;
-      ul {
+      .left-side-channel-name {
         color: #b9bbbe;
       }
-      button {
+      .left-side-overview {
+        color: #b9bbbe;
+        
+      }
+      .left-side-delete-button {
         color: red;
       }
     }
@@ -20,22 +24,39 @@
   .create-channel-right-wrapper {
     background-color: #36393f;
     display: flex;
-    width: 64.85%;
+    width: 65.15%;
     .create-channel-form {
-      // background-color: #36393f;
+      display: flex;
+      flex-direction: column;
       padding: 60px 40px 80px;
-      max-width: 740px;
+      width: 650px;
       min-width: 460px;
       min-height: 100%;
       h1 {
         text-transform: uppercase;
         color: #fff;
+        font-weight: 550;
+        font-size: 15px;
+        padding-bottom: 15px;
+      }
+      h2 {
+        text-transform: uppercase;
+        color: #b9bbbe;
+        font-weight: 550;
+        font-size: 13px;
+        padding-bottom: 10px;
       }
       .create-channel-input {
-
+        border-radius: 3px;
+        color: #dcddde;
+        font-size: 15px;
+        background-color: #2f3136;
+        border: 1px solid black;
+        padding: 10px;
+        height: 20px;
       }
       .create-channel-button {
-
+        background-color: 
       }
       .channel-error-wrapper {
         .channel-error {
@@ -44,9 +65,11 @@
       }
     }
     .create-channel-right-close-modal {
+      display: flex;
       // color: red;
       color: #72767d;
       font-size: 45px;
+      padding-top: 60px;
     }
   }
 }
