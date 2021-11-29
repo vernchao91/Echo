@@ -31,7 +31,6 @@ class ChannelIndex extends React.Component {
   }
   
   componentDidMount() {
-    console.log("mount channel indexx");
     this.props.fetchUsersFromServer(this.props.serverId)
       .then((state) => this.setState({users: this.props.users}))
     this.props.fetchChannels(this.props.serverId)

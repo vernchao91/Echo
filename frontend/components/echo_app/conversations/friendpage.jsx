@@ -14,7 +14,6 @@ class FriendPage extends React.Component {
   }
   
   componentDidMount() {
-    console.log(this.props.history)
   }
 
   render() {
