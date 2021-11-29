@@ -16,6 +16,7 @@ class ChannelIndexItem extends React.Component {
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleReset = this.handleReset.bind(this)
   }
 
   componentWillUnmount() {
@@ -32,6 +33,12 @@ class ChannelIndexItem extends React.Component {
         border: "",
       })
     }
+  }
+
+  handleReset(e) {
+    e.preventDefault();
+    this.props.removeChannelErrors();
+    this.setState({channel : { ...this.state.channel, name: this.props.channel.name}})
   }
 
   handleSubmit(e) {
@@ -65,6 +72,7 @@ class ChannelIndexItem extends React.Component {
           <div className="edit-channel-left">
             <ul className="left-side-channel-name"># {this.state.channel.name}</ul>
             <ul className="left-side-overview">Overview</ul>
+            <ul className="border-bottom"/>
             <button className="left-side-delete-button" onClick={() => this.props.deleteChannel(this.props.channel.id)}>Delete Channel</button>
           </div>
         </div>
@@ -91,7 +99,7 @@ class ChannelIndexItem extends React.Component {
             ))}
 
             <div className="edit-channel-right-button-wrapper">
-              <button onClick={() => this.setState({channel : { ...this.state.channel, name: this.props.channel.name}})} className="reset-channel-button">
+              <button onClick={this.handleReset} className="reset-channel-button">
                 Reset
               </button>
               <button onClick={this.handleSubmit} className="edit-channel-button">Save Changes</button>
