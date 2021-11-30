@@ -53,7 +53,7 @@ class EditServerForm extends React.Component {
         <div className="edit-server-left-wrapper">
           <div className="edit-server-left">
             <ul className="left-side-server-name">{this.state.name ? this.state.name : "SERVER SETTINGS"}</ul>
-            <ul className="left-side-overview">OVERVIEW</ul>
+            <ul className="left-side-overview">Overview</ul>
             <ul className="border-bottom"/>
             <button className="left-side-delete-button" onClick={() => this.props.deleteServer(this.props.serverId).then(this.props.closeModal())}>Delete Server</button>
           </div>
