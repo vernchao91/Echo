@@ -31,14 +31,25 @@
     color: rgb(204, 204, 204);
     margin-top: 15px;
     margin-left: 10px;
+    &:hover {
+      .channel-index-item {
+        display: flex;
+        .channel-button {
+          margin-right: 5px;
+          color: white;
+        }
+      }
+      .cog {
+        display: flex;
+      }
+    }
+    .cog {
+      display: none;
+    }
     .channel-index-item {
       display: flex;
       p {
         margin-right: 5px;
-      }
-      .cog {
-        display: flex;
-        align-items: flex-end;
       }
     }
   }

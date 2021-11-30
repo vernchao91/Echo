@@ -57,7 +57,6 @@
     .server-index-wrapper {
       display:flex;
       justify-content: center;
-      border: 1px solid rgb(255, 255, 255);
       border-radius: 50%;
       width: auto;
       height: auto;
@@ -79,10 +78,15 @@
         align-items: center;
         width: 48px;
         height: 48px;
-        border-radius: 10px;
         transition: 0.1s ease-in-out;
-        border: transparent;
-
+        border-radius: 50%;
+        border: 1px solid rgb(255, 255, 255);
+        &:hover {
+          color: white;
+          border-radius: 10px;
+          border: 1px solid rgb(255, 255, 255);
+        }
+        // border: transparent;
       }
 
       // tool tip display hovered

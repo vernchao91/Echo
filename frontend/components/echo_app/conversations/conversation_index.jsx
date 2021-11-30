@@ -53,6 +53,7 @@ class ConversationIndex extends React.Component {
         arr.push({displayId: conversation.ownerId, username: conversation.ownerUsername, id: conversation.id})
       }
     })
+    
     const pathName = this.props.history.location.pathname;
     const friendpage = "/app/conversations/friendpage/all";
     const pending =  "/app/conversations/friendpage/pending";

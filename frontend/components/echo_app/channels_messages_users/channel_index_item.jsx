@@ -122,17 +122,20 @@ class ChannelIndexItem extends React.Component {
   render() {
     const { channel } = this.props
     if (!channel) return null
+    if(!this.props.server) return null
+
+    
     return (
-      <div className="channel-index-wrapper">
+      <Link className="channel-index-wrapper" to={`/app/servers/${channel.serverId}/channels/${channel.id}/messages`}>
         <Modal isOpen={this.state.modal} className="overlay" ariaHideApp={false}>
           {this.editChannelForm()}
         </Modal>
         <div className="channel-index-item">
           <p>#</p>
-          <Link className="channel-button" to={`/app/servers/${channel.serverId}/channels/${channel.id}/messages`}>{channel.name}</Link>
+          <div className="channel-button">{channel.name}</div>
         </div>
         {this.renderEditChannelButton()}
-      </div>
+      </Link>
     )
   }
 }

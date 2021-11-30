@@ -1,9 +1,9 @@
 import { connect } from "react-redux";
 import ServerIndex from "./server_index_item";
+import { withRouter } from "react-router-dom";
 import {
   updateServer
 } from "../../../actions/server_actions";
-
 import {
   fetchUsersFromServer
 } from "../../../actions/user_actions"
@@ -24,4 +24,4 @@ const mapDispatchToProps = dispatch => {
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(ServerIndex)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ServerIndex))
