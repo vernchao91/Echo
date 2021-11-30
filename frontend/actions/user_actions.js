@@ -1,6 +1,7 @@
 import * as UserApiUtil from "../util/user_api_util";
 
 export const RECEIVE_USERS = "RECEIVE_USERS";
+export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const JOIN_SERVER = "JOIN_SERVER";
 export const LEAVE_SERVER = "LEAVE_SERVER";
 export const CLEAR_USERS = "CLEAR_USERS";
@@ -22,6 +23,12 @@ export const receiveUsers = users => {
 export const receiveUser = user => {
   return {
     type: JOIN_SERVER,
+    user
+  }
+}
+export const receiveCurrentUser = user => {
+  return {
+    type: RECEIVE_CURRENT_USER,
     user
   }
 }
@@ -69,6 +76,13 @@ export const removeErrors = errors => {
 
 // thunk async actions
 // fetches all users from particular server
+export const fetchCurrentUser = () => dispatch => (
+  UserApiUtil.fetchCurrentUser()
+    .then(
+      user => (dispatch(receiveCurrentUser(user))),
+      err => (dispatch(receiveUserErrors(err.responseJSON)))
+    )
+)
 export const fetchUsersFromServer = (serverId) => dispatch => (
   UserApiUtil.fetchUsersFromServer(serverId)
     .then(

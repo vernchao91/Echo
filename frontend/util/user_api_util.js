@@ -18,3 +18,9 @@ export const leaveServer = (serverId) => {
     method: "DELETE"
   })
 }
+export const fetchCurrentUser = () => {
+  return $.ajax({
+    url: `/api/users/:id`,
+    method: "GET"
+  })
+}

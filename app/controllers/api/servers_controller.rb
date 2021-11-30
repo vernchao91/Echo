@@ -15,6 +15,8 @@ class Api::ServersController < ApplicationController
   def show
     @server = Server.find_by(id: params[:id])
     if @server
+      @list = List.new(user_id: current_user.id, server_id: @server.id)
+      @list.save
       render :show
     else
       render json: { error: "Server doesn't exist" }, status: 404

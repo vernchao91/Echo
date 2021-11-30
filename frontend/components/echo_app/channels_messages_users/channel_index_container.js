@@ -3,23 +3,26 @@ import ChannelIndex from "./channel_index";
 import {
   fetchUsersFromServer,
   clearUsers
-} from "../../../actions/user_actions"
+} from "../../../actions/user_actions";
 import {
   deleteServer,
   updateServer,
   joinServer,
   leaveServer,
-} from "../../../actions/server_actions"
+} from "../../../actions/server_actions";
 import { 
   openModal, 
   closeModal 
-} from "../../../actions/modal_actions"
+} from "../../../actions/modal_actions";
 import { 
   fetchChannels,
   createChannel,
   removeChannelErrors,
   clearChannels
-} from "../../../actions/channel_actions"
+} from "../../../actions/channel_actions";
+import {
+  fetchCurrentUser
+} from "../../../actions/user_actions";
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -46,7 +49,8 @@ const mapDispatchToProps = dispatch => {
     closeModal: () => dispatch(closeModal()),
     removeChannelErrors: () => dispatch(removeChannelErrors()),
     clearUsers: () => dispatch(clearUsers()),
-    clearChannels: () => dispatch(clearChannels())
+    clearChannels: () => dispatch(clearChannels()),
+    fetchCurrentUser: () => dispatch(fetchCurrentUser())
   }
 }
 

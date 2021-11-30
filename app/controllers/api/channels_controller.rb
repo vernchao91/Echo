@@ -38,8 +38,10 @@ class Api::ChannelsController < ApplicationController
       render :show
     elsif !@channel
       render json: { error: "Server doesn't exist" }, status: 404
-    else
+    elsif @channel.name.empty?
       render json: { error: "This field is required" }, status: 404
+    else
+      render json: { error: "There is already a channel under that name" }, status: 404
     end
   end
 

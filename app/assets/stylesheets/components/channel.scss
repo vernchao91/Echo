@@ -14,6 +14,8 @@
     height: 18px;
     .channel-header {
       color: rgb(204, 204, 204);
+      font-weight: 501;
+      font-size: 14px;
     }
     .create-channel-button{
       font-size: 25px;
@@ -35,9 +37,10 @@
     padding-left: 5px;
     padding-right: 5px;
     border-radius: 5px;
-    height: 30px;
+    height: 32px;
     &:hover {
       background-color: rgb(58, 58, 58);
+      // div hover to change nested divs
       .channel-index-item {
         display: flex;
         .channel-button {
@@ -51,11 +54,20 @@
     }
     .cog {
       display: none;
+      &:hover {
+        color: white;
+      }
     }
     .channel-index-item {
       display: flex;
+      align-items: center;
       p {
+        font-size: 20px;
         margin-right: 5px;
+      }
+      .channel-button {
+        font-weight: 525;
+        font-size: 15px;
       }
     }
   }

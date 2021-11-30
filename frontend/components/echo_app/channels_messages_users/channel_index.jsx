@@ -31,10 +31,13 @@ class ChannelIndex extends React.Component {
   }
   
   componentDidMount() {
+    this.props.clearUsers();
+    this.props.clearChannels();
     this.props.fetchUsersFromServer(this.props.serverId)
       .then((state) => this.setState({users: this.props.users}))
     this.props.fetchChannels(this.props.serverId)
       .then((state) => this.setState({channels: this.props.channels}))
+    this.props.fetchCurrentUser();
   }
   
   componentDidUpdate(prevProp) {
@@ -43,6 +46,7 @@ class ChannelIndex extends React.Component {
         .then((state) => this.setState({users: this.props.users, serverId: this.props.serverId}))
       this.props.fetchChannels(this.props.serverId)
         .then((state) => this.setState({channels: this.props.channels, serverId: this.props.serverId}))
+      this.props.fetchCurrentUser();
     }
   }
   

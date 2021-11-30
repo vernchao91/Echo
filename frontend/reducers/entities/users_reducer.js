@@ -1,10 +1,7 @@
-import { 
-  RECEIVE_CURRENT_USER,
-} from "../../actions/session_actions"
-
 import {
   RECEIVE_USERS,
-  CLEAR_USERS
+  CLEAR_USERS,
+  RECEIVE_CURRENT_USER
 } from "../../actions/user_actions"
 
 const usersReducer = (oldState = {}, action) => {
@@ -13,7 +10,7 @@ const usersReducer = (oldState = {}, action) => {
   
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
-      return Object.assign({}, oldState, { [action.user.id]: action.user });
+      return Object.assign({}, newState, { [action.user.id]: action.user });
 
     case RECEIVE_USERS:
       return action.users
