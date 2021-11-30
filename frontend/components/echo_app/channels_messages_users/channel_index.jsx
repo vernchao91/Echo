@@ -34,7 +34,7 @@ class ChannelIndex extends React.Component {
     this.props.clearUsers();
     this.props.clearChannels();
     this.props.fetchUsersFromServer(this.props.serverId)
-      .then((state) => this.setState({users: this.props.users}))
+      .then(() => this.props.fetchCurrentUser())
     this.props.fetchChannels(this.props.serverId)
       .then((state) => this.setState({channels: this.props.channels}))
     this.props.fetchCurrentUser();
@@ -113,8 +113,8 @@ class ChannelIndex extends React.Component {
     if (currentUserId === server.ownerId) {
       return (
         <div className="server-owner-button-wrapper">
-          <Link className="delete-button" to="/app" onClick={() => deleteServer(serverId)}>Delete Server</Link>
-          <button className="edit-button" onClick={openEditModal}>Edit Server</button>
+          {/* <Link className="delete-button" to="/app" onClick={() => deleteServer(serverId)}>Delete Server</Link> */}
+          <button className="edit-button" onClick={openEditModal}>Server Settings</button>
         </div>
       )
     // } else if (!users[currentUserId]) {
@@ -147,8 +147,8 @@ class ChannelIndex extends React.Component {
 
   render() {
     const { users, channels, server } = this.props
-    let modal = <Modal errors={this.props.errors} name={this.props.modal} serverId={this.props.serverId}/>
     if (!users || !channels || !server) return null
+    let modal = <Modal errors={this.props.errors} name={this.props.modal} server={this.props.server} serverId={this.props.serverId}/>
     return (
       <div className="channels-servername-messages-users-wrapper">
 

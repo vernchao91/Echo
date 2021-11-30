@@ -79,7 +79,7 @@ class ChannelIndexItem extends React.Component {
 
         <div className={this.props.errors.length === 0 ? "edit-channel-right-wrapper-1" : "edit-channel-right-wrapper-2"}>
           <form className="edit-channel-form" >
-            <h1>OVERVIEW</h1>
+            <h1>CHANNEL OVERVIEW</h1>
             <h2>CHANNEL NAME</h2>
 
             <input
@@ -104,7 +104,6 @@ class ChannelIndexItem extends React.Component {
               </button>
               <button type="submit" onClick={this.handleSubmit} className="edit-channel-button">Save Changes</button>
             </div>
-
 
           </form>
           <button className="edit-channel-right-close-modal" onClick={this.handleCloseModal} ><IoCloseCircleOutline/></button>

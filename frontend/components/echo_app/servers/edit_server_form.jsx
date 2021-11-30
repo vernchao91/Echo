@@ -1,4 +1,5 @@
 import React from "react";
+import { IoCloseCircleOutline } from "react-icons/io5";
 
 class EditServerForm extends React.Component {
   constructor(props) {
@@ -15,7 +16,14 @@ class EditServerForm extends React.Component {
         id: this.props.serverId
       }
     }
-    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleReset = this.handleReset.bind(this);
+  }
+
+  handleReset(e) {
+    e.preventDefault();
+    this.props.removeServerErrors();
+    this.setState({name: this.props.server.name})
   }
 
   handleSubmit(e) {
@@ -33,6 +41,7 @@ class EditServerForm extends React.Component {
 
   update(field) {
     return (e) => {
+      this.props.removeServerErrors();
       this.setState({ [field]: e.currentTarget.value })
     }
   }
@@ -40,24 +49,46 @@ class EditServerForm extends React.Component {
   render() {
     return (
       <div className="edit-server-form-wrapper">
-        <h1>Edit Server</h1>
-        <form onSubmit={this.handleSubmit}>
-          <label className="label-name">Name: </label>
-          <input
-            className="edit-server-input"
-            type="text"
-            value={this.state.name}
-            onChange={this.update("name")}>
-          </input>
-          <button className="edit-server-button">Edit Server</button>
 
-          {this.props.errors.map((error, i) => (
-            <div className="session-error-wrapper" key={i}>
-              <li className="session-error">{error}</li>
+        <div className="edit-server-left-wrapper">
+          <div className="edit-server-left">
+            <ul className="left-side-server-name">{this.state.name ? this.state.name : "SERVER SETTINGS"}</ul>
+            <ul className="left-side-overview">OVERVIEW</ul>
+            <ul className="border-bottom"/>
+            <button className="left-side-delete-button" onClick={() => this.props.deleteServer(this.props.serverId).then(this.props.closeModal())}>Delete Server</button>
+          </div>
+        </div>
+
+        <div className={this.props.errors.length === 0 ? "edit-server-right-wrapper-1" : "edit-server-right-wrapper-2"}>
+          <form className="edit-server-form">
+            <h1>SERVER OVERVIEW</h1>
+            <h2>SERVER NAME</h2>
+
+            <input
+              className="edit-server-input"
+              type="text"
+              value={this.state.name}
+              onChange={this.update("name")}>
+            </input>
+            <div className="dummy-div-for-error"></div>
+
+            {this.props.errors.map((error, i) => (
+              <div className="server-error-wrapper" key={i}>
+                <ul className="server-error">{error}</ul>
+              </div>
+            ))}
+
+            <div className="edit-server-right-button-wrapper">
+              <button type="button" onClick={this.handleReset} className="reset-server-button">
+                Reset
+              </button>
+              <button type="submit" className="edit-server-button" onClick={this.handleSubmit}>Save Changes</button>
             </div>
-          ))}
+          </form>
+          <button className="edit-server-right-close-modal" onClick={() => this.props.closeModal()} ><IoCloseCircleOutline/></button>
 
-        </form>
+        </div>
+
       </div>
     )
   }

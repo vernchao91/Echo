@@ -6,14 +6,13 @@
   width: 11.2%;
   min-width: 206.75px;
   max-width: 238.87px;
-
   .channel-header-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 18px;
     .channel-header {
-      color: rgb(204, 204, 204);
+      color: rgb(240, 240, 240);
       font-weight: 501;
       font-size: 14px;
     }
@@ -186,7 +185,6 @@
           color:rgb(204, 204, 204);
           padding-right: 10px;
           height: 20px;
-
         }
         .edit-channel-button {
           background-color:#69e376b0;

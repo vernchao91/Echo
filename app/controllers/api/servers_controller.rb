@@ -46,7 +46,7 @@ class Api::ServersController < ApplicationController
     elsif !@server
       render json: { error: "Server doesn't exist" }, status: 404
     else
-      render json: @server.errors.full_messages, status: 422
+      render json: { error: "This field is required" }, status: 422
     end
   end
 
