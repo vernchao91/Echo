@@ -116,7 +116,15 @@ class ChannelIndexItem extends React.Component {
 
   renderEditChannelButton() {
     if(!this.props.server) return null
-    if(this.props.server.ownerId === this.props.currentUserId) return <button className="cog" onClick={() => this.handleOpenModal()}> <i className="fas fa-cog" /> </button>
+    const { channel } = this.props
+    const pathName = this.props.history.location.pathname;
+    const channelPath = `/app/servers/${channel.serverId}/channels/${channel.id}/messages`;
+
+    // if((this.props.server.ownerId === this.props.currentUserId) && (pathName === channelPath)) {
+    //   return <button style={{display="block"}} className="cog" onClick={() => this.handleOpenModal()}> <i className="fas fa-cog" /> </button>
+    // } else if ((this.props.server.ownerId === this.props.currentUserId) && (pathName !== channelPath)) {
+    //   return <button style={{display="none"}} className="cog" onClick={() => this.handleOpenModal()}> <i className="fas fa-cog" /> </button>
+    // }
   }
 
   render() {
@@ -124,9 +132,21 @@ class ChannelIndexItem extends React.Component {
     if (!channel) return null
     if(!this.props.server) return null
 
-    
+    const pathName = this.props.history.location.pathname;
+    const channelPath = `/app/servers/${channel.serverId}/channels/${channel.id}/messages`;
+
+    const renderStyle = () => {
+      if (pathName === channelPath) {
+        return {backgroundColor: "rgb(58, 58, 58)"}
+      }
+    }
+
     return (
-      <Link className="channel-index-wrapper" to={`/app/servers/${channel.serverId}/channels/${channel.id}/messages`}>
+      <Link 
+        className="channel-index-wrapper" 
+        to={`/app/servers/${channel.serverId}/channels/${channel.id}/messages`} 
+        style={renderStyle()}
+      >
         <Modal isOpen={this.state.modal} className="overlay" ariaHideApp={false}>
           {this.editChannelForm()}
         </Modal>
@@ -134,7 +154,7 @@ class ChannelIndexItem extends React.Component {
           <p>#</p>
           <div className="channel-button">{channel.name}</div>
         </div>
-        {this.renderEditChannelButton()}
+        {/* {this.renderEditChannelButton()} */}
       </Link>
     )
   }
