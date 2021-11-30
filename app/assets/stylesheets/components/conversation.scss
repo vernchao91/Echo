@@ -9,8 +9,6 @@
     display: flex;
     flex-direction: column;
     border: 1px solid white;
-    // padding: 15px;
-    // width: 11.2%;
     min-width: 236.75px;
     max-width: 236.75px;
     .conversation-index-header-wrapper {
@@ -28,6 +26,12 @@
       .conversation-friendpage-link {
         display: flex;
         align-items: center;
+        padding-left: 10px;
+        height: 40px;
+        // background-color: rgb(78, 78, 78);
+        &:hover {
+          background-color: rgb(78, 78, 78);
+        }
         .conversation-friendpage-icon {
           font-size: 25px;
         }

@@ -18,7 +18,12 @@ class ConversationIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchConversations(this.props.currentUserId)
-      .then(() => this.setState({conversations: this.props.conversations}))
+      .then(() => this.setState({conversations: this.props.conversations}));
+    this.setState({style: { backgroundColor: ""}})
+  }
+
+  componentWillUnmount() {
+    this.setState({style: { backgroundColor: ""}})
   }
 
   componentDidUpdate(prevProps) {
@@ -60,7 +65,7 @@ class ConversationIndex extends React.Component {
           </div>
 
           <div className="conversation-list-wrapper">
-            <Link style={{backgroundColor: "red"}} className="conversation-friendpage-link" to="/app/conversations/friendpage/all">
+            <Link style={{backgroundColor: "", borderRadius: "3px"}} className="conversation-friendpage-link" to="/app/conversations/friendpage/all">
               <IoPeopleOutline className="conversation-friendpage-icon"/>
               <p className="conversation-friendpage-text">Friends</p>
             </Link>
