@@ -85,12 +85,25 @@ class EchoApp extends React.Component {
   }
 
   render() {
+    const pathName = this.props.history.location.pathname;
+    const directMessaging = "/app/conversations";
+    const explore = "/app/servers/explore";
+    let renderStyleDM
+    let renderStyleExplore
+    let renderStyleExploreIcon
+    if (pathName.includes(directMessaging)) {
+      renderStyleDM = {backgroundColor: "rgb(58, 94, 211)", borderRadius: "10px", color: "rgb(255, 255, 255)"}
+    } else if (pathName.includes(explore)) {
+      renderStyleExplore = {backgroundColor: "rgb(18, 168, 85)", borderRadius: "10px", color: "rgb(255, 255, 255)"}
+      renderStyleExploreIcon = {color: "rgb(255, 255, 255)"}
+    }
+
     if (!this.props.servers) return null
     return (
       <div className="echoapp-wrapper">
 
         <div className="conversation-link-wrapper"> 
-          <Link className="conversation-link" to="/app/conversations">DMs</Link>
+          <Link style={renderStyleDM} className="conversation-link" to="/app/conversations">DMs</Link>
         </div>
 
         <div className="server-wrapper">
@@ -112,10 +125,10 @@ class EchoApp extends React.Component {
           </Modal>
         </div>
 
-        <div className="explore-icon-wrapper">
-            <Link to="/app/servers/explore">
-              <IoCompassOutline className="explore-icon"/>
-            </Link>
+        <div style={renderStyleExplore} className="explore-icon-wrapper">
+          <Link to="/app/servers/explore">
+            <IoCompassOutline style={renderStyleExploreIcon} className="explore-icon"/>
+          </Link>
         </div>
 
         <div className="home-icon-wrapper">

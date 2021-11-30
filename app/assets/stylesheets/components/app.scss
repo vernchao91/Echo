@@ -13,14 +13,9 @@
     height: 48px;
     border: transparent;
     transition: 0.1s ease-in-out;
-    border: 2px solid rgb(177, 177, 177);
+    // border: 1px solid rgb(177, 177, 177);
     border-radius: 50%;
     margin-top: 5px;
-    &:hover {
-      border-radius: 10px;
-      color: rgb(0, 0, 0);
-      background-color: rgb(58, 94, 211);
-    }
     .conversation-link {
       color: white;
       font-size: 15px;
@@ -30,9 +25,15 @@
       align-items: center;
       width: 48px;
       height: 48px;
-      border-radius: 10px;
+      border-radius: 50%;
       transition: 0.1s ease-in-out;
-      border: transparent;
+      // border: transparent;
+      border: 2px solid rgb(177, 177, 177);
+      &:hover {
+        border-radius: 10px;
+        color: rgb(255, 255, 255);
+        background-color: rgb(58, 94, 211);
+      }
     }
   }
   /* Hide scrollbar for Chrome, Safari and Opera */
@@ -143,9 +144,10 @@
       padding-top: 5px;
       font: 40px;
       width: 25px;
-      height: 43px;
+      height: 30px;
       color:rgb(18, 168, 85);
       &:hover {
+        background-color:rgb(18, 168, 85);
         color: white;
       }
     }
