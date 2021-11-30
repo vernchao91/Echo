@@ -61,14 +61,14 @@ class ConversationIndex extends React.Component {
     let renderStyle
     let renderFontColor
     if (pathName === friendpage || pathName === pending || pathName === searchuser) {
-      renderStyle = {backgroundColor: "rgb(58, 58, 58)"}
-      renderFontColor = {color: "white"}
+      renderStyle = {backgroundColor: "rgb(78, 78, 78)"}
+      renderFontColor = {color: "rgb(230, 230, 230)"}
     }
 
     const conversationStyle = (id) => {
       const conversation = `/app/conversations/${id}/messages`
       if (pathName === conversation) {
-        return {backgroundColor: "rgb(58, 58, 58)", color: "white"}
+        return {backgroundColor: "rgb(78, 78, 78)", color: "rgb(230, 230, 230)"}
       }
     }
 
