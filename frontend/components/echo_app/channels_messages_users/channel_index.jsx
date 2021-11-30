@@ -119,7 +119,7 @@ class ChannelIndex extends React.Component {
     //       <button className="join-button" onClick={() => joinServer({server_id: serverId})}>Join Server</button>
     //     </div>
     //   )
-    } else if (users[currentUserId]) {
+    } else {
       return (
         <div className="join-leave-server-button-wrapper">
           <Link className="leave-button" to="/app" onClick={() => leaveServer(serverId)}>Leave Server</Link>

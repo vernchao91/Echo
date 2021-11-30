@@ -8,7 +8,9 @@ class ConversationIndex extends React.Component {
     super(props);
     this.state = {
       conversations: this.props.conversations,
-      // modal: false
+      style: {
+        backgroundColor: ""
+      }
     }
     // this.handleOpenModal = this.handleOpenModal.bind(this)
     // this.handleCloseModal = this.handleCloseModal.bind(this)
@@ -36,6 +38,8 @@ class ConversationIndex extends React.Component {
   //   this.props.removeConversationErorrs();
   // }
 
+
+
   render() {
     let arr = []
 
@@ -56,7 +60,7 @@ class ConversationIndex extends React.Component {
           </div>
 
           <div className="conversation-list-wrapper">
-            <Link className="conversation-friendpage-link" to="/app/conversations/friendpage/all">
+            <Link style={{backgroundColor: "red"}} className="conversation-friendpage-link" to="/app/conversations/friendpage/all">
               <IoPeopleOutline className="conversation-friendpage-icon"/>
               <p className="conversation-friendpage-text">Friends</p>
             </Link>
