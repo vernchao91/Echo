@@ -218,9 +218,10 @@
   }
 }
 
-// .ReactModal__Overlay {
-//   height: 1px;
-// }
+.ReactModal__Overlay {
+  height: 1px;
+  // background-color: rgba(255, 255, 255, 2);
+}
 
 .create-server-form-wrapper-background {
   height: 100vh;
@@ -229,21 +230,21 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
   .create-server-form-wrapper {
     height: auto;
     width: auto;
     .create-server-form {
       background-color: rgb(253, 253, 253);
-      height: 500px;
-      width: 408px;
+      height: 400px;
+      width: 400px;
       padding: 32px;
       display: flex;
       flex-direction: column;
       border-radius: 5px;
       box-sizing: border-box;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.75);
     }
-  
     h1 {
       display: flex;
       justify-content: center;

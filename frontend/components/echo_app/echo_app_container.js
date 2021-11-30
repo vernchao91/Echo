@@ -13,7 +13,7 @@ const mapStateToProps = (state) => {
   return {
     servers: (state.entities.joinedServers),
     errors: Object.values(state.errors.servers),
-    currentUserId: state.session.id,
+    currentUser: state.session,
   }
 }
 

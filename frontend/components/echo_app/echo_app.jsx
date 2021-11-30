@@ -21,7 +21,7 @@ class EchoApp extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchServersFromUser(this.props.currentUserId)
+    this.props.fetchServersFromUser(this.props.currentUser.id)
       .then(() => this.setState({servers: this.props.servers}))
   }
 
@@ -30,7 +30,7 @@ class EchoApp extends React.Component {
   }
 
   handleOpenModal() {
-    this.setState({modal: true,  name: ""})
+    this.setState({modal: true, name: ""})
   }
   
   handleCloseModal() {
@@ -59,26 +59,35 @@ class EchoApp extends React.Component {
     this.setState({ hover: false })
   }
 
+  renderCursor() {
+    if(!this.state.name) {
+      return { cursor: "not-allowed", opacity: "0.5" }
+    }
+  }
+
   createServerForm() {
     return (
       <div className="create-server-form-wrapper-background" onClick={() => this.handleCloseModal()}>
         <div className="create-server-form-wrapper" onClick={e => e.stopPropagation()}>
+
           <form className="create-server-form" onSubmit={this.handleSubmit}>
-            <h1>Create a Server</h1>
-              <label className="label-name">Name: </label>
-              <input
-                className="create-server-input"
-                type="text"
-                value={this.state.name}
-                onChange={this.update("name")}>
-              </input>
-              <button className="create-server-button">Create Server</button>
-              {this.props.errors.map((error, i) => (
-                <div className="server-error-wrapper" key={i}>
-                  <li className="server-error">{error}</li>
-                </div>
-              ))}
+            <h1>Create your Server</h1>
+            <label className="label-name">Server Name</label>
+            <input
+              className="create-server-input"
+              type="text"
+              value={this.state.name}
+              onChange={this.update("name")}>
+            </input>
+            <button disabled={!this.state.name} style={this.renderCursor()} className="create-server-button">Create</button>
+            {this.props.errors.map((error, i) => (
+              <div className="server-error-wrapper" key={i}>
+                <ul className="server-error">{error}</ul>
+              </div>
+            ))}
           </form>
+
+
         </div>  
       </div>
     )

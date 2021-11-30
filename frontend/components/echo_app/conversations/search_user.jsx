@@ -31,7 +31,7 @@ class SearchUser extends React.Component {
   }
 
   renderCursor() {
-    if(!this.state.user_username.length) {
+    if(!this.state.user_username) {
       return { cursor: "not-allowed", opacity: "0.5" }
     }
   }
