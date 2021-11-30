@@ -31,14 +31,22 @@
         border-radius: 3px;
         &:hover {
           background-color: rgb(78, 78, 78);
+          .conversation-friendpage-text {
+           color: white;
+          }
+          .conversation-friendpage-icon {
+            color: white;
+          }
         }
         .conversation-friendpage-icon {
           font-size: 25px;
+          color: #72767d;
         }
         .conversation-friendpage-text {
           font-weight: 550;
           font-size: 15px;
           margin-left: 10px;
+          color: #72767d;
         }
       }
       .conversation-dm-modal {
@@ -60,8 +68,10 @@
             padding-left: 10px;
             height: 40px;
             border-radius: 3px;
+            color: #72767d;
             &:hover {
-              background-color: rgb(78, 78, 78);
+              background-color: rgb(58, 58, 58);
+              color: white;
             }
           }
         }

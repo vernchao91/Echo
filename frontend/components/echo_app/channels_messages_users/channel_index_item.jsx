@@ -140,6 +140,11 @@ class ChannelIndexItem extends React.Component {
         return {backgroundColor: "rgb(58, 58, 58)"}
       }
     }
+    const renderFontColor = () => {
+      if (pathName === channelPath) {
+        return {color: "rgb(230, 230, 230)"}
+      }
+    }
 
     return (
       <Link 
@@ -151,8 +156,8 @@ class ChannelIndexItem extends React.Component {
           {this.editChannelForm()}
         </Modal>
         <div className="channel-index-item">
-          <p>#</p>
-          <div className="channel-button">{channel.name}</div>
+          <p style={renderFontColor()}>#</p>
+          <div style={renderFontColor()} className="channel-button">{channel.name}</div>
         </div>
         {this.renderEditChannelButton()}
       </Link>

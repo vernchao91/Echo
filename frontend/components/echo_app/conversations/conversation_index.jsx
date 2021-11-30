@@ -53,22 +53,22 @@ class ConversationIndex extends React.Component {
         arr.push({displayId: conversation.ownerId, username: conversation.ownerUsername, id: conversation.id})
       }
     })
-    
+
     const pathName = this.props.history.location.pathname;
     const friendpage = "/app/conversations/friendpage/all";
     const pending =  "/app/conversations/friendpage/pending";
     const searchuser = "/app/conversations/friendpage/searchuser";
     let renderStyle
+    let renderFontColor
     if (pathName === friendpage || pathName === pending || pathName === searchuser) {
-      renderStyle = {backgroundColor: "rgb(78, 78, 78)"}
-    } else {
-      renderStyle = {}
+      renderStyle = {backgroundColor: "rgb(58, 58, 58)"}
+      renderFontColor = {color: "white"}
     }
 
     const conversationStyle = (id) => {
       const conversation = `/app/conversations/${id}/messages`
       if (pathName === conversation) {
-        return {backgroundColor: "rgb(78, 78, 78)"}
+        return {backgroundColor: "rgb(58, 58, 58)", color: "white"}
       }
     }
 
@@ -82,8 +82,8 @@ class ConversationIndex extends React.Component {
 
           <div className="conversation-list-wrapper">
             <Link style={renderStyle} className="conversation-friendpage-link" to="/app/conversations/friendpage/all">
-              <IoPeopleOutline className="conversation-friendpage-icon"/>
-              <p className="conversation-friendpage-text">Friends</p>
+              <IoPeopleOutline style={renderFontColor} className="conversation-friendpage-icon"/>
+              <p style={renderFontColor} className="conversation-friendpage-text">Friends</p>
             </Link>
             <div className="conversation-dm-modal">
               <p>Direct Messages</p>
