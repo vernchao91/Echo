@@ -9,7 +9,7 @@ class ConversationIndex extends React.Component {
     this.state = {
       conversations: this.props.conversations,
       style: {
-        backgroundColor: ""
+        backgroundColor: "",
       }
     }
     // this.handleOpenModal = this.handleOpenModal.bind(this)
@@ -19,12 +19,12 @@ class ConversationIndex extends React.Component {
   componentDidMount() {
     this.props.fetchConversations(this.props.currentUserId)
       .then(() => this.setState({conversations: this.props.conversations}));
-    this.setState({style: { backgroundColor: ""}})
   }
 
-  componentWillUnmount() {
-    this.setState({style: { backgroundColor: ""}})
-  }
+  // componentWillUnmount() {
+    // console.log("unmount");
+    // this.setState({style: { backgroundColor: ""}})
+  // }
 
   componentDidUpdate(prevProps) {
     if (prevProps.conversations !== this.props.conversations) {
@@ -43,8 +43,6 @@ class ConversationIndex extends React.Component {
   //   this.props.removeConversationErorrs();
   // }
 
-
-
   render() {
     let arr = []
 
@@ -55,6 +53,23 @@ class ConversationIndex extends React.Component {
         arr.push({displayId: conversation.ownerId, username: conversation.ownerUsername, id: conversation.id})
       }
     })
+    const pathName = this.props.history.location.pathname;
+    const friendpage = "/app/conversations/friendpage/all";
+    const pending =  "/app/conversations/friendpage/pending";
+    const searchuser = "/app/conversations/friendpage/searchuser";
+    let renderStyle
+    if (pathName === friendpage || pathName === pending || pathName === searchuser) {
+      renderStyle = {backgroundColor: "rgb(78, 78, 78)"}
+    } else {
+      renderStyle = {}
+    }
+
+    const conversationStyle = (id) => {
+      const conversation = `/app/conversations/${id}/messages`
+      if (pathName === conversation) {
+        return {backgroundColor: "rgb(78, 78, 78)"}
+      }
+    }
 
     return (
       <div className="conversation-page">
@@ -65,7 +80,7 @@ class ConversationIndex extends React.Component {
           </div>
 
           <div className="conversation-list-wrapper">
-            <Link style={{backgroundColor: "", borderRadius: "3px"}} className="conversation-friendpage-link" to="/app/conversations/friendpage/all">
+            <Link style={renderStyle} className="conversation-friendpage-link" to="/app/conversations/friendpage/all">
               <IoPeopleOutline className="conversation-friendpage-icon"/>
               <p className="conversation-friendpage-text">Friends</p>
             </Link>
@@ -77,7 +92,7 @@ class ConversationIndex extends React.Component {
             <div className="conversation-link-wrapper">
               {arr.map((conversation, i) =>
                 <Link key={i} className="conversation-link" to={`/app/conversations/${conversation.id}/messages`}>
-                  <ul>{conversation.username}</ul>
+                  <ul style={conversationStyle(conversation.id)}>{conversation.username}</ul>
                 </Link>
               )}
             </div>
