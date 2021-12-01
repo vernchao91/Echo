@@ -47,6 +47,7 @@ class EchoApp extends React.Component {
 
   update(field) {
     return (e) => {
+      this.props.removeServerErrors();
       this.setState({ [field]: e.currentTarget.value })
     }
   }
@@ -69,22 +70,37 @@ class EchoApp extends React.Component {
     return (
       <div className="create-server-form-wrapper-background" onClick={() => this.handleCloseModal()}>
         <div className="create-server-form-wrapper" onClick={e => e.stopPropagation()}>
+          <form className="create-server-form">
 
-          <form className="create-server-form" onSubmit={this.handleSubmit}>
-            <h1>Create your Server</h1>
-            <label className="label-name">Server Name</label>
-            <input
-              className="create-server-input"
-              type="text"
-              value={this.state.name}
-              onChange={this.update("name")}>
-            </input>
-            <button disabled={!this.state.name} style={this.renderCursor()} className="create-server-button">Create</button>
-            {this.props.errors.map((error, i) => (
-              <div className="server-error-wrapper" key={i}>
-                <ul className="server-error">{error}</ul>
+            <div className="create-server-top">
+              <h1>Create your Server</h1>
+              <p>Give your new server a personality with a name. You can always change it later.</p>
+            </div>
+
+            <div className={this.props.errors.length === 0 ? "create-server-bottom-1" : "create-server-bottom-2"}>
+              
+              <div className="label-error-wrapper">
+                <label className="label-name">Server Name</label>
+                {this.props.errors.map((error, i) => (
+                  <div className="server-error-wrapper" key={i}>
+                    <ul className="server-error">- {error}</ul>
+                  </div>
+                ))}
               </div>
-            ))}
+
+              <input
+                className="create-server-input"
+                type="text"
+                value={this.state.name}
+                onChange={this.update("name")}>
+              </input>
+
+              <label className="guidelines">By creating a server, you agree to Echo's Community Guidelines</label>
+              <div className="create-server-button-wrapper">
+                <button type="button" onClick={this.handleCloseModal} className="cancel-server-button">Cancel</button>
+                <button type="submit" onClick={this.handleSubmit} disabled={!this.state.name} style={this.renderCursor()} className="create-server-button">Create</button>
+              </div>
+            </div>
           </form>
 
 
