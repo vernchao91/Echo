@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import InputEmoji from "react-input-emoji";
 
 class ConversationMessage extends React.Component {
   constructor(props) {
@@ -158,6 +158,12 @@ class ConversationMessage extends React.Component {
                   onChange={this.update("body")}
                   placeholder={this.renderPlaceholder()}
                 />
+                {/* <InputEmoji 
+                  className="message-emoji-input"
+                  value={this.state.message.body}
+                  onChange={this.update("body")}
+                  onEnter={this.ha}
+                /> */}
               </form>
             </div>
             

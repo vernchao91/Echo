@@ -19,6 +19,7 @@ class ChannelIndex extends React.Component {
         serverId: this.props.serverId
       }
     }
+    console.log(this.props);
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -86,6 +87,10 @@ class ChannelIndex extends React.Component {
     if(!this.state.channel.name) {
       return { cursor: "not-allowed", opacity: "0.5" }
     }
+  }
+
+  renderUserOwner(id) {
+
   }
 
   // create channel function
@@ -227,7 +232,7 @@ class ChannelIndex extends React.Component {
             </div>
             {Object.values(users).map(user => 
               <div key={user.id} className="users-link">
-                {user.username}
+                <ul>{user.username}</ul>
               </div>
             )}
           </div>
