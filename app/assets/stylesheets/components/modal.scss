@@ -6,7 +6,6 @@
   left: 0;
   background: rgba(0, 0, 0, 0.7);
   z-index: 10;
-
   .modal-child {
   position: absolute;
   top: 50%;
@@ -15,7 +14,6 @@
   background: white;
   font-family: Arial, Helvetica, sans-serif;
   border-radius: 10px;
-
     .edit-server-form-wrapper {
       display: flex;
       flex-direction: row;
@@ -220,7 +218,6 @@
 
 .ReactModal__Overlay {
   height: 1px;
-  // background-color: rgba(255, 255, 255, 2);
 }
 
 .create-server-form-wrapper-background {
