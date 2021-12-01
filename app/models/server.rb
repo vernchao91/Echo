@@ -11,6 +11,8 @@
 class Server < ApplicationRecord
   validates :name, presence: true
   validates :name, uniqueness: { scope: :owner_id }
+  # validates :name, length: { minimum: 2 }
+  # validates :name, length: { maximum: 20 }
 
   belongs_to :owner,
     primary_key: :id,

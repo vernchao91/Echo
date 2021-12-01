@@ -5,7 +5,6 @@ import ChannelIndexItemContainer from "./channel_index_item_container";
 import Modal from "../../modal/modal";
 import MessageIndexContainer from "../message/message_index_container";
 import Modal2 from "react-modal";
-import { IoCloseCircleOutline } from "react-icons/io5";
 
 class ChannelIndex extends React.Component {
   constructor(props) {
@@ -82,27 +81,46 @@ class ChannelIndex extends React.Component {
     this.props.removeChannelErrors();
   }
 
+  renderCursor() {
+    if(!this.state.channel.name) {
+      return { cursor: "not-allowed", opacity: "0.5" }
+    }
+  }
+
   // create channel function
   createChannelForm() {
     return (
-      <div className="create-channel-form-wrapper">
-        <button onClick={this.handleCloseModal}><IoCloseCircleOutline/></button>
-        <form className="create-channel-form" onSubmit={this.handleSubmit}>
-          <h1>Create Text Channel</h1>
-          <label className="create-channel-label">Channel Name:</label>
-          <input
-            className="create-channel-input"
-            type="text"
-            value={this.state.channel.name}
-            onChange={this.update("name")}
-          />
-          {this.props.errors.map((error, i) => (
-            <div className="channel-error-wrapper" key={i}>
-              <ul className="channel-error">{error}</ul>
+      <div className="create-channel-form-wrapper-background" onClick={() => this.handleCloseModal()}>
+        <div className="create-channel-form-wrapper" onClick={e => e.stopPropagation()}>
+
+          <form className="create-channel-form">
+            
+            <div className="create-channel-header-input-wrapper">
+              <h1>Create Text Channel</h1>
+              <label className="create-channel-label">Channel Name:</label>
+              <input
+                className="create-channel-input"
+                type="text"
+                value={this.state.channel.name}
+                onChange={this.update("name")}
+                label="#"
+                placeholder="new-channel"
+                />
+              {this.props.errors.map((error, i) => (
+                <div className="channel-error-wrapper" key={i}>
+                  <ul className="channel-error">{error}</ul>
+                </div>
+              ))}
             </div>
-          ))}
-          <button> Create Channel</button>
-        </form>
+
+            <div className="create-channel-button-wrapper">
+              <button className="cancel-channel-button" type="button" onClick={this.handleCloseModal}>Cancel</button>
+              <button className="create-channel-button" type="submit" style={this.renderCursor()} disabled={!this.state.channel.name} onClick={this.handleSubmit}>Create Channel</button>
+            </div>
+
+          </form>
+
+        </div>
       </div>
     )
   }
