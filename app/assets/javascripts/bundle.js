@@ -5958,32 +5958,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
+/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var redux_thunk__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux-thunk */ "./node_modules/redux-thunk/es/index.js");
 /* harmony import */ var _reducers_root_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reducers/root_reducer */ "./frontend/reducers/root_reducer.js");
-/* harmony import */ var redux_logger__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! redux-logger */ "./node_modules/redux-logger/dist/redux-logger.js");
-/* harmony import */ var redux_logger__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(redux_logger__WEBPACK_IMPORTED_MODULE_2__);
 
 
-
- // const middlewares = [thunk];
-// if (process.env.NODE_ENV !== "production") {
-//   const { logger } = require("redux-logger");
-//   middlewares.push(logger);
-// }
-// const configureStore = (preloadedState = {}) =>
-//   createStore(rootReducer, preloadedState, applyMiddleware(...middlewares));
+ // import logger from "redux-logger";
 
 var middlewares = [redux_thunk__WEBPACK_IMPORTED_MODULE_0__["default"]];
 
 if (true) {
-  middlewares.push((redux_logger__WEBPACK_IMPORTED_MODULE_2___default()));
+  var _require = __webpack_require__(/*! redux-logger */ "./node_modules/redux-logger/dist/redux-logger.js"),
+      logger = _require.logger;
+
+  middlewares.push(logger);
 }
 
 var configureStore = function configureStore() {
   var preloadedState = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  return (0,redux__WEBPACK_IMPORTED_MODULE_3__.createStore)(_reducers_root_reducer__WEBPACK_IMPORTED_MODULE_1__["default"], preloadedState, redux__WEBPACK_IMPORTED_MODULE_3__.applyMiddleware.apply(void 0, middlewares));
-}; // const configureStore = (preloadedState = {}) => {
+  return (0,redux__WEBPACK_IMPORTED_MODULE_2__.createStore)(_reducers_root_reducer__WEBPACK_IMPORTED_MODULE_1__["default"], preloadedState, redux__WEBPACK_IMPORTED_MODULE_2__.applyMiddleware.apply(void 0, middlewares));
+}; // const middlewares = [thunk];
+// if (process.env.NODE_ENV !== "production") {
+//   middlewares.push(logger);
+// }
+// const configureStore = (preloadedState = {}) =>
+//   createStore(rootReducer, preloadedState, applyMiddleware(...middlewares));
+// const configureStore = (preloadedState = {}) => {
 //   return (
 //     createStore(RootReducer, preloadedState, applyMiddleware(thunk, logger))
 //   )
