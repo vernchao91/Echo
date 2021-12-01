@@ -26,6 +26,7 @@ class Api::ServersController < ApplicationController
   def create
     @server = Server.new(server_params)
     @server.owner_id = current_user.id
+    @server.name = @server.name.strip
     if @server.name.length == 0
       @server.name = current_user.username + "'s Server"
     end
