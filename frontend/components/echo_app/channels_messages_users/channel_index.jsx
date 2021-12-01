@@ -51,6 +51,7 @@ class ChannelIndex extends React.Component {
   
   update(field) {
     return (e) => {
+      this.props.removeChannelErrors();
       this.setState({ 
         channel: {
         ...this.state.channel,
@@ -114,22 +115,21 @@ class ChannelIndex extends React.Component {
               </div>
 
               <div className="create-channel-label-error-wrapper">
-                <label className="create-channel-label">Channel Name</label>
+                <label className={this.props.errors.length === 0 ? "create-channel-label" : "create-channel-label-2"}>Channel Name</label>
                 {this.props.errors.map((error, i) => (
                   <div className="channel-error-wrapper" key={i}>
-                    <ul className="channel-error">{error}</ul>
+                    <ul className="channel-error">- {error}</ul>
                   </div>
                 ))}
               </div>
-                <input
-                  className="create-channel-input"
-                  type="text"
-                  value={this.state.channel.name}
-                  onChange={this.update("name")}
-                  label="#"
-                  placeholder="new-channel"
-                />
-                <label className="guidelines"></label>
+              <input
+                className="create-channel-input"
+                type="text"
+                value={this.state.channel.name}
+                onChange={this.update("name")}
+                placeholder="new-channel"
+              />
+              <label className="guidelines">By creating a channel, you agree to Echo's Community Guidelines</label>
 
             </div>
 

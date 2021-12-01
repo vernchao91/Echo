@@ -155,16 +155,31 @@
             }
           }
         }
-
         .create-channel-label-error-wrapper {
           display: flex;
-          flex-direction: column;
-          padding: 16px;
+          flex-direction: row;
+          align-items: center;
+          margin-top: 100px;
+          margin-left: 15px;
+          margin-right: 15px;
+          margin-bottom: 5px;
           .create-channel-label {
             color:grey;
-            margin-bottom: 5px;
             font-size: 14px;
             font-weight: 600;
+          }
+          .create-channel-label-2 {
+            color:red;
+            font-size: 14px;
+            font-weight: 600;
+          }
+          .channel-error-wrapper {
+            .channel-error {
+              padding-left: 5px;
+              font-style: italic;
+              font-size: 13px;
+              color: red;
+            }
           }
         }
         .create-channel-input {
@@ -180,6 +195,13 @@
           &:focus {
             border: 1px solid rgb(70, 102, 209);
           }
+        }
+        .guidelines {
+          margin-left: 15px;
+          margin-right: 15px;
+          margin-top: 10px;
+          color:grey;
+          font-size: 11px;
         }
       }
       .create-channel-button-wrapper {
