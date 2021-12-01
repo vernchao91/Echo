@@ -96,6 +96,7 @@ class ChannelIndex extends React.Component {
           <form className="create-channel-form">
             
             <div className="create-channel-header-type-input-wrapper">
+
               <div className="create-channel-header-wrapper">
                 <h1>Create Text Channel</h1>
                 <p>in Text Channels</p>
@@ -112,20 +113,24 @@ class ChannelIndex extends React.Component {
                 </div>
               </div>
 
-              <label className="create-channel-label">Channel Name:</label>
-              <input
-                className="create-channel-input"
-                type="text"
-                value={this.state.channel.name}
-                onChange={this.update("name")}
-                label="#"
-                placeholder="new-channel"
-              />
-              {this.props.errors.map((error, i) => (
-                <div className="channel-error-wrapper" key={i}>
-                  <ul className="channel-error">{error}</ul>
-                </div>
-              ))}
+              <div className="create-channel-label-error-wrapper">
+                <label className="create-channel-label">Channel Name</label>
+                {this.props.errors.map((error, i) => (
+                  <div className="channel-error-wrapper" key={i}>
+                    <ul className="channel-error">{error}</ul>
+                  </div>
+                ))}
+              </div>
+                <input
+                  className="create-channel-input"
+                  type="text"
+                  value={this.state.channel.name}
+                  onChange={this.update("name")}
+                  label="#"
+                  placeholder="new-channel"
+                />
+                <label className="guidelines"></label>
+
             </div>
 
             <div className="create-channel-button-wrapper">
