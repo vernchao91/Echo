@@ -8,6 +8,8 @@ if (process.env.NODE_ENV === "development") {
   const { logger } = require("redux-logger");
   middlewares.push(logger);
 }
+console.log("-----");
+console.log(process.env.NODE_ENV);
 const configureStore = (preloadedState = {}) =>
   createStore(rootReducer, preloadedState, applyMiddleware(...middlewares));
 

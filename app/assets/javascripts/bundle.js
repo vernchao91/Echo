@@ -5974,6 +5974,9 @@ if (true) {
   middlewares.push(logger);
 }
 
+console.log("-----");
+console.log("development");
+
 var configureStore = function configureStore() {
   var preloadedState = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   return (0,redux__WEBPACK_IMPORTED_MODULE_2__.createStore)(_reducers_root_reducer__WEBPACK_IMPORTED_MODULE_1__["default"], preloadedState, redux__WEBPACK_IMPORTED_MODULE_2__.applyMiddleware.apply(void 0, middlewares));
