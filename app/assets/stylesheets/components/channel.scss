@@ -103,7 +103,24 @@
       box-sizing: border-box;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.75);
       .create-channel-header-type-input-wrapper {
+        height: 100%;
+        background-color: #36393f;
+        .create-channel-header-wrapper {
+        }
 
+        .create-channel-type-wrapper {
+          .create-channel-texttype-wrapper {
+            .create-channel-texttype {
+            }
+          }
+        }
+
+        .create-channel-label {
+
+        }
+        .create-channel-input {
+
+        }
       }
       .create-channel-button-wrapper {
         display: flex;

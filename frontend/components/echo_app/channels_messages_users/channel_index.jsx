@@ -103,10 +103,10 @@ class ChannelIndex extends React.Component {
 
               <div className="create-channel-type-wrapper">
                 <h1>Channel Type</h1>
-                <div className="create-channel-text-type">
+                <div className="create-channel-texttype-wrapper">
                   <h2>#</h2>
-                  <div className="create-channel-text-type">
-                    <h3>Text Channel</h3>
+                  <div className="create-channel-texttype">
+                    <h2>Text Channel</h2>
                     <p>Send Messages, opinions, puns, and emoji stickers</p>
                   </div>
                 </div>
@@ -120,7 +120,7 @@ class ChannelIndex extends React.Component {
                 onChange={this.update("name")}
                 label="#"
                 placeholder="new-channel"
-                />
+              />
               {this.props.errors.map((error, i) => (
                 <div className="channel-error-wrapper" key={i}>
                   <ul className="channel-error">{error}</ul>
