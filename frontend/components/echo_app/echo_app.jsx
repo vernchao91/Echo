@@ -150,19 +150,19 @@ class EchoApp extends React.Component {
           </Modal>
         </div>
 
-        <div style={renderStyleExplore} className="explore-icon-wrapper">
-          <Link to="/app/servers/explore">
+        <Link  to="/app/servers/explore" style={renderStyleExplore} className="explore-icon-wrapper">
+          <div>
             <IoCompassOutline style={renderStyleExploreIcon} className="explore-icon"/>
-          </Link>
-        </div>
+          </div>
+        </Link>
 
-        <div className="home-icon-wrapper">
-          <Link to="/"><IoHomeOutline className="home-icon"/></Link>
-        </div>
+        <Link to="/" className="home-icon-wrapper">
+          <div><IoHomeOutline className="home-icon"/></div>
+        </Link>
 
-        <div className="logout-icon-wrapper">
-          <IoLogOutOutline onClick={this.props.logout} className="logout-icon"/>
-        </div>
+        <button onClick={this.props.logout} className="logout-icon-wrapper">
+          <IoLogOutOutline className="logout-icon"/>
+        </button>
 
       </div>
     )
