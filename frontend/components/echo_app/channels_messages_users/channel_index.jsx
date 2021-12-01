@@ -95,8 +95,23 @@ class ChannelIndex extends React.Component {
 
           <form className="create-channel-form">
             
-            <div className="create-channel-header-input-wrapper">
-              <h1>Create Text Channel</h1>
+            <div className="create-channel-header-type-input-wrapper">
+              <div className="create-channel-header-wrapper">
+                <h1>Create Text Channel</h1>
+                <p>in Text Channels</p>
+              </div>
+
+              <div className="create-channel-type-wrapper">
+                <h1>Channel Type</h1>
+                <div className="create-channel-text-type">
+                  <h2>#</h2>
+                  <div className="create-channel-text-type">
+                    <h3>Text Channel</h3>
+                    <p>Send Messages, opinions, puns, and emoji stickers</p>
+                  </div>
+                </div>
+              </div>
+
               <label className="create-channel-label">Channel Name:</label>
               <input
                 className="create-channel-input"
