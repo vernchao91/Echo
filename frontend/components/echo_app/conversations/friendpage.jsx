@@ -18,13 +18,24 @@ class FriendPage extends React.Component {
 
   render() {
     
+    let pathName = this.props.location.pathname
     const friendAll = "/app/conversations/friendpage/all";
     const friendPending = "/app/conversations/friendpage/pending";
     const friendSearchUser = "/app/conversations/friendpage/searchuser";
-    let pathName = this.props.location.pathname
-
-    let renderStyle = {}
     let renderStyleSearch
+    let renderSearchStyleFont
+
+    const renderStyle = (path) => {
+      if (pathName === path) return {backgroundColor: "rgb(78, 78, 78)"}
+    }
+
+    const renderFontColor = (path) => {
+      if (pathName === path) return {color: "rgb(255, 255, 255)"}
+    }
+    if (pathName === friendSearchUser) {
+      renderStyleSearch = { backgroundColor: "rgb(9, 167, 9)"}
+      renderSearchStyleFont = { color: "rgb(255, 255, 255)"}
+    }
 
     return (
       <div className="friendpage-wrapper">
@@ -35,16 +46,16 @@ class FriendPage extends React.Component {
             <h1 className="friend-text">Friends</h1>
           </div>
 
-          <Link className="friendpage-all" to="/app/conversations/friendpage/all">
-            <div className="friendlist-buttons">All</div>
+          <Link style={renderStyle(friendAll)} className="friendpage-all" to="/app/conversations/friendpage/all">
+            <div style={renderFontColor(friendAll)} className="friendlist-buttons">All</div>
           </Link>
 
-          <Link className="friendpage-pending" to="/app/conversations/friendpage/pending" >
-            <div className="friendlist-buttons">Pending</div>
+          <Link style={renderStyle(friendPending)} className="friendpage-pending" to="/app/conversations/friendpage/pending" >
+            <div style={renderFontColor(friendPending)} className="friendlist-buttons">Pending</div>
           </Link>
 
-          <Link className="friendpage-add" to="/app/conversations/friendpage/searchuser">
-            <div className="friendlist-buttons">Add Friend</div>
+          <Link style={renderStyleSearch} className="friendpage-add" to="/app/conversations/friendpage/searchuser">
+            <div style={renderSearchStyleFont} className="friendlist-buttons">Add Friend</div>
           </Link>
 
         </div>
