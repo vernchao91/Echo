@@ -78,7 +78,7 @@ class EchoApp extends React.Component {
             </div>
 
             <div className={this.props.errors.length === 0 ? "create-server-bottom-1" : "create-server-bottom-2"}>
-              
+
               <div className="label-error-wrapper">
                 <label className="label-name">Server Name</label>
                 {this.props.errors.map((error, i) => (
@@ -98,7 +98,7 @@ class EchoApp extends React.Component {
               <label className="guidelines">By creating a server, you agree to Echo's Community Guidelines</label>
               <div className="create-server-button-wrapper">
                 <button type="button" onClick={this.handleCloseModal} className="cancel-server-button">Cancel</button>
-                <button type="submit" onClick={this.handleSubmit} disabled={!this.state.name} style={this.renderCursor()} className="create-server-button">Create</button>
+                <button type="submit" onClick={this.handleSubmit} disabled={!this.state.name} style={this.renderCursor()} className="create-server-button">Create Server</button>
               </div>
             </div>
           </form>
