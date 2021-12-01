@@ -17,21 +17,36 @@ class FriendPage extends React.Component {
   }
 
   render() {
+    
+    const friendAll = "/app/conversations/friendpage/all";
+    const friendPending = "/app/conversations/friendpage/pending";
+    const friendSearchUser = "/app/conversations/friendpage/searchuser";
+    let pathName = this.props.location.pathname
+
+    let renderStyle = {}
+    let renderStyleSearch
+
     return (
       <div className="friendpage-wrapper">
 
         <div className="friendpage-header-wrapper">
           <IoPeopleOutline className="friend-icon"/>
-          <div className="friendpage-friends"><h1 className="friendlist-buttons">Friends</h1></div>
-          <div className="friendpage-all">
-            <Link to="/app/conversations/friendpage/all" className="friendlist-buttons">All</Link>
+          <div className="friendpage-friends">
+            <h1 className="friend-text">Friends</h1>
           </div>
-          <div className="friendpage-pending">
-            <Link to="/app/conversations/friendpage/pending" className="friendlist-buttons">Pending</Link>
-          </div>
-          <div className="friendpage-add">
-            <Link to="/app/conversations/friendpage/searchuser" className="friendlist-buttons">Add Friend</Link>
-          </div>
+
+          <Link className="friendpage-all" to="/app/conversations/friendpage/all">
+            <div className="friendlist-buttons">All</div>
+          </Link>
+
+          <Link className="friendpage-pending" to="/app/conversations/friendpage/pending" >
+            <div className="friendlist-buttons">Pending</div>
+          </Link>
+
+          <Link className="friendpage-add" to="/app/conversations/friendpage/searchuser">
+            <div className="friendlist-buttons">Add Friend</div>
+          </Link>
+
         </div>
 
         <div className="friendpage-index-wrapper">

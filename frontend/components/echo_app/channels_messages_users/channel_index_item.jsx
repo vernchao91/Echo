@@ -133,30 +133,26 @@ class ChannelIndexItem extends React.Component {
 
     const pathName = this.props.history.location.pathname;
     const channelPath = `/app/servers/${channel.serverId}/channels/${channel.id}/messages`;
+    let renderStyle
+    let renderFontColor
 
-    const renderStyle = () => {
-      if (pathName === channelPath) {
-        return {backgroundColor: "rgb(58, 58, 58)"}
-      }
-    }
-    const renderFontColor = () => {
-      if (pathName === channelPath) {
-        return {color: "rgb(230, 230, 230)"}
-      }
+    if (pathName === channelPath) {
+      renderStyle =  {backgroundColor: "rgb(58, 58, 58)"}
+      renderFontColor = {color: "rgb(230, 230, 230)"}
     }
 
     return (
-      <Link 
+      <Link
         className="channel-index-wrapper" 
         to={`/app/servers/${channel.serverId}/channels/${channel.id}/messages`} 
-        style={renderStyle()}
+        style={renderStyle}
       >
         <Modal isOpen={this.state.modal} className="overlay" ariaHideApp={false}>
           {this.editChannelForm()}
         </Modal>
         <div className="channel-index-item">
-          <p style={renderFontColor()}>#</p>
-          <div style={renderFontColor()} className="channel-button">{channel.name}</div>
+          <p style={renderFontColor}>#</p>
+          <div style={renderFontColor} className="channel-button">{channel.name}</div>
         </div>
         {this.renderEditChannelButton()}
       </Link>

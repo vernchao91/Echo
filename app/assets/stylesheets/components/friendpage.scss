@@ -22,32 +22,66 @@
       font-weight: 600;
       font-size: 16px;
       border-right: 1px solid white;
+      .friend-text {
+        margin-right: 20px;
+      }
     }
     .friendpage-all {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-weight: 500;
       color:rgb(173, 173, 173);
+      border-radius: 3px;
+      height: 22px;
+      width: 40px;
       margin-left: 20px;
-      a:hover {
+      &:hover {
+        background-color: rgb(78, 78, 78);
+      }
+      div:hover {
         color: rgb(220, 220, 220);
         cursor: pointer;
       }
     }
     .friendpage-pending {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-weight: 500;
       color: rgb(173, 173, 173);
-      a:hover {
+      border-radius: 3px;
+      margin-left: 20px;
+      height: 22px;
+      width: 70px;
+      &:hover {
+        background-color: rgb(78, 78, 78);
+      }
+      div:hover {
         color: rgb(220, 220, 220);
         cursor: pointer;
       }
     }
     .friendpage-add {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-weight: 500;
-      a {
+      margin-left: 20px;
+      border-radius: 3px;
+      height: 22px;
+      width: 90px;
+      &:hover {
+        background-color: rgb(9, 167, 9);
+        div {
+          color: white;
+        }
+      }
+      div {
         color: rgb(9, 167, 9)
       }
     }
     .friendlist-buttons {
-      margin-right: 20px;
       font-size: 15px;
     }
   }
