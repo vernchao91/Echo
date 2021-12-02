@@ -22,41 +22,6 @@
     align-items: center;
     justify-content: center;
   }
-
-  // inquiry text and link
-
-  .redirect-wrapper-login {
-    display: flex;
-    justify-content: space-between;
-    .register-account{
-      align-self: flex-start;
-    }
-    .register-link {
-      border: 1px solid;
-      border-radius: 1px solid;
-    }
-  }
-  .redirect-wrapper-login {
-    width: 65%;
-    .register-account {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 50%
-    }
-    .register-link {
-      display: flex;
-      justify-content: center;
-      border: 1px solid;
-      border-radius: 5px;
-      background-color: rgb(37, 126, 117);
-      color: white;
-      border-color: black;
-      width: 50%;
-    }
-  }
-
-
   // demo button
   .demo-wrapper {
     display: flex;
@@ -145,11 +110,23 @@
           border-color:rgba(9, 88, 107, 0.2);
         }
       }
+      .redirect-wrapper-login {
+        display: flex;
+        .register-account {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: #474d52;
+        }
+        .register-link {
+          display: flex;
+          justify-content: center;
+        }
+      }
     }
   }
 
   // register form
-
   .form-box-Register {
     width: 700px;
     height: 408px;

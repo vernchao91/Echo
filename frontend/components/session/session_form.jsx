@@ -72,7 +72,7 @@ class SessionForm extends React.Component {
       otherLink = 
       <div className="redirect-wrapper-login">
         <label className="register-account">Need an account?</label>
-        <Link className="register-link" to="/register"> Register</Link>
+        <Link className="register-link" to="/register">Register</Link>
       </div>
     } else {
       otherLink = 
