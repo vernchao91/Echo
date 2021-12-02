@@ -51,7 +51,6 @@
       height: 40px;
     }
   }
-
   // login form
   .form-box-Login {
     width: 784px;
@@ -66,12 +65,19 @@
     .session-form {
       display: flex;
       flex-direction: column;
+      // justify-content: space-evenly;
       height: 100%;
       width: 100%;
       .session-form-header {
         font-size: 24px;
         font-weight: 500;
         margin-bottom: 10px;
+      }
+      .email-wrapper {
+        margin-top: 20px;
+        .label-email {
+
+        }
       }
       .label-email, .label-username, .label-password {
         display: flex;
@@ -92,6 +98,7 @@
         text-align: center;
         background-color: rgb(37, 126, 117);
         color: white;
+        margin-top: 15px;
         width: 100%;
         height: 40px;
       }
@@ -110,8 +117,10 @@
           border-color:rgba(9, 88, 107, 0.2);
         }
       }
+      // redirect wrapper
       .redirect-wrapper-login {
         display: flex;
+        margin-top: 10px;
         .register-account {
           display: flex;
           justify-content: center;
@@ -180,7 +189,6 @@
         }
       }
     }
-
     .redirect-wrapper-register {
       display: flex;
       justify-content: center;
@@ -188,7 +196,6 @@
       width:65%;
       .login-account {
         width: 50%;
-        // align-self: flex-start;
       }
       .login-link {
         display: flex;
@@ -206,5 +213,4 @@
   .session-error {
     color: red;
   }
-
 }
