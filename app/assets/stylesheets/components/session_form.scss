@@ -1,88 +1,26 @@
-.session-header-wrapper {
-  // display: flex;
-  // margin: 24px;
-  // width: 80%;
-  .session-home-link {
-    // position: relative;
-    color: white;
-    height: 35px;
-    z-index: 1;
-    &:hover {
-      cursor: pointer;
-    }
-  }
-}
-
 .bg-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-image: image-url("echo-background2.jpg");
-  background-size: contain;
-  resize: both;
+  background-size: cover;
+  background-repeat: no-repeat;
   height: 100vh;
   width: 100vw;
-}
-.session-form-wrapper {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  // width: 100vw;
-  // height: 100vh;
-  // min-height: 927px;
-  // min-width: 1900px;
-  // top: 0;
-  // left: 0;
-  // background-image: image-url("echo-background2.jpg");
-  background-size: 100%, 100%;
-
-  .session-form {
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: column;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-    .session-form-header {
-      font-size: 25px;
-    }
-
-    .demo-login {
-      display: flex;
-      flex-direction: column;
-      width: 50%;
-    }
-
-    .label-email, .label-username, .label-password {
-      display: flex;
-      flex-direction: column;
-    }
-
-    button {
-      border: 1px solid black;
-      font-size: 16px;
-      border-radius: 3px;
-      text-align: center;
-      background-color: rgb(37, 126, 117);
-      color: white;
-      width: 65%;
-    }
-
-    input {
-      box-sizing: border-box;
-      font-size: 16px;
-      outline: none;
-      width: 412px;
-      height: 40px;
-      border-radius: 3px;
-      padding: 10px;
-      background-color: rgba(0, 0, 0, 0.2);
-      border: 1px solid;
-      transition: border-color .2s ease-in-out;
-  
+  .session-header-wrapper {
+    color: red;
+    .session-home-link {
+      color: red;
       &:hover {
-        border-color:rgba(9, 88, 107, 0.2);
+        cursor: pointer;
       }
     }
-
+  }
+  .session-form-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   // inquiry text and link
@@ -122,10 +60,16 @@
   // demo button
   .demo-wrapper {
     display: flex;
+    flex-direction: column;
+    // justify-content: center;
     align-items: center;
-    // height: 50px;
     width: 65%;
     .demo-text {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      font-weight: 700;
       width: 50%;
     }
     .demo-login {
@@ -133,20 +77,19 @@
       justify-content: center;
       align-items: center;
       background-color: rgb(37, 126, 117);
-      border-radius: 5px;
+      border-radius: 3px;
       color: white;
       font-size: 16px;
       border: 1px solid black;
-      width: 50%;
-      // height: 23px;
+      margin-top: 20px;
+      width: 192px;
+      height: 40px;
     }
-
   }
 
   // login form
-
   .form-box-Login {
-    width: 700px;
+    width: 784px;
     height: 408px;
     padding: 32px;
     display: flex;
@@ -155,18 +98,54 @@
     box-sizing: border-box;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     background-color: rgba(255, 255, 255, 0.685);
-    
-    .form-wrapper {
+    .session-form {
       display: flex;
-      // align-items: center;
-      justify-content: flex-start;
-
+      flex-direction: column;
+      height: 100%;
+      width: 100%;
+      .session-form-header {
+        font-size: 24px;
+        font-weight: 500;
+        margin-bottom: 10px;
+      }
+      .label-email, .label-username, .label-password {
+        display: flex;
+        flex-direction: column;
+        font-size: 12px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        width: 100%;
+        input {
+          height: 40px;
+          width: 100%;
+        }
+      }
+      .Login-button {
+        border: 1px solid black;
+        font-size: 16px;
+        border-radius: 3px;
+        text-align: center;
+        background-color: rgb(37, 126, 117);
+        color: white;
+        width: 100%;
+        height: 40px;
+      }
+      input {
+        box-sizing: border-box;
+        font-size: 16px;
+        outline: none;
+        width: 412px;
+        height: 40px;
+        border-radius: 3px;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.2);
+        border: 1px solid;
+        transition: border-color .2s ease-in-out;
+        &:hover {
+          border-color:rgba(9, 88, 107, 0.2);
+        }
+      }
     }
-
-  }
-
-  .session-error {
-    color: red;
   }
 
   // register form
@@ -181,6 +160,49 @@
     box-sizing: border-box;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     background-color: rgba(255, 255, 255, 0.685);
+    .session-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+      .session-form-header {
+        font-size: 25px;
+      }
+      .demo-login {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+      }
+      .label-email, .label-username, .label-password {
+        display: flex;
+        flex-direction: column;
+      }
+      button {
+        border: 1px solid black;
+        font-size: 16px;
+        border-radius: 3px;
+        text-align: center;
+        background-color: rgb(37, 126, 117);
+        color: white;
+        width: 65%;
+      }
+      input {
+        box-sizing: border-box;
+        font-size: 16px;
+        outline: none;
+        width: 412px;
+        height: 40px;
+        border-radius: 3px;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.2);
+        border: 1px solid;
+        transition: border-color .2s ease-in-out;
+        &:hover {
+          border-color:rgba(9, 88, 107, 0.2);
+        }
+      }
+    }
 
     .redirect-wrapper-register {
       display: flex;
