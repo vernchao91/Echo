@@ -2,15 +2,11 @@
   display: flex;
   flex-direction: column;
   // justify-content: space-between;
-  position: absolute;
+  // position: absolute;
   background-image: image-url("echo-background.jpg");
-  height: 900px;
+  height: 100vh;
   width: 100vw;
   z-index: -10;
-  min-width: 1165px;
-  // background-size: cover, contain;
-  // background-repeat: no-repeat;
-  // background-attachment: fixed;
 
   .header-wrapper {
     display: flex;
@@ -22,7 +18,6 @@
       justify-content: flex-start;
       font-size: 30px;
     }
-
     .social-links-wrapper {
       position: relative;
       display: flex;

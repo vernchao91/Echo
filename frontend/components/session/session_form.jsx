@@ -90,20 +90,18 @@ class SessionForm extends React.Component {
     const formBox = `form-box-${this.props.formType}`
 
     return (
-      <>
-        <div className="bg-container">
-          
-        </div>
+      <div className="bg-container">
+
         <header className="session-header-wrapper">
           <Link className="session-home-link" to="/">
             Home
           </Link>
         </header>
+
         <div className="session-form-wrapper">
           <div className={ formBox }>
               <form className="session-form" onSubmit={this.handleSubmit}>
                 <div className="session-form-header">Welcome to Echo! </div>
-
                 {this.signupUsername()}
 
                   <div className="email-wrapper">
@@ -141,7 +139,7 @@ class SessionForm extends React.Component {
               </form>
           </div>
         </div>
-      </>
+      </div>
     )
   }
 

@@ -1,10 +1,10 @@
 .session-header-wrapper {
-  display: flex;
-  margin: 24px;
-  width: 80%;
-
+  // display: flex;
+  // margin: 24px;
+  // width: 80%;
   .session-home-link {
-    position: relative;
+    // position: relative;
+    color: white;
     height: 35px;
     z-index: 1;
     &:hover {
@@ -13,18 +13,25 @@
   }
 }
 
+.bg-container {
+  background-image: image-url("echo-background2.jpg");
+  background-size: contain;
+  resize: both;
+  height: 100vh;
+  width: 100vw;
+}
 .session-form-wrapper {
   position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 100%;
-  min-height: 927px;
-  min-width: 1900px;
-  top: 0;
-  left: 0;
-  background-image: image-url("echo-background2.jpg");
+  // width: 100vw;
+  // height: 100vh;
+  // min-height: 927px;
+  // min-width: 1900px;
+  // top: 0;
+  // left: 0;
+  // background-image: image-url("echo-background2.jpg");
   background-size: 100%, 100%;
 
   .session-form {
