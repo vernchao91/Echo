@@ -32,7 +32,7 @@ class ExplorePage extends React.Component {
 
         <div className="explore-server-index-wrapper">
           <Link style={renderStyle} to="/app/servers/explore/home" className="explore-server-home-link">
-            <IoCompassOutline className="explore-home-icon"/><p>Home</p>
+            <IoCompassOutline className="explore-home-icon"/><p>Featured</p>
           </Link>
           {/* <Link to="/app/servers/explore/gaming" className="explore-server-gaming-link">
             <IoGameControllerOutline className="explore-gaming-icon"/><p>Gaming</p>

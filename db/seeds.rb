@@ -33,6 +33,7 @@ roadhog = User.create!(username: "Roadhog", email: "Roadhog@gmail.com", password
 mercy = User.create!(username: "Mercy", email: "Mercy@gmail.com", password:"password")
 demo2 = User.create!(username: "demo2", email: "demo2@gmail.com", password: "password")
 demo3 = User.create!(username: "demo3", email: "demo3@gmail.com", password: "password")
+echo = User.create!(username: "echo", email: "echo@gmail.com", password: "password")
 
 #server = Server.create!(name: "", owner_id: )
 server1 = Server.create!(name: "League of Legends", owner_id: 3)
