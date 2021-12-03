@@ -95,35 +95,51 @@ class SessionForm extends React.Component {
 
   render() {
     const formBox = `form-box-${this.props.formType}`
-    const errors = this.props.errors
+    const { errors, formType } = this.props
     let renderStyle
     let renderErrors
     let renderBorderColor
+    let renderTerms
+
+    let renderUsernameError = ""
+    let renderEmailError = ""
+    let renderPasswordError = ""
+    if (errors.includes("Email can't be blank")) {
+      renderEmailError = "Email can't be blank"
+    } else if (errors.includes("Password is too short (minimum is 6 characters)")) {
+      renderPasswordError = "Password is too short (minimum is 6 characters)"
+    } else if (errors.includes("Username can't be blank")) {
+      renderUsernameError = "Username can't be blank"
+    }
+    console.log(errors);
+    console.log(renderUsernameError);
 
     let renderHeaderHeight
-    if (this.props.formType === "Login") {
+    if (formType === "Login") {
       renderHeaderHeight = {height: "30vh"}
     } else {
       renderHeaderHeight = {height: "20vh"}
+      renderTerms = <p className="terms">By registering, you agree to Echo's Terms of Service and Privay Policy</p>
     }
 
-    if (errors.length > 0 ) {
+    if (errors.length > 0  && formType === "Login") {
       renderErrors = "- Invalid credentials, please try again."
       renderStyle = {color: "red"}
       renderBorderColor = {borderColor: "red"}
     }
+
     let header
-    if (this.props.formType === "Login") {
+    if (formType === "Login") {
       header = <p>Welcome back!</p>
     } else {
       header = <p>Create an Account</p>
     }
 
     let signupUsername
-    if (this.props.formType === "Register") {
+    if (formType === "Register") {
     signupUsername = <div className="username-wrapper">
       <label className="label-username">
-        <h1 style={renderStyle}>Username{renderErrors}</h1>
+        <h1 style={renderStyle}>Username{renderUsernameError}</h1>
         <input
           style={renderBorderColor}
           id="username"
@@ -177,11 +193,13 @@ class SessionForm extends React.Component {
                 </label>
               </div>
 
+              {renderTerms}
+
               <button className={`${this.props.formType}-button`} type="submit">{this.props.formType}</button>
               {this.inquiryLink()}
 
             </form>
-              {this.demoLogin()}
+            {this.demoLogin()}
 
           </div>
         </div>
