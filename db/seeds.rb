@@ -8,7 +8,7 @@
 
 #user = User.create!(username: "", email: "@gmail.com", password: "password")
 guest = User.create!(username: "guest", email: "guest@gmail.com", password: "password")
-demo = User.create!(username: "demo", email: "demo@gmail.com", password: "password")
+demo = User.create!(username: "demo1", email: "demo1@gmail.com", password: "password")
 demo2 = User.create!(username: "demo2", email: "demo2@gmail.com", password: "password")
 demo3 = User.create!(username: "demo3", email: "demo3@gmail.com", password: "password")
 ashe = User.create!(username: "Ashe", email: "ashe1@gmail.com", password: "password")

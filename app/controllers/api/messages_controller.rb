@@ -3,13 +3,9 @@ class Api::MessagesController < ApplicationController
     if params[:channel_id]
       channel = Channel.find_by(id: params[:channel_id])
       @messages = Message.where(messageable_type: :Channel, messageable_id: channel.id).limit(50)
-        #.order(created_at: :desc)
-        #.limit(50)
     elsif params[:conversation_id]
       conversation = Conversation.find_by(id: params[:conversation_id])
       @messages = Message.where(messageable_type: :Conversation, messageable_id: conversation.id).limit(50)
-        # .order(created_at: :desc)
-        # .limit(50)
     else
       render json: { msg: "No messages created" }, status: 404
     end

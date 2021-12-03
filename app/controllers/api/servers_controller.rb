@@ -6,6 +6,7 @@ class Api::ServersController < ApplicationController
       # user = User.find_by(id: params[:user_id])
       # @servers = user.joined_servers
       @servers = current_user.joined_servers
+      # users = @servers.includes(:users)
     else
       @servers = Server.all
     end

@@ -6,7 +6,9 @@ class SessionForm extends React.Component {
     super(props);
     this.state = this.props.user;
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleDemoSubmit = this.handleDemoSubmit.bind(this);
+    this.handleDemoSubmit1 = this.handleDemoSubmit1.bind(this);
+    this.handleDemoSubmit2 = this.handleDemoSubmit2.bind(this);
+    this.handleDemoSubmit3 = this.handleDemoSubmit3.bind(this);
   }
 
   componentWillUnmount() {
@@ -18,18 +20,25 @@ class SessionForm extends React.Component {
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
   }
-
-  handleDemoSubmit(e) {
+  handleDemoSubmit1(e) {
     e.preventDefault();
-    const user = {
-      email: "demo@gmail.com",
-      password: "password"
-    }
-    this.props.processForm(user);
+    const demo1 = { email: "demo1@gmail.com", password: "password" }
+    this.props.processForm(demo1);
+  }
+  handleDemoSubmit2(e) {
+    e.preventDefault();
+    const demo2 = { email: "demo2@gmail.com", password: "password" }
+    this.props.processForm(demo2);
+  }
+  handleDemoSubmit3(e) {
+    e.preventDefault();
+    const demo3 = { email: "demo3@gmail.com", password: "password" }
+    this.props.processForm(demo3);
   }
 
   update(field) {
     return (e) => {
+      this.props.removeSessionErrors();
       this.setState({ [field]: e.currentTarget.value })
     }
   }
@@ -39,9 +48,9 @@ class SessionForm extends React.Component {
       return (
         <div className="demo-wrapper">
           <span className="demo-text">Demo Login</span>
-          <button className="demo-login" type="button" onClick={this.handleDemoSubmit}>Demo 1</button>
-          <button className="demo-login" type="button" onClick={this.handleDemoSubmit}>Demo 2</button>
-          <button className="demo-login" type="button" onClick={this.handleDemoSubmit}>Demo 3</button>
+          <button className="demo-login" type="button" onClick={this.handleDemoSubmit1}>Demo 1</button>
+          <button className="demo-login" type="button" onClick={this.handleDemoSubmit2}>Demo 2</button>
+          <button className="demo-login" type="button" onClick={this.handleDemoSubmit3}>Demo 3</button>
         </div>
       )
     }
@@ -86,6 +95,16 @@ class SessionForm extends React.Component {
 
   render() {
     const formBox = `form-box-${this.props.formType}`
+    const errors = this.props.errors
+    let renderStyle
+    let renderErrors
+    let renderBorderColor
+
+    if (errors.length > 0 ) {
+      renderErrors = "- Invalid credentials, please try again."
+      renderStyle = {color: "red"}
+      renderBorderColor = {borderColor: "red"}
+    }
 
     return (
       <div className="bg-container">
@@ -100,37 +119,34 @@ class SessionForm extends React.Component {
           <div className={ formBox }>
 
             <form className="session-form" onSubmit={this.handleSubmit}>
-              <div className="session-form-header">Welcome to Echo! </div>
+              <div className="session-form-header">Welcome to Echo!</div>
               {this.signupUsername()}
 
               <div className="email-wrapper">
                 <label className="label-email">
-                  <h1>Email</h1>
+                  <h1 style={renderStyle}>Email {renderErrors}</h1>
                   <input
+                    style={renderBorderColor}
                     type="email" 
                     value={this.state.email}
                     onChange={this.update("email")}>
-                    </input>
+                  </input>
                 </label>
               </div>
 
               <div className="password-wrapper">
                 <label className="label-password">
-                  <h1>Password</h1>
+                  <h1 style={renderStyle}>Password {renderErrors}</h1>
                   <input
+                    style={renderBorderColor}
                     id="password"
-                    type="password" 
+                    type="password"
                     value={this.state.password}
                     onChange={this.update("password")}>
-                    </input>
+                  </input>
                 </label>
               </div>
 
-              {this.props.errors.map((error, i) => (
-                <div className="session-error-wrapper" key={i}>
-                  <ul className="session-error">{error}</ul>
-                </div>
-              ))}
               <button className={`${this.props.formType}-button`} type="submit">{this.props.formType}</button>
               {this.inquiryLink()}
 

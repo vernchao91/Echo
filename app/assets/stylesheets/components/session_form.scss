@@ -1,8 +1,8 @@
 .bg-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  // justify-content: center;
+  // align-items: center;
   background-image: image-url("echo-background2.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -10,6 +10,7 @@
   width: 100vw;
   .session-header-wrapper {
     color: red;
+    height: 30vh;
     .session-home-link {
       color: red;
       &:hover {
