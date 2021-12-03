@@ -9,8 +9,6 @@
 #user = User.create!(username: "", email: "@gmail.com", password: "password")
 guest = User.create!(username: "guest", email: "guest@gmail.com", password: "password")
 demo = User.create!(username: "demo1", email: "demo1@gmail.com", password: "password")
-demo2 = User.create!(username: "demo2", email: "demo2@gmail.com", password: "password")
-demo3 = User.create!(username: "demo3", email: "demo3@gmail.com", password: "password")
 ashe = User.create!(username: "Ashe", email: "ashe1@gmail.com", password: "password")
 alistar = User.create!(username: "Alistar", email: "alistar1@gmail.com", password: "password")
 ryze = User.create!(username: "Ryze", email: "ryze1@gmail.com", password: "password")
@@ -33,6 +31,8 @@ tracer = User.create!(username: "Tracer", email: "Tracer@gmail.com", password:"p
 mei = User.create!(username: "Mei", email: "Mei@gmail.com", password:"password")
 roadhog = User.create!(username: "Roadhog", email: "Roadhog@gmail.com", password:"password")
 mercy = User.create!(username: "Mercy", email: "Mercy@gmail.com", password:"password")
+demo2 = User.create!(username: "demo2", email: "demo2@gmail.com", password: "password")
+demo3 = User.create!(username: "demo3", email: "demo3@gmail.com", password: "password")
 
 #server = Server.create!(name: "", owner_id: )
 server1 = Server.create!(name: "League of Legends", owner_id: 3)

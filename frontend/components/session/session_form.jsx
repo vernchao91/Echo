@@ -95,25 +95,46 @@ class SessionForm extends React.Component {
   render() {
     const formBox = `form-box-${this.props.formType}`
     const { errors, formType } = this.props
-    let renderStyle
-    let renderErrors
-    let renderBorderColor
     let renderTerms
 
     let renderUsernameError = ""
+    let classNameUsername = "label-username"
     let renderEmailError = ""
+    let classNameEmail = "label-email"
     let renderPasswordError = ""
+    let classNamePassword = "label-password"
     let header
 
-    if (errors.includes("Email can't be blank")) {
-      renderEmailError = "Email can't be blank"
-    } else if (errors.includes("Password is too short (minimum is 6 characters)")) {
-      renderPasswordError = "Password is too short (minimum is 6 characters)"
-    } else if (errors.includes("Username can't be blank")) {
-      renderUsernameError = "Username can't be blank"
-    }
-    console.log(errors);
-    console.log(renderUsernameError);
+    this.props.errors.forEach(error => {
+      if (error.includes("Username can't be blank")) {
+        classNameUsername = "label-error-username"
+        renderUsernameError = " - This field is required"
+      }
+      if (error.includes("Username has already been taken")) {
+        classNameUsername = "label-error-username"
+        renderUsernameError = " - Username has already been taken"
+      }
+      if (error.includes("Email can't be blank")) {
+        classNameEmail = "label-error-email"
+        renderEmailError = " - This field is required"
+      }  
+      if (error.includes("Email has already been taken")) {
+        classNameEmail = "label-error-email"
+        renderEmailError = " - Email has already been taken"
+      }
+      if (error.includes("Invalid credentials, please try again.")) {
+        classNameEmail = "label-error-email"
+        renderEmailError = " - Invalid credentials, please try again."
+      }
+      if (error.includes("Password is too short (minimum is 6 characters)")) {
+        classNamePassword = "label-error-password"
+        renderPasswordError = " - Password is too short (minimum is 6 characters)"
+      }
+      if (error.includes("Invalid credentials, please try again.")) {
+        classNamePassword = "label-error-password"
+        renderPasswordError = " - Invalid credentials, please try again."
+      }  
+    })
 
     let renderHeaderHeight
     if (formType === "Login") {
@@ -125,22 +146,12 @@ class SessionForm extends React.Component {
       header = <p>Create an Account</p>
     }
 
-    if (errors.length > 0) {
-      renderBorderColor = {borderColor: "red"}
-      renderStyle = {color: "red"}
-    } 
-    
-    if (errors.length > 0 && formType === "Login") {
-      renderErrors = "- Invalid credentials, please try again."
-    }
-
     let signupUsername
     if (formType === "Register") {
     signupUsername = <div className="username-wrapper">
-      <label className="label-username">
-        <h1 style={renderStyle}>Username{renderUsernameError}</h1>
+      <label className={classNameUsername}>
+        <h1>Username{renderUsernameError}</h1>
         <input
-          style={renderBorderColor}
           id="username"
           type="text"
           value={this.state.username}
@@ -168,10 +179,9 @@ class SessionForm extends React.Component {
               {signupUsername}
 
               <div className="email-wrapper">
-                <label className="label-email">
-                  <h1 style={renderStyle}>Email {renderErrors}</h1>
+                <label className={classNameEmail}>
+                  <h1>Email {renderEmailError}</h1>
                   <input
-                    style={renderBorderColor}
                     type="email" 
                     value={this.state.email}
                     onChange={this.update("email")}>
@@ -180,10 +190,9 @@ class SessionForm extends React.Component {
               </div>
 
               <div className="password-wrapper">
-                <label className="label-password">
-                  <h1 style={renderStyle}>Password {renderErrors}</h1>
+                <label className={classNamePassword}>
+                  <h1>Password {renderPasswordError}</h1>
                   <input
-                    style={renderBorderColor}
                     id="password"
                     type="password"
                     value={this.state.password}

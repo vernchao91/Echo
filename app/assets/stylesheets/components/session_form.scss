@@ -90,6 +90,22 @@
             width: 100%;
           }
         }
+        .label-error-email {
+          display: flex;
+          flex-direction: column;
+          font-size: 12px;
+          font-weight: 700;
+          margin-bottom: 20px;
+          width: 100%;
+          color: red;
+          input {
+            font-weight: 100;
+            font-size: 14px;
+            height: 40px;
+            width: 100%;
+            color: red;
+          }
+        }
       }
       .password-wrapper {
         .label-password {
@@ -104,6 +120,22 @@
             font-size: 14px;
             height: 40px;
             width: 100%;
+          }
+        }
+        .label-error-password {
+          display: flex;
+          flex-direction: column;
+          font-size: 12px;
+          font-weight: 700;
+          margin-bottom: 20px;
+          width: 100%;
+          color: red;
+          input {
+            font-weight: 100;
+            font-size: 14px;
+            height: 40px;
+            width: 100%;
+            color: red;
           }
         }
       }
@@ -194,6 +226,22 @@
             width: 100%;
           }
         }
+        .label-error-username {
+          display: flex;
+          flex-direction: column;
+          font-size: 12px;
+          font-weight: 700;
+          margin-bottom: 20px;
+          width: 100%;
+          color: red;
+          input {
+            font-weight: 100;
+            font-size: 14px;
+            height: 40px;
+            width: 100%;
+            color: red;
+          }
+        }
       }
       .email-wrapper {
         .label-email {
@@ -210,6 +258,22 @@
             width: 100%;
           }
         }
+        .label-error-email {
+          display: flex;
+          flex-direction: column;
+          font-size: 12px;
+          font-weight: 700;
+          margin-bottom: 20px;
+          width: 100%;
+          color: red;
+          input {
+            font-weight: 100;
+            font-size: 14px;
+            height: 40px;
+            width: 100%;
+            color: red;
+          }
+        }
       }
       .password-wrapper {
         .label-password {
@@ -224,6 +288,22 @@
             font-size: 14px;
             height: 40px;
             width: 100%;
+          }
+        }
+        .label-error-password {
+          display: flex;
+          flex-direction: column;
+          font-size: 12px;
+          font-weight: 700;
+          margin-bottom: 20px;
+          width: 100%;
+          color: red;
+          input {
+            font-weight: 100;
+            font-size: 14px;
+            height: 40px;
+            width: 100%;
+            color: red;
           }
         }
       }
