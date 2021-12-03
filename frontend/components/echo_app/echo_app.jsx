@@ -2,7 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ServerIndexItemContainer from "./servers/server_index_container";
 import Modal from "react-modal";
-import { IoLogOutOutline, IoHomeOutline, IoCompassOutline } from "react-icons/io5";
+import { 
+  IoLogOutOutline, 
+  IoHomeOutline, 
+  IoCompassOutline,
+  IoLogoGithub,
+  IoLogoLinkedin,
+} from "react-icons/io5";
+import { SiAngellist } from "react-icons/si";
 
 class EchoApp extends React.Component {
   constructor(props) {
@@ -159,6 +166,18 @@ class EchoApp extends React.Component {
         <Link to="/" className="home-icon-wrapper">
           <div><IoHomeOutline className="home-icon"/></div>
         </Link>
+
+        <a href="https://github.com/vernchao91" target="_blank" className="github-icon-wrapper">
+          <div><IoLogoGithub className="github-icon"/></div>
+        </a>
+
+        <a href="https://www.linkedin.com/in/vern-chao-a8201a1ba/" target="_blank" className="linkedin-icon-wrapper">
+          <IoLogoLinkedin className="github-icon"/>
+        </a>
+
+        <a href="https://angel.co/u/vern-chien-chao" target="_blank" className="angelist-icon-wrapper">
+          <div><SiAngellist className="github-icon"/></div>
+        </a>
 
         <button onClick={this.props.logout} className="logout-icon-wrapper">
           <IoLogOutOutline className="logout-icon"/>

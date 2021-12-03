@@ -127,19 +127,19 @@ class ChannelIndexItem extends React.Component {
   }
 
   render() {
-    const { channel } = this.props
-    if (!channel) return null
-    if(!this.props.server) return null
+    const { channel } = this.props;
+    if (!channel) return null;
+    if(!this.props.server) return null;
 
     const pathName = this.props.history.location.pathname;
     const channelPath = `/app/servers/${channel.serverId}/channels/${channel.id}/messages`;
-    let renderStyle
-    let renderFontColor
+    let renderStyle;
+    let renderFontColor;
 
     if (pathName === channelPath) {
       renderStyle =  {backgroundColor: "rgb(58, 58, 58)"}
       renderFontColor = {color: "rgb(230, 230, 230)"}
-    }
+    };
 
     return (
       <Link

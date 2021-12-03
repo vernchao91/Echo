@@ -1,4 +1,5 @@
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 import ExplorePage from "./explore_page";
 import {
   fetchServers
@@ -16,4 +17,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ExplorePage)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ExplorePage))

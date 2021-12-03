@@ -1,45 +1,40 @@
 .explore-server-wrapper {
   display: flex;
+  flex-direction: column;
   color: white;
   border: 1px solid white;
   max-height: 100vh;
 
   // explore page
+  .explore-header-wrapper {
+    padding-left: 15px;
+    padding-top: 15px;
+    p {
+      font-weight: 600;
+      font-size: 24px;
+      color: white;
+      padding-bottom: 15px;
+    }
+  }
   .explore-server-index-wrapper {
     display: flex;
     flex-direction: column;
-    border: 1px solid white;
     padding: 15px;
     min-width: 206.75px;
     max-width: 206.75px;
-    .explore-header-wrapper {
-      p {
-        font-weight: 600;
-        font-size: 24px;
-        color: white;
-        padding-bottom: 15px;
-      }
-    }
-    .explore-server-index {
+
+    .explore-server-home-link {
       display: flex;
       flex-direction: row;
       align-items: center;
-      .explore-compass-icon {
-        color: rgb(204, 204, 204);
-        padding-right: 10px;
-        font-size: 26px;
+      height: 40px;
+      border-radius: 3px;
+      padding-left: 10px;
+      &:hover {
+        background-color: rgb(78, 78, 78);
+        color: rgb(230, 230, 230);
       }
-      .explore-gaming-icon {
-        color: rgb(204, 204, 204);
-        padding-right: 10px;
-        font-size: 26px;
-      }
-      .explore-music-icon {
-        color: rgb(204, 204, 204);
-        padding-right: 10px;
-        font-size: 26px;
-      }
-      .explore-sciencetech-icon {
+      .explore-home-icon {
         color: rgb(204, 204, 204);
         padding-right: 10px;
         font-size: 26px;
@@ -50,9 +45,34 @@
         font-weight: 525;
       }
     }
+    // .explore-server-gaming-link {
+    //   .explore-gaming-icon {
+    //     color: rgb(204, 204, 204);
+    //     padding-right: 10px;
+    //     font-size: 26px;
+    //   }
+    //   p {
+    //   }
+    // }
+    // .explore-server-music-link {
+    //   .explore-music-icon {
+    //     color: rgb(204, 204, 204);
+    //     padding-right: 10px;
+    //     font-size: 26px;
+    //   }
+    //   p {
+    //   }
+    // }
+    // .explore-server-sciencetech-link { 
+    //   .explore-sciencetech-icon {
+    //     color: rgb(204, 204, 204);
+    //     padding-right: 10px;
+    //     font-size: 26px;
+    //   }
+    //   p {
+    //   }
+    // }
   }
-
-
 }
 // changeable component home/gaming/music/sciencetech
 .explore-home-wrapper {
