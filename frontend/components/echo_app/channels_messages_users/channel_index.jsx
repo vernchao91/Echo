@@ -19,7 +19,6 @@ class ChannelIndex extends React.Component {
         serverId: this.props.serverId
       }
     }
-    console.log(this.props);
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
