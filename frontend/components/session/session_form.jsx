@@ -86,8 +86,7 @@ class SessionForm extends React.Component {
     } else {
       otherLink = 
       <div className="redirect-wrapper-register"> 
-        <label className="login-account">Already have an account? </label>
-        <Link className="login-link" to="/login"> Login</Link>
+        <Link className="login-link" to="/login">Already have an account?</Link>
       </div>
     };
     return otherLink
@@ -104,6 +103,8 @@ class SessionForm extends React.Component {
     let renderUsernameError = ""
     let renderEmailError = ""
     let renderPasswordError = ""
+    let header
+
     if (errors.includes("Email can't be blank")) {
       renderEmailError = "Email can't be blank"
     } else if (errors.includes("Password is too short (minimum is 6 characters)")) {
@@ -117,22 +118,20 @@ class SessionForm extends React.Component {
     let renderHeaderHeight
     if (formType === "Login") {
       renderHeaderHeight = {height: "30vh"}
-    } else {
+      header = <p>Welcome back!</p>
+    } else if (formType === "Register") {
       renderHeaderHeight = {height: "20vh"}
       renderTerms = <p className="terms">By registering, you agree to Echo's Terms of Service and Privay Policy</p>
-    }
-
-    if (errors.length > 0  && formType === "Login") {
-      renderErrors = "- Invalid credentials, please try again."
-      renderStyle = {color: "red"}
-      renderBorderColor = {borderColor: "red"}
-    }
-
-    let header
-    if (formType === "Login") {
-      header = <p>Welcome back!</p>
-    } else {
       header = <p>Create an Account</p>
+    }
+
+    if (errors.length > 0) {
+      renderBorderColor = {borderColor: "red"}
+      renderStyle = {color: "red"}
+    } 
+    
+    if (errors.length > 0 && formType === "Login") {
+      renderErrors = "- Invalid credentials, please try again."
     }
 
     let signupUsername
