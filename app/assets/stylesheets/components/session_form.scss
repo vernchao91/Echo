@@ -10,9 +10,24 @@
   width: 100vw;
   .session-header-wrapper {
     color: red;
+    padding: 15px;
     .session-home-link {
-      color: red;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgb(255, 255, 255);
+      color: rgb(0, 0, 0);
+      text-align: center;
+      margin: 15px;
+      padding: 3px;
+      height: 45px;
+      width: 45px;
+      font-size: 30px;
+      border-radius: 50%;
+      font-weight: 500;
       &:hover {
+        background-color: rgb(12, 178, 184);
+        color:rgb(255, 255, 255);
         cursor: pointer;
       }
     }
@@ -339,25 +354,13 @@
       }
     }
     .redirect-wrapper-register {
-      // display: flex;
-      // justify-content: center;
-      // align-items: center;
-      // width:65%;
-      .login-account {
-        // width: 50%;
-      }
       .login-link {
         display: flex;
         padding-top: 10px;
         font-size: 12px;
         font-weight: 600;
-        // justify-content: center;
-        // border: 1px solid;
-        // border-radius: 5px;
-        // background-color: rgb(37, 126, 117);
         color: #006bc2;
-        // border-color: black;
-        // width: 50%;
+        width: 150px;
       }
     }
   }

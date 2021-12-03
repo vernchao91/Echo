@@ -1,5 +1,6 @@
-import React from "react"
-import { Link } from "react-router-dom"
+import React from "react";
+import { Link } from "react-router-dom";
+import { IoHomeOutline } from "react-icons/io5";
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -85,7 +86,7 @@ class SessionForm extends React.Component {
       </div>
     } else {
       otherLink = 
-      <div className="redirect-wrapper-register"> 
+      <div className="redirect-wrapper-register">
         <Link className="login-link" to="/login">Already have an account?</Link>
       </div>
     };
@@ -167,7 +168,7 @@ class SessionForm extends React.Component {
 
         <header style={renderHeaderHeight} className="session-header-wrapper">
           <Link className="session-home-link" to="/">
-            Home
+            <IoHomeOutline/>
           </Link>
         </header>
 
