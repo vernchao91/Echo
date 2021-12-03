@@ -187,6 +187,100 @@
       }
     }
   }
+  .github-icon-wrapper {
+    color: rgb(184, 176, 176);
+    font-size: 20px;
+    font-weight: 300;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    transition: 0.1s ease-in-out;
+    border: 1px solid rgb(255, 255, 255);
+    margin-top: 5px;
+    &:hover {
+      background-color:black;
+      cursor: pointer;
+      border-radius: 10px;
+      .github-icon {
+        color: white;
+      }
+    }
+    .github-icon {
+      width: 25px;
+      height: 43px;
+      // color:rgb(18, 168, 85);
+      color:black;
+      &:hover {
+        color: white;
+      }
+    }
+  }
+
+  .linkedin-icon-wrapper {
+    color: rgb(184, 176, 176);
+    font-size: 20px;
+    font-weight: 300;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    transition: 0.1s ease-in-out;
+    border: 1px solid rgb(255, 255, 255);
+    margin-top: 5px;
+    &:hover {
+      background-color: #006097;
+      cursor: pointer;
+      border-radius: 10px;
+      .linkedin-icon {
+        color: white;
+      }
+    }
+    .linkedin-icon {
+      width: 25px;
+      height: 43px;
+      // color:rgb(18, 168, 85);
+      color:#006097;
+      &:hover {
+        color: white;
+      }
+    }
+  }
+  .angellist-icon-wrapper {
+    color: rgb(184, 176, 176);
+    font-size: 20px;
+    font-weight: 300;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    transition: 0.1s ease-in-out;
+    border: 1px solid rgb(255, 255, 255);
+    margin-top: 5px;
+    &:hover {
+      background-color:white;
+      cursor: pointer;
+      border-radius: 10px;
+      .angellist-icon {
+        color: black;
+      }
+    }
+    .angellist-icon {
+      width: 25px;
+      height: 43px;
+      // color:rgb(18, 168, 85);
+      color:white;
+      &:hover {
+        color: black;
+      }
+    }
+  }
   
   // logout server display button
   .logout-icon-wrapper {
