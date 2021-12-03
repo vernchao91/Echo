@@ -100,6 +100,13 @@ class SessionForm extends React.Component {
     let renderErrors
     let renderBorderColor
 
+    let renderHeaderHeight
+    if (this.props.formType === "Login") {
+      renderHeaderHeight = {height: "30vh"}
+    } else {
+      renderHeaderHeight = {height: "20vh"}
+    }
+
     if (errors.length > 0 ) {
       renderErrors = "- Invalid credentials, please try again."
       renderStyle = {color: "red"}
@@ -132,7 +139,7 @@ class SessionForm extends React.Component {
     return (
       <div className="bg-container">
 
-        <header className="session-header-wrapper">
+        <header style={renderHeaderHeight} className="session-header-wrapper">
           <Link className="session-home-link" to="/">
             Home
           </Link>

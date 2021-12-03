@@ -10,7 +10,6 @@
   width: 100vw;
   .session-header-wrapper {
     color: red;
-    height: 30vh;
     .session-home-link {
       color: red;
       &:hover {
@@ -175,8 +174,8 @@
 
   // register form
   .form-box-Register {
-    width: 700px;
-    height: 408px;
+    width: 480px;
+    height: 570px;
     padding: 32px;
     display: flex;
     justify-content: center;
@@ -247,7 +246,6 @@
       }
     }
   }
-
   .session-error {
     color: red;
   }
