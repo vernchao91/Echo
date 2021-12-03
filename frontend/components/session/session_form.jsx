@@ -61,7 +61,7 @@ class SessionForm extends React.Component {
       return (
         <div className="username-wrapper">
           <label className="label-username">
-            <h1>Username</h1>
+            <h1 style={renderStyle}>Username{renderErrors}</h1>
             <input
               id="username"
               type="text"
@@ -105,6 +105,29 @@ class SessionForm extends React.Component {
       renderStyle = {color: "red"}
       renderBorderColor = {borderColor: "red"}
     }
+    let header
+    if (this.props.formType === "Login") {
+      header = <p>Welcome back!</p>
+    } else {
+      header = <p>Create an Account</p>
+    }
+
+    let signupUsername
+    if (this.props.formType === "Register") {
+    signupUsername = <div className="username-wrapper">
+      <label className="label-username">
+        <h1 style={renderStyle}>Username{renderErrors}</h1>
+        <input
+          style={renderBorderColor}
+          id="username"
+          type="text"
+          value={this.state.username}
+          onChange={this.update("username")}
+          />
+        <br />
+      </label>
+    </div>
+    }
 
     return (
       <div className="bg-container">
@@ -119,8 +142,8 @@ class SessionForm extends React.Component {
           <div className={ formBox }>
 
             <form className="session-form" onSubmit={this.handleSubmit}>
-              <div className="session-form-header">Welcome to Echo!</div>
-              {this.signupUsername()}
+              <div className="session-form-header">{header}</div>
+              {signupUsername}
 
               <div className="email-wrapper">
                 <label className="label-email">
