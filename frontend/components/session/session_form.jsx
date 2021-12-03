@@ -121,7 +121,7 @@ class SessionForm extends React.Component {
       }  
       if (error.includes("Email has already been taken")) {
         classNameEmail = "label-error-email"
-        renderEmailError = " - Email has already been taken"
+        renderEmailError = " - Email has already been registered"
       }
       if (error.includes("Invalid credentials, please try again.")) {
         classNameEmail = "label-error-email"
