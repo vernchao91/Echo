@@ -27,7 +27,7 @@ class Landing extends React.Component  {
     if (this.props.userId) {
       return (
         <div className="app-link-wrapper">
-          <Link className="app-link" to="/app">Join Servers!</Link>
+          <Link className="app-link" to="/app/conversations/friendpage/all">Join Servers!</Link>
         </div>
       )
     }
