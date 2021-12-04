@@ -124,6 +124,7 @@ class ConversationMessage extends React.Component {
   render() {
     const { currentUserId, conversation } = this.props
     if (!currentUserId || !conversation) return null
+    console.log(conversation);
     return (
       <div className="conversation-messages-wrapper">
 
@@ -132,12 +133,12 @@ class ConversationMessage extends React.Component {
         <div className="messages-display-input-wrapper">
           <div className="messages-display">
             <div className="messages-pushed-to-bottom"/>
-            {Object.values(this.state.messages).map((message, i) => {
+            {Object.values(this.props.messages).map((message, i) => {
               let username
-              if (message.authorId !== currentUserId) {
-                username = conversation.ownerUsername
-              } else {
+              if (message.authorId === conversation.userId) {
                 username = conversation.userUsername
+              } else {
+                username = conversation.ownerUsername
               }
               return (
                 <div className="message" key={i}>

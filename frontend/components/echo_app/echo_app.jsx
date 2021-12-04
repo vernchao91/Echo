@@ -157,7 +157,7 @@ class EchoApp extends React.Component {
           </Modal>
         </div>
 
-        <Link to="/app/servers/explore" style={renderStyleExplore} className="explore-icon-wrapper">
+        <Link to="/app/servers/explore/home" style={renderStyleExplore} className="explore-icon-wrapper">
           <div>
             <IoCompassOutline style={renderStyleExploreIcon} className="explore-icon"/>
           </div>

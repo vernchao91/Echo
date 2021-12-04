@@ -61,6 +61,7 @@ class MessageIndex extends React.Component {
       this.bottom.current.scrollIntoView();
     }
   }
+  
   componentWillUnmount() {
     App.cable.subscriptions.subscriptions[0].unsubscribe();
     this.props.clearMessages()

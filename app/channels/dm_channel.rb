@@ -1,14 +1,8 @@
 class DMChannel < ApplicationCable::Channel
   def subscribed
-    # stream_from "some_channel"
-    # @channel = Channel.find_by(id: params[:id])
+    puts "--------------------------"
     @conversation = Conversation.find_by(id: params[:id])
-    # if @channel
-    #   stream_for @channel
-    # else
-      stream_for @conversation
-    # end
-    # stream_for "chat_channel"
+    stream_for @conversation
   end
 
   def speak(data)
@@ -25,7 +19,7 @@ class DMChannel < ApplicationCable::Channel
       #}
       socket = { message: @message }
       # ChatChannel.broadcast_to('chat_channel', socket)
-      ChatChannel.broadcast_to(@channel, socket)
+      DMChannel.broadcast_to(@conversation, socket)
     else
       puts "failed"
     end
