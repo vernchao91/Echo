@@ -124,7 +124,6 @@ class ConversationMessage extends React.Component {
   render() {
     const { currentUserId, conversation } = this.props
     if (!currentUserId || !conversation) return null
-    console.log(conversation);
     return (
       <div className="conversation-messages-wrapper">
 
