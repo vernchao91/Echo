@@ -21,11 +21,6 @@ class ConversationIndex extends React.Component {
       .then(() => this.setState({conversations: this.props.conversations}));
   }
 
-  // componentWillUnmount() {
-    // console.log("unmount");
-    // this.setState({style: { backgroundColor: ""}})
-  // }
-
   componentDidUpdate(prevProps) {
     if (prevProps.conversations !== this.props.conversations) {
       this.setState({conversations: this.props.conversations})

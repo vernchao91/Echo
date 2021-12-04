@@ -133,7 +133,13 @@ class ConversationMessage extends React.Component {
           <div className="messages-display">
             <div className="messages-pushed-to-bottom"/>
             {Object.values(this.props.messages).map((message, i) => {
-              let username
+              let username;
+              let date = message.createdAt.slice(0, 10);
+              let newDate = date.split("-");
+              let year = newDate[0];
+              newDate.shift();
+              newDate.push(year);
+              let newerDate = newDate.join("/");
               if (message.authorId === conversation.userId) {
                 username = conversation.userUsername
               } else {
@@ -141,7 +147,9 @@ class ConversationMessage extends React.Component {
               }
               return (
                 <div className="message" key={i}>
-                  <h1>{username}</h1>
+                  <div className="username-date-wrapper">
+                    <h1>{username}</h1><p>{newerDate}</p>
+                  </div>
                   <ul>{message.body}</ul>
                 </div>
               )

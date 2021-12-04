@@ -9,6 +9,7 @@ class MessageIndex extends React.Component {
         messageableId: this.props.channelId,
         messageableType: "Channel",
         authorId: this.props.currentUserId,
+        createdAt: "1"
       },
       channelId: this.props.channelId,
       messages: Object.values(this.props.messages)
@@ -109,7 +110,6 @@ class MessageIndex extends React.Component {
   render() {
     if (!this.props.channel || !this.props.users || !this.props.messages) return null;
     const { channel } = this.props;
-    const { users } = this.props;
     return (
       <div className="messages-wrapper">
 
@@ -122,14 +122,21 @@ class MessageIndex extends React.Component {
         <div className="messages-display-input-wrapper">
           <div className="messages-display">
             <div className="messages-pushed-to-bottom"/>
-            {Object.values(this.state.messages).map((message, i) => {
-              // this.displayUsernameAndBody(message, i)
-              const { users } = this.props
-              const user = users[message.authorId]
-              if (!user) return null
+            {Object.values(this.props.messages).map((message, i) => {
+              const { users } = this.props;
+              const user = users[message.authorId];
+              let date = message.createdAt.slice(0, 10);
+              let newDate = date.split("-");
+              let year = newDate[0];
+              newDate.shift();
+              newDate.push(year);
+              let newerDate = newDate.join("/");
+              if (!user) return null;
               return (
                 <div className="message" key={i}>
-                  <h1>{user.username}</h1>
+                  <div className="username-date-wrapper">
+                    <h1>{user.username}</h1><p>{newerDate}</p>
+                  </div>
                   <ul>{message.body}</ul>
                 </div>
                 )

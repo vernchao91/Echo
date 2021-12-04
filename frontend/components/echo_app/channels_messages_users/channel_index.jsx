@@ -35,16 +35,16 @@ class ChannelIndex extends React.Component {
     this.props.fetchUsersFromServer(this.props.serverId)
       .then(() => this.props.fetchCurrentUser())
     this.props.fetchChannels(this.props.serverId)
-      .then((state) => this.setState({channels: this.props.channels}))
+      .then(() => this.props.history.push(`/app/servers/${this.props.serverId}/channels/${Object.values(this.props.channels)[0].id}/messages`))
     this.props.fetchCurrentUser();
   }
   
   componentDidUpdate(prevProp) {
     if (prevProp.serverId !== this.props.serverId) {
       this.props.fetchUsersFromServer(this.props.serverId)
-        .then((state) => this.setState({users: this.props.users, serverId: this.props.serverId}))
+        .then(() => this.props.fetchCurrentUser())
       this.props.fetchChannels(this.props.serverId)
-        .then((state) => this.setState({channels: this.props.channels, serverId: this.props.serverId}))
+        .then(() => this.props.history.push(`/app/servers/${this.props.serverId}/channels/${Object.values(this.props.channels)[0].id}/messages`))
       this.props.fetchCurrentUser();
     }
   }
@@ -189,7 +189,7 @@ class ChannelIndex extends React.Component {
 
   render() {
     const { users, channels, server } = this.props
-    if (!users || !channels || !server) return null
+    if ( !users || !channels || !server ) return null
     let modal = <Modal errors={this.props.errors} name={this.props.modal} server={this.props.server} serverId={this.props.serverId}/>
     return (
       <div className="channels-servername-messages-users-wrapper">

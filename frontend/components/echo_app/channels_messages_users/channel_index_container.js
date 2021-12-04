@@ -1,4 +1,5 @@
 import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
 import ChannelIndex from "./channel_index";
 import {
   fetchUsersFromServer,
@@ -54,4 +55,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ChannelIndex)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ChannelIndex))
