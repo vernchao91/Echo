@@ -135,7 +135,7 @@ class EchoApp extends React.Component {
       <div className="echoapp-wrapper">
 
         <div className="conversation-link-wrapper"> 
-          <Link style={renderStyleDM} className="conversation-link" to="/app/conversations">DMs</Link>
+          <Link style={renderStyleDM} className="conversation-link" to="/app/conversations/friendpage/all">DMs</Link>
         </div>
 
         <div className="server-wrapper">

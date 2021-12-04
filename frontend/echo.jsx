@@ -5,7 +5,6 @@ import configureStore from "./store/store";
 import { deleteServer } from "./util/server_api_util"
 // import { deleteServer } from "./actions/server_actions"
 
-
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("root");
 

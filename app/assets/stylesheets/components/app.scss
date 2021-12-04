@@ -6,14 +6,14 @@
   max-width: 72px;
   width: 3.75%;
   min-width: 72px;
-
+  background-color: #0a050588;
+  // opacity: 0.75;
   .conversation-link-wrapper {
     display: grid;
     width: 48px;
     height: 48px;
     border: transparent;
     transition: 0.1s ease-in-out;
-    // border: 1px solid rgb(177, 177, 177);
     border-radius: 50%;
     margin-top: 5px;
     .conversation-link {
@@ -211,11 +211,7 @@
     .github-icon {
       width: 25px;
       height: 43px;
-      // color:rgb(18, 168, 85);
-      color:black;
-      &:hover {
-        color: white;
-      }
+      color:white;
     }
   }
 
