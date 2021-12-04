@@ -27,6 +27,8 @@ class MessageIndex extends React.Component {
     App.cable.subscriptions.create(
       { channel: "ChatChannel", id: this.props.channelId},
       { received: data => {
+        this.props.fetchUsersFromServer(this.props.serverId)
+        this.props.fetchChannels(this.props.serverId)
         this.props.fetchChannelMessages(this.props.channelId)
           .then((state) => this.setState({
             messages: Object.values(state.messages).concat(data.message)
