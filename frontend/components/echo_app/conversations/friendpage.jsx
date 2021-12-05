@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom"
 import { IoPeopleOutline } from "react-icons/io5";
 import { Route } from "react-router-dom";
+import{ ProtectedRoute } from "../../../util/route_util";
 import AllFriendsIndexContainer from "./all_friends_index_container";
 import PendingIndexContainer from "./pending_index_container";
 import SearchUserContainer from "./search_user_container"
@@ -61,9 +62,9 @@ class FriendPage extends React.Component {
         </div>
 
         <div className="friendpage-index-wrapper">
-          <Route path="/app/conversations/friendpage/all" component={AllFriendsIndexContainer}/>
-          <Route path="/app/conversations/friendpage/pending" component={PendingIndexContainer}/>
-          <Route path="/app/conversations/friendpage/searchuser" component={SearchUserContainer}/>
+          <ProtectedRoute path="/app/conversations/friendpage/all" component={AllFriendsIndexContainer}/>
+          <ProtectedRoute path="/app/conversations/friendpage/pending" component={PendingIndexContainer}/>
+          <ProtectedRoute path="/app/conversations/friendpage/searchuser" component={SearchUserContainer}/>
         </div>
 
       </div>

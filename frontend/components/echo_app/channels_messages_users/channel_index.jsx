@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Route, Switch } from "react-router-dom";
+import { AuthRoute, ProtectedRoute } from "../../../util/route_util";
 import ChannelIndexItemContainer from "./channel_index_item_container";
 import Modal from "../../modal/modal";
 import MessageIndexContainer from "../message/message_index_container";
@@ -223,7 +224,7 @@ class ChannelIndex extends React.Component {
             )}
           </div>
 
-          <Route path="/app/servers/:serverId/channels/:channelId/messages" component={MessageIndexContainer} />
+          <ProtectedRoute path="/app/servers/:serverId/channels/:channelId/messages" component={MessageIndexContainer} />
             
           <div className="users-wrapper">
             <div className="users-total">

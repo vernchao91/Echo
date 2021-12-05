@@ -12,16 +12,16 @@ import ExploreHomeContainer from "./echo_app/servers/explore_page/explore_home_c
 const Main = () => {
   return (
     <div className="main">
-      <Route path="/app" component={EchoAppContainer} />
-      <Route path="/app/servers/:serverId/channels" component={ChannelIndexContainer}/>
-      <Route path="/app/servers/explore" component={ExplorePageContainer}/>
-      <Route path="/app/servers/explore/home" component={ExploreHomeContainer}/>
-      {/* <Route path="/app/servers/explore/gaming" component={ExploreGamingContainer}/>
-        <Route path="/app/servers/explore/music" component={ExploreMusicContainer}/>
-        <Route path="/app/servers/explore/sciencetech" component={ExploreScienceTechContainer}/> */}
-      <Route path="/app/conversations" component={ConversationIndexContainer}/>
-      <Route path="/app/conversations/:conversationId/messages" component={ConversationMessageContainer}/>
-      <Route path="/app/conversations/friendpage" component={FriendPageContainer} />
+      <ProtectedRoute path="/app" component={EchoAppContainer} />
+      <ProtectedRoute path="/app/servers/:serverId/channels" component={ChannelIndexContainer}/>
+      <ProtectedRoute path="/app/servers/explore" component={ExplorePageContainer}/>
+      <ProtectedRoute path="/app/servers/explore/home" component={ExploreHomeContainer}/>
+      {/* <ProtectedRoute path="/app/servers/explore/gaming" component={ExploreGamingContainer}/>
+        <ProtectedRoute path="/app/servers/explore/music" component={ExploreMusicContainer}/>
+        <ProtectedRoute path="/app/servers/explore/sciencetech" component={ExploreScienceTechContainer}/> */}
+      <ProtectedRoute path="/app/conversations" component={ConversationIndexContainer}/>
+      <ProtectedRoute path="/app/conversations/:conversationId/messages" component={ConversationMessageContainer}/>
+      <ProtectedRoute path="/app/conversations/friendpage" component={FriendPageContainer} />
     </div>
   )
 }
