@@ -102,9 +102,27 @@
     }
   }
 
+  .create-tooltip, .explore-tooltip, .github-tooltip, .linkedin-tooltip, .angellist-tooltip, .homepage-tooltip, .logout-tooltip {
+    display: none;
+  }
   // create server display button
   .create-server-button {
+    display: flex;
+    flex-direction: column;
     padding-top: 7.5px;
+    align-items: center;
+    &:hover {
+      .create-tooltip {
+        display: flex;
+        position: absolute;
+        left: 50px;
+        margin-top: 15px;
+        p {
+          background-color: black;
+          color: white;
+        }
+      }
+    }
     .open-modal-create {
       color: rgb(44, 189, 104);
       font-size: 25px;
@@ -140,6 +158,19 @@
       background-color:rgb(18, 168, 85);
       cursor: pointer;
       border-radius: 10px;
+      .explore-tooltip {
+        display: flex;
+        position: absolute;
+        left: 50px;
+        p {
+          text-align: center;
+          justify-content: center;
+          border-radius: 3px;
+          font-size: 16px;
+          background-color: black;
+          color: white;
+        }
+      }
       .explore-icon {
         color: white;
       }
@@ -174,6 +205,19 @@
       background-color:rgb(18, 168, 85);
       cursor: pointer;
       border-radius: 10px;
+      .homepage-tooltip {
+        display: flex;
+        position: absolute;
+        left: 50px;
+        p {
+          text-align: center;
+          justify-content: center;
+          border-radius: 3px;
+          font-size: 16px;
+          background-color: black;
+          color: white;
+        }
+      }
       .home-icon {
         color: white;
       }
@@ -204,6 +248,19 @@
       background-color:black;
       cursor: pointer;
       border-radius: 10px;
+      .github-tooltip {
+        display: flex;
+        position: absolute;
+        left: 50px;
+        p {
+          text-align: center;
+          justify-content: center;
+          border-radius: 3px;
+          font-size: 16px;
+          background-color: black;
+          color: white;
+        }
+      }
       .github-icon {
         color: white;
       }
@@ -232,6 +289,19 @@
       background-color: #006097;
       cursor: pointer;
       border-radius: 10px;
+      .linkedin-tooltip {
+        display: flex;
+        position: absolute;
+        left: 50px;
+        p {
+          text-align: center;
+          justify-content: center;
+          border-radius: 3px;
+          font-size: 16px;
+          background-color: black;
+          color: white;
+        }
+      }
       .linkedin-icon {
         color: white;
       }
@@ -263,6 +333,19 @@
       background-color:white;
       cursor: pointer;
       border-radius: 10px;
+      .angellist-tooltip {
+        display: flex;
+        position: absolute;
+        left: 50px;
+        p {
+          text-align: center;
+          justify-content: center;
+          border-radius: 3px;
+          font-size: 16px;
+          background-color: black;
+          color: white;
+        }
+      }
       .angellist-icon {
         color: black;
       }
@@ -296,6 +379,19 @@
       background-color:rgb(18, 168, 85);
       cursor: pointer;
       border-radius: 10px;
+      .logout-tooltip {
+        display: flex;
+        position: absolute;
+        left: 50px;
+        p {
+          text-align: center;
+          justify-content: center;
+          border-radius: 3px;
+          font-size: 16px;
+          background-color: black;
+          color: white;
+        }
+      }
       .logout-icon {
         color: white;
       }
@@ -322,7 +418,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  border: 1px solid rgb(255, 255, 255);
+  // border: 1px solid rgb(255, 255, 255);
   width: 96.25%;
   min-width: 865px;
   max-height: 100vh;
@@ -331,7 +427,7 @@
     display: flex;
     min-height: 18px;
     height: 18px;
-    border: 1px solid white;
+    border-bottom: 2px solid #0a0505;
     align-items: center;
     padding: 10px;
     .server-owner-button-wrapper {
@@ -344,11 +440,14 @@
     .join-leave-server-button-wrapper {
       .leave-button, .join-button {
         color: white;
+        font-size: 14px;
         margin-left: 10px;
       }
     }
     .server-name-text {
-      display: grid;
+      display: flex;
+      font-size: 15px;
+      font-weight: 600;
       color: rgb(182, 182, 182);
       flex-direction: column;
     }
@@ -363,16 +462,29 @@
       min-width: 229px;
       padding-top: 15px;
       padding-left: 15px;
-      border: 1px solid white;
+      // border: 1px solid white;
+      background-color: #00000057;
+
       .users-total {
+        font-weight: 600;
+        font-size: 15px;
         color: rgb(204, 204, 204);
       }
       .users-link {
         display: flex;
         color: rgb(204, 204, 204);
         flex-direction: row;
-        padding-top: 10px;
+        padding-top: 20px;
         padding-left: 20px;
+        .username-text {
+          display: flex;
+          align-items: center;
+          font-size: 15px;
+          .crown {
+            padding-left: 5px;
+            color: gold
+          }
+        }
       }
     }
   }

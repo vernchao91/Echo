@@ -72,7 +72,7 @@ class ConversationIndex extends React.Component {
 
         <div className="conversation-index-wrapper">
           <div className="conversation-index-header-wrapper">
-            Conversations
+            <p>Conversations</p>
           </div>
 
           <div className="conversation-list-wrapper">

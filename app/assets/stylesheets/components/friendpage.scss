@@ -3,14 +3,16 @@
   display: flex;
   flex-direction: column;
   color: white;
-  border: 1px solid white;
+  // border: 1px solid white;
   width: 100%;
   .friendpage-header-wrapper {
     display: flex;
     align-items: center;
     padding: 10px;
     padding-left: 15px;
-    border: 1px solid white;
+    border-bottom: 2px solid #0a050588;
+    // border: 1px solid white;
+    background-color: #3a393915;
     height: 18px;
     .friend-icon {
       margin-right: 5px;
@@ -91,6 +93,7 @@
     padding-bottom: 20px;
     height: calc(100% - 40px);
     width: calc(100% - 40px);
+    background-color: #3a393915;
 
     // all-friends-index component
     .all-friends-index-wrapper {

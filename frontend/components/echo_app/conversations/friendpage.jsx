@@ -10,11 +10,6 @@ import SearchUserContainer from "./search_user_container"
 class FriendPage extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-    }
-  }
-  
-  componentDidMount() {
   }
 
   render() {

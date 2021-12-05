@@ -1,22 +1,28 @@
 .conversation-page {
   display: flex;
   color: white;
-  border: 1px solid white;
+  // border: 1px solid white;
   // width: 100%;
   max-height: 100vh;
 
   .conversation-index-wrapper {
     display: flex;
     flex-direction: column;
-    border: 1px solid white;
+    // border: 1px solid white;
     min-width: 236.75px;
     max-width: 236.75px;
     .conversation-index-header-wrapper {
       display: flex;
       flex-direction: column;
       padding: 10px;
-      border: 1px solid white;
+      // border: 1px solid white;
+      border-bottom: 3px solid #0a050588;
       height: 18px;
+      p {
+        font-size: 15px;
+        font-weight: 600;
+        color: rgb(182, 182, 182);
+      }
     }
     .conversation-list-wrapper {
       display: flex;
@@ -81,24 +87,24 @@
   }
   
 }
-.conversation-messages-wrapper {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid white;
-  width: 100%;
-  min-height: 553px;
-  .conversation-message-header-wrapper {
-    padding: 10px;
-    border: 1px solid white;
-    height: 18px;
-    .conversation-message-header-at {
-      color: rgb(185, 185, 185);
-      margin-right: 5px;
-    }
-    .conversation-message-header-username {
-      font-size: 15px;
-      font-weight: 550;
-      color:rgb(235, 235, 235)
-    }
-  }
-}
+// .conversation-messages-wrapper {
+//   display: flex;
+//   flex-direction: column;
+//   // border: 1px solid white;
+//   width: 100%;
+//   min-height: 553px;
+//   .conversation-message-header-wrapper {
+//     padding: 10px;
+//     border: 1px solid white;
+//     height: 18px;
+//     .conversation-message-header-at {
+//       color: rgb(185, 185, 185);
+//       margin-right: 5px;
+//     }
+//     .conversation-message-header-username {
+//       font-size: 15px;
+//       font-weight: 550;
+//       color:rgb(235, 235, 235)
+//     }
+//   }
+// }

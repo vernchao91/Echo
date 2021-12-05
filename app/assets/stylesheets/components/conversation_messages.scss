@@ -6,7 +6,7 @@
   width: 100%;
   min-height: 480px;
   border-bottom: 1px solid white;
-  background-color: #36393f57;
+  background-color: #3a393915;
 
   .conversation-message-header-wrapper {
     color: white;
@@ -14,7 +14,8 @@
     align-items: center;
     padding: 10px;
     padding-left: 15px;
-    border: 1px solid white;
+    // border: 1px solid white;
+    border-bottom: 1px solid white;
     height: 18px;
   }
   /* Hide scrollbar for Chrome, Safari and Opera */

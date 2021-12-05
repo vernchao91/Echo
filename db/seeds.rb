@@ -34,24 +34,41 @@ mercy = User.create!(username: "Mercy", email: "Mercy@gmail.com", password:"pass
 demo2 = User.create!(username: "demo2", email: "demo2@gmail.com", password: "password")
 demo3 = User.create!(username: "demo3", email: "demo3@gmail.com", password: "password")
 echo = User.create!(username: "echo", email: "echo@gmail.com", password: "password")
+kush = User.create!(username: "kush", email: "kush@gmail.com", password: "password")
 
 #server = Server.create!(name: "", owner_id: )
-server1 = Server.create!(name: "League of Legends", owner_id: 3)
-server2 = Server.create!(name: "Apex Legends", owner_id: 6)
-server3 = Server.create!(name: "Fortnite", owner_id: 12)
-server4 = Server.create!(name: "World of Warcraft", owner_id: 13)
-server5 = Server.create!(name: "Hearthstone", owner_id: 14)
-server6 = Server.create!(name: "Valorant", owner_id: 9)
-server7 = Server.create!(name: "Fishing", owner_id:8)
-server8 = Server.create!(name: "Fantasy Football", owner_id:9)
-server9 = Server.create!(name: "Movie Watch Parties", owner_id:10)
-server10 = Server.create!(name: "App Academy", owner_id:17)
-server11 = Server.create!(name: "Jett's server", owner_id:9)
-server12 = Server.create!(name: "Wraith's server", owner_id:6)
-server13 = Server.create!(name: "Manga Talks", owner_id: 20)
+server1 = Server.create!(name: "League of Legends", owner_id: ashe.id)
+List.create!(server_id: server1.id, user_id: ashe.id)
+server2 = Server.create!(name: "Apex Legends", owner_id: wraith.id)
+List.create!(server_id: server2.id, user_id: wraith.id)
+server3 = Server.create!(name: "Fortnite", owner_id: omega.id)
+List.create!(server_id: server3.id, user_id: omega.id)
+server4 = Server.create!(name: "World of Warcraft", owner_id: sylvanas.id)
+List.create!(server_id: server4.id, user_id: sylvanas.id)
+server5 = Server.create!(name: "Hearthstone", owner_id: rexxar.id)
+List.create!(server_id: server5.id, user_id: rexxar.id)
+server6 = Server.create!(name: "Valorant", owner_id: omen.id)
+List.create!(server_id: server6.id, user_id: omen.id)
+server7 = Server.create!(name: "Fishing", owner_id: agentpeely.id)
+List.create!(server_id: server7.id, user_id: agentpeely.id)
+server8 = Server.create!(name: "Fantasy Football", owner_id: mirage.id)
+List.create!(server_id: server8.id, user_id: mirage.id)
+server9 = Server.create!(name: "Movie Watch Parties", owner_id: cypher.id)
+List.create!(server_id: server9.id, user_id: cypher.id)
+server10 = Server.create!(name: "App Academy", owner_id: kush.id)
+List.create!(server_id: server10.id, user_id: kush.id)
+server11 = Server.create!(name: "Jett's server", owner_id: jett.id)
+List.create!(server_id: server11.id, user_id: jett.id)
+server12 = Server.create!(name: "Wraith's server", owner_id: wraith.id)
+List.create!(server_id: server12.id, user_id: wraith.id)
+server13 = Server.create!(name: "Manga Talks", owner_id: pathfinder.id)
+List.create!(server_id: server13.id, user_id: pathfinder.id)
 server14 = Server.create!(name: "Stack Overflow", owner_id: kuno.id)
+List.create!(server_id: server14.id, user_id: kuno.id)
 server15 = Server.create!(name: "Kuno's Server", owner_id: kuno.id)
-server16 = Server.create!(name: "Overwatch", owner_id: 21)
+List.create!(server_id: server15.id, user_id: kuno.id)
+server16 = Server.create!(name: "Overwatch", owner_id: tracer.id)
+List.create!(server_id: server16.id, user_id: tracer.id)
 
 # demo joined servers
 
@@ -67,7 +84,6 @@ list3 = List.create!(server_id: 7, user_id: 2)
 list3 = List.create!(server_id: 8, user_id: 2)
 
 # users joined LoL
-list4 = List.create!(server_id: 1, user_id: 3)
 list5 = List.create!(server_id: 1, user_id: 4)
 list6 = List.create!(server_id: 1, user_id: 5)
 list7 = List.create!(server_id: 1, user_id: 6)
@@ -78,24 +94,17 @@ list11 = List.create!(server_id: 1, user_id: 21)
 list12 = List.create!(server_id: 1, user_id: 19)
 
 # users joined Apex
-list13 = List.create!(server_id: 2, user_id: 6)
 list14 = List.create!(server_id: 2, user_id: 7)
 list15 = List.create!(server_id: 2, user_id: 8)
 
-# users joined Fortnite
-list16 = List.create!(server_id: 3, user_id: 12)
-
 # users joined WoW
-list17 = List.create!(server_id: 4, user_id: 13)
 list18 = List.create!(server_id: 4, user_id: 14)
 
 # users joined Hearthstone
 list19 = List.create!(server_id: 5, user_id: 13)
-list20 = List.create!(server_id: 5, user_id: 14)
 
 # users joined Valorant
 list21 = List.create!(server_id: 6, user_id: 9)
-list22 = List.create!(server_id: 6, user_id: 10)
 list23 = List.create!(server_id: 6, user_id: 11)
 
 # users joined Fishing
@@ -106,7 +115,6 @@ list26 = List.create!(server_id: 7, user_id: 10)
 list27 = List.create!(server_id: 8, user_id: 10)
 list28 = List.create!(server_id: 8, user_id: 4)
 list29 = List.create!(server_id: 9, user_id: 6)
-list30 = List.create!(server_id: 16, user_id: 21)
 list31 = List.create!(server_id: 16, user_id: 22)
 list32 = List.create!(server_id: 16, user_id: 23)
 list33 = List.create!(server_id: 16, user_id: 24)

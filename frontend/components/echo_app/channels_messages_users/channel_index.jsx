@@ -6,6 +6,7 @@ import ChannelIndexItemContainer from "./channel_index_item_container";
 import Modal from "../../modal/modal";
 import MessageIndexContainer from "../message/message_index_container";
 import Modal2 from "react-modal";
+import { FaCrown } from "react-icons/fa";
 
 class ChannelIndex extends React.Component {
   constructor(props) {
@@ -230,11 +231,19 @@ class ChannelIndex extends React.Component {
             <div className="users-total">
               Members - {Object.values(users).length}
             </div>
-            {Object.values(users).map(user => 
-              <div key={user.id} className="users-link">
-                <ul>{user.username}</ul>
-              </div>
-            )}
+            {Object.values(users).map(user => {
+              let userDisplay;
+              if (server.ownerId === user.id) {
+                userDisplay = <ul className="username-text">{user.username}<FaCrown className="crown"/></ul>
+              } else {
+                userDisplay = <ul className="username-text">{user.username}</ul>
+              }
+              return (
+                <div key={user.id} className="users-link">
+                  {userDisplay}
+                </div>
+              )
+            })}
           </div>
           
         </div>

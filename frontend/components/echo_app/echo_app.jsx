@@ -18,22 +18,15 @@ class EchoApp extends React.Component {
       servers: this.props.servers,
       modal: false,
       name: "",
-      hover: false
     }
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleMouseIn = this.handleMouseIn.bind(this);
-    this.handleMouseOut = this.handleMouseOut.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchServersFromUser(this.props.currentUser.id)
       .then(() => this.setState({servers: this.props.servers}))
-  }
-
-  componentWillUnmount() {
-    
   }
 
   handleOpenModal() {
@@ -57,14 +50,6 @@ class EchoApp extends React.Component {
       this.props.removeServerErrors();
       this.setState({ [field]: e.currentTarget.value })
     }
-  }
-
-  handleMouseIn() {
-    this.setState({ hover: true })
-  }
-  
-  handleMouseOut() {
-    this.setState({ hover: false })
   }
 
   renderCursor() {
@@ -110,7 +95,6 @@ class EchoApp extends React.Component {
             </div>
           </form>
 
-
         </div>  
       </div>
     )
@@ -148,7 +132,11 @@ class EchoApp extends React.Component {
           ))}
         </div>
 
+
         <div className="create-server-button">
+          <div className="create-tooltip" >
+            <p>Create a Server</p>
+          </div>
           <button className="open-modal-create" onClick={() => this.handleOpenModal()}>
             +
           </button>
@@ -157,29 +145,49 @@ class EchoApp extends React.Component {
           </Modal>
         </div>
 
+        
+
         <Link to="/app/servers/explore/home" style={renderStyleExplore} className="explore-icon-wrapper">
+          <div className="explore-tooltip" >
+            <p>Explore Servers</p>
+          </div>
           <div>
             <IoCompassOutline style={renderStyleExploreIcon} className="explore-icon"/>
           </div>
         </Link>
 
         <a href="https://github.com/vernchao91" target="_blank" className="github-icon-wrapper">
+          <div className="github-tooltip" >
+            <p>Github</p>
+          </div>
           <div><IoLogoGithub className="github-icon"/></div>
         </a>
 
         <a href="https://www.linkedin.com/in/vern-chao-a8201a1ba/" target="_blank" className="linkedin-icon-wrapper">
+          <div className="linkedin-tooltip" >
+            <p>Linkedin</p>
+          </div>
           <IoLogoLinkedin className="linkedin-icon"/>
         </a>
 
         <a href="https://angel.co/u/vern-chien-chao" target="_blank" className="angellist-icon-wrapper">
+          <div className="angellist-tooltip" >
+            <p>Angel list</p>
+          </div>
           <div><SiAngellist className="angellist-icon"/></div>
         </a>
 
         <Link to="/" className="home-icon-wrapper">
+          <div className="homepage-tooltip" >
+            <p>Home Page</p>
+          </div>
           <div><IoHomeOutline className="home-icon"/></div>
         </Link>
 
         <button onClick={this.props.logout} className="logout-icon-wrapper">
+          <div className="logout-tooltip" >
+            <p>Logout</p> 
+          </div>
           <IoLogOutOutline className="logout-icon"/>
         </button>
 
