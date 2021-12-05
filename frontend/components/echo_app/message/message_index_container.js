@@ -14,6 +14,9 @@ import {
 import {
   fetchChannels
 } from "../../../actions/channel_actions";
+import {
+  fetchServersFromUser
+} from "../../../actions/server_actions";
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -35,6 +38,7 @@ const mapDispatchToProps = dispatch => {
     deleteChannelMessage: () => dispatch(deleteChannelMessage(message)),
     fetchUsersFromServer: (serverId) => dispatch(fetchUsersFromServer(serverId)),
     fetchChannels: (serverId) => dispatch(fetchChannels(serverId)),
+    fetchServersFromUser: (userId) => dispatch(fetchServersFromUser(userId)),
     clearMessages: () => dispatch(clearMessages())
   }
 }

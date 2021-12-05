@@ -24,7 +24,6 @@ class MessageIndex extends React.Component {
         channelId: this.props.channelId,
         messages: Object.values(this.props.messages)
       }))
-    // this.setState({channelId: this.props.channelId})
     App.cable.subscriptions.create(
       { channel: "ChatChannel", id: this.props.channelId},
       { received: data => {
