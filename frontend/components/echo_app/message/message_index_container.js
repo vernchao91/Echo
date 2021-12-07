@@ -42,4 +42,5 @@ const mapDispatchToProps = dispatch => {
     clearMessages: () => dispatch(clearMessages())
   }
 }
+
 export default connect(mapStateToProps, mapDispatchToProps)(MessageIndex)

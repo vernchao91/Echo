@@ -5,7 +5,6 @@ import {
   LOGOUT_CURRENT_USER 
 } from "../../actions/session_actions";
 
-
 const sessionErrorsReducer = (oldState = [], action) => {
   Object.freeze(oldState);
 

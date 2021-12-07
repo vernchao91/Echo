@@ -29,13 +29,13 @@ class Conversation < ApplicationRecord
 
   #has_many :lists,
   #  as: :listable,
-  #  dependent: :destroy 
+  #  dependent: :destroy
 
   #has_many :joined_users,
   #  through: :lists,
   #  source: :user
 
-  def friendlist_check
+  def mutuals
     
     
   end

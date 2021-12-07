@@ -1,12 +1,22 @@
+# @servers.each do |server|
+#   json.set! server.id do
+#     json.users server.joined_users do |user|
+#       json.user user.username
+#       json.id user.id
+#     end
+#     json.partial! "api/servers/server", server: server
+#   end
+# end
+
 @servers.each do |server|
-    json.set! server.id do
-      json.users server.joined_users do |user|
-        json.user user.username
-        json.id user.id
-      end
-      json.partial! "api/servers/server", server: server
-    end
+  json.set! server.id do
+    json.users server.joined_users.length
+    #   json.user user.username
+    #   json.id user.id
+    # end
+    json.partial! "api/servers/server", server: server
   end
+end
 
 
 # {

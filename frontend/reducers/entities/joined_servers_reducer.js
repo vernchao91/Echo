@@ -5,7 +5,7 @@ import {
   JOIN_SERVER,
   LEAVE_SERVER,
   CLEAR_JOINED_SERVERS
-} from "../../actions/server_actions"
+} from "../../actions/server_actions";
 
 const joinedServersReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
