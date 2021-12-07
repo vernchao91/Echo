@@ -34,10 +34,4 @@ class Conversation < ApplicationRecord
   #has_many :joined_users,
   #  through: :lists,
   #  source: :user
-
-  def mutuals
-    
-    
-  end
-
 end
