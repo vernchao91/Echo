@@ -5,11 +5,19 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta property="og:title" content="Echo" />
+    <meta property='og:image' content="<%= image_url('project_pic.png') %>"/>
+    <meta property="og:description"
+      content="A brief description of your project."
+    />
+    <meta property="og:url"
+      content="http://projectname.herokuapp.com/"
+    />
     <script type="text/javascript">
       window.logoURL = "<%= image_url("logo.jpg") %>";
       // window.logoblackURL = "<%= image_url("") %>";
       // window.loginURL = "<%= image_url("") %>";
-      // window.errorURL = "<%= image_url("") %>"
+      // window.errorURL = "<%= image_url("") %>";
     </script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
