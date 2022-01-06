@@ -1,15 +1,44 @@
+# /tmp/*
+# !/tmp/.keep
+# /node_modules
+# /bundle.js*
+# bundle.js.map
+# .byebug_history
+# .DS_Store
+# npm-debug.log
+# /config/master.key
+# /storage/*
+# /yarn-error.log/public/assets
+# /log/*
+# /log/.keep
+# /config/master.key
+# /public/assets
+
+# Ignore bundler config.
+/.bundle
+
+# Ignore all logfiles and tempfiles.
+/log/*
 /tmp/*
+!/log/.keep
 !/tmp/.keep
+
+# Ignore uploaded files in development
+/storage/*
+!/storage/.keep
+
 /node_modules
-/bundle.js*
+/yarn-error.log
+
+/public/assets
+.byebug_history
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
+#  To add
+node_modules/
+bundle.js
 bundle.js.map
 .byebug_history
 .DS_Store
 npm-debug.log
-/config/master.key
-/storage/*
-/yarn-error.log/public/assets
-/log/*
-/log/.keep
-/config/master.key
-/public/assets
