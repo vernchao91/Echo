@@ -24,3 +24,5 @@ Account registration and login are fully functional and error handled.
 <img src="/app/assets/images/EchoAuth.png" alt="UserAuth">
 
 #### Server CRUD(create, read, update, delete)
+Server creation 
+<img src="/app/assets/images/EchoServer.png" alt="Server">
