@@ -20,7 +20,7 @@ The User can create servers and give it a server name. The server name may not b
 Account registration and login are fully functional and error handled.
 - Users can login and must provide the correct Email and Password they registered with. Failing to do so will provide an error message that displays in red font, "Invalid credentials, please try again." This way, a user with ill intentions would not be able to know if the email or password is incorrect.
 - Users can register and must input a unique Email and Username that has not been registered before. This will display the user's username in public but still keep emails private so they stay protected during login. The password is restricted to a minimum of 6 characters. All errors are handled through the backend database and displays the correct error.
-<img src="/app/assets/images/EchoAuth.png" alt="UserAuth">
+- <img src="/app/assets/images/EchoAuth.png" alt="UserAuth">
 
 #### Servers CRUD (create, read, update, delete)
 Server creation form is in a modal and modal input for server name is also error handled. Server update form is on a separate modal that takes up the window size.
