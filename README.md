@@ -44,4 +44,12 @@ Server/Channel creation form is in a modal and modal input for name is also erro
 #### Messages (create, read)
 - Users can create and read messages in 2 different components, the Channels component and the Direct Messaging component. Just like Discord, everyone in a server are connected to the same websocket channel and can see chat messages via live, much like a groupchat. For Direct Messaging, it is between 2 users and their own distinct websocket channel.
 
-##
+#### Future Feature's to add
+- [ ] Server owner can kick joined members.
+- [ ] Server invitation can be created by server owner.
+- [ ] Allow image CRUD for User Avatar
+- [ ] Allow image CRUD for Server Avatar
+- [ ] Add Server cards for "verified" servers
+- [ ] Add more featured servers for Music, Science & Tech, and Gaming. (More Seeds for extra components. Server needs extra column for verified: true or false)
+- [ ] Voice chat.
+- [ ] Video chat. 
