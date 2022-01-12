@@ -52,6 +52,7 @@ Server/Channel creation form is in a modal and modal input for name is also erro
 - [ ] Server invitation can be created by server owner.
 - [ ] Allow image CRUD for User Avatar (Active Storage AWS).
 - [ ] Allow image CRUD for Server Avatar (Active Storage AWS).
+- [ ] Change Joins table to polymorphic and let conversation's be more than 2 people.
 - [ ] Add Server cards for "verified" servers.
 - [ ] Add more featured servers for Music, Science & Tech, and Gaming. (More Seeds for extra components. Server needs extra column for verified: true or false).
 - [ ] Voice chat.
