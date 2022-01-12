@@ -23,10 +23,10 @@ Account registration and login are fully functional and error handled.
 <img src="/app/assets/images/EchoAuth.png" alt="UserAuth">
 
 #### Server CRUD(create, read, update, delete)
-Server creation form is in a modal and the modal inputs for the name is also error handled.
+Server creation form is in a modal and modal input for server name is also error handled. Server update form is on a separate modal that takes up the window size.
 - Create Server button in the form is disabled and is not enabled until input has been filled.
 - Once the input has been filled, the user may not create another server with the same name. Red font errors will be displayed if the user attempts to.
-- 
+- Server settings has a Server Name input that can be updated. If the user tries to update the name to an existing server name, error is flashed in red font and may not be saved to the database
 
 <img src="/app/assets/images/EchoServer.png" alt="Server">
 
