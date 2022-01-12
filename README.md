@@ -1,7 +1,7 @@
-# Echo
+# Echo - Full Stack clone of Discord. Users can create servers, text channels, chat areas, and direct messaging.
 <a href="https://echo-discordclone.herokuapp.com/#/" target="_blank">Live Link! <---</a>
 
-Echo is a fullstack clone of Discord. Users can create servers, text channels, chat areas, and direct messaging.
+<!-- Echo is a Full Stack clone of Discord. Users can create servers, text channels, chat areas, and direct messaging. -->
 
 ## Technologies
 * Ruby / Rails
