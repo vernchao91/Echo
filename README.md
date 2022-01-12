@@ -42,4 +42,6 @@ Server/Channel creation form is in a modal and modal input for name is also erro
 - <img src="/app/assets/images/EchoFLGreen.png" alt="FriendlistSettings"/>
 
 #### Messages (create, read)
-- Users can create and read messages in 2 different components.
+- Users can create and read messages in 2 different components, the Channels component and the Direct Messaging component. Just like Discord, everyone in a server are connected to the same websocket channel and can see chat messages via live, much like a groupchat. For Direct Messaging, it is between 2 users and their own distinct websocket channel.
+
+##
