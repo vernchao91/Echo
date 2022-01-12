@@ -34,22 +34,25 @@ Server/Channel creation form is in a modal and modal input for name is also erro
 
 #### Friends List (create, read, update, delete)
 - Friends list shows a conversations page on the left that displays all your friends. The 'All' tab shows all your friends, a button to direct message and another button to remove them as a friend. The 'Pending' tab shows invitations that were sent or being received. This is the page where you can cancel your invitation or reject an invitation from another user. The last tab 'Add Friend' is an input form to add another user based on username. It has error edge cases that detects for 5 different errors. On an unsuccessful add, the input border and error flashes red. On successful add, input border and successful message flashes green.
-1.  "User not found, Double check that the capitalization, spelling, or numbers are correct." 
-2.  "The user has already sent you a friend request. Awaiting your reponse." 
-3.  "You have already sent a friend request to this user. Awaiting response." 
+1.  "User not found, Double check that the capitalization, spelling, or numbers are correct."
+2.  "The user has already sent you a friend request. Awaiting your reponse."
+3.  "You have already sent a friend request to this user. Awaiting response."
 4.  "You are already friends with this user." 
 5.  "You cannot add yourself as a friend. Sorry :( You can make friends in the Public Servers!" 
 - <img src="/app/assets/images/EchoFLGreen.png" alt="FriendlistSettings"/>
 
 #### Messages (create, read)
 - Users can create and read messages in 2 different components, the Channels component and the Direct Messaging component. Just like Discord, everyone in a server are connected to the same websocket channel and can see chat messages via live, much like a groupchat. For Direct Messaging, it is between 2 users and their own distinct websocket channel.
+- <img src="/app/assets/images/EchoChannelMessage.png" alt="ChannelMessageSettings"/>
+- <img src="/app/assets/images/EchoDMMessageGreen.png" alt="DMMessageSettings"/>
 
-#### Future Feature's to add
+
+#### Future Feature's to add (create, read, update, delete)
 - [ ] Server owner can kick joined members.
 - [ ] Server invitation can be created by server owner.
-- [ ] Allow image CRUD for User Avatar
-- [ ] Allow image CRUD for Server Avatar
-- [ ] Add Server cards for "verified" servers
-- [ ] Add more featured servers for Music, Science & Tech, and Gaming. (More Seeds for extra components. Server needs extra column for verified: true or false)
+- [ ] Allow image CRUD for User Avatar.
+- [ ] Allow image CRUD for Server Avatar.
+- [ ] Add Server cards for "verified" servers.
+- [ ] Add more featured servers for Music, Science & Tech, and Gaming. (More Seeds for extra components. Server needs extra column for verified: true or false).
 - [ ] Voice chat.
-- [ ] Video chat. 
+- [ ] Video chat.
