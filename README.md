@@ -1,5 +1,5 @@
 # Echo
-<a href="https://echo-discordclone.herokuapp.com/#/" target="_blank">https://echo-discordclone.herokuapp.com/#/</a>
+<a href="https://echo-discordclone.herokuapp.com/#/" target="_blank">Live Link! <---</a>
 
 Echo is a fullstack clone of Discord. Users can create servers, text channels, chat areas, and direct messaging.
 
