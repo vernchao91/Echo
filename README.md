@@ -1,5 +1,6 @@
-# Echo
-https://echo-discordclone.herokuapp.com/#/
+<!-- # Echo -->
+# <a href="https://echo-discordclone.herokuapp.com/#/" target="_blank">Echo</a>
+<!-- https://echo-discordclone.herokuapp.com/#/ -->
 
 Echo is a fullstack clone of Discord. Users can create servers, text channels, chat areas, and direct messaging.
 
@@ -25,9 +26,9 @@ Account registration and login are fully functional and error handled.
 #### Servers CRUD(create, read, update, delete)
 Server creation form is in a modal and modal input for server name is also error handled. Server update form is on a separate modal that takes up the window size.
 - Create Server button in the form is disabled and is not enabled until input has been filled.
+<img src="/app/assets/images/EchoServer.png" alt="ServerCreate">
 - Once the input has been filled, the user may not create another server with the same name. Red font errors will be displayed if the user attempts to.
 - Server settings has a Server Name input that can be updated. If the user tries to update the name to an existing server name, error is flashed in red font and may not be saved to the database.
-<img src="/app/assets/images/EchoServer.png" alt="Server">
 
 <!-- #### Channels CRUD(create, read, update, delete)
 
