@@ -42,4 +42,4 @@ Server/Channel creation form is in a modal and modal input for name is also erro
 - <img src="/app/assets/images/EchoFLGreen.png" alt="FriendlistSettings"/>
 
 #### Messages (create, read)
-- 
+- Users can create and read messages in 2 different components.
