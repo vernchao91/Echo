@@ -14,8 +14,7 @@ Echo is a fullstack clone of Discord. Users can create servers, text channels, c
 * Heroku
 
 ## Features
-The User can create servers and give it a server name. The server name may not be the same as an existing owned server. If a name is not entered it will default to the "${username}'s server".
-When a server is created, a "General" chat channel is created automatically so you can start chatting right away! The Server owner can also edit or create more channels. Server owners may also invite and kick members. In the chat channels, the user may post a message through action cable websockets that updates live. Users may edit or delete their own messages in the channel. Direct Messaging are private message channels that are between two users. They have the same functions as would a regular chat channel.
+The User can create servers and give it a server name. The server name may not be the same as an existing owned server. When a server is created, a "General" chat channel is created automatically so you can start chatting right away! The Server owner can also edit or create more channels. Server owners may also invite and kick members. In the chat channels, the user may post a message through action cable websockets that updates live. Users may edit or delete their own messages in the channel. Direct Messaging are private message channels that are between two users. They have the same functions as would a regular chat channel.
 
 #### User Authentication (create, read)
 Account registration and login are fully functional and error handled.
@@ -24,5 +23,11 @@ Account registration and login are fully functional and error handled.
 <img src="/app/assets/images/EchoAuth.png" alt="UserAuth">
 
 #### Server CRUD(create, read, update, delete)
-Server creation 
+Server creation form is in a modal and the modal inputs for the name is also error handled.
+- Create Server button in the form is disabled and is not enabled until input has been filled.
+- Once the input has been filled, the user may not create another server with the same name. Red font errors will be displayed if the user attempts to.
+- 
+
 <img src="/app/assets/images/EchoServer.png" alt="Server">
+
+#### Channel CRUD(create, read, update, delete)

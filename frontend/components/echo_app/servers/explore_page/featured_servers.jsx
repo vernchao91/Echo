@@ -7,7 +7,7 @@ class FeaturedServers extends React.Component {
   }
 
   displayMembers() {
-    let membersLength = this.props.server.users.length
+    let membersLength = this.props.server.users
     return (
       <div className="server-index-members">
         <p>{membersLength} Members</p>
