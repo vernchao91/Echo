@@ -32,4 +32,13 @@ Server/Channel creation form is in a modal and modal input for name is also erro
 - <img src="/app/assets/images/EchoServerSettings.png" alt="ServerSettings"/>
 - <img src="/app/assets/images/EchoChannelSettings.png" alt="ChannelSettings"/>
 
+#### Friends List (create, read, update, delete)
+- Friends list shows a conversations page on the left that displays all your friends. The 'All' tab shows all your friends, a button to direct message and another button to remove them as a friend. The 'Pending' tab shows invitations that were sent or being received. This is the page where you can cancel your invitation or reject an invitation from another user. The last tab 'Add Friend' is an input form that error handles really well. It has error edge cases that detects for 5 different errors.
+1.  "User not found, Double check that the capitalization, spelling, or numbers are correct." 
+2.  "The user has already sent you a friend request. Awaiting your reponse." 
+3.  "You have already sent a friend request to this user. Awaiting response." 
+4.  "You are already friends with this user." 
+5.  "You cannot add yourself as a friend. Sorry :( You can make friends in the Public Servers!" 
+<!-- - <img src="/app/assets/images/EchoChannelSettings.png" alt="ChannelSettings"/> -->
+
 #### Messages (create, read)
