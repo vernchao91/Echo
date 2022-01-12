@@ -22,14 +22,14 @@ Account registration and login are fully functional and error handled.
 - Users can register and must input a unique Email and Username that has not been registered before. This will display the user's username in public but still keep emails private so they stay protected during login. The password is restricted to a minimum of 6 characters. All errors are handled through the backend database and displays the correct error.
 - <img src="/app/assets/images/EchoAuth.png" alt="UserAuth"/>
 
-#### Servers CRUD (create, read, update, delete)
-Server creation form is in a modal and modal input for server name is also error handled. Server update form is on a separate modal that takes up the window size.
+#### Servers CRUD (create, read, update, delete) and Channels CRUD (create, read, update, delete)
+Server/Channel creation form is in a modal and modal input for name is also error handled. Server/Channel update form is on a separate modal that takes up the window size.
 - <img src="/app/assets/images/EchoServer.png" alt="ServerCreate"/>
-- Create Server button in the form is disabled and is not enabled until input has been filled.
-- Once the input has been filled, the user may not create another server with the same name. Red font errors will be displayed if the user attempts to.
-- Server settings has a Server Name input that can be updated. If the user tries to update the name to an existing server name, error is flashed in red font and may not be saved to the database.
+- <img src="/app/assets/images/EchoChannel.png" alt="ChannelCreate"/>
+- Create Server/Channel button in the form is disabled and is not enabled until input has been filled.
+- Once the input has been filled, the user may not create another server/channel with the same name. Red font errors will be displayed if the user attempts to.
+- Server/Channel settings has a Name input that can be updated. If the user tries to update the name to an existing name, error is flashed in red font and may not be saved to the database.
 - <img src="/app/assets/images/EchoServerSettings.png" alt="ServerSettings"/>
-
-#### Channels CRUD(create, read, update, delete)
+- <img src="/app/assets/images/EchoChannelSettings.png" alt="ChannelSettings"/>
 
 #### Messages (create, read)
