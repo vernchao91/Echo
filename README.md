@@ -44,7 +44,7 @@ Server/Channel creation form is in a modal and modal input for name is also erro
 #### Messages (create, read)
 - Users can create and read messages in 2 different components, the Channels component and the Direct Messaging component. Just like Discord, everyone in a server are connected to the same websocket channel and can see chat messages via live, much like a groupchat. For Direct Messaging, it is between 2 users and their own distinct websocket channel.
 - <img src="/app/assets/images/EchoChannelMessage.png" alt="ChannelMessageSettings"/>
-- <img src="/app/assets/images/EchoDMMessageGreen.png" alt="DMMessageSettings"/>
+- <img src="/app/assets/images/EchoDMMessage.png" alt="DMMessageSettings"/>
 
 
 #### Future Feature's to add (create, read, update, delete)
