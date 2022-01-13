@@ -9,6 +9,6 @@ const Root = ({ store }) => (
       <App />
     </HashRouter>
   </Provider>
-)
+);
 
-export default Root
+export default Root;

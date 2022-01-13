@@ -6,17 +6,13 @@ class AllFriends extends React.Component {
     super(props)
     this.state = {
       conversations: this.props.conversations
-    }
+    };
   }
 
   componentDidMount() {
     this.props.fetchConversations(this.props.currentUserId)
-      .then(() => this.setState({conversations: this.props.conversations}))
-  }
-
-  componentWillUnmount() {
-
-  }
+      .then(() => this.setState({conversations: this.props.conversations}));
+  };
 
   render() {
     let arr = []
@@ -24,14 +20,14 @@ class AllFriends extends React.Component {
     Object.values(this.state.conversations).map((conversation, i) => {
       if(conversation.ownerId === this.props.currentUserId) {
         if (!conversation.pending) {
-          arr.push({displayId: conversation.userId, username: conversation.userUsername, id: conversation.id})
-        }
+          arr.push({displayId: conversation.userId, username: conversation.userUsername, id: conversation.id});
+        };
       } else {
         if (!conversation.pending) {
-          arr.push({displayId: conversation.ownerId, username: conversation.ownerUsername, id: conversation.id})
-        }
-      }
-    })
+          arr.push({displayId: conversation.ownerId, username: conversation.ownerUsername, id: conversation.id});
+        };
+      };
+    });
 
     return (
       <div className="all-friends-index-wrapper">

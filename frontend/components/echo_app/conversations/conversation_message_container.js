@@ -21,8 +21,8 @@ const mapStateToProps = (state, ownProps) => {
     messages: state.entities.messages,
     currentUserId: state.session.id,
     users: state.entities.users
-  }
-}
+  };
+};
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -34,7 +34,7 @@ const mapDispatchToProps = dispatch => {
     updateConversationMessage: (message) => dispatch(updateConversationMessage(message)),
     deleteConversationMessage: () => dispatch(deleteConversationMessage(message)),
     clearMessages: () => dispatch(clearMessages())
-  }
-}
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(ConversationMessage)

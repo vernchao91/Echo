@@ -1,5 +1,6 @@
 import React from "react";
-import InputEmoji from "react-input-emoji";
+// import InputEmoji from "react-input-emoji";
+// import Picker from 'emoji-picker-react';
 
 class ConversationMessage extends React.Component {
   constructor(props) {
@@ -16,7 +17,7 @@ class ConversationMessage extends React.Component {
     };
     this.bottom = React.createRef();
     this.handleSubmit = this.handleSubmit.bind(this);
-  }
+  };
   
   componentDidMount() {
     this.props.fetchConversationMessages(this.props.conversationId)
@@ -39,12 +40,12 @@ class ConversationMessage extends React.Component {
     if (this.bottom.current) {
       this.bottom.current.scrollIntoView();
     }
-  }
+  };
 
   componentWillUnmount() {
     App.cable.subscriptions.subscriptions[0].unsubscribe();
     this.props.clearMessages();
-  }
+  };
 
   componentDidUpdate(prevProp, prevState) {
     if (prevProp.conversationId !== this.props.conversationId) {
@@ -69,12 +70,12 @@ class ConversationMessage extends React.Component {
 
   update(field) {
     return (e) => this.setState({
-        message : {
-        ...this.state.message,
-        [field]: e.currentTarget.value 
-        } 
+      message : {
+      ...this.state.message,
+      [field]: e.currentTarget.value 
+      }
     });
-  }
+  };
 
   handleSubmit(e) {
     e.preventDefault();
@@ -89,7 +90,7 @@ class ConversationMessage extends React.Component {
       messages: this.state.messages.concat(newMessage),
       conversationId: this.props.conversationId
     }))
-  }
+  };
 
   renderUsername() {
     const { currentUserId, conversation } = this.props
@@ -109,7 +110,7 @@ class ConversationMessage extends React.Component {
         </div>
       )
     }
-  }
+  };
 
   renderPlaceholder() {
     const { currentUserId, conversation } = this.props
@@ -119,7 +120,7 @@ class ConversationMessage extends React.Component {
     } else {
       return `Message @ ${conversation.ownerUsername}`
     }
-  }
+  };
 
   render() {
     const { currentUserId, conversation } = this.props
@@ -157,28 +158,30 @@ class ConversationMessage extends React.Component {
             <div ref={this.bottom}/>
           </div>
 
-            <div className="message-form-wrapper">
-              <form className="message-form" onSubmit={this.handleSubmit}>
-                <input 
-                  className="message-input"
-                  type="text"
-                  value={this.state.message.body}
-                  onChange={this.update("body")}
-                  placeholder={this.renderPlaceholder()}
-                />
-                {/* <InputEmoji 
-                  className="message-emoji-input"
-                  value={this.state.message.body}
-                  onChange={this.update("body")}
-                  onEnter={this.ha}
-                /> */}
-              </form>
-            </div>
-            
+          <div className="message-form-wrapper">
+            <form className="message-form" onSubmit={this.handleSubmit}>
+              <input
+                className="message-input"
+                type="text"
+                value={this.state.message.body}
+                onChange={this.update("body")}
+                placeholder={this.renderPlaceholder()}
+              />
+              {/* <InputEmoji
+                className="message-emoji-input"
+                value={this.state.message.body}
+                onChange={this.update("body")}
+                // onEnter={this.handleSubmit}
+                placeholder={this.renderPlaceholder()}
+                cleanOnEnter
+              /> */}
+              {/* <Picker /> */}
+            </form>
+          </div>
         </div>
       </div>
     )
   }
-}
+};
 
-export default ConversationMessage
+export default ConversationMessage;

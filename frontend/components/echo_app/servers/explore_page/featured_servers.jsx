@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 class FeaturedServers extends React.Component {
   constructor(props) {
     super(props)
-  }
+  };
 
   displayMembers() {
     let membersLength = this.props.server.users
@@ -13,7 +13,7 @@ class FeaturedServers extends React.Component {
         <p>{membersLength} Members</p>
       </div>
     )
-  }
+  };
 
   render() {
     const { server, joinServer } = this.props
@@ -31,6 +31,6 @@ class FeaturedServers extends React.Component {
       </Link>
     )
   }
-}
+};
 
-export default FeaturedServers
+export default FeaturedServers;

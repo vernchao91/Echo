@@ -7,15 +7,15 @@ import {
   updateConversation,
   deleteConversation,
   removeConversationErrors
-} from "../../../actions/conversation_actions"
+} from "../../../actions/conversation_actions";
 
 const mapStateToProps = (state, ownProps) => {
   return {
     conversations: state.entities.conversations,
     currentUserId: state.session.id,
     conversationId: ownProps.match.params.convesationId
-  }
-}
+  };
+};
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -25,7 +25,7 @@ const mapDispatchToProps = dispatch => {
     updateConversation: (conversation) => dispatch(updateConversation(conversation)),
     deleteConversation: (conversationId) => dispatch(deleteConversation(conversationId)),
     removeConversationErrors: () => dispatch(removeConversationErrors())
-  }
-}
+  };
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(ConversationIndex)
+export default connect(mapStateToProps, mapDispatchToProps)(ConversationIndex);

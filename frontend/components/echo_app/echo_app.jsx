@@ -26,36 +26,36 @@ class EchoApp extends React.Component {
 
   componentDidMount() {
     this.props.fetchServersFromUser(this.props.currentUser.id)
-      .then(() => this.setState({servers: this.props.servers}))
+      .then(() => this.setState({servers: this.props.servers}));
   }
 
   handleOpenModal() {
-    this.setState({modal: true, name: ""})
+    this.setState({modal: true, name: ""});
   }
   
   handleCloseModal() {
-    this.setState({modal: false, name: ""})
+    this.setState({modal: false, name: ""});
     this.props.removeServerErrors();
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    const server = Object.assign({}, this.state)
+    const server = Object.assign({}, this.state);
     this.props.createServer(server)
-      .then(() => {this.handleCloseModal()})
+      .then(() => {this.handleCloseModal()});
   }
 
   update(field) {
     return (e) => {
-      this.props.removeServerErrors();
-      this.setState({ [field]: e.currentTarget.value })
+      this.props.removeServerErrors();;
+      this.setState({ [field]: e.currentTarget.value });
     }
   }
 
   renderCursor() {
     if(!this.state.name) {
-      return { cursor: "not-allowed", opacity: "0.5" }
-    }
+      return { cursor: "not-allowed", opacity: "0.5" };
+    };
   }
 
   createServerForm() {
@@ -95,26 +95,26 @@ class EchoApp extends React.Component {
             </div>
           </form>
 
-        </div>  
+        </div>
       </div>
     )
-  }
+  };
 
   render() {
     const pathName = this.props.history.location.pathname;
     const directMessaging = "/app/conversations";
     const explore = "/app/servers/explore";
-    let renderStyleDM
-    let renderStyleExplore
-    let renderStyleExploreIcon
+    let renderStyleDM;
+    let renderStyleExplore;
+    let renderStyleExploreIcon;
     if (pathName.includes(directMessaging)) {
-      renderStyleDM = {backgroundColor: "rgb(58, 94, 211)", borderRadius: "10px", color: "rgb(255, 255, 255)"}
+      renderStyleDM = {backgroundColor: "rgb(58, 94, 211)", borderRadius: "10px", color: "rgb(255, 255, 255)"};
     } else if (pathName.includes(explore)) {
-      renderStyleExplore = {backgroundColor: "rgb(18, 168, 85)", borderRadius: "10px", color: "rgb(255, 255, 255)"}
-      renderStyleExploreIcon = {color: "rgb(255, 255, 255)"}
+      renderStyleExplore = {backgroundColor: "rgb(18, 168, 85)", borderRadius: "10px", color: "rgb(255, 255, 255)"};
+      renderStyleExploreIcon = {color: "rgb(255, 255, 255)"};
     }
 
-    if (!this.props.servers) return null
+    if (!this.props.servers) return null;
     return (
       <div className="echoapp-wrapper">
 
@@ -195,6 +195,6 @@ class EchoApp extends React.Component {
     )
   }
 
-}
+};
 
-export default EchoApp
+export default EchoApp;

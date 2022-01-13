@@ -7,7 +7,7 @@ import ConversationIndexContainer from "./echo_app/conversations/conversation_in
 import ConversationMessageContainer from "./echo_app/conversations/conversation_message_container";
 import FriendPageContainer from "./echo_app/conversations/friendpage_container";
 import ExplorePageContainer from "./echo_app/servers/explore_page/explore_page_container";
-import ExploreHomeContainer from "./echo_app/servers/explore_page/explore_home_container"
+import ExploreHomeContainer from "./echo_app/servers/explore_page/explore_home_container";
 
 const Main = () => {
   return (
@@ -24,6 +24,6 @@ const Main = () => {
       <ProtectedRoute path="/app/conversations/friendpage" component={FriendPageContainer} />
     </div>
   )
-}
+};
 
 export default Main;

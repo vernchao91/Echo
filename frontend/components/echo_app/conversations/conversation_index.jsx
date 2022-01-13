@@ -55,7 +55,7 @@ class ConversationIndex extends React.Component {
     const searchuser = "/app/conversations/friendpage/searchuser";
     let renderStyle
     let renderFontColor
-    if (pathName === friendpage || pathName === pending || pathName === searchuser) {
+    if (pathName === friendpage || pathName === pending || pathName === searchuser) { // if All/Pending/Add Friend tab is active, this makes sure Friends tab still has grey background
       renderStyle = {backgroundColor: "rgb(78, 78, 78)"}
       renderFontColor = {color: "rgb(230, 230, 230)"}
     }
@@ -76,14 +76,12 @@ class ConversationIndex extends React.Component {
           </div>
 
           <div className="conversation-list-wrapper">
-            <Link style={renderStyle} className="conversation-friendpage-link" to="/app/conversations/friendpage/all">
+            <Link style={renderStyle} className="conversation-friendpage-link" to="/app/conversations/friendpage/all"> 
               <IoPeopleOutline style={renderFontColor} className="conversation-friendpage-icon"/>
               <p style={renderFontColor} className="conversation-friendpage-text">Friends</p>
             </Link>
             <div className="conversation-dm-modal">
               <p>Direct Messages</p>
-              {/* <button onClick={this.handleOpenModal}>+</button> */}
-              {/* <Modal isOpen={this.state.modal} className="overlay" ariaHideApp={false}></Modal> */}
             </div>
             <div className="conversation-link-wrapper">
               {arr.map((conversation, i) =>
@@ -100,4 +98,4 @@ class ConversationIndex extends React.Component {
   };
 };
 
-export default ConversationIndex
+export default ConversationIndex;

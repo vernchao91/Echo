@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 class Landing extends React.Component  {
   constructor(props) {
     super(props);
-  }
+  };
 
   loginOrLogout() {
     if (this.props.userId) {
@@ -21,7 +21,7 @@ class Landing extends React.Component  {
         </div>
       )
     }
-  }
+  };
 
   renderApp(){
     if (this.props.userId) {
@@ -31,7 +31,7 @@ class Landing extends React.Component  {
         </div>
       )
     }
-  }
+  };
 
   render() {
   return (
@@ -69,6 +69,6 @@ class Landing extends React.Component  {
     </div>
     )
   }
-}
+};
 
-export default Landing
+export default Landing;

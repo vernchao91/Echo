@@ -7,8 +7,8 @@ class AllFriendsIndexItem extends React.Component {
     super(props)
     this.state = {
       conversation: this.props.conversation
-    }
-  }
+    };
+  };
 
   render() {
     if (!this.state.conversation) return null
@@ -24,6 +24,6 @@ class AllFriendsIndexItem extends React.Component {
       </div>
     )
   }
-}
+};
 
-export default AllFriendsIndexItem
+export default AllFriendsIndexItem;

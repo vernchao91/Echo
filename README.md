@@ -47,13 +47,15 @@ Server/Channel creation form is in a modal and modal input for name is also erro
 - <img src="/app/assets/images/EchoChannelMessage.png" alt="ChannelMessageSettings"/>
 - <img src="/app/assets/images/EchoDMMessage.png" alt="DMMessageSettings"/>
 
-
 ### Future Feature's to add (create, read, update, delete)
 - [ ] Server owner can kick joined members.
 - [ ] Server invitation can be created by server owner.
+- [ ] Allow Friend Request in server page user list.
+- [ ] Messages can be updated or deleted.
 - [ ] Allow image CRUD for User Avatar (Active Storage AWS).
 - [ ] Allow image CRUD for Server Avatar (Active Storage AWS).
 - [ ] Change Joins table to polymorphic and let conversation's be more than 2 people.
+- [ ] Add input emoji for Messages
 - [ ] Add Server cards for "verified" servers.
 - [ ] Add more featured servers for Music, Science & Tech, and Gaming. (More Seeds for extra components. Server needs extra column for verified: true or false).
 - [ ] Voice chat.
