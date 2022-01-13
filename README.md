@@ -9,6 +9,7 @@ Echo is a Full Stack clone of Discord. Users can create servers, text channels, 
 * PostgreSQL
 * Javascript / JSX
 * React / Redux
+* Action Cable / Websockets
 * HTML / CSS
 * Webpack / Babel
 * Heroku
